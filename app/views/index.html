@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  Help paying for NHS Costs prototype
+  {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
@@ -9,70 +9,62 @@
 <main id="content" role="main">
 
   <div class="grid-row">
-  <div class="column-two-thirds">
+  	<div class="column-two-thirds">
 
         <h1 class="heading-xlarge">
-          <span class="heading-secondary">NHSBSA Design</span>
-          Prototype template
+          <span class="heading-secondary">v0.6 – 23/01/2019</span>
+          {{ serviceName }}
         </h1>
+        <h2 class="heading-medium">Previous research showed:</h2>
+        <ul class="list list-bullet">
+        	<li>Add research findings</li>
+        </ul>
+        <h2 class="heading-medium">Changes made:</h2>
+        <ul class="list list-bullet">
+        	<li>Removed CPI copy from 2015 Pension calculator results page (agreed with legal)</li>
+        	<li>Added link to 2015 scheme information on the 2015 Pension calculator results page to replace the CPI copy</li>
+        	<li>Content to support users and their understanding of max tax-free and max taxable allowance of taking a lump sum with the 2015 Pension calculator</li>
+        </ul>
+        <h2 class="heading-medium">Version notes:</h2>
+        <a href="">View</a>
+        <p><a class="button" href="start" role="button">View prototype</a></p>
 
-  <h2 class="heading-medium">Common pages</h2>
+  	</div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Link</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="common-pages/start-page">Start page</a></td>
-        <td>Start page of your service</td>
-      </tr>
+  	<div class="column-one-third">
+  		<h3 class="heading-medium">Supporting pages</h3>
+  		<ul>
+  			<li><a href="pages">Page templates</a></li>
+  		</ul>
+  	</div>
 
-      <tr>
-        <td><a href="common-pages/name">Name page</a></td>
-        <td>Full name</td>
-      </tr>
+	</div>
 
-      <tr>
-        <td><a href="common-pages/dob">Date of birth page</a></td>
-        <td>Date of birth</td>
-      </tr>
+	<hr />
 
-      <tr>
-        <td><a href="common-pages/post-address">Postal address page</a></td>
-        <td>Address</td>
-      </tr>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h2 class="heading-medium">Previous versions</h2>
+			<p>As we learn more about the <strong class="bold">{{ serviceName }}</strong> service and our user needs we are iterating the prototypes. Previous versions will be kept here as a historical record. The latest version can be accessed above.</p>
+			<details>
+				<summary><span class="summary">All previous versions</span></summary>
 
-      <tr>
-        <td><a href="common-pages/nhs-number">NHS number</a></td>
-        <td>Asking for an NHS number</td>
-      </tr>
+			  <div class="panel panel-border-narrow">
 
-       <tr>
-        <td><a href="common-pages/yes-no">Yes or no question</a></td>
-        <td>Asking a yes or no question</td>
-      </tr>
+					<ul class="list list-bullet">
+						<li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp_V2/startpage">Version 0.5 - </a></li>
+						<li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp_V2/startpage">Version 0.4 - </a></li>
+						<li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp_V2/startpage">Version 0.3 - </a></li>
+						<li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp_V2/startpage">Version 0.2 - 5th Dec 2018 </a></li>
+		        <li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp/startpage">Version 0.1 - 18th Oct 2018 </a></li>
+		      </ul>
 
-       <tr>
-        <td><a href="common-pages/yes-no">checkbox</a></td>
-        <td>Asking multi answer question</td>
-      </tr>
+			  </div>
 
-       <tr>
-        <td><a href="common-pages/check-your-answers">Check your answers page</a></td>
-        <td>For each end of section/ application</td>
-      </tr>
-
-    </tbody>
-  </table>
-
-  
-  </div>
-
-</div>
+			</details>
+			
+		</div>
+	</div>
 
 </main>
 
