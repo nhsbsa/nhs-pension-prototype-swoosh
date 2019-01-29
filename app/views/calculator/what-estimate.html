@@ -1,0 +1,44 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <header class="heading-group">
+        <p>2015 Scheme NHS Pension calculator</p>
+        <h1 class="heading-xlarge">What do you want your 2015 NHS Pension estimate to be based on?</h1>
+    </header>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form method="post" class="form" action="what-estimate">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">What do you want your 2015 NHS Pension estimate to be based on?</legend>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="retiring" name="retiring" type="checkbox" value="true">
+                        <label for="retiring">Retiring at a different age</label>
+                    </div>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="lump-sum" name="lump-sum" type="checkbox" value="true">
+                        <label for="lump-sum">Taking a lump sum when I retire</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                </div>
+            </form>
+      
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

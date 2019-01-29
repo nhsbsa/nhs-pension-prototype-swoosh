@@ -1,0 +1,15 @@
+.column-one-third-lg {
+    padding: 0 15px;
+
+    @include media(desktop) {
+        float: left;
+        width: 33.33%;
+        box-sizing: border-box;
+        display: flex;
+    }
+}
+@include media(desktop) {
+    .grid-row--flex {
+        display: flex;
+    }
+}

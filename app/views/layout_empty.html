@@ -29,88 +29,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.18.3">
-
+    
+    <link href="{{ asset_path }}stylesheets/bsa.css" media="screen" rel="stylesheet" type="text/css">
 
     {% block head %}{% endblock %}
   </head>
 
-  <body class="{% block body_classes %}{% endblock %}">
+  <body class="layout-empty {% block body_classes %}{% endblock %}">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     {% block body_start %}{% endblock %}
 
-    <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">{{ skip_link_message|default('Skip to main content') }}</a>
-      </div>
-    </div>
-
-    {# <div id="global-cookie-message">
-
-        {% block cookie_message %}{% endblock %}
-
-    </div> #}
-    <!--end global-cookie-message-->
-
-
-    <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
-        {% block header_content %}{% endblock %}
-    </header>
-    <!--end header-->
-
+    {% block header_content %}{% endblock %}
 
     {% block after_header %}{% endblock %}
 
     {% block content %}{% endblock %}
-
-<!--unbranded footer
-    <footer class="group js-footer" id="footer" role="contentinfo">
-    </footer>
--->
-     <footer class="group js-footer" id="footer" role="contentinfo">
-
-      <div class="footer-wrapper">
-        {% block footer_top %}{% endblock %}
-
-        <div class="footer-meta">
-          <div class="footer-meta-inner">
-            {% block footer_support_links %}{% endblock %}
-            <div class="footer-meta-inner">
-              <h2 class="visuallyhidden">Support links</h2>
-<ul>
-  <li><a href="">Privacy policy</a></li>
-  <li><a href="">Terms and conditions</a></li>
-
- <!-- Welsh not yet ready to add 
- <li><a href="" lang="cy" hreflang="cy">Rhestr o Wasanaethau Cymraeg</a></li> -->
-
-</ul>
-
-          </div>
-
-            <div class="open-government-licence" style="padding-left:0px; font-weight: 700;">
-                    <p style="font-weight: 700">Helpline - 0345 608 4321</p>
-                   <!--  <p>If you're deaf or hard of hearing you can contact us using the Text Relay service.</p> -->
-                    <p style="font-weight: 700">Textphone - 18001 0345 608 4321</p> 
-                    
-                       <!--  <p style="margin-top:1em">Calls cost up to 9p a minute from landlines, calls from mobiles may cost more.</p> -->
-                          <p>Built by <a href="https://www.gov.uk/government/organisations/nhs-business-services-authority">NHS Business Services Authority</a>
-</p>
-                    
-              
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
-
-
-    <!--end footer-->
-
-    <div id="global-app-error" class="app-error hidden"></div>
-
-    <script src="{{ asset_path }}javascripts/govuk-template.js?0.18.3" type="text/javascript"></script>
 
     {% block body_end %}{% endblock %}
 

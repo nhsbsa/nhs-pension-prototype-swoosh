@@ -1,0 +1,38 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your NHS Pension - My NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include "includes/phase_banner_beta.html" %}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>Your NHS Pension</p>
+                <h1 class="heading-xlarge">Your NHS Pension</h1>
+            </div>  
+            <p class="lede">Keeping your details up to date is important. Not having the correct details may impact and delay your NHS pension.</p>
+            <h2 class="lede">Use this service to:</h2>
+            <ul class="list list-bullet">
+                <li>confirm we hold the correct personal and contact information</li>
+                <li>keep your details up to date to get an accurate NHS Pension</li>
+                <li>view your NHS Pension contributions</li>
+            </ul>
+            <a class="button button-get-started" href="/nino">Start now</a>
+        </div>
+
+        <div class="column-one-third">
+            <h3 class="heading-medium">Other NHS Pension services</h3>
+            <p>
+                <a href="/calculator">2015 Scheme NHS Pension Calculator</a>
+            </p>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

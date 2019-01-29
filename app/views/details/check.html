@@ -1,0 +1,96 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Summary of your contact details - My NHS pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-xlarge">Your details</h1>
+            </div>
+
+            <p>Last updated: <strong class="bold">31/11/2018</strong></p>
+
+            <table class="check-table stack-table center-on-stack" id="contact-details">
+                <caption class="visually-hidden">Personal details</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">Personal details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="col" class="cell-first">Full name</td>
+                        <td class="centered-item" scope="col">Sam Curtis Jones</td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="cell-first">National Insurance number</td>
+                        <td class="centered-item" scope="col">AC 12 34 56 C</td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="cell-first">Date of birth</td>
+                        <td class="centered-item" scope="col">01/12/1987</td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="cell-first">Gender</td>
+                        <td class="centered-item" scope="col">Male</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <table class="check-table stack-table center-on-stack" id="contact-details">
+                <caption class="visually-hidden">Contact details</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">Contact details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="col" class="cell-first">Home address</td>
+                        <td class="centered-item" scope="col">29 Larkholme Lane,<br> Fleetwood, FY7 8AU</td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="cell-first">Postal address</td>
+                        <td class="centered-item" scope="col">29 Larkholme Lane,<br> Fleetwood, FY7 8AU</td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="cell-first">Email address</td>
+                        <td class="centered-item" scope="col">mark.wright6@nhs.net</td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="cell-first">Mobile number</td>
+                        <td class="centered-item" scope="col">0200 010 303</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <details>
+                <summary><span class="summary">What to do if your details are incorrect</span></summary>
+                <div class="panel panel-border-narrow">
+                    <p>If you need to make changes, contact your employer. Only your employer can change this information.</p>
+                </div>
+            </details>
+
+            <br>
+
+            <a href="javascript:history.go(-1)" class="link-back-unstyled">Back to your NHS Pension</a>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

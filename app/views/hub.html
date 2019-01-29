@@ -1,0 +1,63 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your NHS Pension - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include "includes/phase_banner_beta.html" %}
+    <div class="grid-row">
+        <div class="column-full">
+            <h1 class="heading-xlarge">{{ serviceName }}</h1>
+
+            <p class="heading-medium">Sam Curtis Jones</p>
+
+            <div class="grid-row grid-row--flex">
+                <div class="column-one-third-lg">
+                    <div class="govuk-card">
+                        <div class="govuk-card__content">
+                            <h3 class="heading-large">Your details</h3>
+                            <p class="govuk-body">Check and make sure your details are up to date.</p>
+                        </div>
+                        <div class="govuk-card__actions">
+                            <a class="govuk-body govuk-link" href="/details">Your details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column-one-third-lg">
+                    <div class="govuk-card">
+                        <div class="govuk-card__content">
+                            <h3 class="heading-large">Your Pensions Scheme and Sections</h3>
+                            <p class="govuk-body">Here are the Pension Scheme and Sections you belong to.</p>
+                        </div>
+                        <div class="govuk-card__actions">
+                            <a class="govuk-body govuk-link" href="/scheme-sections">Your pension scheme and sections</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column-one-third-lg">
+                    <div class="govuk-card">
+                        <div class="govuk-card__content">
+                            <h3 class="heading-large">2015 Scheme calculator</h3>
+                            <p class="govuk-body">Find out what your 2015 Scheme could be worth if you take a lump sum or retire on a different date.</p>
+                        </div>
+                        <div class="govuk-card__actions">
+                            <a class="govuk-body govuk-link" href="/calculator">2015 Scheme pension calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://stg.services.nhsbsa.nhs.uk/member-services/tea/start" class="button">Claim Your NHS Pension</a>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your NHS Pension - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include "includes/phase_banner_beta.html" %}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Claim your NHS Pension</h1>
+            <p>This service is for deferred members and should take approximately 20 minutes to complete.</p>
+
+            <div class="notice">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small">
+                    This form should not be submitted until 3 months before your expected retirement date.
+                </strong>
+            </div>
+            
+            <h2 class="heading-medium">You will need:</h2>
+            <ul class="list list-bullet">
+                <li>to read the <a href="">guidance notes</a></li>
+                <li>to read the <a href="">fair processing notice</a></li>
+                <li>UK bank account details</li>
+                <li>details of any other pensions you have</li>
+            </ul>
+            <h2 class="heading-medium">You may also need:</h2>
+            <ul class="list list-bullet">
+                <li>a printer to print confirmation of your application</li>
+                <li>date of marriage or civil partnership</li>
+                <li>spouse or civil partners date of birth and National Insurance number</li>
+                <li>dependant childrens date of birth</li>
+            </ul>
+            <h2 class="heading-small">Documents you will find helpful</h2>
+            <ul class="list list-bullet">
+                <li>your recent estimate, if you have one</li>
+                <li>HMRC protection certificate, if you have one</li>
+            </ul>
+
+            <a class="button button-get-started" href="#">Start now</a>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

@@ -70,16 +70,14 @@ body {
   text-align: center;
   color: white;
   padding: 20px;
-  margin: 30px 0;
-  h1 {
-    padding-top: 0;
-    margin: 0;
+  margin: 30px 0
+  ;
+  > *:first-child {
+    margin-top: 0;
   }
-  h2 {
-    line-height: 145%;
-    font-size: 135%;
-    padding-top: 0;
-    margin: 10px 0 5px 0;
+
+  > *:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -663,6 +661,10 @@ td.strong {
   font-size: 17px;
 }
 
+.medium-text {
+  font-size: 22px;
+}
+
 .highlighted {
   li {
     margin-bottom :10px;
@@ -1130,8 +1132,15 @@ border-bottom: 1px solid #bfc1c3;
 
 }
 
+.u-block {
+  display: block;
+}
 
-
+.img-responsive {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
 
 
 

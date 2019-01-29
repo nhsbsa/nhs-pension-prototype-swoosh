@@ -1,0 +1,67 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="nhsuk-box-highlight done-panel">
+                <h1 class="heading-large">Your NHS Pension estimate:</h1>
+                <p><strong class="heading-medium">£28,000 lump sum and <br> £5,839 per year (£467 per month)</strong></p>
+            </div>
+
+            <p>If you take out a lump sum of <strong class="bold">£28,000</strong> it will reduce your annual pension payment from
+            <strong class="bold">£11,280</strong> to <strong class="bold">£5,839 per year</strong>.</p>
+
+            <h2 class="heading-small">Alternative scenarios</h2>
+
+            <table class="check-table stack-table center-on-stack" id="contact-details">
+                <caption class="visually-hidden">Contact details</caption>
+                <thead>
+                    <tr>
+                        <th>Lump sum</th>
+                        <th class="numeric">Pension payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="col">£14,000</td>
+                        <td class="numeric" scope="col">£7,500 per year (£625 per month)</td>
+                    </tr>
+                    <tr>
+                        <td scope="col">£28,000</td>
+                        <td class="numeric" scope="col">£5,000 per year (£467 per month)</td>
+                    </tr>
+                    <tr>
+                        <td scope="col">£56,000</td>
+                        <td class="numeric" scope="col">£2,664 per year (£222 per month)</td>
+                    </tr>
+                    <tr>
+                        <td scope="col">No lump sum</td>
+                        <td class="numeric" scope="col">£11,280 per year (£940 per month)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <p>If you would like to know how this estimate has been calculated, visit the <a href="#">2015 Member guide</a></p>
+
+            <h2 class="heading-small">What happens next?</h2>
+
+            <p>If you are happy with your estimate, speak to your employer about your next steps.</p>
+            <p>You can now <a href="/calculator">create another estimate</a> or return to <a href="/hub">Your NHS Pension</a> home.</p>
+      
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
