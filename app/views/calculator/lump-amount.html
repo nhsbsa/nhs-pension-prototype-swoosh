@@ -1,0 +1,49 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="heading-group">
+                <p>2015 Scheme NHS Pension calculator</p>
+                <h1 class="heading-large">How much of your pension would you like to take as a lump sum?</h1>
+            </header>
+
+            <form method="post" class="form" action="when-retire">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">How much of your pension would you like to take as a lump sum?</legend>
+                    <div class="multiple-choice">
+                        <input id="specific-age" type="radio" name="lump-amount" value="Max">
+                        <label for="specific-age">Maximum amount (£28,000)</label>
+                    </div>
+
+                    <div class="multiple-choice" data-target="other-amount-panel">
+                        <input id="specific-date" type="radio" name="lump-amount" value="Other">
+                        <label for="specific-date">Other amount</label>
+                    </div>
+                    <div class="panel panel-border-narrow js-hidden" id="other-amount-panel">
+                        <label class="form-label" for="other-amount-value">What amount to the nearest pound?</label>
+                        <input class="form-control" name="other-amount-value" type="text" id="other-amount-value">
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                </div>
+            </form>
+      
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

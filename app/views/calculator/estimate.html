@@ -11,7 +11,22 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            
+
+            {{ retiring }}
+            {% set retiring = data['retiring-age'] %}
+
+            {{ lumpSum }}
+            {% set lumpSum = data['lump-sum'] %}
+
+            {% if retiring and lumpSum %}
+                retiring and lump
+            {% elif retiring %}
+                retiring: {{ retiring }}
+            {% elif lumpSum %}
+                lump: {{ lumpSum }}
+            {% endif %}
+
+
             <div class="nhsuk-box-highlight done-panel">
                 <h1 class="heading-large">Your NHS Pension estimate:</h1>
                 <p><strong class="heading-medium">£28,000 lump sum and <br> £5,839 per year (£467 per month)</strong></p>
@@ -52,6 +67,7 @@
 
             <br>
 
+            <!-- show for all -->
             <p>If you would like to know how this estimate has been calculated, visit the <a href="#">2015 Member guide</a></p>
 
             <h2 class="heading-small">What happens next?</h2>

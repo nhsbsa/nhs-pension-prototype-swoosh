@@ -333,6 +333,7 @@ td.strong {
 }
 
 .multiple-choice {
+  float: left;
   background-color: #DEE0E2;
   border :1px solid white;
   padding-left :0;
@@ -344,35 +345,34 @@ td.strong {
   &:hover {
     border :1px solid black;
   }
-  [type=radio] + label::before {
-    background-color: white;
-    position: inherit;
-    float: left;
-    margin-left: -38px;
-    margin-top :3px;
-    width: 24px;
-    height: 24px;
-  }
-  [type=radio] + label::after {
-    left: 17px;
-    top: 17px;
-    border: 7px solid;
-  }
-  label {
-    float: left;
-    margin-left: 48px;
-    padding-right: 25px;
-  }
-}
-
-
-.multiple-radio {
+  [type=radio] + label::before,
   [type=checkbox] + label::before {
-    background: white;
-    top: 9px;
-    left: 9px;
+    background-color: white;
     width: 28px;
     height: 28px;
+    left: 12px;
+  }
+  [type=radio] + label::before {
+    top: 10px;
+  }
+  [type=radio] + label::after {
+    left: 20px;
+    top: 18px;
+    border: 8px solid;
+  }
+  label {
+    line-height: 1.25;
+    float: left;
+    margin: 8px 0 8px 48px;
+    padding-right: 25px;
+  }
+  // checkboxes
+  [type=checkbox] + label::before {
+    top: 10px;
+    @include media(tablet) {
+      top: 12px;
+      left: 12px;
+    }
   }
   [type=checkbox] + label::after {
     top: 19px;
@@ -380,12 +380,33 @@ td.strong {
     width: 13px;
     height: 5px;
     border-width: 0 0 4px 4px;
-  }
-  label {
-    margin-top: 5px;
-    margin-left: 52px;
+    @include media(tablet) {
+      top: 22px;
+      left: 19px;
+    }
   }
 }
+
+// .multiple-radio {
+//   [type=checkbox] + label::before {
+//     background: white;
+//     top: 9px;
+//     left: 9px;
+//     width: 28px;
+//     height: 28px;
+//   }
+//   [type=checkbox] + label::after {
+//     top: 19px;
+//     left: 17px;
+//     width: 13px;
+//     height: 5px;
+//     border-width: 0 0 4px 4px;
+//   }
+//   label {
+//     margin-top: 5px;
+//     margin-left: 52px;
+//   }
+// }
 
 .inline {
   .multiple-choice {
@@ -438,6 +459,13 @@ td.strong {
 
 .stack-panel {
   margin-bottom: 30px;
+}
+
+.form-control--xs {
+  max-width: 50px;
+}
+.form-control--sm {
+  max-width: 80px;
 }
 
 //footer

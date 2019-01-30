@@ -10,13 +10,13 @@
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/back-link.html" %}
 
-    <header class="heading-group">
-        <p>2015 Scheme NHS Pension calculator</p>
-        <h1 class="heading-xlarge">When would you like to retire?</h1>
-    </header>
-
     <div class="grid-row">
         <div class="column-two-thirds">
+
+            <header class="heading-group">
+                <p>2015 Scheme NHS Pension calculator</p>
+                <h1 class="heading-large">When would you like to retire?</h1>
+            </header>
 
             <form method="post" class="form" action="when-retire">
                 <fieldset class="form-group">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="panel panel-border-narrow js-hidden" id="specific-age-panel">
                         <label class="form-label" for="specific-age-value">Age</label>
-                        <input class="form-control" name="specific-age-value" type="text" id="specific-age-value">
+                        <input class="form-control form-control--sm" name="specific-age-value" type="text" id="specific-age-value">
                     </div>
 
                     <div class="multiple-choice" data-target="specific-date-panel">
@@ -51,7 +51,7 @@
 
                             <div class="form-group form-group-year">
                                 <label for="dob-year">Year</label>
-                                <input class="form-control" id="dob-year" max="2014" min="0" name="dob-year" pattern="[0-9]*" type="number">
+                                <input class="form-control" id="dob-year" max="2100" min="0" name="dob-year" pattern="[0-9]*" type="number">
                             </div>
 
                         </div>

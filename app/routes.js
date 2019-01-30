@@ -25,11 +25,28 @@ router.get('/calculator', function (req, res) {
 })
 
 router.post('/calculator/what-estimate', function (req, res) {
-  res.redirect('/calculator/when-retire')
+  var lump = req.session.data['lump-sum'];
+  var retiring = req.session.data['retiring-age'];
+
+  console.log(req.body.lump)
+  console.log(req.body.retiring)
+  console.log("Lump: " + lump, "Retiring: " + retiring);
+
+  if (lump === 'yes') {
+    res.redirect('/calculator/lump-amount')
+  } else {
+    res.redirect('/calculator/when-retire')
+  }
+
 })
 
 router.post('/calculator/when-retire', function (req, res) {
-  res.redirect('/calculator/estimate')
+  var lump = req.session.data['lump-sum'];
+  if (lump === 'yes') {
+    res.redirect('/calculator/lump-amount')
+  } else {
+    res.redirect('/calculator/estimate')
+  }
 })
 
 module.exports = router
