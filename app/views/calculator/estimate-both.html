@@ -1,0 +1,37 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="nhsuk-box-highlight done-panel">
+                <h1 class="heading-large">Your NHS Pension estimate:</h1>
+                <p><strong class="heading-medium">£3,000 per year and a lump sum of £28,000</strong></p>
+            </div>
+
+            <p>If you retire at <strong class="bold">56 years (01/11/22)</strong> and take out a lump sum of
+            <strong class="bold">£28,000</strong> it will reduce your annual NHS pension from <strong class="bold">£11,280</strong>
+            to <strong class="bold">£3,000 per year</strong>.</p>
+
+            <!-- show for all -->
+            <p>If you would like to know how this estimate has been calculated, visit the <a href="#">2015 Member guide</a></p>
+
+            <h2 class="heading-small">What happens next?</h2>
+
+            <p>If you are happy with your estimate, speak to your employer about your next steps.</p>
+            <p>You can now <a href="/calculator">create another estimate</a> or return to <a href="/hub">Your NHS Pension</a> home.</p>
+      
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
