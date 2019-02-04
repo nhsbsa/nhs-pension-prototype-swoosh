@@ -705,10 +705,10 @@ td.strong {
 }
 
 
-.link-back {
-  margin-top: 30px;
-  margin-bottom: 0;
-}
+// .link-back {
+//   margin-top: 30px;
+//   margin-bottom: 0;
+// }
 
 .or-block {
   margin-bottom: 0;
@@ -1170,5 +1170,24 @@ border-bottom: 1px solid #bfc1c3;
   max-width: 100%;
 }
 
+.log-out-link {
+  float: right;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  @include media(tablet) {
+    font-size: 16px;
+  }
+}
 
+// We should really depend on the govuk design system
+.govuk-margin-top-0 {
+  margin-top: 0 !important;
+}
 
+.visual-break {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: grey;
+  height: 2px;
+}
