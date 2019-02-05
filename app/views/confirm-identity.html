@@ -1,0 +1,29 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {# {% include "includes/back-link.html" %} #}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">Confirm your identity</h1>
+        <p>You need to sign in with GOV.UK Verify to access {{ serviceName }}.</p>
+        <p>If you have not used GOV.UK Verify before, it will take you about 5 minutes to get set up.</p>
+
+        <div class="verify-block">
+            <img src="/public/images/verify/govuk-verify-small-black-text.png" alt="GOV.UK Verify" />
+        </div>
+
+        <a href="verify" class="button">Continue</a>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

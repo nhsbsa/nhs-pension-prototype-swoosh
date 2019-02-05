@@ -17,7 +17,12 @@ router.get('/verify', function (req, res) {
 })
 
 router.post('/nino', function (req, res) {
-  res.redirect('hub')
+  const answer = req.session.data['nino'];
+  if (answer === 'no match') {
+    res.redirect('nino-not-matched')
+  } else {
+    res.redirect('hub')
+  }
 })
 
 router.get('/calculator', function (req, res) {
