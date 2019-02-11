@@ -1,8 +1,11 @@
 var express = require('express')
 var router = express.Router()
 
+const BASE_PATH = '/';
+const ABS_BASE_PATH = `${BASE_PATH}`;
+
 // Route index page
-router.get('/', function (req, res) {
+router.get(`${BASE_PATH}`, function (req, res) {
   res.render('index')
 })
 
@@ -58,5 +61,21 @@ router.post('/calculator/lump-amount', function (req, res) {
     res.redirect('/calculator/estimate-lump')
   }
 })
+
+
+// This moves scenario routing to scenario directory
+router.use('/scenario/', require('./views/scenario/_routes'))
+router.get('/scenarios', function (req, res) {
+  res.redirect('scenario')
+})
+
+// This moves schemes routing to schemes directory
+router.use('/schemes/', require('./views/schemes/_routes'))
+
+// When we get hub
+// router.get('/hub', function (req, res) {
+//   res.render('hub')
+// })
+
 
 module.exports = router

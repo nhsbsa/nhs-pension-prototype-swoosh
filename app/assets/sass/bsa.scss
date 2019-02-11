@@ -38,6 +38,7 @@ body {
   background-repeat: no-repeat;
   background-position: center bottom;
   height: 170px;
+  position: relative;
   @media screen and (max-width: $break-small) {
     height: auto;
     background: transparent;
@@ -60,6 +61,11 @@ body {
       float: right;
       padding: 5% 4% 0;
     }
+  }
+  .notice {
+    position: absolute;
+    left: 1em;
+    top: 35px;
   }
 }
 
