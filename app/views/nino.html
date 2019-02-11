@@ -16,9 +16,11 @@
         <form action="nino" method="post" class="form">
 
           <div class="form-group">
-              <h1 class="page-header--lede heading-large">
-                  <label for="nino">What is your National Insurance Number?</label>
-              </h1>
+              <div class="heading-group">
+                  <p>{{ serviceName }}</p>
+                  <h1 class="heading-large">What is your National Insurance Number?</h1>
+              </div>
+              <label for="nino" class="visually-hidden">What is your National Insurance Number?</label>
               <input class="form-control" id="nino" name="nino" type="text">
           </div>
 
