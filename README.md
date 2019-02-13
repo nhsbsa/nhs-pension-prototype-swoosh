@@ -22,6 +22,9 @@ If you publish your prototypes online, they **must** be protected by a [username
 
 ## Changelog
 
+### Version 3 and later
+[See index.html](app/views/index.html)
+
 ### Version 2
 - [Prototype link](https://nhs-pension-v2.herokuapp.com/)
 - [Codebase](https://github.com/nhsbsa/ynhsp-prototype/releases/tag/version-2)

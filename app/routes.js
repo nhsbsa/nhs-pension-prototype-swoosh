@@ -69,13 +69,8 @@ router.get('/scenarios', function (req, res) {
   res.redirect('scenario')
 })
 
-// This moves schemes routing to schemes directory
-router.use('/schemes/', require('./views/schemes/_routes'))
-
-// When we get hub
-// router.get('/hub', function (req, res) {
-//   res.render('hub')
-// })
+// This moves pension-details routing to pension-details directory
+router.use('/pension-details/', require('./views/pension-details/_routes'))
 
 
 module.exports = router

@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Scheme and Sections - {{ serviceName }} - NHSBSA
+Your pension details - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -22,17 +22,17 @@ Scheme and Sections - {{ serviceName }} - NHSBSA
             {% set scheme = data['scheme'] %}
 
             {% if ('2015' in scheme) or ('0' in scheme) %}
-            {% include "schemes/includes/2015.html" %}
+            {% include "pension-details/includes/2015.html" %}
             <hr class="visual-break">
             {% endif %}
 
             {% if ('2008' in scheme) or ('0' in scheme) %}
-            {% include "schemes/includes/2008.html" %}
+            {% include "pension-details/includes/2008.html" %}
             <hr class="visual-break">
             {% endif %}
 
             {% if ('1995' in scheme) or ('0' in scheme) %}
-            {% include "schemes/includes/1995.html" %}
+            {% include "pension-details/includes/1995.html" %}
             <hr class="visual-break">
             {% endif %}
 

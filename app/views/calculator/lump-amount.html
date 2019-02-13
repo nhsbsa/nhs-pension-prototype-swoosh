@@ -14,7 +14,7 @@
         <div class="column-two-thirds">
 
             <header class="heading-group">
-                <p>2015 Scheme NHS Pension calculator</p>
+                <p>{{ serviceName }}</p>
                 <h1 class="heading-large">How much of your pension would you like to take as a lump sum?</h1>
             </header>
 
@@ -30,9 +30,16 @@
                         <input id="specific-date" type="radio" name="lump-amount" value="Other">
                         <label for="specific-date">Other amount</label>
                     </div>
+
+                    
                     <div class="panel panel-border-narrow js-hidden" id="other-amount-panel">
                         <label class="form-label" for="other-amount-value">What amount to the nearest pound?</label>
-                        <input class="form-control" name="other-amount-value" type="text" id="other-amount-value">
+                        {# <input class="form-control" name="other-amount-value" type="text" id="other-amount-value"> #}
+                        {{ govukCurrencyInput({
+                            id: "other-amount-value",
+                            name: "other-amount-value",
+                            classes: "form-control"
+                        }) }}
                     </div>
                 </fieldset>
 

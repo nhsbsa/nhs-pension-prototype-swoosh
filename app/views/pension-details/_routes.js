@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const BASE_PATH = 'schemes';
+const BASE_PATH = 'pension-details';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
 const NEXT_PATH = '/hub';
 
