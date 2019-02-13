@@ -32,15 +32,6 @@ Your NHS Pension - My NHS Pension - NHSBSA
             <p>When planning for your retirement, you may also wish to take independent financial advice.</p>
         </div>
 
-        {{ scheme }}
-        {% set scheme = data['scheme'] %}
-        {% if ('2015' in scheme) or ('0' in scheme) %}
-        <div class="column-one-third">
-            <h3 class="heading-medium">Other NHS Pension services</h3>
-            <p><a href="/calculator">2015 Scheme NHS Pension Calculator</a></p>
-        </div>
-        {% endif %}
-
     </div>
 </main>
 
