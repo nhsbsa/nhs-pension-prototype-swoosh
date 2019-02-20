@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Processing - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include 'verify/includes/back.html' %}
+
+
+      <div class="grid-row">
+            <div class="verify-logo">
+  <img class="verify-hub-logo" src="/public/images/verify/govuk-verify-small-black-text.png" alt="" style="width:60%">
+</div>
+
+<div class="column-two-thirds">
+  		<h1 class="heading-large">Do you have a mobile phone or tablet?</h1>
+
+      <p>Certified companies can send security codes to your mobile.</p>
+
+      <form action="choose-a-company">
+        <input type="hidden" name="registration" value="true">
+<input type="hidden" name="user_age" value="true">
+<input type="hidden" name="user_uk" value="true">
+<input type="hidden" name="non-uk-group" value="true">
+<input type="hidden" name="drivingLicence" value="true">
+<input type="hidden" name="drivingLicenceGB" value="true">
+<input type="hidden" name="passport" value="true">
+
+        <div class="form-group" data-required="Please answer the question">
+          <fieldset class="block">
+
+            <div class="multiple-choice" data-target="install-apps">
+              <input id="mobile-device-true" type="radio" name="mobile" value="true" aria-controls="install-apps" aria-expanded="false">
+              <label for="mobile-device-true">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="">
+              <input id="mobile-device" type="radio" name="mobile" value="false">
+              <label for="mobile-device">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="install-apps" aria-hidden="true">
+              Can you install apps on your device?
+              <span class="form-hint">Some certified companies ask you to download a free app and use your phone's camera as part of verifying your identity.</span>
+
+              <div class="multiple-choice" data-target="">
+                <input id="apps-yes" type="radio" name="apps" value="true">
+                <label for="apps-yes">Yes</label>
+              </div>
+              
+              <div class="multiple-choice" data-target="">
+                <input id="apps-no" type="radio" name="apps" value="false">
+                <label for="apps-no">No</label>
+              </div>
+
+              <div class="multiple-choice" data-target="">
+                <input id="apps-dont-know" type="radio" name="apps" value="false">
+                <label for="apps-dont-know">I don’t know</label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <input class="button" type="submit" value="Continue">
+      </form>
+  	</div>
+
+
+      </div>
+
+
+
+</main>
+{% endblock %}

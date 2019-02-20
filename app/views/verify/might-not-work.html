@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Processing - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include 'verify/includes/back.html' %}
+
+
+      <div class="grid-row">
+            <div class="verify-logo">
+  <img class="verify-hub-logo" src="/public/images/verify/govuk-verify-small-black-text.png" alt="" style="width:60%">
+</div>
+<div class="column-two-thirds">
+  		<h1 class="heading-large">You might not be able to have your identity verified</h1>
+
+      <p>To verify an identity, certified companies access credit records then ask you to confirm this information. Most young people and newcomers to the UK have a limited ‘credit history’, companies might not be able to check your identity in this way.</p>
+
+      <h2 class="heading-medium">What you’ll need on your credit record</h2>
+
+      <p>Your identity might be verified if you have 2 or more of the following:</p>
+
+      <ul class="list list-bullet">
+        <li>current account with a UK bank</li>
+        <li>credit card</li>
+        <li>personal loan</li>
+        <li>mortgage</li>
+        <li>gas or electricity bills</li>
+        <li>mobile phone contract</li>
+        <li>you’re registered to vote</li>
+      </ul>
+
+      <p>You’ll also need a UK passport or a UK driving licence.</p>
+
+      <p><a href="/hub/select-documents?registration=true&amp;user_age=true&amp;user_uk=false&amp;non-uk-group=true">I’d like to try to verify my identity online</a></p>
+
+      
+        <h2 class="heading-medium">Other ways to access your Italian service</h2>
+        <p>If you cannot verify your identity using GOV.UK Verify, you’ll need to <a href="http://eidas-inps-test.herokuapp.com/">go back to the service</a> to find other ways to apply.</p>
+
+      
+
+  	</div>
+      
+      
+      </div>
+
+
+
+</main>
+{% endblock %}

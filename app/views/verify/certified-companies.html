@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Processing - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include 'verify/includes/back.html' %}
+
+    <div class="content-inner slides">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <figure>
+            <img srcset="/public/images/verify/govuk-verify.svg 1x" alt="GOV.UK Verify" src="/public/images/verify/govuk-verify.png">
+          </figure>
+        </div>
+        <div class="column-two-thirds">
+            
+            <form action="identity-accounts" method="post">
+                <p>A certified company verifies your identity. They’ve all met security standards set by government.</p>
+                <p>You don’t need to be an existing customer with a company as they've built new, secure systems to verify identities.</p>
+
+  <ul class="list-companies"> 
+    <li>
+      <img alt="Experian: a world of insight" src="/public/images/idp-logos/white/experian.png">
+    </li>
+    <li>
+      <img alt="Digidentity" src="/public/images/idp-logos/white/digidentity.png">
+    </li>
+    <li>
+      <img alt="Post Office" src="/public/images/idp-logos/white/post-office.png">
+    </li>
+  </ul>
+  <ul class="list-companies"> 
+    <li>
+      <img alt="Barclays" src="/public/images/idp-logos/white/barclays.png">
+    </li>
+    <li>
+      <img alt="SecureIdentity: by Morpho, leader in government ID" src="/public/images/idp-logos/white/morpho.png">
+    </li>
+  </ul>
+<br>
+
+<p>There’s no charge for this service.</p>
+
+<details role="group">
+  <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+    <span class="summary">How companies can verify identities</span>
+  </summary>
+
+  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+    <p>These companies can use their own data, and they can access data like credit records. They’re able to check that information from passports and driving licences is correct.</p>
+    
+    <p>Certified companies meet government privacy standards, so you can trust them with your personal information. They won’t share or sell your data for any other purposes without your consent.</p>
+
+    <p>There won’t be any effect on your credit score.</p>
+    
+    <p>More than one certified company means you choose who verifies your identity, and it means the system overall is stronger.</p>
+  </div>
+</details>
+
+<div class="form-group">
+  <div class="actions">
+    <input class="button" id="next-button" type="submit" value="Next">
+  </div>
+</div>
+</form>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+</main>
+{% endblock %}

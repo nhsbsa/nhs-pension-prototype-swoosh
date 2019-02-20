@@ -16,4 +16,12 @@ $(document).ready(function () {
   // to toggle hidden content
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
+
+  // Tell user about dead links
+  // @via paulhayes_dfe
+  function alertUser(evt) {
+    evt.preventDefault();
+    alert('Sorry, this hasn\'t been built yet');
+  }
+  $('body').on('click', 'a[href="#"]', alertUser);
 })

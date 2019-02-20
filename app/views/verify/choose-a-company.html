@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Processing - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include 'verify/includes/back.html' %}
+
+
+      <div class="grid-row">
+            <div class="verify-logo">
+  <img class="verify-hub-logo" src="/public/images/verify/govuk-verify-small-black-text.png" alt="" style="width:60%">
+</div>
+<div class="column-two-thirds">
+  		<h1 class="heading-large">Choose a company to verify your identity</h1>
+
+      <p>You don't have to be an existing customer with a company.</p>
+
+      <p>They ask you to provide personal information and evidence, and then check it's correct using the new, secure systems they built.</p>
+
+      <ul class="list list-bullet">
+        <li><a href="#">Why there’s a choice of companies</a></li>
+      </ul>
+
+
+      <p>Based on your answers, these companies can verify you now:</p>
+
+
+ 
+
+        <input type="hidden" name="registration" value="true">
+<input type="hidden" name="user_age" value="true">
+<input type="hidden" name="user_uk" value="true">
+<input type="hidden" name="non-uk-group" value="true">
+<input type="hidden" name="drivingLicence" value="true">
+<input type="hidden" name="drivingLicenceGB" value="true">
+<input type="hidden" name="passport" value="true">
+<input type="hidden" name="mobile" value="true">
+<input type="hidden" name="apps" value="true">
+
+
+  		 <div id="company-about">
+
+        
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <img alt="" src="/public/images/idp-logos/experian.png">
+
+           
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="provider/1">
+                <input type="hidden" name="idpChoice" value="experian">
+                <button class="button">Select Experian</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <img alt="" src="/public/images/idp-logos/post-office.png">
+
+           
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="provider/1">
+                <input type="hidden" name="idpChoice" value="post-office">
+                <button class="button">Select Post Office</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <img alt="" src="/public/images/idp-logos/digidentity.png">
+
+           
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="provider/1">
+                <input type="hidden" name="idpChoice" value="digidentity">
+                <button class="button">Select Digidentity</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <img alt="" src="/public/images/idp-logos/barclays.png">
+
+           
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="provider/1">
+                <input type="hidden" name="idpChoice" value="barclays">
+                <button class="button">Select Barclays</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <img alt="" src="/public/images/idp-logos/secureidentity.png">
+
+           
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="provider/1">
+                <input type="hidden" name="idpChoice" value="secureidentity">
+                <button class="button">Select SecureIdentity</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+  	</div>
+      </div>
+
+
+
+</main>
+{% endblock %}

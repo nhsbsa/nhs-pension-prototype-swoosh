@@ -15,10 +15,6 @@ router.get('/details', function (req, res) {
   res.redirect('details/check')
 })
 
-router.get('/verify', function (req, res) {
-  res.render('verify/1')
-})
-
 router.post('/nino', function (req, res) {
   const answer = req.session.data['nino'];
   if (answer === 'no match') {
@@ -72,5 +68,10 @@ router.get('/scenarios', function (req, res) {
 // This moves pension-details routing to pension-details directory
 router.use('/pension-details/', require('./views/pension-details/_routes'))
 
+// This moves verify routing to verify directory
+router.use('/verify/', require('./views/verify/_routes'))
+router.get('/verify', function (req, res) {
+  res.redirect('verify/sign-in')
+})
 
 module.exports = router

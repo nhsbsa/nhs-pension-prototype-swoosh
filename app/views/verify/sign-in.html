@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Processing - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include 'verify/includes/back.html' %}
+
+    <div class="content-inner slides">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <figure>
+            <img srcset="/public/images/verify/govuk-verify.svg 1x" alt="GOV.UK Verify" src="/public/images/verify/govuk-verify.png">
+          </figure>
+        </div>
+        <div class="column-two-thirds">
+            
+            <h1>Sign in with GOV.UK Verify</h1>
+            <form action="sign-in" method="post">
+                <div class="form-group">
+                    <fieldset class="block">
+                    <div class="multiple-choice" data-target="age-over-20">
+                        <input id="verify_create_account" type="radio" name="registration" value="true">
+                        <label for="verify_create_account" style="font-size: 24px;">This is my first time using Verify</label>
+                    </div>
+                    <div class="multiple-choice" data-target="age-under-20">
+                        <input id="verify_sign_in" type="radio" name="registration" value="false">
+                        <label for="verify_sign_in" style="font-size: 24px;">I’ve used Verify before</label>
+                    </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group-tight">
+                    <div class="actions">
+                    <input class="button" id="next-button" type="submit" value="Continue">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+</main>
+{% endblock %}
