@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Processing - {{ serviceName }} - NHSBSA
+Sign in - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block body_classes %}
@@ -17,9 +17,7 @@ hub-start
     <div class="content-inner slides">
       <div class="grid-row">
         <div class="column-one-third">
-          <figure>
-            <img srcset="/public/images/verify/govuk-verify.svg 1x" alt="GOV.UK Verify" src="/public/images/verify/govuk-verify.png">
-          </figure>
+          {% include 'verify/includes/verify-start-logo.html' %}
         </div>
         <div class="column-two-thirds">
             

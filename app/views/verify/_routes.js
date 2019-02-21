@@ -17,8 +17,8 @@ router.post('/sign-in', function (req, res) {
     }
 })
 
-// router.post('/', function (req, res) {
-//     res.redirect(`${NEXT_PATH}`);
-// })
+router.post('/provider', function (req, res) {
+    res.redirect('provider/1');
+})
 
 module.exports = router;

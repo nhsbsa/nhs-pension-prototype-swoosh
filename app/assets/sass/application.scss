@@ -93,3 +93,20 @@ $path: "/public/images/";
     display: none;
   }
 }
+
+// Verify and IDP logo lockup
+
+.verify-idp-logo-lockup {
+  padding: 20px 0;
+  
+  .idp-logo-lockup {
+    height:60px;
+  }
+  
+  .verify-logo-lockup {
+    height:60px; 
+    margin-left: 30px; 
+    padding-left: 30px; 
+    border-left:#bfc1c3 solid 1px;
+  }
+}
