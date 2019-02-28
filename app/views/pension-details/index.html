@@ -21,17 +21,17 @@ Your pension details - {{ serviceName }} - NHSBSA
             {{ scheme }}
             {% set scheme = data['scheme'] %}
 
-            {% if ('2015' in scheme) or ('0' in scheme) %}
+            {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/2015.html" %}
             <hr class="visual-break">
             {% endif %}
 
-            {% if ('2008' in scheme) or ('0' in scheme) %}
+            {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/2008.html" %}
             <hr class="visual-break">
             {% endif %}
 
-            {% if ('1995' in scheme) or ('0' in scheme) %}
+            {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/1995.html" %}
             <hr class="visual-break">
             {% endif %}
