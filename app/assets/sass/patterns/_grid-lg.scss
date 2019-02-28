@@ -11,5 +11,6 @@
 @include media(desktop) {
     .grid-row--flex {
         display: flex;
+        flex-wrap: wrap;
     }
 }

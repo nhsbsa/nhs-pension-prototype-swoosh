@@ -1,27 +1,85 @@
 $card-spacing: 15px;
+$card-border-radius: 0;
+$card-bg-color: #f8f8f8;
 
 .govuk-card {
     display: flex;
+    flex: 1;
     flex-direction: column;
     margin-bottom: 20px;
-    @include media(desktop) {
-        margin-bottom: 40px;
-    }
-    padding-bottom: $card-spacing;
-    border: 1px solid grey;
+    border-radius: $card-border-radius;
+    border: 1px solid $grey-2;
     box-sizing: border-box;
-    background-color: #f8f8f8;
+    background-color: $card-bg-color;
+    
+    &__heading {
+        margin-top: 0;
+        
+        a {
+            text-decoration: none;
+            // color: $blue;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+            &:hover {
+                text-decoration: underline;
+
+                &::after {
+                    // background: $govuk-blue;
+                }
+            }
+        }
+
+        &:focus-within ~ p {
+
+        }
+    }
+
+    &__header,
+    &__content,
+    &__actions {
+        padding: $card-spacing;
+
+    }
+
+    &__header {
+        background-color: $card-bg-color;
+        border-top-left-radius: $card-border-radius;
+        border-top-right-radius: $card-border-radius;
+        padding-bottom: 0;
+        // border-bottom: 1px solid $grey-2;
+    }
 
     &__content {
-        padding: $card-spacing;
-        padding-bottom: 0;
+        flex-grow: 1;
+        position: relative;
+        background-color: #f8f8f8;
         > :first-child {
             margin-top: 0;
         }
     }
 
     &__actions {
-        padding: $card-spacing $card-spacing 0 $card-spacing;
         margin-top: auto;
+        border-top: 1px solid $grey-2;
+        background-color: $white;
+        border-bottom-left-radius: $card-border-radius;
+        border-bottom-right-radius: $card-border-radius;
+    }
+
+    &__actions-list {
+        li {
+            margin-bottom: $card-spacing;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
