@@ -1,0 +1,66 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 2015 pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">2015 pension estimate</h1>
+            </div>
+
+            <ul class="list">
+                <li>You can claim this pension in full on <strong class="bold">01/12/2033</strong> at <strong class="bold">age 65</strong></li>
+                <li>You can claim a reduced pension from <strong class="bold">01/12/2023</strong> at <strong class="bold">age 55</strong></li>
+            </ul>
+
+            <p class="heading-large">£11,280.00
+                <span class="small-text u-block">Estimated annual payment if retiring at 65.</span>
+            </p>
+            <br>
+
+            <p>To get an alternative estimate of your pension for the 2015 Scheme, you can use the <a href="/calculator">2015 Scheme NHS Pension Calculator</a>.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Last updated: 31/01/19</th>
+                        <th class="numeric" scope="col"><span class="visually-hidden">Amount</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Your contributions</td>
+                        <td class="numeric"><strong class="bold">£9,600</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Employer contributions</td>
+                        <td class="numeric"><strong class="bold">£38,400</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Contribution total</td>
+                        <td class="numeric"><strong class="bold">£48,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            
+            {% include "includes/back-link-unstyled.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}
