@@ -13,30 +13,23 @@ Your 2015 pension estimate - {{ serviceName }} - NHSBSA
 
     <div class="grid-row">
         <div class="column-two-thirds">
+
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
                 <h1 class="heading-large">2015 pension estimate</h1>
             </div>
 
-            <ul class="list">
-                <li>You can claim this pension in full on <strong class="bold">01/12/2033</strong> at <strong class="bold">age 65</strong></li>
-                <li>You can claim a reduced pension from <strong class="bold">01/12/2023</strong> at <strong class="bold">age 55</strong></li>
-            </ul>
+            <div class="done-panel">
+                <p class="govuk-margin-bottom-0">You could get this pension on <strong class="bold">1st December 2041</strong> when you will be&nbsp;<strong class="bold">65</strong>, your estimate is</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£2484.21 a month</p>
+                <p class="heading-medium govuk-margin-top-0">£29,810.47 a year</p>
+            </div>
 
-            <p class="heading-large">£11,280.00
-                <span class="small-text u-block">Estimated annual payment if retiring at 65.</span>
-            </p>
-            <br>
+            <p>You could get a reduced pension on <strong class="bold">1st December 2031</strong> when you will be&nbsp;<strong class="bold">55</strong>.</p>
 
-            <p>To get an alternative estimate of your pension for the 2015 Scheme, you can use the <a href="/calculator">2015 Scheme NHS Pension Calculator</a>.</p>
+            <p>You can <a href="/calculator">change this estimate</a> based on retiring early or getting a lump&nbsp;sum.</p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Last updated: 31/01/19</th>
-                        <th class="numeric" scope="col"><span class="visually-hidden">Amount</span></th>
-                    </tr>
-                </thead>
+            {# <table>
                 <tbody>
                     <tr>
                         <td>Your contributions</td>
@@ -51,11 +44,19 @@ Your 2015 pension estimate - {{ serviceName }} - NHSBSA
                         <td class="numeric"><strong class="bold">£48,000</strong></td>
                     </tr>
                 </tbody>
-            </table>
+            </table> #}
 
             <br>
-            
-            {% include "includes/back-link-unstyled.html" %}
+
+            <p class="bold">Last updated: 31/01/19</p>
+
+            <br>
+
+            <form action="#">
+                <button class="button">Get your 2015 pension</button>
+            </form>
+
+            {# {% include "includes/back-link-unstyled.html" %} #}
 
         </div>
 

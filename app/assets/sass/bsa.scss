@@ -1,8 +1,13 @@
+// BSA Vars
+@import 'var';
+
+// As you were
 @import 'unbranded';
 
 // Components
 @import 'components/currency-input';
 @import 'components/tag';
+@import 'components/panel';
 
 // Patterns
 @import 'patterns/card';
@@ -34,8 +39,6 @@ $break-medium: 768px;
 h3.heading-medium {
   margin-top: 30px;
 }
-
-$nhs-blue: #005EB8;
 
 body {
   color: #333333;
@@ -76,35 +79,6 @@ body {
     left: 1em;
     top: 35px;
   }
-}
-
-//done-page
-
-.done-panel {
-  background-color: $nhs-blue;
-  text-align: center;
-  color: white;
-  padding: 20px;
-  margin: 30px 0
-  ;
-  > *:first-child {
-    margin-top: 0;
-  }
-
-  > *:last-child {
-    margin-bottom: 0;
-  }
-}
-
-#done-tick {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  padding: 4px 20px 4px 4px;;
-  background-color: $nhs-blue;
-  background-image: url('/public/images/bsa/done-tick.png');
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .details {

@@ -1,0 +1,41 @@
+//done-page
+
+.done-panel {
+    position: relative;
+    background-color: $nhs-blue;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 30px 0
+    ;
+    > *:first-child {
+      margin-top: 0;
+    }
+  
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  #done-tick {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 4px 20px 4px 4px;;
+    background-color: $nhs-blue;
+    background-image: url('/public/images/bsa/done-tick.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .done-panel--success {
+    background-color: $grass-green;
+  }
+  
+  .done-panel--warning {
+    background-color: $brown;
+  }
+  
+  .done-panel--danger {
+    background-color: $mellow-red;
+  }
