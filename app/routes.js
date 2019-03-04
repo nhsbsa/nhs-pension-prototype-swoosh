@@ -24,39 +24,8 @@ router.post('/nino', function (req, res) {
   }
 })
 
-router.get('/calculator', function (req, res) {
-  res.redirect('/calculator/what-estimate')
-})
-
-router.post('/calculator/what-estimate', function (req, res) {
-  var estimate = req.body['estimate_based_on'];
-  // console.log(estimate);
-  if(estimate.includes('age')) {
-    res.redirect('/calculator/when-retire')
-  } else {
-    res.redirect('/calculator/lump-amount')
-  }
-})
-
-router.post('/calculator/when-retire', function (req, res) {
-  var estimate = req.session.data['estimate_based_on'];
-  // console.log(estimate);
-  if (estimate.includes('lump')) {
-    res.redirect('/calculator/lump-amount')
-  } else {
-    res.redirect('/calculator/estimate')
-  }
-})
-
-router.post('/calculator/lump-amount', function (req, res) {
-  var estimate = req.session.data['estimate_based_on'];
-  // console.log(estimate);
-  if(estimate.includes('age')) {
-    res.redirect('/calculator/estimate-both')
-  } else {
-    res.redirect('/calculator/estimate-lump')
-  }
-})
+// This moves calculator routing to calculator directory
+router.use('/calculator/', require('./views/calculator/_routes'))
 
 
 // This moves scenario routing to scenario directory

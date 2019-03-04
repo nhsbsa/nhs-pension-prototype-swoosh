@@ -9,18 +9,23 @@
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
 
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="nhsuk-box-highlight done-panel">
-                <h1 class="heading-large">Your NHS Pension estimate:</h1>
-                <p><strong class="heading-medium">£3,000 per year and a lump sum of £28,000</strong></p>
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">2015 pension estimate</h1>
             </div>
 
-            <p>If you retire at <strong class="bold">56 years (01/11/22)</strong> and take out a lump sum of
-            <strong class="bold">£28,000</strong> it will reduce your annual NHS pension from <strong class="bold">£11,280</strong>
-            to <strong class="bold">£3,000 per year</strong>.</p>
+            <div class="done-panel">
+                <p class="govuk-margin-bottom-0">If you retire at <strong class="bold">56</strong> on <strong class="bold">1st November 2022</strong> and<br> you take a lump sum of <strong class="bold">£28,000</strong> your estimate&nbsp;is</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£467.22 a month</p>
+                <p class="govuk-margin-top-0">reduced from £777.77 a month.</p>
+                <p>Your yearly estimate is <strong class="bold">£5,606.64</strong> reduced from <strong class="bold">£29,810.47</strong>.</p>
+            </div>
+            
 
             <!-- show for all -->
             {% include "calculator/includes/next.html" %}

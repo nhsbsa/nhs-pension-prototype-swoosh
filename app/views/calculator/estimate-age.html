@@ -9,44 +9,49 @@
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
 
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="done-panel">
-                <h1 class="heading-large">Your NHS Pension estimate:</h1>
-                <p><strong class="heading-medium">£5,000 per year (£467 per month)</strong></p>
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">2015 pension estimate</h1>
             </div>
 
-            <p>If you retire at <strong class="bold">64 years (01/11/22)</strong> it will reduce your annual NHS 
-            pension from <strong class="bold">£11,280</strong> to <strong class="bold">£5,000 per year</strong>.</p>
+            <div class="done-panel">
+                <p class="govuk-margin-bottom-0">If you retire at <strong class="bold">64</strong> on <strong class="bold">1st January 2022</strong> your estimate&nbsp;is</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£467.22 a month</p>
+                <p class="govuk-margin-top-0">reduced from £777.77 a month.</p>
+                <p>Your yearly estimate is <strong class="bold">£5,606.64</strong> reduced from <strong class="bold">£29,810.47</strong>.</p>
+            </div>
 
-            <h2 class="heading-small">Alternative scenarios</h2>
+            <h2 class="heading-medium">Other different age examples</h2>
 
             <table class="check-table stack-table center-on-stack" id="contact-details">
-                <caption class="visually-hidden">Contact details</caption>
+                <caption class="visually-hidden">Retirement age</caption>
                 <thead>
                     <tr>
-                        <th>Retirement age</th>
-                        <th class="numeric">Pension payment</th>
+                        <th>Age</th>
+                        <th class="numeric">Payment</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td scope="col">60 years (earliest retirement age)</td>
-                        <td class="numeric" scope="col">£2,664 per year (£222 per month)</td>
+                        <td class="numeric" scope="col">£222 a month (£2,664 a year)</td>
                     </tr>
                     <tr>
                         <td scope="col">64 years</td>
-                        <td class="numeric" scope="col">£5,000 per year (£467 per month)</td>
-                    </tr>
-                    <tr>
-                        <td scope="col">67 years</td>
-                        <td class="numeric" scope="col">£14,100 per year (£1175 per month)</td>
+                        <td class="numeric" scope="col">£467.22 a month (£5,606.64 a year)</td>
                     </tr>
                     <tr>
                         <td scope="col">65 years (normal retirement age)</td>
-                        <td class="numeric" scope="col">£11,280 per year (£940 per month)</td>
+                        <td class="numeric" scope="col">£940 a month (£11,280 a year)</td>
+                    </tr>
+                    <tr>
+                        <td scope="col">67 years</td>
+                        <td class="numeric" scope="col">£1175 a month (£14,100 a year)</td>
                     </tr>
                 </tbody>
             </table>
