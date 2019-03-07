@@ -15,24 +15,37 @@ Your 1995 pension estimate - {{ serviceName }} - NHSBSA
         <div class="column-two-thirds">
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">Your 1995 pension estimate</h1>
+                <h1 class="heading-large">1995 pension estimate</h1>
             </div>
 
-            <ul class="list">
-                <li>You can claim this pension in full on <strong class="bold">01/12/2033</strong> at <strong class="bold">age 60</strong></li>
-                <li>You can claim a reduced pension from <strong class="bold">01/12/2028</strong> at <strong class="bold">age 55</strong></li>
-            </ul>
-            <p class="heading-large">£
-                <span class="medium-text">Availabile on your Total Rewards Statement</span>
-            </p>
+            {% if data['show'] === "trs"  %}
 
-            <p>To get an estimate of your pension for the 1995 Section, you can use the <a href="#">Standard Pension Calculator</a> or log onto your <a href="#">Total Reward Statement</a>.</p>
+            <div class="done-panel">
+                <p class="govuk-margin-bottom-0">You could get this pension on <strong class="bold">1st December 2041</strong> when you will be&nbsp;<strong class="bold">60</strong>, your estimate is available on your</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">Total Reward Statement</p>
+                <p>You could get a reduced pension on <strong class="bold">1st December 2031</strong> when you will be&nbsp;<strong class="bold">55</strong>.</p>
+            </div>
+
+            {% else %}
+
+            <div class="done-panel">
+                <p class="govuk-margin-bottom-0">You could get this pension on <strong class="bold">1st December 2041</strong> when you will be&nbsp;<strong class="bold">60</strong>, your estimate is</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£274.46 a month</p>
+                <p class="heading-medium govuk-margin-top-0">£3,293.52 a year</p>
+                <p>You could get a reduced pension on <strong class="bold">1st December 2031</strong> when you will be&nbsp;<strong class="bold">55</strong>.</p>
+            </div>
+
+            {% endif %}
+
+            <p>To get an estimate of your 1995 pension, you can use the <a href="/public/images/xl/ARER Calculator V6 (08.2016) (1).xlsm">Standard Pension Calculator</a> or log in to your <a href="https://www.totalrewardstatements.nhs.uk/">Total Reward Statement</a>.</p>
+
+            <p class="small-text">Last updated <strong class="bold">31st March 2018</strong>.</p>
 
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">Last updated: 31/01/19</th>
-                        <th class="numeric" scope="col"><span class="visually-hidden">Amount</span></th>
+                        <th scope="col">Contribution</th>
+                        <th class="numeric" scope="col">Amount</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +58,7 @@ Your 1995 pension estimate - {{ serviceName }} - NHSBSA
                         <td class="numeric"><strong class="bold">£58,500</strong></td>
                     </tr>
                     <tr>
-                        <td>Contribution total</td>
+                        <td>Total contributions</td>
                         <td class="numeric"><strong class="bold">£81,969</strong></td>
                     </tr>
                 </tbody>

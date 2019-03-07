@@ -34,53 +34,114 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                             <div class="govuk-card__content">
                                 <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="pension-details/2015-estimate">2015 Pension estimate</a></h3>
                                 <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">£2484<span class="heading-small">.21 <span>a&nbsp;month</span></span></p>
-                                <span class="app-c-tag app-c-tag--danger">Estimated</span>
+                                <span class="app-c-tag">Estimated</span>
                             </div>
                             <div class="govuk-card__actions">
                                 
                                 <ul class="govuk-card__actions-list">
                                     <li><a href="calculator">Calculate your 2015 pension based on different scenarios</a></li>
-                                    <li><a href="https://stg.services.nhsbsa.nhs.uk/member-services/tea/start">Get your 2015 pension</a></li>
+                                    <li><a href="#">Get your 2015 pension</a></li>
+                                    <li><a href="#">Opt out of your 2015 pension</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     {% endif %}
 
-                    {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %} 
-                    <li class="column-one-third-lg">
-                        <div class="govuk-card">
-                            <div class="govuk-card__content">
-                            <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="pension-details/2008-estimate">2008 Pension estimate</a></h3>
-                                <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">£422<span class="heading-small">.94 <span>a&nbsp;month</span></span></p>
-                                <span class="app-c-tag app-c-tag--danger">Estimated</span>
+                    {% if data['show'] === "trs"  %}
+                        <li class="column-one-third-lg">
+                            <div class="govuk-card">
+                                <div class="govuk-card__content">
+                                <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="pension-details/2008-estimate">2008 Pension estimate</a></h3>
+                                    <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">Unavailable</p>
+                                    <span class="app-c-tag app-c-tag--warning">See TRS</span>
+                                </div>
+                                <div class="govuk-card__actions">
+                                    <ul class="govuk-card__actions-list">
+                                        <li><a href="#">Calculate your 2008 pension based on different scenarios</a></li>
+                                        <li><a href="#">Get your 2008 pension</a></li>
+                                        <li><a href="#">Opt out of your 2008 pension</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="govuk-card__actions">
-                                <ul class="govuk-card__actions-list">
-                                    <li><a href="#">Calculate your 2008 pension based on different scenarios</a></li>
-                                    <li><a href="#">Get your 2008 pension</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    {% endif %}
+                        </li>
 
-                    {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}                    
-                    <li class="column-one-third-lg">
-                        <div class="govuk-card">
-                            <div class="govuk-card__content">
+                        <li class="column-one-third-lg">
+                            <div class="govuk-card">
+                                <div class="govuk-card__content">
                                 <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="pension-details/1995-estimate">1995 Pension estimate</a></h3>
-                                <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">£274<span class="heading-small">.46 <span>a&nbsp;month</span></span></p>
-                                <span class="app-c-tag app-c-tag--danger">Estimated</span>
+                                    <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">Unavailable</p>
+                                    <span class="app-c-tag app-c-tag--warning">See TRS</span>
+                                </div>
+                                <div class="govuk-card__actions">
+                                    <ul class="govuk-card__actions-list">
+                                        <li><a href="#">Calculate your 1995 pension based on different scenarios</a></li>
+                                        <li><a href="#">Get your 1995 pension</a></li>
+                                        <li><a href="#">Opt out of your 1995 pension</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    {% else %}
+
+                        {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %} 
+                        <li class="column-one-third-lg">
+                            <div class="govuk-card">
+                                <div class="govuk-card__content">
+                                <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="pension-details/2008-estimate">2008 Pension estimate</a></h3>
+                                    <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">£422<span class="heading-small">.94 <span>a&nbsp;month</span></span></p>
+                                    <span class="app-c-tag">Estimated</span>
+                                </div>
+                                <div class="govuk-card__actions">
+                                    <ul class="govuk-card__actions-list">
+                                        <li><a href="#">Calculate your 2008 pension based on different scenarios</a></li>
+                                        <li><a href="#">Get your 2008 pension</a></li>
+                                        <li><a href="#">Opt out of your 2008 pension</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}                    
+                        <li class="column-one-third-lg">
+                            <div class="govuk-card">
+                                <div class="govuk-card__content">
+                                    <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="pension-details/1995-estimate">1995 Pension estimate</a></h3>
+                                    <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">£274<span class="heading-small">.46 <span>a&nbsp;month</span></span></p>
+                                    <span class="app-c-tag">Estimated</span>
+                                </div>
+                                <div class="govuk-card__actions">
+                                    <ul class="govuk-card__actions-list">
+                                        <li><a href="#">Calculate your 1995 pension based on different scenarios</a></li>
+                                        <li><a href="#">Get your 1995 pension</a></li>
+                                        <li><a href="#">Opt out of your 1995 pension</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        
+                    {% endif %}
+
+                    {% if data['show'] === "taking"  %}
+                    <li class="column-one-third-lg">
+                        <div class="govuk-card">
+                            <div class="govuk-card__content">
+                                <h3 class="heading-small govuk-card__heading govuk-margin-top-0"><a href="#">1995 Pension</a></h3>
+                                <p class="heading-large govuk-margin-top-0 govuk-margin-bottom-0">£2484<span class="heading-small">.21 <span>a&nbsp;month</span></span></p>
+                                <span class="app-c-tag app-c-tag--success">taking</span>
                             </div>
                             <div class="govuk-card__actions">
+                                
                                 <ul class="govuk-card__actions-list">
-                                    <li><a href="#">Calculate your 1995 pension based on different scenarios</a></li>
-                                    <li><a href="#">Get your 1995 pension</a></li>
+                                    <li><a href="#">View your pension statements</a></li>
+                                    <li><a href="#">Opt out of your 1995 pension</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
+
                     {% endif %}
 
                 </ul>
@@ -109,11 +170,29 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                         </div>
                     </li>
 
+                </ul>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 class="heading-large">Think about</h2>
+                <ul class="grid-row grid-row--flex">
+
                     <li class="column-one-third-lg">
                         <div class="govuk-card">
                             <div class="govuk-card__content">
                                 <h3 class="heading-medium govuk-card__heading"><a href="#">Your nominations</a></h3>
                                 <p>Name one or many people or organisations to get your pension if you die.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="column-one-third-lg">
+                        <div class="govuk-card">
+                            <div class="govuk-card__content">
+                                <h3 class="heading-medium govuk-card__heading"><a href="#">Transferring a pension</a></h3>
+                                <p>You can transfer in from another pension scheme registered with HM Revenue & Customs (HMRC).</p>
                             </div>
                         </div>
                     </li>
@@ -131,10 +210,6 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
             </section>
 
             <hr>
-
-            <section>
-            <!-- TO ADD -->
-            </section>
 
         </div>
 
