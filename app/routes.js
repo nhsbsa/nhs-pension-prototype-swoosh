@@ -15,15 +15,6 @@ router.get('/details', function (req, res) {
   res.redirect('details/check')
 })
 
-router.post('/nino', function (req, res) {
-  const answer = req.session.data['nino'];
-  if (answer === 'no match') {
-    res.redirect('nino-not-matched')
-  } else {
-    res.redirect('hub')
-  }
-})
-
 // This moves calculator routing to calculator directory
 router.use('/calculator/', require('./views/calculator/_routes'))
 
@@ -41,6 +32,12 @@ router.use('/pension-details/', require('./views/pension-details/_routes'))
 router.use('/verify/', require('./views/verify/_routes'))
 router.get('/verify', function (req, res) {
   res.redirect('verify/sign-in')
+})
+
+// This moves matching routing to matching directory
+router.use('/matching/', require('./views/matching/_routes'))
+router.get('/nino', function (req, res) {
+  res.redirect('matching')
 })
 
 module.exports = router

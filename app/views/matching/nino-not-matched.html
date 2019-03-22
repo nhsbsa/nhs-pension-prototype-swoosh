@@ -1,0 +1,57 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-large">We could not find a match</h1>
+        </div>
+
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            Some of your details from GOV.UK Verify do not match the details we (NHS Pensions) are holding for you.
+          </strong>
+        </div>
+        <h2 class="heading-medium">This is what we have:</h2>
+        <ul class="list list-bullet">
+          <li>First name: <strong class="bold">Sam</strong></li>
+          <li>Last name: <strong class="bold">Jones</strong></li>
+          <li>National Insurance number: <strong class="bold">JH 34 45 56 A</strong></li>
+          <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
+        </ul>
+
+        <form action="nino-not-matched" method="post">
+          <fieldset class="form-group">
+            <legend class="heading-medium">Are these details correct?</legend>
+            <div class="multiple-choice">
+              <input id="matching-yes" name="matching_details[]" type="radio" value="yes">
+              <label for="matching-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="matching-no" name="matching_details[]" type="radio" value="no">
+              <label for="matching-no">No</label>
+            </div>
+          </fieldset>
+          <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+          </div>
+        </form>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-large">You will need to call the contact centre</h1>
+        </div>
+
+        <p>Contact the NHS Pensions helpline on <strong class="bold">01234 567 890</strong>.</p>
+
+        <p>This is the information from GOV.UK Verify.</p>
+
+        <ul class="list list-bullet">
+          <li>First name: <strong class="bold">Sam</strong></li>
+          <li>Last name: <strong class="bold">Jones</strong></li>
+          <li>National Insurance number: <strong class="bold">JH 34 45 56 A</strong></li>
+          <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
+        </ul>
+
+        <p>It will take several days for us to update your details. After this time please try again.</p>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

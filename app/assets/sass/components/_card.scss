@@ -58,7 +58,6 @@ $card-bg-color: #f8f8f8;
     }
 
     &__content {
-        flex-grow: 1;
         position: relative;
         background-color: #f8f8f8;
         > :first-child {
@@ -67,6 +66,7 @@ $card-bg-color: #f8f8f8;
     }
 
     &__actions {
+        flex-grow: 1;
         margin-top: auto;
         border-top: 1px solid $grey-2;
         background-color: $white;

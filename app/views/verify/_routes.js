@@ -3,7 +3,7 @@ const router = express.Router();
 
 const BASE_PATH = 'verify';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
-const NEXT_PATH = '/nino';
+const NEXT_PATH = '/matching';
 
 
 router.post('/sign-in', function (req, res) {
