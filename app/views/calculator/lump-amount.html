@@ -23,7 +23,7 @@
                     <legend class="visually-hidden">How much of your pension would you like to take as a lump sum?</legend>
                     <div class="multiple-choice">
                         <input id="specific-age" type="radio" name="lump-amount" value="Max">
-                        <label for="specific-age">Maximum amount (£102,126)</label>
+                        <label for="specific-age">Your maximum amount which is £102,126</label>
                     </div>
 
                     <div class="multiple-choice" data-target="other-amount-panel">
@@ -33,7 +33,7 @@
 
                     
                     <div class="panel panel-border-narrow js-hidden" id="other-amount-panel">
-                        <label class="form-label" for="other-amount-value">What amount to the nearest pound?</label>
+                        <label class="form-label" for="other-amount-value">What amount?</label>
                         {# <input class="form-control" name="other-amount-value" type="text" id="other-amount-value"> #}
                         {{ govukCurrencyInput({
                             id: "other-amount-value",
