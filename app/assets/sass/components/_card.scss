@@ -76,7 +76,7 @@ $card-bg-color: #f8f8f8;
 
     &__actions-list {
         li {
-            margin-bottom: $card-spacing;
+            margin-bottom: $card-spacing * 1.2;
             &:last-child {
                 margin-bottom: 0;
             }

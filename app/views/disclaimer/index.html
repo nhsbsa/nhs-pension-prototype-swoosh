@@ -1,0 +1,44 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+How we work out your pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">How we work out your pension estimate</h1>
+            </div>
+
+            <p>Estimates are not guaranteed. They are based on current law and pay information provided by your employer.</p>
+            <p>Our website has guidance on how your estimate is calculated.</p>
+            <p>If you’re currently paying pension contributions we have assumed a pay increase of 2% each year.</p>
+            <p>We have estimated an inflation figure of 0.5% each year.</p>
+
+            <h2 class="heading-small">What the calculation does not include</h2>
+            <ul class="list list-bullet">
+                <li>Early Retirement Reduction Buy Out (ERRBO)</li>
+                <li>Additional Pension</li>
+                <li>‘Pensions on Divorce’ Debit or Credit that applies to you</li>
+                <li>Scheme Pays debits</li>
+                <li>benefits you’ve transferred in from a Club CARE scheme</li>
+            </ul>
+
+            <hr>
+            {% include "includes/back-to-home-link.html" %}
+            
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

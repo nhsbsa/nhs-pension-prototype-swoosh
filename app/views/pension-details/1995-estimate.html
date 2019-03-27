@@ -30,45 +30,19 @@ Your 1995 pension estimate - {{ serviceName }} - NHSBSA
 
             <div class="done-panel">
                 <p class="govuk-margin-bottom-0">You could get this pension on <strong class="bold">1st December 2041</strong> when you will be&nbsp;<strong class="bold">60</strong>, your estimate is</p>
-                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£274.46 a month</p>
-                <p class="heading-medium govuk-margin-top-0">£3,293.52 a year</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£274 a month</p>
+                <p class="heading-medium govuk-margin-top-0">£3,293 a year</p>
                 <p>You could get a reduced pension on <strong class="bold">1st December 2031</strong> when you will be&nbsp;<strong class="bold">55</strong>.</p>
             </div>
 
             {% endif %}
 
-            <p>To change this estimate of your 1995 pension, you can use the <a href="/public/images/xl/ARER Calculator V6 (08.2016) (1).xlsm">Standard Pension Calculator</a> or log in to your <a href="https://www.totalrewardstatements.nhs.uk/">Total Reward Statement</a>.</p>
-
-            <p class="small-text">Last updated <strong class="bold">31st March 2018</strong>.</p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Contribution</th>
-                        <th class="numeric" scope="col">Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Your contributions</td>
-                        <td class="numeric"><strong class="bold">£23,196</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Employer contributions</td>
-                        <td class="numeric"><strong class="bold">£58,500</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Total contributions</td>
-                        <td class="numeric"><strong class="bold">£81,969</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-            {% include "includes/caveat.html" %}
+            <div class="panel panel-border-wide">
+                <p>To change this estimate of your 1995 pension, you can use the <a href="/public/images/xl/ARER Calculator V6 (08.2016) (1).xlsm">Standard Pension Calculator</a> or log in to your <a href="https://www.totalrewardstatements.nhs.uk/">Total Reward Statement</a>.</p>
+            </div>
+            {% include "includes/caveat-link.html" %}
             <hr>
-
-            {% include "includes/back-link-unstyled.html" %}
+            {% include "includes/back-to-home-link.html" %}
 
         </div>
 

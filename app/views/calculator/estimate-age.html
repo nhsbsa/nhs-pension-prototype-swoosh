@@ -26,7 +26,7 @@
                 <p>Your yearly estimate is <strong class="bold">£19,779</strong> reduced from <strong class="bold">£23,829</strong>.</p>
             </div>
 
-            <h2 class="heading-medium">Other different age examples</h2>
+            <h2 class="heading-small">Retirement age examples</h2>
 
             <table class="check-table stack-table center-on-stack" id="contact-details">
                 <caption class="visually-hidden">Retirement age</caption>
@@ -42,6 +42,10 @@
                         <td class="numeric" scope="col">£1,160 a month (£13,915 a year)</td>
                     </tr>
                     <tr>
+                        <td scope="col">63 years</td>
+                        <td class="numeric" scope="col">£1,648 a month (£19,779 a year)</td>
+                    </tr>
+                    <tr>
                         <td scope="col">65 years (normal retirement age)</td>
                         <td class="numeric" scope="col">£1,986 a month (£23,829 a year)</td>
                     </tr>
@@ -51,13 +55,12 @@
                     </tr>
                 </tbody>
             </table>
-
             <br>
-
-            <!-- show for all -->
+            {% include "includes/calculator-link.html" %}
+            {% include "includes/caveat-link.html" %}
             {% include "calculator/includes/next.html" %}
             <hr>
-            {% include "includes/caveat.html" %}
+            {% include "includes/back-to-home-link.html" %}
 
         </div>
     </div>

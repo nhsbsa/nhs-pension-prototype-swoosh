@@ -26,7 +26,8 @@
                 <p>Your yearly estimate is <strong class="bold">£15,319</strong> reduced from <strong class="bold">£23,829</strong>.</p>
             </div>
 
-            <h2 class="heading-medium">Other lump sum examples</h2>
+
+            <h2 class="heading-small">Lump sum examples</h2>
 
             <table class="check-table stack-table center-on-stack" id="contact-details">
                 <caption class="visually-hidden">Other lump sum examples</caption>
@@ -38,12 +39,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td scope="col">£10,000</td>
-                        <td class="numeric" scope="col">£1,916 a month (£22,996 a year)</td>
+                        <td scope="col">£51,063</td>
+                        <td class="numeric" scope="col">£1,631 a month (£19,574 a year)</td>
                     </tr>
                     <tr>
-                        <td scope="col">£28,000</td>
-                        <td class="numeric" scope="col">£467.22 a month (£5,606.64 a year)</td>
+                        <td scope="col">£102,126 (Maximum amount)</td>
+                        <td class="numeric" scope="col">£1,277 a month (£15,319 a year)</td>
                     </tr>
                     <tr>
                         <td scope="col">No lump sum</td>
@@ -51,13 +52,12 @@
                     </tr>
                 </tbody>
             </table>
-
             <br>
-
-            <!-- show for all -->
+            {% include "includes/calculator-link.html" %}
+            {% include "includes/caveat-link.html" %}
             {% include "calculator/includes/next.html" %}
             <hr>
-            {% include "includes/caveat.html" %}
+            {% include "includes/back-to-home-link.html" %}
             
         </div>
     </div>
