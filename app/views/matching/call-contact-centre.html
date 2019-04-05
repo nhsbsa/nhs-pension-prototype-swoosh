@@ -14,23 +14,43 @@
       <div class="column-two-thirds">
         <div class="heading-group">
           <p>{{ serviceName }}</p>
-          <h1 class="heading-large">You will need to call the contact centre</h1>
+          <h1 class="heading-large">There was a problem confirming your details</h1>
         </div>
 
-        <p>Contact the NHS Pensions helpline on <strong class="bold">01234 567 890</strong>.</p>
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            Some of your details don't match your NHS Pension record, we need you to help us to fix it.
+          </strong>
+        </div>
 
-        <p>This is the information from GOV.UK Verify.</p>
+        <h2 class="heading-medium">These are the details we tried to confirm</h2>
 
+        {# <h2 class="heading-medium">Personal details:</h2> #}
         <ul class="list list-bullet">
           <li>First name: <strong class="bold">Sam</strong></li>
           <li>Last name: <strong class="bold">Jones</strong></li>
-          <li>National Insurance number: <strong class="bold">JH 34 45 56 A</strong></li>
           <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
         </ul>
+        <p>National Insurance number: <strong class="bold">JH 34 45 56 A</strong></p>
+        <hr/>
 
-        <p>It will take several days for us to update your details. After this time please try again.</p>
+        <h2 class="heading-medium">What happens next?</h2>
 
+        <p>You will need to call the NHS Pensions helpline.</p>
+        <ul class="list list-bullet">
+          <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+          <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+          <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+        </ul>
+
+        <p>It can take up to 10 days to update your details.</p>
+        <hr>
+        <p><a href="#">Print this page</a></p>
       </div>
+
     </div>
 </main>
 
