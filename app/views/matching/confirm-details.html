@@ -16,23 +16,20 @@
           <p>{{ serviceName }}</p>
           <h1 class="heading-large">Confirm your details</h1>
         </div>
-
+        <h2 class="heading-medium">National Insurance number:</h2>
+        <p>You entered: <strong class="bold">QQ 11 22 33 C</strong></p>
         <h2 class="heading-medium">Personal details:</h2>
         <ul class="list list-bullet">
           <li>First name: <strong class="bold">Sam</strong></li>
           <li>Last name: <strong class="bold">Jones</strong></li>
           <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
         </ul>
-        <p>National Insurance number: <strong class="bold">JH 34 45 56 A</strong></p>
+        
         <hr/>
 
         <form action="confirm-details" method="post">
           <fieldset class="form-group">
             <legend class="heading-medium">Are these details correct?</legend>
-            <div class="multiple-choice">
-              <input id="matching-correct" name="matching_details[]" type="radio" value="correct">
-              <label for="matching-correct">Yes, all my details look correct</label>
-            </div>
             <div class="multiple-choice">
               <input id="matching-nino" name="matching_details[]" type="radio" value="nino">
               <label for="matching-nino">No, my National Insurance number is wrong</label>
@@ -40,6 +37,10 @@
             <div class="multiple-choice">
               <input id="matching-details" name="matching_details[]" type="radio" value="details">
               <label for="matching-details">No, some of my personal details are wrong</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="matching-correct" name="matching_details[]" type="radio" value="correct">
+              <label for="matching-correct">Yes, all my details look correct</label>
             </div>
           </fieldset>
           <div class="form-group">
