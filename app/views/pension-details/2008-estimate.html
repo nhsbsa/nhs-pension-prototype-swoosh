@@ -41,9 +41,15 @@ Your 2008 pension estimate - {{ serviceName }} - NHSBSA
             <div class="panel panel-border-wide">
                 <p>To change this estimate of your 2008 pension, you can use the <a href="/public/images/xl/ARER Calculator V6 (08.2016) (1).xlsm">Standard Pension Calculator</a> or log in to your <a href="https://www.totalrewardstatements.nhs.uk/">Total Reward Statement</a>.</p>
             </div>
-            {% include "includes/caveat-link.html" %}
-            <hr>
-            {% include "includes/back-to-home-link.html" %}
+
+            <div class="bsa-print-hide">
+                {% include "includes/caveat-link.html" %}
+                {% include "includes/print-link.html" %}
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
+
+            {% include "includes/caveat-print.html" %}
 
         </div>
 

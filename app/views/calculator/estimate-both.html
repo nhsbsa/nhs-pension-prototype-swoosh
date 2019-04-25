@@ -26,11 +26,16 @@
                 <p>Your yearly estimate is <strong class="bold">£5,606.64</strong> reduced from <strong class="bold">£29,810.47</strong>.</p>
             </div>
             
-            {% include "includes/calculator-link.html" %}
-            {% include "includes/caveat-link.html" %}
-            {% include "calculator/includes/next.html" %}
-            <hr>
-            {% include "includes/back-to-home-link.html" %}
+            <div class="bsa-print-hide">
+                {% include "includes/calculator-link.html" %}
+                {% include "includes/caveat-link.html" %}
+                {% include "calculator/includes/next.html" %}
+                {% include "includes/print-link.html" %}
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
+
+            {% include "includes/caveat-print.html" %}
             
         </div>
     </div>

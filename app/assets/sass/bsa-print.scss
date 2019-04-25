@@ -1,0 +1,64 @@
+// BSA Vars
+@import 'var';
+
+// As you were
+@import 'unbranded';
+
+@import 'components/panel';
+@import 'components/spacing';
+@import 'components/print';
+
+@page {
+    margin: 15mm 10mm 15mm 15mm;
+    size: A4 portrait;
+}
+
+.bsa-print-hide,
+.phase-banner,
+.log-out-link,
+.link-back,
+.link-back-unstyled,
+.panel-border-wide {
+    display: none;
+}
+
+.column-two-thirds {
+    padding: 0;
+    width: 62.5ch;
+}
+
+#global-header {
+    border-bottom: 1pt solid grey;
+    text-align: right;
+    margin-bottom: 10pt;
+}
+
+#bsa-logo {
+    display: inline-block;
+    width: 5cm;
+    margin-bottom: 10pt;
+}
+
+#content {
+    clear: both;
+}
+
+
+.done-panel {
+    text-align: left;
+    background: none;
+    border: 1pt solid grey;
+    > p:first-child,
+    > p:last-child {
+        font-size: 1.3em;
+    }
+}
+
+.heading-group {
+    > p:first-child {
+        margin-bottom: 0;
+    }
+    > .heading-large {
+        margin-top: 0;
+    }
+}

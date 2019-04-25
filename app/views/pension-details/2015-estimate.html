@@ -26,10 +26,15 @@ Your 2015 pension estimate - {{ serviceName }} - NHSBSA
                 <p>You could get a reduced pension on <strong class="bold">1st March 2030</strong> when you will be&nbsp;<strong class="bold">55</strong>.</p>
             </div>
 
-            {% include "includes/calculator-link.html" %}
-            {% include "includes/caveat-link.html" %}
-            <hr>
-            {% include "includes/back-to-home-link.html" %}
+            <div class="bsa-print-hide">
+                {% include "includes/calculator-link.html" %}
+                {% include "includes/caveat-link.html" %}
+                {% include "includes/print-link.html" %}
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
+
+            {% include "includes/caveat-print.html" %}
         </div>
 
     </div>
