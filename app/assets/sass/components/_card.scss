@@ -1,6 +1,7 @@
 $card-spacing: 15px;
 $card-border-radius: 0;
 $card-bg-color: #f8f8f8;
+$card-border-color: $grey-2;
 
 .govuk-card {
     display: flex;
@@ -8,7 +9,7 @@ $card-bg-color: #f8f8f8;
     flex-direction: column;
     margin-bottom: 20px;
     border-radius: $card-border-radius;
-    border: 1px solid $grey-2;
+    border: 1px solid $card-border-color;
     box-sizing: border-box;
     background-color: $card-bg-color;
     
@@ -81,5 +82,10 @@ $card-bg-color: #f8f8f8;
                 margin-bottom: 0;
             }
         }
+    }
+
+    &__actions-break {
+        padding-top: 10px;
+        border-top: 1px solid $card-border-color;
     }
 }

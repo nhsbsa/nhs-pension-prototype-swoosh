@@ -1,0 +1,71 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 1995 pension contributions - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">1995 Membership statement</h1>
+            </div>
+            
+            {# <p>Last updated: <strong class="bold">31st March 2018</strong></p> #}
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">EA Code</th>
+                        <th scope="col">Employer</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Mental Health</th>
+                        <th scope="col">Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123456</td>
+                        <td>Employer address</td>
+                        <td>03/03/2019</td>
+                        <td>03/03/2019</td>
+                        <td><strong class="bold">No</strong></td>
+                        <td>Part time</td>
+                    </tr>
+                    <tr>
+                        <td>435231</td>
+                        <td>Employer address</td>
+                        <td>03/03/2019</td>
+                        <td>03/03/2019</td>
+                        <td><strong class="bold">No</strong></td>
+                        <td>Part time</td>
+                    </tr>
+                    <tr>
+                        <td>540932</td>
+                        <td>Employer address</td>
+                        <td>03/03/2019</td>
+                        <td>03/03/2019</td>
+                        <td><strong class="bold">Yes</strong></td>
+                        <td>Full time</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}
