@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 
 router.post('/nino', function (req, res) {
     const answer = req.session.data['nino'];
-    if (answer === 'mismatch') {
+    if (answer === 'QQ 12 34 56 C') {
         res.redirect('confirm-details')
     } else {
         res.redirect('/hub')
