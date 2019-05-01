@@ -9,22 +9,24 @@ router.get('/', function (req, res) {
 })
 
 router.post('/nino', function (req, res) {
-    const answer = req.session.data['nino'];
-    if (answer === 'QQ 12 34 56 C') {
-        res.redirect('confirm-details')
+    const answer = req.session.data['nino'],
+    match = ['QQ 12 34 56 C', 'QQ123456C', 'qq 12 34 56 c', 'qq123456c'];
+
+    if (match.includes(answer)) {
+        res.redirect('check');
     } else {
-        res.redirect('/hub')
+        res.redirect('/hub');
     }
 })
   
-router.post('/confirm-details', function (req, res) {
+router.post('/check', function (req, res) {
     const answer = req.session.data['matching_details'];
     if (answer == 'correct') {
-        res.redirect('call-contact-centre')
+        res.redirect('problem')
     } else if (answer == 'nino') {
         res.redirect('nino')
     } else {
-        res.redirect('update-verify-details')
+        res.redirect('update-personal-details')
     }
 })
 

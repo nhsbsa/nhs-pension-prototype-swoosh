@@ -27,7 +27,7 @@
         </div>
 
         <h2 class="heading-medium">National Insurance number:</h2>
-        <p>You entered: <strong class="bold">QQ 12 34 56 C</strong></p>
+        <p>You entered: <strong class="bold">{{ data['nino']}}</strong></p>
         <h2 class="heading-medium">Personal details:</h2>
         <ul class="list list-bullet">
           <li>First name: <strong class="bold">Sam</strong></li>
@@ -38,7 +38,7 @@
         
         <hr/>
 
-        <form action="confirm-details" method="post">
+        <form action="check" method="post">
           <fieldset class="form-group">
             <legend class="heading-medium">Are these details correct?</legend>
             <div class="multiple-choice">
