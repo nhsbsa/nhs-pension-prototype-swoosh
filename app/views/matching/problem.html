@@ -19,7 +19,7 @@
 
         <h2 class="heading-medium">We tried to find you with the following details</h2>
         <ul class="list list-bullet">
-          <li>National Insurance number: <strong class="bold">QQ 12 34 56 C</strong></li>
+          <li>National Insurance number: <strong class="bold">{{ data['nino']}}</strong></li>
           <li>First name: <strong class="bold">Sam</strong></li>
           <li>Last name: <strong class="bold">Jones</strong></li>
           <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
@@ -39,21 +39,30 @@
           </div>
         </details>
 
-        <hr/>
+        {# <hr/> #}
 
         <h2 class="heading-medium">What happens next?</h2>
-        <p>If you are currently working in the NHS you may be able to update this information in your Electronic Staff Record (ESR). 
-        If you don't have access to ESR you need to contact your pensions officer or employer to get this information updated.</p>
-        <p>Alternatively you can call the NHS pensions helpline.</p>
+        <p>If you are currently working in the NHS you may be able to update this information in your Electronic Staff Record (ESR). </p>
+        <p>If you don't have access to ESR you need to either:</p>
         <ul class="list list-bullet">
-          <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
-          <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
-          <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+          <li>speak to your pensions officer</li>
+          <li>speak to your employer</li>
         </ul>
-
         <p>It can take up to 10 days to update your details.</p>
-        <hr>
-        <p><a href="#">Print this page</a></p>
+        <details>
+          <summary>No longer working in the NHS?</summary>
+          <div class="panel panel-border-narrow">
+            <p>You can call the NHS pensions helpline.</p>
+            <ul class="list list-bullet">
+              <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+              <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+              <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+            </ul>
+          </div>
+        </details>
+        
+        <hr class="bsa-print-hide">
+        <p class="bsa-print-hide"><a href="javascript:window.print();">Print this page</a></p>
       </div>
 
     </div>
