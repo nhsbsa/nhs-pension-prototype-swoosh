@@ -27,14 +27,26 @@
         </div>
 
         <h2 class="heading-medium">National Insurance number:</h2>
-        <p>You entered: <strong class="bold">QQ 12 34 56 C</strong></p>
-        <h2 class="heading-medium">Personal details:</h2>
+        <p>You entered: <strong class="bold">{{ data['nino']}}</strong></p>
+
+        <img alt="" src="/public/images/idp-logos/post-office.png" style="float: right; width: 180px; text-align: center; padding: 0; margin: 0; display: block;">
+
+        <h2 class="heading-medium">Personal details from Post Office:</h2>
         <ul class="list list-bullet">
           <li>First name: <strong class="bold">Sam</strong></li>
           <li>Last name: <strong class="bold">Jones</strong></li>
           <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
           <li>Address: <strong class="bold">10 Madeup Road, Madeupistown, Madeupville. MDE 0UP.</strong></li>
         </ul>
+
+        <details>
+          <summary><span class="summary">Why are my personal details here?</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>When you first accessed your NHS pension you registered with an identity provider using GOV.UK Verify.
+            The provider you chose was Post Office. We use your National Insurance number and your personal details from
+            Post Office to find you in our pension records.</p>
+          </div>
+        </details>
         
         <hr/>
 
