@@ -1,0 +1,85 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 1995 pension contributions - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-full">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">1995 Membership statement</h1>
+            </div>
+
+            <hr>
+
+            {{ bsaTransactionItem({
+                name: "Black Country Partnership NHS Foundation Trust",
+                eaCode: "483950",
+                dateFrom: "23 June 2011",
+                dateTo: "06 August 2012",
+                pensionableService: "410 days",
+                address: "Human Resources Dept, Delta House, Greets Green Road, West Bromwich. West Midlands. B70 9PL.",
+                contract: "full time",
+                mho: "No"
+            }) }}
+
+            <hr>
+
+            {{ bsaTransactionItem({
+                name: "Birmingham and Solihull Mental Health NHS Foundation Trust",
+                eaCode: "183827",
+                dateFrom: "03 May 2011",
+                dateTo: "22 June 2011",
+                pensionableService: "50 days",
+                address: "Trust Headquarters B1, 50 Summerhill Road, Birmingham. B1 3RB. UK.",
+                contract: "full time",
+                mho: "No"
+            }) }}
+
+            <hr>
+
+            {{ bsaTransactionItem({
+                name: "Coventry and Warwickshire Partnership Trust (CWPT)",
+                eaCode: "403928",
+                dateFrom: "03 January 2008",
+                dateTo: "02 May 2011",
+                pensionableService: "1215 days",
+                address: "Wayside House, Wilsons Lane, Coventry. CV6 6NY. UK.",
+                contract: "full time",
+                mho: "No"
+            }) }}
+
+            <hr>
+
+            {{ bsaTransactionItem({
+                name: "Midlands Partnership NHS Foundation Trust (formerly Staffordshire and Stoke on Trent Partnership Trust)",
+                eaCode: "488853",
+                dateFrom: "12 January 1998",
+                dateTo: "02 January 2008",
+                pensionableService: "3642 days",
+                address: "Trust Headquarters, Corporation Street, Stafford. Staffordshire. ST16 3SR. UK.",
+                contract: "full time",
+                mho: "Yes"
+            }) }}
+
+            <hr>
+
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

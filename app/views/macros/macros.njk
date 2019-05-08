@@ -10,3 +10,47 @@
     </div>
   </div>
 {% endmacro %}
+
+{% macro bsaTransactionItem(options) %}
+  {% set classes = options.classes or "" %}
+  {% set id = options.name or "" %}
+  {% set name = options.name or "" %}
+  {% set dateFrom = options.dateFrom or "" %}
+  {% set dateTo = options.dateTo or "" %}
+  {% set address = options.address or "" %}
+  {% set contract = options.contract or "" %}
+  {% set mho = options.mho or "" %}
+  {% set eaCode = options.eaCode or "" %}
+  {% set pensionableService = options.pensionableService or "" %}
+
+<div class="hhhh" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2em;">
+  <ul>
+    <li>
+      <span class="visually-hidden">Employing authority code:</span>
+      <span class="bold-xsmall">EA:</span><span class="font-xsmall">{{ eaCode }}</span>
+    </li>
+    <li>
+      <span class="visually-hidden">Employer:</span>
+      <h2 class="heading-small govuk-margin-top-0 govuk-margin-bottom-0">{{ name }}</h2>
+    </li>
+    <li>
+      <span class="visually-hidden">Employer address:</span>
+      <span class="font-xsmall">{{ address }}</span>
+    </li>
+  </ul>
+
+  <ul>
+    <li style="float: right;">
+      <span class="visually-hidden">Contract type:</span>
+      <span class="app-c-tag">{{ contract }}</span>
+    </li>
+    <li class="data govuk-margin-bottom-0">
+      <span class="data-item bold-xsmall">Pensionable service</span>
+      <span class="data-item bold-medium">{{ pensionableService }}</span>
+    </li>
+    <li class="font-xsmall">Pension term started: <strong class="bold">{{ dateFrom }}</strong></li>
+    <li class="font-xsmall">Pension term ended: <strong class="bold">{{ dateTo }}</strong></li>
+    <li class="font-xsmall">Mental health officer: {{ mho }}</li>
+  </ul>
+</div>
+{% endmacro %}

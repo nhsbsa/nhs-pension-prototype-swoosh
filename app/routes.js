@@ -40,4 +40,7 @@ router.get('/nino', function (req, res) {
   res.redirect('matching')
 })
 
+// This moves matching routing to matching directory
+router.use('/statement/', require('./views/statement/_routes'))
+
 module.exports = router
