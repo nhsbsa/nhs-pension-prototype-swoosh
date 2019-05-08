@@ -8,6 +8,11 @@
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -34,6 +39,7 @@
                 <div class="form-group">
                     <input class="button" type="submit" value="Next">
                 </div>
+                <input type="hidden" name="hiddenInputExampleShownOnHub" value="hello">
             </form>
       
         </div>

@@ -11,6 +11,7 @@
 @import 'components/card';
 @import 'components/spacing';
 @import 'components/print';
+@import 'components/account-details-bar';
 
 // Patterns
 @import 'patterns/grid-lg';
@@ -1162,11 +1163,11 @@ border-bottom: 1px solid #bfc1c3;
 }
 
 .log-out-link {
-  float: right;
+  display: inline-block;
   margin-top: 15px;
-  margin-bottom: 15px;
   font-size: 14px;
   @include media(tablet) {
+    float: right;
     font-size: 16px;
   }
 }

@@ -8,18 +8,28 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
 
 <main id="content" role="main" tabindex="-1">
 
+    <span class="visually-hidden">{{ data['hiddenInputExampleShownOnHub'] }}</span>
+
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+
+    {% if data['show'] === "nino"  %}
+    {{ bsaAccountDetailsBar({
+        class: "",
+        code: "NI number",
+        codeValue: "QQ 12 34 56 C",
+        headingClass: "large"
+    }) }}
+
+    {% else %}
+
+    {{ bsaAccountDetailsBar({
+        class: "",
+        headingClass: "large"
+    }) }}
+    {% endif %}
 
     <div class="grid-row">
         <div class="column-full">
-
-            <div class="heading-group govuk-margin-top-0">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-xlarge">Sam Curtis Jones</h1>
-            </div>
-
-            <hr>
 
             <section>
                 <h2 class="heading-large">Your pensions</h2>
