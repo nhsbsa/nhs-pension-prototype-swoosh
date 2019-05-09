@@ -4,9 +4,9 @@ var router = express.Router()
 const BASE_PATH = '/';
 const ABS_BASE_PATH = `${BASE_PATH}`;
 
-router.get('/', function (req, res) {
-  res.redirect('/calculator/what-estimate')
-})
+// router.get('/', function (req, res) {
+//   res.redirect('/calculator/what-estimate')
+// })
 
 router.post('/what-estimate', function (req, res) {
     var estimate = req.body['estimate_based_on'];
