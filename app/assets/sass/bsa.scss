@@ -1195,3 +1195,13 @@ border-bottom: 1px solid #bfc1c3;
   border-bottom: 0;
   padding-bottom: 0;
 }
+
+
+.proto-phone {
+  display: block;
+  margin: auto;
+  max-width: 375px;
+  &:focus {
+    background-color: white;
+  }
+}
