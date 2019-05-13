@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Your 2015 pension contributions - {{ serviceName }} - NHSBSA
+Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -20,13 +20,15 @@ Your 2015 pension contributions - {{ serviceName }} - NHSBSA
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">2015 Pension contribution statement</h1>
+                <h1 class="heading-large">{{ data['schemeReference'] }} Pension contribution statement</h1>
             </div>
+            
+            <p>Last updated: <strong class="bold">31st March 2019</strong></p>
             
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2"><h2 class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">2017/2018</h2></th>
+                        <th colspan="2"><h2 class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">{{ data['schemeYear'] }}</h2></th>
                         <th colspan="2" class="numeric">Contributions</th>
                     <tr>
                         <th scope="col">Month</th>
@@ -38,27 +40,39 @@ Your 2015 pension contributions - {{ serviceName }} - NHSBSA
                 <tbody>
                     <tr>
                         <td>March</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
+                        <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
+                        <td class="numeric"><strong class="bold">£112.19</strong></td>
+                        <td class="numeric"><strong class="bold">£134.45</strong></td>
                     </tr>
                     <tr>
                         <td>February</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
+                        <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
+                        <td class="numeric"><strong class="bold">£112.19</strong></td>
+                        <td class="numeric"><strong class="bold">£134.45</strong></td>
                     </tr>
                     <tr>
                         <td>January</td>
+                        <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
+                        <td class="numeric"><strong class="bold">£112.19</strong></td>
+                        <td class="numeric"><strong class="bold">£134.45</strong></td>
+                    </tr>
+                    <tr class="bsa-multi-row">
+                        <td>December</td>
+                        <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
+                        <td class="numeric"><strong class="bold">£42.22</strong></td>
+                        <td class="numeric"><strong class="bold">£71.34</strong></td>
+                    </tr>
+                    <tr class="bsa-multi-row">
+                        <td><span class="visually-hidden">December</span></td>
                         <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
+                        <td class="numeric"><strong class="bold">£34.87</strong></td>
+                        <td class="numeric"><strong class="bold">£58.45</strong></td>
                     </tr>
                     <tr>
-                        <td>December</td>
+                        <td><span class="visually-hidden">December</span></td>
                         <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
+                        <td class="numeric"><strong class="bold">£34.87</strong></td>
+                        <td class="numeric"><strong class="bold">£58.45</strong></td>
                     </tr>
                     <tr>
                         <td>November</td>
@@ -110,10 +124,9 @@ Your 2015 pension contributions - {{ serviceName }} - NHSBSA
                     </tr>
                 </tbody>
             </table>
-
+            
             <br>
-            <p>Last updated: <strong class="bold">31st March 2019</strong></p>
-            <hr>
+            
             {% include "includes/back-to-home-link.html" %}
 
         </div>

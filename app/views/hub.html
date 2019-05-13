@@ -50,9 +50,9 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                             </div>
                             <div class="govuk-card__actions">
                                 <ul class="govuk-card__actions-list">
-                                    <li><a href="pension-details/forecast?schemeCalc=2015">View your 2015 estimate</a></li>
-                                    <li><a href="calculator/what-estimate?schemeCalc=2015">Change your 2015 estimate using the pension calculator</a></li>
-                                    <li><a href="statement/2015">View your 2015 contribution statement</a></li>
+                                    <li><a href="pension-details/forecast?schemeReference=2015">View your 2015 estimate</a></li>
+                                    <li><a href="calculator/what-estimate?schemeReference=2015">Change your 2015 estimate using the pension calculator</a></li>
+                                    <li><a href="statement?schemeReference=2015&schemeYear=2018/2019">View your 2015 contribution statement</a></li>
                                     <li><a href="#">Get your 2015 pension</a></li>
                                     <!-- opt out only applicable to 2015 and only for 12 months? after joining scheme -->
                                     <li class="govuk-card__actions-break"><a href="#">Opt out of your 2015 pension</a></li>
@@ -74,9 +74,9 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                                 </div>
                                 <div class="govuk-card__actions">
                                     <ul class="govuk-card__actions-list">
-                                        {# <li><a href="pension-details/forecast?schemeCalc=2008">View your 2008 estimate</a></li> #}
-                                        {# <li><a href="calculator/what-estimate?schemeCalc=2008">Change your 2008 estimate using the pension calculator</a></li> #}
-                                        <li><a href="#">View your 2008 contribution statement</a></li>
+                                        {# <li><a href="pension-details/forecast?schemeReference=2008">View your 2008 estimate</a></li> #}
+                                        {# <li><a href="calculator/what-estimate?schemeReference=2008">Change your 2008 estimate using the pension calculator</a></li> #}
+                                        <li><a href="statement?schemeReference=2008&schemeYear=2007/2008">View your 2008 contribution statement</a></li>
                                         <li><a href="#">Get your 2008 pension</a></li>
                                     </ul>
                                 </div>
@@ -94,9 +94,9 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                                 </div>
                                 <div class="govuk-card__actions">
                                     <ul class="govuk-card__actions-list">
-                                        {# <li><a href="pension-details/forecast?schemeCalc=1995">View your 1995 estimate</a></li> #}
-                                        {# <li><a href="calculator/what-estimate?schemeCalc=1995">Change your 1995 estimate using the pension calculator</a></li> #}
-                                        <li><a href="#">View your 1995 contribution statement</a></li>
+                                        {# <li><a href="pension-details/forecast?schemeReference=1995">View your 1995 estimate</a></li> #}
+                                        {# <li><a href="calculator/what-estimate?schemeReference=1995">Change your 1995 estimate using the pension calculator</a></li> #}
+                                        <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
                                         <li><a href="#">Get your 1995 pension</a></li>
                                     </ul>
                                 </div>
@@ -116,9 +116,9 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                                 </div>
                                 <div class="govuk-card__actions">
                                     <ul class="govuk-card__actions-list">
-                                        <li><a href="pension-details/forecast?schemeCalc=2008">View your 2008 estimate</a></li>
-                                        <li><a href="calculator/what-estimate?schemeCalc=2008">Change your 2008 estimate using the pension calculator</a></li>
-                                        <li><a href="#">View your 2008 contribution statement</a></li>
+                                        <li><a href="pension-details/forecast?schemeReference=2008">View your 2008 estimate</a></li>
+                                        <li><a href="calculator/what-estimate?schemeReference=2008">Change your 2008 estimate using the pension calculator</a></li>
+                                        <li><a href="statement?schemeReference=2008&schemeYear=2007/2008">View your 2008 contribution statement</a></li>
                                         <li><a href="#">Get your 2008 pension</a></li>
                                     </ul>
                                 </div>
@@ -140,7 +140,7 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                                 
                                 <ul class="govuk-card__actions-list">
                                     <li><a href="#">View your 1995 pension</a></li>
-                                    <li><a href="#">View your 1995 contribution statement</a></li>
+                                    <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -148,7 +148,7 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
 
                     {% else %}
 
-                        {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}                    
+                    {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}                    
                         <li class="column-one-third-lg">
                             <div class="govuk-card">
                                 <div class="govuk-card__content">
@@ -160,16 +160,16 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                                 </div>
                                 <div class="govuk-card__actions">
                                     <ul class="govuk-card__actions-list">
-                                        <li><a href="pension-details/forecast?schemeCalc=1995">View your 1995 estimate</a></li>
-                                        <li><a href="calculator/what-estimate?schemeCalc=1995">Change your 1995 estimate using the pension calculator</a></li>
-                                        <li><a href="#">View your 1995 contribution statement</a></li>
+                                        <li><a href="pension-details/forecast?schemeReference=1995">View your 1995 estimate</a></li>
+                                        <li><a href="calculator/what-estimate?schemeReference=1995">Change your 1995 estimate using the pension calculator</a></li>
+                                        <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
                                         {# <li><a href="membership/1995">View your 1995 membership record</a></li> #}
                                         <li><a href="#">Get your 1995 pension</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
-                        {% endif %}
+                    {% endif %}
 
                     {% endif %}
                         

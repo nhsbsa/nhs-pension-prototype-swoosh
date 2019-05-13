@@ -7,12 +7,12 @@
 {% set reducedDate = '1st March 2030' %}
 {% set reducedAge = '55' %}
 
-{% if data['schemeCalc'] === '2008' %}
+{% if data['schemeReference'] === '2008' %}
     {% set getDate = '1st December 2041' %}
     {% set getMonthly = '422' %}
     {% set getYearly = '5,075' %}
     {% set reducedDate = '1st December 2031' %}
-{% elif data['schemeCalc'] === '1995' %}
+{% elif data['schemeReference'] === '1995' %}
     {% set getDate = '1st December 2041' %}
     {% set getAge = '60' %}
     {% set getMonthly = '274' %}
@@ -22,7 +22,7 @@
 {% endif %}
 
 {% block page_title %}
-Your {{ data['schemeCalc'] }} pension estimate - {{ serviceName }} - NHSBSA
+Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -41,7 +41,7 @@ Your {{ data['schemeCalc'] }} pension estimate - {{ serviceName }} - NHSBSA
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">{{ data['schemeCalc'] }} pension estimate</h1>
+                <h1 class="heading-large">{{ data['schemeReference'] }} pension estimate</h1>
             </div>
 
             <div class="done-panel">
