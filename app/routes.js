@@ -49,4 +49,7 @@ router.get('/nhs-login', function (req, res) {
   res.redirect('nhs-login/index')
 })
 
+// This moves assisted routing to assisted directory
+router.use('/assisted/', require('./views/assisted/_routes'))
+
 module.exports = router
