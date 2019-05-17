@@ -54,3 +54,25 @@
   </ul>
 </div>
 {% endmacro %}
+
+
+{% macro bsaAccountDetailsBar(options) %}
+  {% set class = options.class or "" %}
+  {% set code = options.code or "SD Number" %}
+  {% set codeValue = options.codeValue or "12345678" %}
+  {% set headingClass = options.headingClass or "small" %}
+
+<section class="bsa-account-details-bar {{ class }} bsa-print-hide" role="contentinfo" aria-label="Account details">
+    <dl class="bsa-account-details-bar__contents">
+        <div class="bsa-account-details-bar__header">
+            <dt class="visually-hidden">Name:</dt>
+            <dd class="bsa-account-details-bar__name heading-{{ headingClass }}">Sam Curtis Jones</dd>
+            <dt class="visually-hidden">{{ code }} number:</dt>
+            <dd class="bsa-account-details-bar__id">{{ code }}: {{ codeValue }}</dd>
+        </div>
+    </dl>
+    <div class="bsa-account-details-bar__action">
+        <a href="/logged-out" class="log-out-link">Sign out</a>
+    </div>
+</section>
+{% endmacro %}

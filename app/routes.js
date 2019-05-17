@@ -43,4 +43,13 @@ router.get('/nino', function (req, res) {
 // This moves matching routing to matching directory
 router.use('/statement/', require('./views/statement/_routes'))
 
+// This moves nhs-login routing to nhs-login directory
+router.use('/nhs-login/', require('./views/nhs-login/_routes'))
+router.get('/nhs-login', function (req, res) {
+  res.redirect('nhs-login/index')
+})
+
+// This moves assisted routing to assisted directory
+router.use('/assisted/', require('./views/assisted/_routes'))
+
 module.exports = router

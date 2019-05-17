@@ -11,6 +11,7 @@
 @import 'components/card';
 @import 'components/spacing';
 @import 'components/print';
+@import 'components/account-details-bar';
 
 // Patterns
 @import 'patterns/grid-lg';
@@ -1163,11 +1164,11 @@ border-bottom: 1px solid #bfc1c3;
 }
 
 .log-out-link {
-  float: right;
+  display: inline-block;
   margin-top: 15px;
-  margin-bottom: 15px;
   font-size: 14px;
   @include media(tablet) {
+    float: right;
     font-size: 16px;
   }
 }
@@ -1194,4 +1195,14 @@ border-bottom: 1px solid #bfc1c3;
 .bsa-multi-row td {
   border-bottom: 0;
   padding-bottom: 0;
+}
+
+
+.proto-phone {
+  display: block;
+  margin: auto;
+  max-width: 375px;
+  &:focus {
+    background-color: white;
+  }
 }

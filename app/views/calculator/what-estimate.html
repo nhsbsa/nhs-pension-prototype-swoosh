@@ -8,6 +8,11 @@
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -15,7 +20,7 @@
 
             <header class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">What do you want your 2015 pension estimate to include?</h1>
+                <h1 class="heading-large">What do you want your {{ data['schemeReference'] }} pension estimate to include?</h1>
             </header>
 
             <form method="post" action="what-estimate" class="form">
@@ -25,15 +30,23 @@
                         <input id="retiring-age" name="estimate_based_on[]" type="checkbox" value="age">
                         <label for="retiring-age">Retiring at a different age</label>
                     </div>
+                    {% if data['schemeReference'] === '1995' %}
+                    <div class="multiple-choice">
+                        <input id="additional-lump-sum" name="estimate_based_on[]" type="checkbox" value="addLump">
+                        <label for="additional-lump-sum">Taking an additional lump sum when I retire</label>
+                    </div>
+                    {% else %}
                     <div class="multiple-choice">
                         <input id="lump-sum" name="estimate_based_on[]" type="checkbox" value="lump">
                         <label for="lump-sum">Taking a lump sum when I retire</label>
                     </div>
+                    {% endif %}
                 </fieldset>
 
                 <div class="form-group">
                     <input class="button" type="submit" value="Next">
                 </div>
+                <input type="hidden" name="hiddenInputExampleShownOnHub" value="hello">
             </form>
       
         </div>

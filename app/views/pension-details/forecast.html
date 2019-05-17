@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% set getDate = '1st March 2040' %}
+{% set getAge = '65' %}
+{% set getMonthly = '1,986' %}
+{% set getYearly = '23,829' %}
+{% set reducedDate = '1st March 2030' %}
+{% set reducedAge = '55' %}
+
+{% if data['schemeReference'] === '2008' %}
+    {% set getDate = '1st December 2041' %}
+    {% set getMonthly = '422' %}
+    {% set getYearly = '5,075' %}
+    {% set reducedDate = '1st December 2031' %}
+{% elif data['schemeReference'] === '1995' %}
+    {% set getDate = '1st December 2041' %}
+    {% set getAge = '60' %}
+    {% set getMonthly = '274' %}
+    {% set getYearly = '3,293' %}
+    {% set reducedDate = '1st December 2031' %}
+    {% set reducedAge = '55' %}
+{% endif %}
+
+{% block page_title %}
+Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">{{ data['schemeReference'] }} pension estimate</h1>
+            </div>
+
+            <div class="done-panel">
+                <p class="govuk-margin-bottom-0">You could get this pension on <strong class="bold">{{ getDate }}</strong> when you will be&nbsp;<strong class="bold">{{ getAge }}</strong>, your estimate is</p>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ getMonthly }} a month</p>
+                <p class="heading-medium govuk-margin-top-0">£{{ getYearly }} a year</p>
+                <p>You could get a reduced pension on <strong class="bold">{{ reducedDate }}</strong> when you will be&nbsp;<strong class="bold">{{ reducedAge }}</strong>.</p>
+            </div>
+
+            <div class="bsa-print-hide">
+                {% include "includes/calculator-link.html" %}
+                {% include "includes/caveat-link.html" %}
+                {% include "includes/print-link.html" %}
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
+
+            {% include "includes/caveat-print.html" %}
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

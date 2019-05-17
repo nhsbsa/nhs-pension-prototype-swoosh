@@ -8,7 +8,11 @@
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -16,7 +20,7 @@
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">2015 pension estimate</h1>
+                <h1 class="heading-large">{{ data['schemeReference'] }} pension estimate</h1>
             </div>
 
             <div class="done-panel">

@@ -1,14 +1,18 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Your 2015 pension contributions - {{ serviceName }} - NHSBSA
+Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -16,14 +20,15 @@ Your 2015 pension contributions - {{ serviceName }} - NHSBSA
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">2015 Pension contribution statement</h1>
+                <h1 class="heading-large">{{ data['schemeReference'] }} Pension contribution statement</h1>
             </div>
             
+            <p>Last updated: <strong class="bold">31st March 2019</strong></p>
             
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2"><h2 class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">2018/2019</h2></th>
+                        <th colspan="2"><h2 class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">{{ data['schemeYear'] }}</h2></th>
                         <th colspan="2" class="numeric">Contributions</th>
                     <tr>
                         <th scope="col">Month</th>
@@ -121,8 +126,7 @@ Your 2015 pension contributions - {{ serviceName }} - NHSBSA
             </table>
             
             <br>
-            <p>Last updated: <strong class="bold">31st March 2019</strong></p>
-            <hr>
+            
             {% include "includes/back-to-home-link.html" %}
 
         </div>

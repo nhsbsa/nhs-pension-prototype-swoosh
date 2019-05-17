@@ -8,7 +8,11 @@ How we work out your pension estimate - {{ serviceName }} - NHSBSA
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -16,7 +20,7 @@ How we work out your pension estimate - {{ serviceName }} - NHSBSA
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">How we work out your pension estimate</h1>
+                <h1 class="heading-large">Your pension estimate calculation</h1>
             </div>
 
             {% include "includes/caveat-content.html" %}
