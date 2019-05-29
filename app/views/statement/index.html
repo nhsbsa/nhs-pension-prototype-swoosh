@@ -16,7 +16,7 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
-        <div class="column-two-thirds">
+        <div class="column-full">
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
@@ -27,113 +27,73 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
             
             <table>
                 <thead>
+                    
                     <tr>
-                        <th colspan="2"><h2 class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">{{ data['schemeYear'] }}</h2></th>
-                        <th colspan="2" class="numeric">Contributions</th>
-                    <tr>
-                        <th scope="col">Month</th>
+                        <th scope="col">Year</th>
                         <th scope="col"><span class="visually-hidden">Employer</span></th>
                         <th class="numeric" scope="col">Yours</th>
                         <th class="numeric" scope="col">Employers</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% if data['schemeReference'] === '1995' %}
                     <tr>
-                        <td>March</td>
+                        <td>1994/1995</td>
                         <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£112.19</strong></td>
-                        <td class="numeric"><strong class="bold">£134.45</strong></td>
+                        <td class="numeric"><strong class="bold">£1346.28</strong></td>
+                        <td class="numeric"><strong class="bold">£1613.40</strong></td>
+                    </tr>
+                    {% elif data['schemeReference'] === '2008' %}
+                    <tr>
+                        <td>2007/2008</td>
+                        <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
+                        <td class="numeric"><strong class="bold">£1346.28</strong></td>
+                        <td class="numeric"><strong class="bold">£1613.40</strong></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td>2018/2019</td>
+                        <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
+                        <td class="numeric"><strong class="bold">£1346.28</strong></td>
+                        <td class="numeric"><strong class="bold">£1613.40</strong></td>
                     </tr>
                     <tr>
-                        <td>February</td>
+                        <td>2017/2018</td>
                         <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£112.19</strong></td>
-                        <td class="numeric"><strong class="bold">£134.45</strong></td>
+                        <td class="numeric"><strong class="bold">£1300.84</strong></td>
+                        <td class="numeric"><strong class="bold">£1588.22</strong></td>
                     </tr>
                     <tr>
-                        <td>January</td>
+                        <td>2016/2017</td>
                         <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£112.19</strong></td>
-                        <td class="numeric"><strong class="bold">£134.45</strong></td>
+                        <td class="numeric"><strong class="bold">£1256.19</strong></td>
+                        <td class="numeric"><strong class="bold">£1542.55</strong></td>
                     </tr>
                     <tr class="bsa-multi-row">
-                        <td>December</td>
+                        <td>2015/2016</td>
                         <td class="font-xsmall">Black Country Partnership NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£42.22</strong></td>
-                        <td class="numeric"><strong class="bold">£71.34</strong></td>
+                        <td class="numeric"><strong class="bold">£1000.00</strong></td>
+                        <td class="numeric"><strong class="bold">£1112.88</strong></td>
                     </tr>
                     <tr class="bsa-multi-row">
                         <td><span class="visually-hidden">December</span></td>
                         <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£34.87</strong></td>
-                        <td class="numeric"><strong class="bold">£58.45</strong></td>
+                        <td class="numeric"><strong class="bold">£213.43</strong></td>
+                        <td class="numeric"><strong class="bold">£244.45</strong></td>
                     </tr>
-                    <tr>
-                        <td><span class="visually-hidden">December</span></td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£34.87</strong></td>
-                        <td class="numeric"><strong class="bold">£58.45</strong></td>
-                    </tr>
-                    <tr>
-                        <td>November</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>October</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>September</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>August</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>July</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>June</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>May</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
-                    <tr>
-                        <td>April</td>
-                        <td class="font-xsmall">Birmingham and Solihull Mental Health NHS Foundation Trust</td>
-                        <td class="numeric"><strong class="bold">£98.66</strong></td>
-                        <td class="numeric"><strong class="bold">£116.98</strong></td>
-                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
             
-            <br>
+            <hr>
             
             {% include "includes/back-to-home-link.html" %}
 
         </div>
 
-        <div class="column-one-third">
+        {# <div class="column-one-third">
         	{% include "statement/includes/subnav.html" %}
-        </div>
+        </div> #}
 
     </div>
 
