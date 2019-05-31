@@ -1,0 +1,59 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {# {% include "includes/back-link.html" %} #}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-large">We cannot find your National Insurance (NI) number in our pension records</h1>
+        </div>
+
+        <h2 class="heading-medium">Why is there a problem?</h2>
+
+        <p>There could be a number of reasons why we cannot find your NI number, such as:</p>
+        <ul class="list list-bullet">
+            <li>us holding incorrect information</li>
+            <li>your employer hasn't updated your details</li>
+        </ul>
+
+        <details>
+          <summary><span class="summary">Get help to find your NI number</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Your National Insurance number is on your National Insurance card, a benefit letter, a payslip or a P60. For example, ‘QQ 12 34 56 C’.</p>
+          </div>
+        </details>
+
+        
+        <h2 class="heading-medium">What happens next?</h2>
+        <p>Your NI number needs to be updated by your employer, you will need to either speak to your:</p>
+        <ul class="list list-bullet">
+            <li>pensions officer</li>
+            <li>employer</li>
+        </ul>
+        <p>It can take up to 10 days to update your details.</p>
+        <details>
+            <summary>No longer working in the NHS?</summary>
+            <div class="panel panel-border-narrow">
+                <p>You can call our helpline.</p>
+                <ul class="list list-bullet">
+                    <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+                    <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+                    <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+                </ul>
+            </div>
+        </details>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

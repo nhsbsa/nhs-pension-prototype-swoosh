@@ -14,6 +14,8 @@ router.post('/nino', function (req, res) {
 
     if (match.includes(answer)) {
         res.redirect('check');
+    } else if (answer == '3') {
+        res.redirect('nino-not-found');
     } else {
         res.redirect('/hub');
     }
