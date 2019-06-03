@@ -1,0 +1,26 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-full">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-xlarge">Patterns</h1>
+        </div>
+
+        <a href="patterns/card">Card</a>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

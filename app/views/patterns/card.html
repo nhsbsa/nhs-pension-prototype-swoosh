@@ -1,0 +1,60 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-full">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-xlarge">Card</h1>
+        </div>
+
+        <h2 class="heading-large">Simple Card</h2>
+        <ul class="grid-row grid-grid">
+            <li>
+                {% include "patterns/card/simple.html" %}
+            </li>
+
+            <li>
+                {% include "patterns/card/simple.html" %}
+            </li>
+
+            <li>
+                {% include "patterns/card/simple.html" %}
+            </li>
+
+            <li>
+                {% include "patterns/card/simple.html" %}
+            </li>
+
+        </ul>
+
+        <h2 class="heading-large">Action Card</h2>
+        <ul class="grid-row grid-grid">
+            <li>
+                {% include "patterns/card/action.html" %}
+            </li>
+            <li>
+                {% include "patterns/card/action.html" %}
+            </li>
+            <li>
+                {% include "patterns/card/action.html" %}
+            </li>
+            <li>
+                {% include "patterns/card/action.html" %}
+            </li>
+        </ul>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}
