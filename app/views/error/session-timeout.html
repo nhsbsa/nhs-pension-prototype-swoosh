@@ -1,0 +1,30 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+{{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">Your session has ended</h1>
+            </div>
+
+            <p>Due to inactivity your session has timed out, you need to restart the service.</p>
+            <p>
+            <a href="/start" class="button button-get-started">Restart</a>
+            </p>
+            
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

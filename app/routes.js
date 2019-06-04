@@ -52,4 +52,7 @@ router.get('/nhs-login', function (req, res) {
 // This moves assisted routing to assisted directory
 router.use('/assisted/', require('./views/assisted/_routes'))
 
+// This moves error routing to assisted directory
+router.use('/error/', require('./views/error/_routes'))
+
 module.exports = router
