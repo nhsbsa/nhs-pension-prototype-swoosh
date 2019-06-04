@@ -9,19 +9,44 @@
 <main id="content" role="main" tabindex="-1">    
     {% include "includes/phase_banner_beta.html" %}
     <div class="grid-row">
-        <div class="column-two-thirds">
+        <div class="column-full">
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">Error pages</h1>
+                <h1 class="heading-large">Common error pages</h1>
             </div>
 
-            <ul class="list list-bullet">
-                <li><a href="error/page-not-found">Page not found page</a></li>
-                <li><a href="error/session-timeout">Session time out page</a></li>
-                <li><a href="error/problem-with-the-service">Problem with the service</a></li>
-                <li><a href="error/service-unavailable">Service unavailable</a></li>
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page name</th>
+                        <th>Code</th>
+                        <th>Scenario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="error/page-not-found">Page not found page</a></td>
+                        <td>404</td>
+                        <td>URL Mistyped, page no longer exists</td>
+                    </tr>
+                    <tr>
+                        <td><a href="error/session-timeout">Session time out page</a></td>
+                        <td>?</td>
+                        <td>Cookie expired, period of inactivity</td>
+                    </tr>
+                    <tr>
+                        <td><a href="error/problem-with-the-service">Problem with the service page</a></td>
+                        <td>500</td>
+                        <td>Internal server error</td>
+                    </tr>
+                    <tr>
+                        <td><a href="error/service-unavailable">Service unavailable page</a></td>
+                        <td>503</td>
+                        <td>Service taken down for maintenance</td>
+                    </tr>
+                </tbody>
+            </table>
             
         </div>
     </div>
