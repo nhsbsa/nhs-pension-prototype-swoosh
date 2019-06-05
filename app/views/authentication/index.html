@@ -1,0 +1,49 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+How do you want to auth? - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {# {% include "includes/back-link.html" %} #}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">How would you like to confirm your identity?</h1>
+            </div>
+
+            <form action="authentication" method="post">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">Which types of waste do you transport regularly?</legend>
+                    <div class="multiple-choice">
+                        <input id="auth-num" name="auth" type="radio" value="auth-num">
+                        <label for="auth-num">Using my pension member and National Insurance numbers.
+                            <span class="form-hint">These numbers can be found on your NHS payslip.</span>
+                        </label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="auth-verify" name="auth" type="radio" value="auth-verify">
+                        <label for="auth-verify">Using GOV.UK Verify
+                            <span class="form-hint">You can use the government’s identity verification service GOV.UK Verify instead.</span>
+                        </label>
+                    </div>
+
+                </fieldset>
+
+                  <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

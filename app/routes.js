@@ -15,6 +15,10 @@ router.get('/details', function (req, res) {
   res.redirect('details/check')
 })
 
+router.get('/id', function (req, res) {
+  res.redirect('verify')
+})
+
 // This moves calculator routing to calculator directory
 router.use('/calculator/', require('./views/calculator/_routes'))
 
@@ -31,7 +35,7 @@ router.use('/pension-details/', require('./views/pension-details/_routes'))
 // This moves verify routing to verify directory
 router.use('/verify/', require('./views/verify/_routes'))
 router.get('/verify', function (req, res) {
-  res.redirect('verify/sign-in')
+  res.redirect('verify/confirm-identity')
 })
 
 // This moves matching routing to matching directory
@@ -40,7 +44,7 @@ router.get('/nino', function (req, res) {
   res.redirect('matching')
 })
 
-// This moves matching routing to matching directory
+// This moves statement routing to statement directory
 router.use('/statement/', require('./views/statement/_routes'))
 
 // This moves nhs-login routing to nhs-login directory
@@ -54,5 +58,9 @@ router.use('/assisted/', require('./views/assisted/_routes'))
 
 // This moves error routing to assisted directory
 router.use('/error/', require('./views/error/_routes'))
+
+
+// This moves authentication routing to assisted directory
+router.use('/authentication/', require('./views/authentication/_routes'))
 
 module.exports = router
