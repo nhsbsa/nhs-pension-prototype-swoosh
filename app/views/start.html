@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Your NHS Pension - My NHS Pension - NHSBSA
+{{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,12 @@ Your NHS Pension - My NHS Pension - NHSBSA
     {% include "includes/phase_banner_beta.html" %}
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-xlarge">{{ serviceName }}</h1>
+
+            <div class="heading-group">
+                <p>NHS Business Services Authority</p>
+                <h1 class="heading-xlarge">{{ serviceName }}</h1>
+            </div>
+
             <h2 class="heading-medium">Use this service to:</h2>
             <ul class="list list-bullet">
                 <li>see the personal details we hold about you</li>

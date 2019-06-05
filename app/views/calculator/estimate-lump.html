@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
+Pension calculator - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -57,6 +57,8 @@
             {% include "calculator/includes/next.html" %}
             <hr>
             {% include "calculator/includes/caveat.html" %}
+            <hr>
+            {% include "includes/print-link.html" %}
             
         </div>
     </div>

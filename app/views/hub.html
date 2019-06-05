@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Your NHS Pension - {{ serviceName }} - NHSBSA
+Home - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -19,43 +19,43 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                 <h1 class="heading-xlarge">Sam Curtis Jones</h1>
             </div>
 
-            <div class="grid-row grid-row--flex">
-                <div class="column-one-third-lg">
-                    <div class="govuk-card">
-                        <div class="govuk-card__content">
-                            <h3 class="heading-medium">Your details</h3>
+            <ul class="grid-row grid-grid">
+                <li>
+                    <div class="bsa-card">
+                        <div class="bsa-card__content">
+                            <h2 class="heading-medium"><a href="/details">Your details</a></h2>
                             <p>Check and make sure your details are up to date.</p>
                         </div>
-                        <div class="govuk-card__actions">
-                            <a href="/details">Your details</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="bsa-card">
+                        <div class="bsa-card__content">
+                            <h2 class="heading-medium"><a href="/pension-details">Your NHS pensions</a></h2>
+                            <p>Check the pensions you belong to and how much you could get when you retire.</p>
                         </div>
                     </div>
-                </div>
+                </li>
 
-                <div class="column-one-third-lg">
-                    <div class="govuk-card">
-                        <div class="govuk-card__content">
-                            <h3 class="heading-medium">Your pension details</h3>
-                            <p>Here are the Pension Schemes and Sections you belong to.</p>
-                        </div>
-                        <div class="govuk-card__actions">
-                            <a href="/pension-details">Your pension details</a>
+                <li>
+                    <div class="bsa-card">
+                        <div class="bsa-card__content">
+                            <h2 class="heading-medium"><a href="/contributions">Your pension contributions</a></h2>
+                            <p>View what you have paid into your NHS pensions.</p>
                         </div>
                     </div>
-                </div>
+                </li>
 
-                <div class="column-one-third-lg">
-                    <div class="govuk-card">
-                        <div class="govuk-card__content">
-                            <h3 class="heading-medium">Claim Your NHS Pension</h3>
+                <li>
+                    <div class="bsa-card">
+                        <div class="bsa-card__content">
+                            <h2 class="heading-medium"><a href="https://stg.services.nhsbsa.nhs.uk/member-services/tea/start">Claim Your NHS Pension</a></h2>
                             <p>Start an application to claim your NHS Pension.</p>
                         </div>
-                        <div class="govuk-card__actions">
-                            <a href="https://stg.services.nhsbsa.nhs.uk/member-services/tea/start">Start now</a>
-                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
 
         </div>
 
