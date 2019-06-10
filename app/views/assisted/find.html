@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+{% if data['show'] == "error" %}
+Member not found - {{ serviceName }} - NHSBSA
+{% else %}
+Find a member - {{ serviceName }} - NHSBSA
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+        {% if data['show'] == "invalid" %}
+            {% set groupErrorClass = 'form-group-error' %}
+            {% set inputErrorClass = 'form-control-error' %}
+            <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+                <h1 class="heading-medium error-summary-heading" id="error-summary-heading">The National Insurance number is not valid</h1>
+                <ul class="error-summary-list">
+                    <li><a href="#nino">Enter a National Insurance number</a></li>
+                </ul>
+            </div>
+
+        {% elif data['show'] == "error" %}
+
+            {% set groupErrorClass = 'form-group-error' %}
+            {% set inputErrorClass = 'form-control-error' %}
+            <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+                <h1 class="heading-medium error-summary-heading" id="error-summary-heading">The member QQ 12 34 56 B was not found</h1>
+                <ul class="error-summary-list">
+                    <li><a href="#nino">Enter a National Insurance number</a></li>
+                </ul>
+            </div>
+
+        {% endif %}
+
+            <form action="find" method="post" class="form">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">Find a member</h1>
+                </div>
+                <div class="form-group {{ groupErrorClass }}">
+                    <label for="nino" class="form-label">
+                        <span>Enter the members National Insurance number</span>
+                        <span class="form-hint">For example, ‘QQ 12 34 56 C’.</span>
+                        {% if data['show'] == "error" %}
+                        <span class="error-message">Enter a National Insurance number</span>
+                        {% endif %}
+                    </label>
+                    <input class="form-control {{ inputErrorClass }}" id="nino" name="nino" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Find member">
+                </div>
+                <input type="hidden" name="assisted" value="true">
+            </form>
+
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

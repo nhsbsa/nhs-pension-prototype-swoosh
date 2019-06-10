@@ -74,4 +74,7 @@ router.get('/verify', function (req, res) {
   res.redirect('verify/sign-in')
 })
 
+// This moves assisted routing to assisted directory
+router.use('/assisted/', require('./views/assisted/_routes'))
+
 module.exports = router
