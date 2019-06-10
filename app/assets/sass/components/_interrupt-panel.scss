@@ -1,0 +1,32 @@
+
+$interrupt-panel-background-color: $nhs-blue;
+
+.interrupt-panel {
+    margin-top: 30px;
+    padding: 30px;
+    background: $interrupt-panel-background-color;
+    color: $white;
+    border-radius: 4px;
+
+    a,
+    a:active,
+    a:link,
+    a:visited,
+    .heading-group p {
+        color: $white;
+    }
+
+    a.button,
+    hr {
+        background-color: $white;
+    }
+
+    a.button {
+        color: $interrupt-panel-background-color;
+        font-weight: bold;
+    }
+
+    .heading-group {
+        margin-top: 0;
+    }
+}

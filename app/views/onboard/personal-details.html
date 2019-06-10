@@ -1,0 +1,32 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your pension information - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <h1 class="heading-large">It is your <strong class="bold">employers responsibility</strong> to keep your pension information up to date.</h1>
+                </div>
+                <hr>
+                <p>You can make changes to your personal details on your Electronic Staff Record (ESR). If you cannot access ESR, 
+                contact your employer.</p>
+                <hr>
+                <a href="estimate" class="button">Next</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

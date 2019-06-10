@@ -12,6 +12,7 @@
 @import 'components/spacing';
 @import 'components/print';
 @import 'components/account-details-bar';
+@import 'components/interrupt-panel';
 
 // Patterns
 @import 'patterns/grid-grid';
@@ -1205,4 +1206,8 @@ border-bottom: 1px solid #bfc1c3;
   &:focus {
     background-color: white;
   }
+}
+
+.nobr {
+  white-space: nowrap;
 }

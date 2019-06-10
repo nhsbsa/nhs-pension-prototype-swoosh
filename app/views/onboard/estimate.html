@@ -1,0 +1,32 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <h1 class="heading-large">Your pension estimate is not what you will get</h1>
+                </div>
+                <hr>
+                <p>It’s based on current law and pay information from your employer. We make assumptions to give an approximate estimate.</p>
+                <p>It does not include tax.</p>
+                <hr>
+                <a href="/hub" class="button">Continue</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

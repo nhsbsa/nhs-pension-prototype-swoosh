@@ -16,6 +16,8 @@ router.post('/nino', function (req, res) {
         res.redirect('check');
     } else if (answer == '3') {
         res.redirect('nino-not-found');
+    } else if (answer == 'onboard') {
+        res.redirect('/onboard/welcome');
     } else {
         res.redirect('/hub');
     }
