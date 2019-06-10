@@ -23,6 +23,7 @@ Your pension details - {{ serviceName }} - NHSBSA
 
             {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/2015.html" %}
+            <p><a href="/disclaimer">Find out what we assume when we calculate your pension estimate</a>.</p>
             <hr class="visual-break">
             {% endif %}
 

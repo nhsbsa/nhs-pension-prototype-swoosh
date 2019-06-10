@@ -1,0 +1,32 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+How we work out your pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">Your pension estimate calculation</h1>
+            </div>
+
+            {% include "includes/caveat-content.html" %}
+
+            <hr>
+            {% include "includes/back-to-home-link.html" %}
+            
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
