@@ -51,14 +51,17 @@ Pension calculator - {{ serviceName }} - NHSBSA
                 </tbody>
             </table>
 
-            <br>
+            <div class="bsa-print-hide">
+                <br>
+                {% include "includes/calculator-link.html" %}
+                {% include "includes/caveat-link.html" %}
+                {% include "calculator/includes/next.html" %}
+                {% include "includes/print-link.html" %}
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
 
-            <!-- show for all -->
-            {% include "calculator/includes/next.html" %}
-            <hr>
-            {% include "calculator/includes/caveat.html" %}
-            <hr>
-            {% include "includes/print-link.html" %}
+            {% include "includes/caveat-print.html" %}
 
         </div>
     </div>

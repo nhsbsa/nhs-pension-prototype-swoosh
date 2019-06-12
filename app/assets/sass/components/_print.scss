@@ -1,0 +1,10 @@
+// Hide here then show for print
+.bsa-print-show {
+    display: none;
+}
+
+@media print {
+    .bsa-print-show {
+        display: block;
+    } 
+}
