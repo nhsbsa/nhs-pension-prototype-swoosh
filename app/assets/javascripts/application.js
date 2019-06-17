@@ -24,4 +24,10 @@ $(document).ready(function () {
     alert('Sorry, this hasn\'t been built yet');
   }
   $('body').on('click', 'a[href="#"]', alertUser);
+
+
+  // Add timeout modal
+  // Set options in views/includes/timeout_modal.html
+  GOVUK.modalDialog.init()
+
 })

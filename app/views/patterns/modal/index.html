@@ -1,0 +1,41 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-full">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-xlarge">Modal dialog</h1>
+        </div>
+        
+        <p>Example provided by Dean Cobb NHS BSA from <a href="http://haltersweb.github.io/Accessibility/dialog.html">http://haltersweb.github.io/Accessibility/dialog.html</a></p>
+        <button type="button" class="button" data-controls="modal" aria-controls="timeOutModal">Launch modal window example</button>
+        
+        <!-- Modal HTML -->
+        <div id="timeOutModal" class="modal" role="dialog" data-widget="modal" aria-hidden="true">
+            <div role="document">
+                <h2 class="heading-medium visually-hidden">You are about to be signed out</h2>
+                <p>For your security and to protect your information we will sign you out in <strong class="bold nobr">2 minutes</strong>.</p>
+                <p>We have saved your application.</p>
+                <p><button type="button" class="button" data-control="close" aria-label="Close modal window and stay signed in">Stay signed in</button></p>
+                <p><a href="/error/session-timeout">Sign out</a></p>
+            </div>
+        </div>
+        <div class="block-screen"></div>
+        <!--/ Modal HTML -->
+
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}
