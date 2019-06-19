@@ -1196,9 +1196,10 @@ border-bottom: 1px solid #bfc1c3;
   }
 }
 
-.bsa-multi-row td {
-  border-bottom: 0;
-  padding-bottom: 0;
+@include media(desktop) {
+  .bsa-multi-row > td:first-child {
+    border-bottom-color: $white;
+  }
 }
 
 

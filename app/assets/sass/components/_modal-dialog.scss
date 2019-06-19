@@ -61,32 +61,6 @@
         font-size: 19px;
       }
   
-    //   &__link {
-    //     @include copy-19;
-    //     background: none;
-    //     border: none;
-    //     vertical-align: middle;
-    //     margin-top: 20px;
-  
-    //     @include media(mobile) {
-    //       text-align: center;
-    //       display: block;
-    //       margin-top: 25px;
-    //     }
-  
-    //     @include media(tablet) {
-    //       position: absolute;
-    //       top: 50%;
-    //       transform: translateY(-50%);
-    //       padding: 0;
-    //       margin: 0 0 0 30px;
-    //     }
-  
-    //     &:hover {
-    //       cursor: pointer;
-    //     }
-    //   }
-  
       &__block {
         position: relative;
         >*:last-child {

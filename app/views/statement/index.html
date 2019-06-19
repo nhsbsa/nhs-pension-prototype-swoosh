@@ -26,7 +26,6 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
             <table class="responsive-table">
                 <caption class="heading-medium">Your contributions (as of the 31st March 2019)</caption>
                 <thead>
-                    
                     <tr>
                         <th scope="col">Year</th>
                         <th scope="col"><span class="visually-hidden">Employer</span></th>
@@ -35,153 +34,321 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
                     </tr>
                 </thead>
                 <tbody>
+
                     {% if data['schemeReference'] === '2008' %}
-                    <tr>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Year</span>
-                            2007/2008
-                        </td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Black Country Partnership NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£1346.28</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£1613.40</strong>
-                        </td>
-                    </tr>
+
+                        {{ bsaContributionsTableRow({
+                            year: '2007/2008',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
                     {% else %}
-                    <tr>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Year</span>
-                            2018/2019
-                        </td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Black Country Partnership NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£1346.28</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£1613.40</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Year</span>
-                            2017/2018
-                        </td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Black Country Partnership NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£1300.84</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£1588.22</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Year</span>
-                            2016/2017
-                        </td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Black Country Partnership NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£1256.19</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£1542.55</strong>
-                        </td>
-                    </tr>
-                    <tr class="bsa-multi-row">
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Year</span>
-                            2015/2016
-                        </td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Black Country Partnership NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£1000.00</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£1112.88</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span class="visually-hidden">December</span></td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Birmingham and Solihull Mental Health NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£213.43</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£244.45</strong>
-                        </td>
-                    </tr>
+
+                        {{ bsaContributionsTableRow({
+                            year: '2018/2019',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2017/2018',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1300.84',
+                            employerContributions: '1588.22'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2016/2017',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1256.19',
+                            employerContributions: '1542.55'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1000.00',
+                            employerContributions: '1112.88'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'Birmingham Community Healthcare NHS Foundation Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'West Midlands Ambulance Service NHS Foundation Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'Heart of England NHS Foundation Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'Sandwell and West Birmingham NHS Trust',
+                            yourContributions: '213.43',
+                            employerContributions: '244.45'
+                        }) }}
+
                     {% endif %}
 
                     {% if data['schemeReference'] === '1995' %}
-                    <tr>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Year</span>
-                            1995/1996
-                        </td>
-                        <td>
-                            <span class="table-heading" aria-hidden="true">Employer</span>
-                            Black Country Partnership NHS Foundation Trust
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your contributions</span>
-                            <strong class="bold">£1346.28</strong>
-                        </td>
-                        <td class="numeric">
-                            <span class="table-heading" aria-hidden="true">Your employers contributions</span>
-                            <strong class="bold">£1613.40</strong>
-                        </td>
-                    </tr>
+
+                        {{ bsaContributionsTableRow({
+                            year: '2014/2015',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2013/2014',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2012/2013',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2011/2012',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2010/2011',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2009/2010',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2008/2009',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2007/2008',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2006/2007',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2005/2006',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            rowClass: 'bsa-multi-row',
+                            year: '2005/2006',
+                            hideDate: 'true',
+                            employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2005/2006',
+                            hideDate: 'true',
+                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2004/2005',
+                            employer: 'East Midlands Ambulance Service NHS Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2003/2004',
+                            employer: 'Hertfordshire Community NHS Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2002/2003',
+                            employer: 'West Herts Hospitals Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2001/2002',
+                            employer: 'Princess Alexandra Hospital NHS Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2000/2001',
+                            employer: 'Hertfordshire Partnership University Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1999/2000',
+                            employer: 'East And North Hertfordshire NHS Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1998/1999',
+                            employer: 'South Essex Partnership NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1997/1998',
+                            employer: 'Central and North West London NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1996/1997',
+                            employer: 'East of England Ambulance Service NHS Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1995/1996',
+                            employer: 'East London NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1994/1995',
+                            employer: 'Bedford Hospital NHS Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1993/1994',
+                            employer: 'Milton Keynes University Hospital NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1992/1993',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '1346.28',
+                            employerContributions: '1613.40'
+                        }) }}
+
                     {% endif %}
                 </tbody>
             </table>
 
-            <div class="table-foot">
-                <span class="table-total">Total</span>
-                <span class="total-value">£14,177.92</span>
-            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
             
             <br>
+
+            <details>
+                <summary><span class="summary">Is there anything wrong with your contribution statement?</span></summary>
+                <div class="panel panel-border-narrow">
+                    <p>It is your employers responsibility to submit your contributions.</p>
+                    <p>If you are no longer working in the NHS you can call our helpline.</p>
+                    <ul class="list list-bullet">
+                        <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+                        <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+                        <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+                    </ul>
+                </div>
+            </details>
+            <hr>
             
             {% include "includes/back-to-home-link.html" %}
 
         </div>
-
-        {# <div class="column-one-third">
-        	{% include "statement/includes/subnav.html" %}
-        </div> #}
-
     </div>
 
 </main>

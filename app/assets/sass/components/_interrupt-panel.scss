@@ -29,4 +29,8 @@ $interrupt-panel-background-color: $nhs-blue;
     .heading-group {
         margin-top: 0;
     }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
 }
