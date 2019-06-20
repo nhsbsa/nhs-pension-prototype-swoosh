@@ -19,7 +19,7 @@ router.post('/what-estimate', function (req, res) {
   
 router.post('/when-retire', function (req, res) {
     var estimate = req.session.data['estimate_based_on'];
-    if (estimate.includes('lump')) {
+    if (estimate.includes('lump') || estimate.includes('addLump')) {
       res.redirect('/calculator/lump-amount')
     } else {
       res.redirect('/calculator/estimate-age')

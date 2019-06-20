@@ -5,6 +5,7 @@
 @import 'unbranded';
 
 // Components
+@import 'components/breaks';
 @import 'components/currency-input';
 @import 'components/tag';
 @import 'components/panel';
@@ -16,6 +17,7 @@
 @import 'components/responsive-table';
 @import 'components/modal';
 @import 'components/modal-dialog';
+
 
 // Patterns
 @import 'patterns/grid-grid';
@@ -1178,14 +1180,6 @@ border-bottom: 1px solid #bfc1c3;
 }
 
 // We should really depend on the govuk design system
-
-
-.visual-break {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  background-color: grey;
-  height: 2px;
-}
 
 .verify-block {
   width: 200px;

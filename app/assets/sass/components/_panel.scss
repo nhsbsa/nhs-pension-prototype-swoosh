@@ -1,13 +1,38 @@
-//done-page
+/*
+As we are dealing with pensioners I want to align the content in the done
+panel to the left by default. Centrally aligned text is difficult to read.
+
+We are also adding more content than a standard done panel would have and dealing
+with figures and numbers that users will be processing and mentally calulating
+pension information with.
+*/
+
+$done-panel-foreground-color: $white;
+$done-panel-background-color: $nhs-blue;
 
 .done-panel {
     position: relative;
-    background-color: $nhs-blue;
-    text-align: center;
-    color: white;
+    background-color: $done-panel-background-color;
+    color: $done-panel-foreground-color;
     padding: 20px;
+    margin-top: 30px;
     margin-bottom: 30px;
     
+    a,
+    .heading-secondary {
+      color: $done-panel-foreground-color;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+    
+    a:focus {
+      text-decoration: none;
+      color: $black;
+      border-bottom: 2px solid $black;
+    }
+
     > *:first-child {
       margin-top: 0;
     }
@@ -15,27 +40,23 @@
     > *:last-child {
       margin-bottom: 0;
     }
-  }
-  
-  #done-tick {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    padding: 4px 20px 4px 4px;;
-    background-color: $nhs-blue;
-    background-image: url('/public/images/bsa/done-tick.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
 
-  .done-panel--success {
-    background-color: $grass-green;
-  }
-  
-  .done-panel--warning {
-    background-color: $brown;
-  }
-  
-  .done-panel--danger {
-    background-color: $mellow-red;
-  }
+    &--center {
+      text-align: center;
+    }
+
+    // color variants
+    &--success {
+      background-color: $grass-green;
+    }
+    &--warning {
+      background-color: $brown;
+    }
+    &--danger {
+      background-color: $mellow-red;
+    }
+
+    .break {
+      background-color: $done-panel-foreground-color;
+    }
+}

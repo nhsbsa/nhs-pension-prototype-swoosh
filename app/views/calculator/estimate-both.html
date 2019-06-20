@@ -18,16 +18,20 @@
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="heading-group">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-large">2015 pension estimate</h1>
-            </div>
-
             <div class="done-panel">
-                <p class="govuk-margin-bottom-0">If you retire at <strong class="bold">56</strong> on <strong class="bold">1st November 2022</strong> and<br> you take a lump sum of <strong class="bold">£28,000</strong> your estimate&nbsp;is</p>
-                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£467.22 a month</p>
-                <p class="govuk-margin-top-0">reduced from £777.77 a month.</p>
-                <p>Your yearly estimate is <strong class="bold">£5,606.64</strong> reduced from <strong class="bold">£29,810.47</strong>.</p>
+                <h1 class="govuk-margin-bottom-0">Your {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong> is:</h1>
+                <p class="govuk-margin-top-0 govuk-margin-bottom-0">
+                    <span class="heading-xlarge">£467 a month</span>
+                    reduced from <strong class="bold nobr">£1,986</strong>
+                </p>
+                <p class="govuk-margin-bottom-0 govuk-margin-top-0">
+                    <span class="heading-medium">£5,606 a year</span>
+                    reduced from <strong class="bold nobr">£23,829</strong>
+                </p>
+                <p class="govuk-margin-bottom-0">With a lump sum of <strong class="bold nobr">£28,000</strong></p>
+                <p class="govuk-margin-bottom-0">You could get this on <strong class="bold nobr">1 November 2022</strong> at age <strong class="bold">56</strong></p>
+                <hr class="break">
+                {% include "calculator/includes/pay-info-date.html" %}
             </div>
             
             <div class="bsa-print-hide">

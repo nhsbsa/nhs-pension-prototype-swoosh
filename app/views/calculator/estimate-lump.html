@@ -18,18 +18,21 @@
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="heading-group">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-large">{{ data['schemeReference'] }} pension estimate</h1>
-            </div>
 
             <div class="done-panel">
-                <p class="govuk-margin-bottom-0">If you take a lump sum of <strong class="bold">£102,126</strong> your estimate&nbsp;is</p>
-                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£1,277 a month</p>
-                <p class="govuk-margin-top-0">reduced from £1,986 a month.</p>
-                <p>Your yearly estimate is <strong class="bold">£15,319</strong> reduced from <strong class="bold">£23,829</strong>.</p>
+                <h1 class="govuk-margin-bottom-0">Your {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong> is:</h1>
+                <p class="govuk-margin-top-0 govuk-margin-bottom-0">
+                    <span class="heading-xlarge">£1,277 a month</span>
+                    reduced from <strong class="bold nobr">£1,986</strong>
+                </p>
+                <p class="govuk-margin-bottom-0 govuk-margin-top-0">
+                    <span class="heading-medium">£15,319 a year</span>
+                    reduced from <strong class="bold nobr">£23,829</strong>
+                </p>
+                <p class="govuk-margin-bottom-0">With a lump sum of <strong class="bold nobr">£102,126</strong></p>
+                <hr class="break">
+                {% include "calculator/includes/pay-info-date.html" %}
             </div>
-
 
             <h2 class="heading-small">Lump sum examples</h2>
 
