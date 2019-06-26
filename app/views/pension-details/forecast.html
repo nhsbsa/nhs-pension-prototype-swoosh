@@ -6,11 +6,15 @@
 {% set getYearly = '23,829' %}
 {% set reducedDate = '1 March 2030' %}
 {% set reducedAge = '55' %}
+{% set getReducedMonthly = '1,287' %}
+{% set getReducedYearly = '18,957' %}
 
 {% if data['schemeReference'] === '2008' %}
     {% set getDate = '1 December 2041' %}
     {% set getMonthly = '422' %}
     {% set getYearly = '5,075' %}
+    {% set getReducedMonthly = '1,287' %}
+    {% set getReducedYearly = '18,957' %}
     {% set reducedDate = '1 December 2031' %}
 {% elif data['schemeReference'] === '1995' %}
     {% set getDate = '1 December 2041' %}
@@ -19,6 +23,8 @@
     {% set getYearly = '25,218' %}
     {% set reducedDate = '1 December 2036' %}
     {% set reducedAge = '55' %}
+    {% set getReducedMonthly = '1,287' %}
+    {% set getReducedYearly = '18,957' %}
 {% endif %}
 
 {% block page_title %}
@@ -39,12 +45,15 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="done-panel estimate-panel">
+            <div class=" interrupt-panel">
                 <h1 class="govuk-margin-bottom-0">Your {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong> is:</h1>
                 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ getMonthly }} a month</p>
                 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ getYearly }} a year</p>
                 <p class="govuk-margin-bottom-0">You could get this on <strong class="bold nobr">{{ getDate }}</strong> at age <strong class="bold">{{ getAge }}</strong></p>
-                <p>You could get a reduced pension on <strong class="bold nobr">{{ reducedDate }}</strong> at age <strong class="bold">{{ reducedAge }}</strong></p>
+                {# <hr class="break">
+                <p class="govuk-margin-bottom-0">You could get a reduced pension of:</p>
+                <p class="heading-medium govuk-margin-top-0 govuk-margin-bottom-0">£{{ getReducedMonthly }} a month (£{{ getReducedYearly }} a year)</p>
+                <p>You could get this on <strong class="bold nobr">{{ reducedDate }}</strong> at age <strong class="bold">{{ reducedAge }}</strong></p> #}
                 <hr class="break">
                 {% include "calculator/includes/pay-info-date.html" %}
             </div>
