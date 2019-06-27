@@ -34,4 +34,11 @@ $interrupt-panel-background-color: $nhs-blue;
     > *:last-child {
         margin-bottom: 0;
     }
+
+    table {
+        margin-bottom: 20px;
+        th,td {
+            border-bottom-color: $white;
+        }
+    }
 }

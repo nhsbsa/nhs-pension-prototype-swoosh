@@ -60,3 +60,72 @@ $done-panel-background-color: $nhs-blue;
       background-color: $done-panel-foreground-color;
     }
 }
+
+
+.compare-panel {
+    position: relative;
+    background-color: $done-panel-background-color;
+    color: $done-panel-foreground-color;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    a,
+    a:link,
+    a:visited,
+    .heading-group p {
+        color: $white;
+    }
+    a:active {
+      color: $done-panel-background-color;
+    }
+
+    a.button,
+    hr {
+        background-color: $white;
+    }
+
+    a.button {
+        color: $done-panel-background-color;
+        font-weight: bold;
+    }
+
+    * > *:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(desktop) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    // align-items: flex-end;
+
+    &__header,
+    &__body,
+    &__footer {
+      padding: 20px;
+    }
+
+    &__header {
+      flex-grow: 1;
+      flex-shrink: 1;
+      // border-right: 1px solid $white;
+    }
+
+    &__footer {
+      padding-top: 10px;
+      padding-bottom: 10px; 
+      width: 100%;
+      // text-align: center;
+      border-top: 1px solid $white;
+      > * {
+        margin: 0;
+      }
+    }
+
+    &__body {
+      flex-shrink: 0;
+      border: 3px solid $done-panel-background-color;
+      // background-color: $white;
+      // color: $done-panel-background-color;
+    }
+}

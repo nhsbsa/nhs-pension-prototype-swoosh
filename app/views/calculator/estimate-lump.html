@@ -1,5 +1,36 @@
 {% extends "layout_bsa.html" %}
 
+{% set getDate = '1 March 2040' %}
+{% set getAge = '65' %}
+{% set getMonthly = '1,277' %}
+{% set getYearly = '15,319' %}
+{% set reducedDate = '1 March 2030' %}
+{% set reducedAge = '55' %}
+{% set getReducedMonthly = '1,287' %}
+{% set getReducedYearly = '18,957' %}
+{% set getLump = '43,126' %}
+
+{% if data['schemeReference'] === '2008' %}
+    {% set getDate = '1 December 2041' %}
+    {% set getMonthly = '422' %}
+    {% set getYearly = '5,075' %}
+    {% set getReducedMonthly = '1,287' %}
+    {% set getReducedYearly = '18,957' %}
+    {% set reducedDate = '1 December 2031' %}
+    {% set getLump = '12,126' %}
+
+{% elif data['schemeReference'] === '1995' %}
+    {% set getDate = '1 December 2041' %}
+    {% set getAge = '60' %}
+    {% set getMonthly = '2,104' %}
+    {% set getYearly = '25,218' %}
+    {% set reducedDate = '1 December 2036' %}
+    {% set reducedAge = '55' %}
+    {% set getReducedMonthly = '1,287' %}
+    {% set getReducedYearly = '18,957' %}
+    {% set getLump = '102,126' %}
+{% endif %}
+
 {% block page_title %}
 2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
 {% endblock %}
@@ -18,52 +49,39 @@
     <div class="grid-row">
         <div class="column-two-thirds">
 
+            <header class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">{{ data['schemeReference'] }} pension <strong class="bold">estimate</strong></h1>
+            </header>
 
-            <div class="done-panel">
-                <h1 class="govuk-margin-bottom-0">Your {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong> is:</h1>
-                <p class="govuk-margin-top-0 govuk-margin-bottom-0">
-                    <span class="heading-xlarge">£1,277 a month</span>
-                    reduced from <strong class="bold nobr">£1,986</strong>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+
+            <div class="interrupt-panel">
+                <p class="govuk-margin-bottom-0">
+                    If you retire at your normal retirement age of <strong class="bold">{{ getAge }}</strong> on 
+                    <strong class="bold nobr">{{ getDate }}</strong>, with a lump sum of <strong class="bold">£{{ getLump}}</strong>,
+                    your pension could be worth:
                 </p>
-                <p class="govuk-margin-bottom-0 govuk-margin-top-0">
-                    <span class="heading-medium">£15,319 a year</span>
-                    reduced from <strong class="bold nobr">£23,829</strong>
-                </p>
-                <p class="govuk-margin-bottom-0">With a lump sum of <strong class="bold nobr">£102,126</strong></p>
-                <hr class="break">
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ getMonthly }} a month</p>
+                <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ getYearly }} a year</p>
+
+                <h2 class="heading-small">Other retirement examples</h2>
+                {% include "calculator/includes/retirement-examples/lump1.html" %}
                 {% include "calculator/includes/pay-info-date.html" %}
             </div>
 
-            <h2 class="heading-small">Lump sum examples</h2>
+        </div>
+    </div>
 
-            <table class="check-table stack-table center-on-stack" id="contact-details">
-                <caption class="visually-hidden">Other lump sum examples</caption>
-                <thead>
-                    <tr>
-                        <th>Amount</th>
-                        <th class="numeric">Payment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td scope="col">£51,063</td>
-                        <td class="numeric" scope="col">£1,631 a month (£19,574 a year)</td>
-                    </tr>
-                    <tr>
-                        <td scope="col">£102,126 (Maximum amount)</td>
-                        <td class="numeric" scope="col">£1,277 a month (£15,319 a year)</td>
-                    </tr>
-                    <tr>
-                        <td scope="col">No lump sum</td>
-                        <td class="numeric" scope="col">£2484.21 a month (£29,810.47 a year)</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="grid-row">
+        <div class="column-two-thirds">
 
             <div class="bsa-print-hide">
-                <br>
                 {% include "includes/calculator-link.html" %}
-                {% include "includes/caveat-link.html" %}
                 {% include "calculator/includes/next.html" %}
                 {% include "includes/print-link.html" %}
                 <hr>

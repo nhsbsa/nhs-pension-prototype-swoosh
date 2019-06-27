@@ -24,6 +24,11 @@
 
 @import 'patterns/hub-sign-in';
 
+  .column-desktop-two-thirds {
+    @include grid-column( 2/3, $full-width: 920px );
+  }
+
+
 //body {
 //  color: #555;
 //}

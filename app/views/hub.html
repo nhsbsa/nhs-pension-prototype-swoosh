@@ -35,6 +35,15 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
                 <h2 class="heading-large">Your pensions</h2>
                 <ul class="grid-row grid-grid">
 
+                    {# {% set estimate = data['estimate_test'] %}
+                    {% if (estimate == 'A') %}
+                    A = true
+                    {% elif (estimate == 'B') %}
+                    B = true
+                    {% elif (estimate == 'C') %}
+                    C = true
+                    {% endif %} #}
+
                     {{ scheme }}
                     {% set scheme = data['scheme'] %}
 

@@ -45,22 +45,39 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class=" interrupt-panel">
-                <h1 class="govuk-margin-bottom-0">Your {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong> is:</h1>
+            <header class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large"> {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong></h1>
+            </header>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+
+            <div class="interrupt-panel">
+                <p class="govuk-margin-bottom-0">
+                    If you retire at your normal retirement age of <strong class="bold">{{ getAge }}</strong> on 
+                    <strong class="bold nobr">{{ getDate }}</strong>, your pension could be worth:
+                </p>
                 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ getMonthly }} a month</p>
                 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ getYearly }} a year</p>
-                <p class="govuk-margin-bottom-0">You could get this on <strong class="bold nobr">{{ getDate }}</strong> at age <strong class="bold">{{ getAge }}</strong></p>
-                {# <hr class="break">
-                <p class="govuk-margin-bottom-0">You could get a reduced pension of:</p>
-                <p class="heading-medium govuk-margin-top-0 govuk-margin-bottom-0">£{{ getReducedMonthly }} a month (£{{ getReducedYearly }} a year)</p>
-                <p>You could get this on <strong class="bold nobr">{{ reducedDate }}</strong> at age <strong class="bold">{{ reducedAge }}</strong></p> #}
-                <hr class="break">
+
+                <h2 class="heading-small">Other retirement ages</h2>
+                {% include "calculator/includes/retirement-examples/ages1.html" %}
                 {% include "calculator/includes/pay-info-date.html" %}
             </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <br>
 
             <div class="bsa-print-hide">
                 {% include "includes/calculator-link.html" %}
-                {% include "includes/caveat-link.html" %}
+                {% include "calculator/includes/next.html" %}
                 {% include "includes/print-link.html" %}
                 <hr>
                 {% include "includes/back-to-home-link.html" %}

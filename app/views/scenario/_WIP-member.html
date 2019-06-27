@@ -1,0 +1,61 @@
+{% extends "layout_empty.html" %}
+
+{% block page_title %}
+  {{ serviceName }} prototype
+{% endblock %}
+
+{% block header_content %}
+    {% include 'includes/warn-screening.html' %}
+  {% include "bsa_head.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {# {% include "includes/phase_banner_beta.html" %} #}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <div class="heading-group">
+              <p>{{ serviceName }}</p>
+              <h1 class="heading-large">Is the member active or deferred?</h1>
+          </div>
+            
+            <form class="form" action="scenario" method="post">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">Is the member active or deferred?</legend>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="mActive" name="member[]" type="radio" value="active">
+                        <label for="mActive">Active</label>
+                    </div>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="mDeferred" name="member[]" type="radio" value="deferred">
+                        <label for="mDeferred">Deferred</label>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<script>
+function uncheckAll() {
+  var inputs = document.querySelectorAll('.chk');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
+function uncheckIdk() {
+  var inputs = document.querySelectorAll('.chk-idk');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
+</script>
+
+{% endblock %}

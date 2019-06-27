@@ -1,5 +1,36 @@
 {% extends "layout_bsa.html" %}
 
+{% set getDate = '1 March 2038' %}
+{% set getAge = '63' %}
+{% set getMonthly = '467' %}
+{% set getYearly = '5,606' %}
+{% set reducedDate = '1 March 2030' %}
+{% set reducedAge = '55' %}
+{% set getReducedMonthly = '1,287' %}
+{% set getReducedYearly = '18,957' %}
+{% set getLump = '28,000' %}
+
+{% if data['schemeReference'] === '2008' %}
+    {% set getDate = '1 December 2041' %}
+    {% set getMonthly = '422' %}
+    {% set getYearly = '5,075' %}
+    {% set getReducedMonthly = '1,287' %}
+    {% set getReducedYearly = '18,957' %}
+    {% set reducedDate = '1 December 2031' %}
+    {% set getLump = '12,126' %}
+
+{% elif data['schemeReference'] === '1995' %}
+    {% set getDate = '1 December 2041' %}
+    {% set getAge = '60' %}
+    {% set getMonthly = '2,104' %}
+    {% set getYearly = '25,218' %}
+    {% set reducedDate = '1 December 2036' %}
+    {% set reducedAge = '55' %}
+    {% set getReducedMonthly = '1,287' %}
+    {% set getReducedYearly = '18,957' %}
+    {% set getLump = '102,126' %}
+{% endif %}
+
 {% block page_title %}
 2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
 {% endblock %}
@@ -18,25 +49,38 @@
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="done-panel">
-                <h1 class="govuk-margin-bottom-0">Your {{ data['schemeReference'] }} pension <strong class="bold">estimate</strong> is:</h1>
-                <p class="govuk-margin-top-0 govuk-margin-bottom-0">
-                    <span class="heading-xlarge">£467 a month</span>
-                    reduced from <strong class="bold nobr">£1,986</strong>
+            <header class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">{{ data['schemeReference'] }} pension <strong class="bold">estimate</strong></h1>
+            </header>
+
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+
+            <div class="interrupt-panel">
+                <p class="govuk-margin-bottom-0">
+                    If you retire early at the age of <strong class="bold">{{ getAge }}</strong> on 
+                    <strong class="bold nobr">{{ getDate }}</strong>, with a lump sum of <strong class="bold">£{{ getLump }}</strong>,
+                    your pension could be worth:
                 </p>
-                <p class="govuk-margin-bottom-0 govuk-margin-top-0">
-                    <span class="heading-medium">£5,606 a year</span>
-                    reduced from <strong class="bold nobr">£23,829</strong>
-                </p>
-                <p class="govuk-margin-bottom-0">With a lump sum of <strong class="bold nobr">£28,000</strong></p>
-                <p class="govuk-margin-bottom-0">You could get this on <strong class="bold nobr">1 November 2022</strong> at age <strong class="bold">56</strong></p>
-                <hr class="break">
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ getMonthly }} a month</p>
+                <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ getYearly }} a year</p>
+
+                <h2 class="heading-small">Other retirement examples</h2>
+                {% include "calculator/includes/retirement-examples/both.html" %}
                 {% include "calculator/includes/pay-info-date.html" %}
             </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
             
             <div class="bsa-print-hide">
                 {% include "includes/calculator-link.html" %}
-                {% include "includes/caveat-link.html" %}
                 {% include "calculator/includes/next.html" %}
                 {% include "includes/print-link.html" %}
                 <hr>
@@ -44,7 +88,6 @@
             </div>
 
             {% include "includes/caveat-print.html" %}
-            
         </div>
     </div>
 
