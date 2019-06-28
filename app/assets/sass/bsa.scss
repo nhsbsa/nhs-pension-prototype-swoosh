@@ -447,19 +447,6 @@ td.strong {
   margin-bottom: 35px;
 }
 
-.heading-group {
-  p {
-    margin: 0;
-    padding: 0;
-    color: gray;
-    font-size: 110%;
-  }
-  .heading-xlarge, .heading-large {
-    margin: 0;
-    padding: 0;
-  }
-  margin: 30px 0 23px 0;
-}
 
 .stack-panel {
   margin-bottom: 30px;
@@ -838,7 +825,7 @@ $task-list-indent: 35px;
   p {
     margin: 0;
     padding: 0;
-    color: gray;
+    color: $grey-1;
     font-size: 110%;
   }
   .heading-xlarge, .heading-large {
@@ -1162,6 +1149,14 @@ border-bottom: 1px solid #bfc1c3;
     }
   }
 
+}
+
+@include media(desktop) {
+  .govuk-check-your-answers.cya-no-change {
+    .cya-question {
+      width: 40%;
+    }
+  }
 }
 
 .u-block {

@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Your NHS Pension - {{ serviceName }} - NHSBSA
+Home page {{ serviceName }} NHS BSA Prototype
 {% endblock %}
 
 {% block content %}
@@ -31,8 +31,10 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
     <div class="grid-row">
         <div class="column-full">
 
-            <section>
-                <h2 class="heading-large">Your pensions</h2>
+            <h1 class="visually-hidden" id="page-heading">{{ serviceName }} home</h1>
+
+            <section aria-labelledBy="pensions-heading">
+                <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
                 <ul class="grid-row grid-grid">
 
                     {# {% set estimate = data['estimate_test'] %}
@@ -192,8 +194,8 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
 
             <hr>
 
-            <section>
-                <h2 class="heading-large">Your details</h2>
+            <section aria-labelledBy="details-heading">
+                <h2 class="heading-large" id="details-heading">Your details</h2>
                 <ul class="grid-row grid-grid">
                     <li >
                         <div class="bsa-card">
@@ -218,8 +220,8 @@ Your NHS Pension - {{ serviceName }} - NHSBSA
 
             <hr>
 
-            <section>
-                <h2 class="heading-large">Think about</h2>
+            <section aria-labelledBy="think-heading">
+                <h2 class="heading-large" id="think-heading">Think about</h2>
                 <ul class="grid-row grid-grid">
 
                     <li >

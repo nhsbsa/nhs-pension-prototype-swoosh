@@ -26,42 +26,52 @@
             <form method="post" class="form" action="when-retire">
                 <fieldset class="form-group">
                     <legend class="visually-hidden">When would you like to retire?</legend>
+
+                    <p class="form-hint">Your earliest retirement age is 55 your latest retirement age is 75. We can't give you an estimate outside of these ages.</p>
+
                     <div class="multiple-choice" data-target="specific-age-panel">
                         <input id="specific-age" type="radio" name="retire-group" value="Yes">
-                        <label for="specific-age">A specific age</label>
+                        <label for="specific-age">At a specific age</label>
                     </div>
                     <div class="panel panel-border-narrow js-hidden" id="specific-age-panel">
-                        <label class="form-label" for="specific-age-value">Age</label>
+                        <label class="form-label" for="specific-age-value">
+                            Enter age
+                            <span class="form-hint">For example, ‘63’</span>
+                        </label>
                         <input class="form-control form-control--sm" name="specific-age-value" type="text" id="specific-age-value">
                     </div>
 
                     <div class="multiple-choice" data-target="specific-date-panel">
                         <input id="specific-date" type="radio" name="retire-group" value="Yes">
-                        <label for="specific-date">A specific date</label>
+                        <label for="specific-date">On a specific date</label>
                     </div>
                     <div class="panel panel-border-narrow js-hidden" id="specific-date-panel">
 
-                        <p class="form-hint">For example, 31 3 1980</p>
+                        <fieldset>
+                            <legend>Enter a date</legend>
+                            <p class="form-hint">For example, 31 3 2034</p>
 
-                        <div class="form-date">
-                            <div class="form-group form-group-day">
-                                <label for="dob-day">Day</label>
-                                <input class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label for="dob-day">Day</label>
+                                    <input class="form-control" id="dob-day" name="dob-day" pattern="[0-9]*" type="text">
+                                </div>
+
+                                <div class="form-group form-group-month">
+                                    <label for="dob-month">Month</label>
+                                    <input class="form-control" id="dob-month" name="dob-month" pattern="[0-9]*" type="text">
+                                </div>
+
+                                <div class="form-group form-group-year">
+                                    <label for="dob-year">Year</label>
+                                    <input class="form-control" id="dob-year" name="dob-year" pattern="[0-9]*" type="text">
+                                </div>
+
                             </div>
-
-                            <div class="form-group form-group-month">
-                                <label for="dob-month">Month</label>
-                                <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
-                            </div>
-
-                            <div class="form-group form-group-year">
-                                <label for="dob-year">Year</label>
-                                <input class="form-control" id="dob-year" max="2100" min="0" name="dob-year" pattern="[0-9]*" type="number">
-                            </div>
-
-                        </div>
+                        </fieldset>
 
                     </div>
+   
                 </fieldset>
 
                 <div class="form-group">

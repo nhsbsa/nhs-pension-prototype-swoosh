@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  NHSBSA Prototype
+We can&rsquo;t find you in our pension records {{ serviceName }} NHS BSA Prototype
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
       <div class="column-two-thirds">
         <div class="heading-group">
           <p>{{ serviceName }}</p>
-          <h1 class="heading-large">We cannot find you in our pension records</h1>
+          <h1 class="heading-large">We can&rsquo;t find you in our pension records</h1>
         </div>
 
         <div class="notice">
@@ -26,10 +26,10 @@
           </strong>
         </div>
 
-        <h2 class="heading-medium">National Insurance number:</h2>
+        <h2 class="heading-medium"><span class="visually-hidden">Check your</span> National Insurance number:</h2>
         <p>You entered: <strong class="bold">{{ data['nino']}}</strong></p>
 
-        <h2 class="heading-medium">Personal details:</h2>
+        <h2 class="heading-medium"><span class="visually-hidden">Now check your</span> Personal details:</h2>
         <ul class="list list-bullet">
           <li>First name: <strong class="bold">Sam</strong></li>
           <li>Last name: <strong class="bold">Jones</strong></li>
@@ -50,7 +50,7 @@
 
         <form action="check" method="post">
           <fieldset class="form-group">
-            <legend class="heading-medium">Are these details correct?</legend>
+            <legend class="heading-medium">Are your details correct?</legend>
             <div class="multiple-choice">
               <input id="matching-nino" name="matching_details[]" type="radio" value="nino">
               <label for="matching-nino">No, my National Insurance number is wrong</label>

@@ -6,7 +6,7 @@
   <div class="govuk-currency-input">
     <div class="govuk-currency-input__inner">
       <span class="govuk-currency-input__inner__unit govuk-body">£</span>
-      <input class="{{ classes }} govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="{{ id }}" data-non-numeric="" type="number" id="{{ id }}" pattern="[0-9]\d*(\.\d+)?" value="{{ options.value }}">
+      <input class="{{ classes }} govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="{{ id }}" data-non-numeric="" type="text" id="{{ id }}" pattern="[0-9]\d*(\.\d+)?" value="{{ options.value }}">
     </div>
   </div>
 {% endmacro %}
@@ -67,7 +67,7 @@
         <div class="bsa-account-details-bar__header">
             <dt class="visually-hidden">Name:</dt>
             <dd class="bsa-account-details-bar__name heading-{{ headingClass }}">Sam Curtis Jones</dd>
-            <dt class="visually-hidden">{{ code }} number:</dt>
+            <dt class="visually-hidden">{{ code }}:</dt>
             <dd class="bsa-account-details-bar__id">{{ code }}: {{ codeValue }}</dd>
         </div>
     </dl>

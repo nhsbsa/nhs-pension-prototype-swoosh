@@ -36,15 +36,23 @@
                         <label for="specific-date">Other amount</label>
                     </div>
 
-                    
-                    <div class="panel panel-border-narrow js-hidden" id="other-amount-panel">
-                        <label class="form-label" for="other-amount-value">What amount?</label>
-                        {# <input class="form-control" name="other-amount-value" type="text" id="other-amount-value"> #}
-                        {{ govukCurrencyInput({
-                            id: "other-amount-value",
-                            name: "other-amount-value",
-                            classes: "form-control"
-                        }) }}
+                    <div class="js-hidden" id="other-amount-panel">
+                        <div class="panel panel-border-narrow">
+                            <label class="form-label" for="other-amount-value">What amount?</label>
+                            <p class="form-hint">The amount you enter will be rounded down to be divisible by 12.</p>
+                            {# <input class="form-control" name="other-amount-value" type="text" id="other-amount-value"> #}
+                            {{ govukCurrencyInput({
+                                id: "other-amount-value",
+                                name: "other-amount-value",
+                                classes: "form-control"
+                            }) }}
+                        </div>
+                        {# <details>
+                            <summary><span class="summary">Why is it divisible by 12?</span></summary>
+                            <div class="panel panel-border-narrow">
+                                <p>You can increase the amount of lump sum you take and have a smaller pension. We pay for this by reducing your pension by £1 for every £12 of extra lump sum you choose to take.</p>
+                            </div>
+                        </details> #}
                     </div>
                 </fieldset>
 
