@@ -10,3 +10,104 @@
     </div>
   </div>
 {% endmacro %}
+
+{% macro bsaTransactionItem(options) %}
+  {% set classes = options.classes or "" %}
+  {% set id = options.name or "" %}
+  {% set name = options.name or "" %}
+  {% set dateFrom = options.dateFrom or "" %}
+  {% set dateTo = options.dateTo or "" %}
+  {% set address = options.address or "" %}
+  {% set contract = options.contract or "" %}
+  {% set mho = options.mho or "" %}
+  {% set eaCode = options.eaCode or "" %}
+  {% set pensionableService = options.pensionableService or "" %}
+
+<div class="hhhh" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2em;">
+  <ul>
+    <li>
+      <span class="visually-hidden">Employing authority code:</span>
+      <span class="bold-xsmall">EA:</span><span class="font-xsmall">{{ eaCode }}</span>
+    </li>
+    <li>
+      <span class="visually-hidden">Employer:</span>
+      <h2 class="heading-small govuk-margin-top-0 govuk-margin-bottom-0">{{ name }}</h2>
+    </li>
+    <li>
+      <span class="visually-hidden">Employer address:</span>
+      <span class="font-xsmall">{{ address }}</span>
+    </li>
+  </ul>
+
+  <ul>
+    <li style="float: right;">
+      <span class="visually-hidden">Contract type:</span>
+      <span class="app-c-tag">{{ contract }}</span>
+    </li>
+    <li class="data govuk-margin-bottom-0">
+      <span class="data-item bold-xsmall">Pensionable service</span>
+      <span class="data-item bold-medium">{{ pensionableService }}</span>
+    </li>
+    <li class="font-xsmall">Pension term started: <strong class="bold">{{ dateFrom }}</strong></li>
+    <li class="font-xsmall">Pension term ended: <strong class="bold">{{ dateTo }}</strong></li>
+    <li class="font-xsmall">Mental health officer: {{ mho }}</li>
+  </ul>
+</div>
+{% endmacro %}
+
+
+{% macro bsaAccountDetailsBar(options) %}
+  {% set class = options.class or "" %}
+  {% set code = options.code or "Membership number" %}
+  {% set codeValue = options.codeValue or "12345678" %}
+  {% set headingClass = options.headingClass or "small" %}
+
+<section class="bsa-account-details-bar {{ class }} bsa-print-hide" role="contentinfo" aria-label="Account details">
+    <dl class="bsa-account-details-bar__contents">
+        <div class="bsa-account-details-bar__header">
+            <dt class="visually-hidden">Name:</dt>
+            <dd class="bsa-account-details-bar__name heading-{{ headingClass }}">Sam Curtis Jones</dd>
+            <dt class="visually-hidden">{{ code }}:</dt>
+            <dd class="bsa-account-details-bar__id">{{ code }}: {{ codeValue }}</dd>
+        </div>
+    </dl>
+    <div class="bsa-account-details-bar__action">
+        <a href="/logged-out" class="log-out-link">Sign out</a>
+    </div>
+</section>
+{% endmacro %}
+
+{% macro bsaContributionsTableRow(options) %}
+  {% set rowClass = options.rowClass or "" %}
+  {% set year = options.year or "Year" %}
+  {% set hideDate = options.hideDate or "" %}
+  {% set hideDateClass = "visually-hidden" if options.hideDate %}
+  {% set employer = options.employer or "Employer" %}
+  {% set yourContributions = options.yourContributions or "Your contributions" %}
+  {% set employerContributions = options.employerContributions or "Employer contributions" %}
+
+<tr class="{{ rowClass }}">
+    <td>
+        <span class="table-heading" aria-hidden="true">Year</span>
+        <span class="{{ hideDateClass }}">{{ year }}</span>
+    </td>
+    <td>
+    
+        <span class="table-heading" aria-hidden="true">Employer</span>
+        {% if employer == 'ns' %}
+          <span class="app-c-tag app-c-tag--warning">Not submitted</span>
+        {% else %}
+        {{ employer }}
+        {% endif %}
+    </td>
+    <td class="numeric">
+        <span class="table-heading" aria-hidden="true">Your contributions</span>
+        <strong class="bold">£{{ yourContributions }}</strong>
+    </td>
+    <td class="numeric">
+        <span class="table-heading" aria-hidden="true">Your employers contributions</span>
+        <strong class="bold">£{{ employerContributions }}</strong>
+    </td>
+</tr>
+
+{% endmacro %}

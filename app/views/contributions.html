@@ -8,7 +8,11 @@ Your pension contributions - {{ serviceName }} - NHSBSA
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -19,7 +23,7 @@ Your pension contributions - {{ serviceName }} - NHSBSA
                 <h1 class="heading-large">Your pension contributions</h1>
             </div>
 
-            <p><strong class="bold">Last updated: 31/01/19</strong></p>
+            <p><strong class="bold">Last updated: 31 January 2019</strong></p>
 
 <section>
     <h2 class="visually-hidden">2015 Pension</h2>
