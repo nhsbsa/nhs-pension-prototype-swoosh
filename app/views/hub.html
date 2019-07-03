@@ -9,53 +9,108 @@ Home - {{ serviceName }} - NHSBSA
 <main id="content" role="main" tabindex="-1">
 
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+    
+    {% if data['show'] === "nino"  %}
+    {{ bsaAccountDetailsBar({
+        class: "",
+        code: "NI number",
+        codeValue: "QQ 12 34 56 C",
+        headingClass: "large"
+    }) }}
+
+    {% else %}
+
+    {{ bsaAccountDetailsBar({
+        class: "",
+        headingClass: "large"
+    }) }}
+    {% endif %}
 
     <div class="grid-row">
         <div class="column-full">
 
-            <div class="heading-group govuk-margin-top-0">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-xlarge">Sam Curtis Jones</h1>
+            <div class="heading-group">
+                <p class="visually-hidden">{{ serviceName }}</p>
+                <h1 class="visually-hidden" id="page-heading">Sam Curtis Jones</h1>
             </div>
 
-            <ul class="grid-row grid-grid">
-                <li>
-                    <div class="bsa-card">
-                        <div class="bsa-card__content">
-                            <h2 class="heading-medium"><a href="/details">Your details</a></h2>
-                            <p>Check and make sure your details are up to date.</p>
-                        </div>
-                    </div>
-                </li>
+            <section aria-labelledby="pensions-heading">
+                <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
 
-                <li>
-                    <div class="bsa-card">
-                        <div class="bsa-card__content">
-                            <h2 class="heading-medium"><a href="/pension-details">Your NHS pensions</a></h2>
-                            <p>Check the pensions you belong to and how much you could get when you retire.</p>
-                        </div>
-                    </div>
-                </li>
+                <ul class="grid-row grid-grid">
 
-                <li>
-                    <div class="bsa-card">
-                        <div class="bsa-card__content">
-                            <h2 class="heading-medium"><a href="/contributions">Your pension contributions</a></h2>
-                            <p>View what you have paid into your NHS pensions.</p>
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading govuk-margin-top-0">2015 Pension</h3>
+                                <div class="data govuk-margin-bottom-0">
+                                    <span class="data-item bold-large">£1,986 <span class="bold-xsmall">a month (age 65)</span></span>
+                                    <span class="data-item bold-xsmall"><span class="app-c-tag">Estimate</span></span>
+                                </div>
+                            </div>
+                            <div class="bsa-card__actions">
+                                <ul class="bsa-card__actions-list">
+                                    <li><a href="/pension-details">View your 2015 estimate</a></li>
+                                    <li><a href="/contributions">View your 2015 contribution statement</a></li>
+                                    <li><a href="#">Get your 2015 pension</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li>
-                    <div class="bsa-card">
-                        <div class="bsa-card__content">
-                            <h2 class="heading-medium"><a href="https://tea-prototype.herokuapp.com/awards/V8/start/start">Claim Your NHS Pension</a></h2>
-                            <p>Start an application to claim your NHS Pension.</p>
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading">2008 Pension</h3>
+                                <p class="govuk-margin-bottom-0">More information for this pension is available on your Total Reward Statement.</p>
+                            </div>
+                            <div class="bsa-card__actions">
+                                <ul class="bsa-card__actions-list">
+                                    <li><a href="#">View your Total Reward Statement</a></li>
+                                    <li><a href="#">Claim your 2008 pension</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading">1995 Pension</h3>
+                                <p class="govuk-margin-bottom-0">More information for this pension is available on your Total Reward Statement.</p>
+                            </div>
+                            <div class="bsa-card__actions">
+                                <ul class="bsa-card__actions-list">
+                                    <li><a href="#">View your Total Reward Statement</a></li>
+                                    {# <li><a href="#">Claim your 1995 pension</a></li> #}
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 class="heading-large" id="details-heading">Your details</h2>
+
+                <ul class="grid-row grid-grid">
+
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h2 class="heading-medium"><a href="/details">Your details</a></h2>
+                                <p>Check and make sure your details are up to date.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </section>
+
+            <hr>
 
         </div>
 

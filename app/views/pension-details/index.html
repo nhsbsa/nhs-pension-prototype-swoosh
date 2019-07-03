@@ -8,7 +8,11 @@ Your pension details - {{ serviceName }} - NHSBSA
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
@@ -23,9 +27,9 @@ Your pension details - {{ serviceName }} - NHSBSA
 
             {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/2015.html" %}
-            <hr class="visual-break">
+            <hr>
             {% endif %}
-
+{# 
             {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/2008.html" %}
             <hr class="visual-break">
@@ -34,7 +38,7 @@ Your pension details - {{ serviceName }} - NHSBSA
             {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}
             {% include "pension-details/includes/1995.html" %}
             <hr class="visual-break">
-            {% endif %}
+            {% endif %} #}
 
             {% include "includes/back-link-unstyled.html" %}
 
