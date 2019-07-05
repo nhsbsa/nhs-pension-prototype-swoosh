@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
 })
 
 router.post('/nino', function (req, res) {
+    const journey = req.session.data['journey']
     const answer = req.session.data['nino'],
     match = ['QQ 12 34 56 C', 'QQ123456C', 'qq 12 34 56 c', 'qq123456c'];
 
@@ -16,7 +17,7 @@ router.post('/nino', function (req, res) {
         res.redirect('check');
     } else if (answer == '3') {
         res.redirect('nino-not-found');
-    } else if (answer == 'onboard') {
+    } else if (answer == 'onboard' || journey == 'onboard') {
         res.redirect('/onboard/welcome');
     } else {
         res.redirect('/hub');

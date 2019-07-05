@@ -33,7 +33,17 @@ Start {{ serviceName }} NHS BSA Prototype
 
             <h2 class="heading-medium">What to do if your details change</h2>
             <p>You must keep us up to date with any changes. Incorrect details can impact and delay your NHS Pension.</p>
-            <p><a class="button button-get-started" href="/id">Start now</a></p>
+
+            {{ journey }}
+            {% set journey = data['journey'] %}
+            {% if (journey == null) or ('bypass' in journey) %}
+                <p><a class="button button-get-started" href="/hub" data-journey="{{ journey }}">Start now</a></p>
+            {% elif (journey == null) or ('auth' in journey) %}
+                <p><a class="button button-get-started" href="/id" data-journey="{{ journey }}">Start now</a></p>
+            {% else %}
+                <p><a class="button button-get-started" href="/matching" data-journey="{{ journey }}">Start now</a></p>
+            {% endif %}
+
         </div>
 
     </div>

@@ -63,4 +63,11 @@ router.use('/error/', require('./views/error/_routes'))
 // This moves authentication routing to assisted directory
 router.use('/authentication/', require('./views/authentication/_routes'))
 
+
+// This moves scenario routing to scenario directory
+router.use('/journey/', require('./views/journey/_routes'))
+router.get('/journeys', function (req, res) {
+  res.redirect('journey')
+})
+
 module.exports = router

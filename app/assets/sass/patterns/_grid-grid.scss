@@ -7,7 +7,7 @@ $grid-spacing: 30px;
     }
 
     @include media(desktop) {
-        margin: 0;
+        margin-bottom: $grid-spacing;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
@@ -28,7 +28,7 @@ $grid-spacing: 30px;
 
         @supports (display: grid) {
             display: grid;
-            grid-gap: $grid-spacing;
+            grid-column-gap: $grid-spacing;
             grid-template-columns: repeat(3, 1fr);
             padding-bottom: 0;
         }

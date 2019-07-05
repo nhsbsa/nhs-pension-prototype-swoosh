@@ -1,0 +1,50 @@
+{% extends "layout_empty.html" %}
+
+{% block page_title %}
+  {{ serviceName }} prototype
+{% endblock %}
+
+{% block header_content %}
+    {% include 'includes/warn-screening.html' %}
+  {% include "bsa_head.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {# {% include "includes/phase_banner_beta.html" %} #}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <div class="heading-group">
+              <p>{{ serviceName }}</p>
+              <h1 class="heading-large">Which journey do you want?</h1>
+          </div>
+            
+            <form class="form" action="journey" method="post">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">Which journey do you want?</legend>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="journeyAuth" name="journey[]" type="radio" value="auth">
+                        <label for="journeyAuth">Authentication (via Verify)</label>
+                    </div>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="journeyBypass" name="journey[]" type="radio" value="bypass">
+                        <label for="journeyBypass">Straight to hub (no authentication or matching)</label>
+                    </div>
+                    <div class="multiple-choice multiple-radio">
+                        <input id="journeyOnboard" name="journey[]" type="radio" value="onboard">
+                        <label for="journeyOnboard">Onboarding (via NINO for matching)</label>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
