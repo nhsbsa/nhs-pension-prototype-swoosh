@@ -39,6 +39,11 @@ Home - {{ serviceName }} - NHSBSA
 
                 <ul class="grid-row grid-grid">
 
+            {{ scheme }}
+            {% set scheme = data['scheme'] %}
+
+            {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %}
+
                     <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
@@ -50,43 +55,51 @@ Home - {{ serviceName }} - NHSBSA
                             </div>
                             <div class="bsa-card__actions">
                                 <ul class="bsa-card__actions-list">
-                                    <li><a href="/pension-details">View your 2015 estimate</a></li>
+                                    <li><a href="/pension-details?schemeReference=2015">View your 2015 pension details</a></li>
                                     <li><a href="/contributions">View your 2015 contribution statement</a></li>
                                     <li><a href="#">Get your 2015 pension</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
+            {% endif %}
+
+            {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %}
 
                     <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
-                                <h3 class="heading-small bsa-card__heading">2008 Pension</h3>
-                                <p class="govuk-margin-bottom-0">More information for this pension is available on your Total Reward Statement.</p>
+                                <h3 class="heading-medium bsa-card__heading">2008 Pension</h3>
+                                <p class="govuk-margin-bottom-0">A summary of this pension is available on Total Reward Statement.</p>
                             </div>
                             <div class="bsa-card__actions">
                                 <ul class="bsa-card__actions-list">
-                                    <li><a href="#">View your Total Reward Statement</a></li>
-                                    <li><a href="#">Claim your 2008 pension</a></li>
+                                    <li><a href="/pension-details?schemeReference=2008">View your 2008 pension details</a></li>
+                                    <li><a href="#">Get your 2008 pension</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
+            {% endif %}
 
+            {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}
                     <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
-                                <h3 class="heading-small bsa-card__heading">1995 Pension</h3>
-                                <p class="govuk-margin-bottom-0">More information for this pension is available on your Total Reward Statement.</p>
+                                <h3 class="heading-medium bsa-card__heading">1995 Pension</h3>
+                                <p class="govuk-margin-bottom-0">A summary of this pension is available on Total Reward Statement.</p>
                             </div>
                             <div class="bsa-card__actions">
                                 <ul class="bsa-card__actions-list">
-                                    <li><a href="#">View your Total Reward Statement</a></li>
-                                    {# <li><a href="#">Claim your 1995 pension</a></li> #}
+                                    <li><a href="/pension-details?schemeReference=1995">View your 1995 pension details</a></li>
+                                    <li><a href="#">Get your 1995 pension</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
+            {% endif %}
+
+            
                 </ul>
 
             </section>

@@ -22,23 +22,23 @@ Your pension details - {{ serviceName }} - NHSBSA
                 <h1 class="heading-large">Your NHS pensions</h1>
             </div>
 
-            {{ scheme }}
-            {% set scheme = data['scheme'] %}
+            {{ schemeReference }}
+            {% set schemeReference = data['schemeReference'] %}
 
-            {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %}
+            {% if (schemeReference == '2015') %}
             {% include "pension-details/includes/2015.html" %}
             <hr>
             {% endif %}
-{# 
-            {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %}
+
+            {% if (schemeReference == '2008') %}
             {% include "pension-details/includes/2008.html" %}
-            <hr class="visual-break">
+            <hr>
             {% endif %}
 
-            {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}
+            {% if (schemeReference == '1995') %}
             {% include "pension-details/includes/1995.html" %}
-            <hr class="visual-break">
-            {% endif %} #}
+            <hr>
+            {% endif %}
 
             {% include "includes/back-link-unstyled.html" %}
 
