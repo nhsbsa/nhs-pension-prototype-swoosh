@@ -17,10 +17,6 @@ Your pension details - {{ serviceName }} - NHSBSA
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <div class="heading-group">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-large">Your NHS pensions</h1>
-            </div>
 
             {{ schemeReference }}
             {% set schemeReference = data['schemeReference'] %}
@@ -43,15 +39,6 @@ Your pension details - {{ serviceName }} - NHSBSA
             {% include "includes/back-link-unstyled.html" %}
 
         </div>
-{# 
-        <div class="column-one-third">
-            <aside class="govuk-related-items" role="complementary">
-                <h2 class="heading-medium">Share this forecast</h2>
-                <p>You can share this forecast in an email. No personal information will be shared.</p>
-                <p><a href="email" class="button">Share this forecast</a></p>
-            </aside>
-        </div>
-         #}
     </div>
 
 </main>
