@@ -16,19 +16,30 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
-        <div class="column-full">
+        <div class="column-two-thirds">
 
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
                 <h1 class="heading-large">{{ data['schemeReference'] }} Pension contribution statement</h1>
             </div>
-                        
+
+            <div class="panel panel-border-wide">
+                <p>Your statement was last updated on the <strong class="bold">31 March 2018</strong>. <br>
+                It is up to your employer to keep this information up to date.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-full">
+
             <table class="responsive-table">
-                <caption class="heading-medium">Your contributions (as of the 31st March 2019)</caption>
+                <caption class="heading-medium visually-hidden">1995 scheme pension contributions</caption>
                 <thead>
                     <tr>
                         <th scope="col">Year</th>
-                        <th scope="col"><span class="visually-hidden">Employer</span></th>
+                        <th scope="col">Employer</th>
                         <th class="numeric" scope="col">Yours</th>
                         <th class="numeric" scope="col">Employers</th>
                     </tr>
@@ -38,287 +49,439 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
                     {% if data['schemeReference'] === '2008' %}
 
                         {{ bsaContributionsTableRow({
-                            year: '2007/2008',
-                            employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            year: '2014/2015',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '3516.20',
+                            employerContributions: '5293.19'
                         }) }}
 
-                    {% else %}
+                        {{ bsaContributionsTableRow({
+                            year: '2013/2014',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '3273.35',
+                            employerContributions: '5091.88'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2012/2013',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '2937.85',
+                            employerContributions: '5141.23'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2011/2012',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Birmingham Community Healthcare NHS Foundation Trust',
+                            yourContributions: '575.80',
+                            employerContributions: '1240.23'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2011/2012',
+                            hideDate: 'true',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '2307.81',
+                            employerContributions: '4970.67'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2010/2011',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Birmingham Community Healthcare NHS Foundation Trust',
+                            yourContributions: '434.72',
+                            employerContributions: '1217.21'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2010/2011',
+                            hideDate: 'true',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '219.51',
+                            employerContributions: '614.60'
+                        }) }}
+
+                    {% elif  data['schemeReference'] === '2015' %}
 
                         {{ bsaContributionsTableRow({
                             year: '2018/2019',
-                            employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            rowClass: 'bsa-multi-row',
+                            employer: 'West Midlands Ambulance Service NHS Foundation Trust',
+                            yourContributions: '3875.05',
+                            employerContributions: '4127.64'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2018/2019',
+                            hideDate: 'true',
+                            employer: 'Heart of England NHS Foundation Trust',
+                            yourContributions: '1495.80',
+                            employerContributions: '1390.30'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2017/2018',
-                            employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1300.84',
-                            employerContributions: '1588.22'
-                        }) }}
-
-                        {{ bsaContributionsTableRow({
-                            year: '2016/2017',
-                            employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1256.19',
-                            employerContributions: '1542.55'
-                        }) }}
-
-                        {{ bsaContributionsTableRow({
                             rowClass: 'bsa-multi-row',
-                            year: '2015/2016',
-                            employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1000.00',
-                            employerContributions: '1112.88'
+                            employer: 'Shrewsbury and Telford Hospital NHS Trust',
+                            yourContributions: '974.10',
+                            employerContributions: '1120.57'
                         }) }}
-
                         {{ bsaContributionsTableRow({
+                            year: '2017/2018',
                             rowClass: 'bsa-multi-row',
-                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'West Midlands Ambulance Service NHS Foundation Trust',
+                            yourContributions: '3057.03',
+                            employerContributions: '3256.26'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2017/2018',
+                            rowClass: 'bsa-multi-row',
+                            hideDate: 'true',
+                            employer: 'Heart of England NHS Foundation Trust',
+                            yourContributions: '1208.50',
+                            employerContributions: '1390.30'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2017/2018',
                             hideDate: 'true',
                             employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
-                            yourContributions: '213.43',
-                            employerContributions: '244.45'
+                            yourContributions: '918.52',
+                            employerContributions: '2358.63'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             rowClass: 'bsa-multi-row',
-                            year: '2015/2016',
-                            hideDate: 'true',
-                            employer: 'Birmingham Community Healthcare NHS Foundation Trust',
-                            yourContributions: '213.43',
-                            employerContributions: '244.45'
-                        }) }}
-
-                        {{ bsaContributionsTableRow({
-                            rowClass: 'bsa-multi-row',
-                            year: '2015/2016',
-                            hideDate: 'true',
-                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
-                            yourContributions: '213.43',
-                            employerContributions: '244.45'
-                        }) }}
-
-                        {{ bsaContributionsTableRow({
-                            rowClass: 'bsa-multi-row',
-                            year: '2015/2016',
-                            hideDate: 'true',
+                            year: '2016/2017',
                             employer: 'West Midlands Ambulance Service NHS Foundation Trust',
                             yourContributions: '213.43',
                             employerContributions: '244.45'
                         }) }}
-
                         {{ bsaContributionsTableRow({
                             rowClass: 'bsa-multi-row',
-                            year: '2015/2016',
                             hideDate: 'true',
+                            year: '2016/2017',
                             employer: 'Heart of England NHS Foundation Trust',
-                            yourContributions: '213.43',
-                            employerContributions: '244.45'
+                            yourContributions: '412.21',
+                            employerContributions: '633.82'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2016/2017',
+                            hideDate: 'true',
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '1763.99',
+                            employerContributions: '2712.36'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             rowClass: 'bsa-multi-row',
                             year: '2015/2016',
-                            hideDate: 'true',
-                            employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
-                            yourContributions: '213.43',
-                            employerContributions: '244.45'
+                            employer: 'Heart of England NHS Foundation Trust',
+                            yourContributions: '412.21',
+                            employerContributions: '633.82'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2015/2016',
                             hideDate: 'true',
-                            employer: 'Sandwell and West Birmingham NHS Trust',
-                            yourContributions: '213.43',
-                            employerContributions: '244.45'
+                            employer: 'Birmingham and Solihull Mental Health NHS Foundation Trust',
+                            yourContributions: '3429.89',
+                            employerContributions: '5273.92'
                         }) }}
 
-                    {% endif %}
+                    {% elif data['schemeReference'] === '1995' %}
 
-                    {% if data['schemeReference'] === '1995' %}
+                        {{ bsaContributionsTableRow({
+                            year: '2016/2017',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
+                            yourContributions: '6321.21',
+                            employerContributions: '6266.21'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2016/2017',
+                            hideDate: 'true',
+                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
+                            yourContributions: '6960.00',
+                            employerContributions: '6864.00'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2015/2016',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '348.59',
+                            employerContributions: '683.61'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '2015/2016',
+                            hideDate: 'true',
+                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
+                            yourContributions: '6380.00',
+                            employerContributions: '6292.00'
+                        }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2014/2015',
+                            rowClass: 'bsa-multi-row',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '2320.00',
+                            employerContributions: '2240.00'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '2014/2015',
+                            hideDate: 'true',
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '3446.55',
+                            employerContributions: '5188.36'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2013/2014',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '5727.99',
+                            employerContributions: '7093.16'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2012/2013',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '7662.23',
+                            employerContributions: '10835.47'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2011/2012',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '5840.47',
+                            employerContributions: '10902.21'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2010/2011',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '4447.13',
+                            employerContributions: '9578.43'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2009/2010',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '4369.94',
+                            employerContributions: '9412.17'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2008/2009',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '4021.23',
+                            employerContributions: '8661.10'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2007/2008',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '3721.38',
+                            employerContributions: '8683.22'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2006/2007',
                             employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '3482.34',
+                            employerContributions: '8125.46'
                         }) }}
+
 
                         {{ bsaContributionsTableRow({
                             rowClass: 'bsa-multi-row',
                             year: '2005/2006',
-                            employer: 'Black Country Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
-                        }) }}
-
-                        {{ bsaContributionsTableRow({
-                            rowClass: 'bsa-multi-row',
-                            year: '2005/2006',
-                            hideDate: 'true',
                             employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '2305.74',
+                            employerContributions: '5380.05'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2005/2006',
                             hideDate: 'true',
-                            employer: 'Birmingham Women’s and Children’s NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            employer: 'Black Country Partnership NHS Foundation Trust',
+                            yourContributions: '1263.36',
+                            employerContributions: '2947.83'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2004/2005',
-                            employer: 'East Midlands Ambulance Service NHS Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
+                            yourContributions: '1445.63',
+                            employerContributions: '3373.17'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2003/2004',
-                            employer: 'Hertfordshire Community NHS Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
+                            yourContributions: '2959.72',
+                            employerContributions: '3453.19'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2002/2003',
-                            employer: 'West Herts Hospitals Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            employer: 'The Royal Orthopaedic Hospital NHS Foundation Trust',
+                            yourContributions: '1323.74',
+                            employerContributions: '1544.37'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2001/2002',
-                            employer: 'Princess Alexandra Hospital NHS Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            employer: 'Hertfordshire Partnership University Foundation Trust',
+                            yourContributions: '657.00',
+                            employerContributions: '766.50'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '2000/2001',
                             employer: 'Hertfordshire Partnership University Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '1341.24',
+                            employerContributions: '1117.70'
                         }) }}
-
+{# 
                         {{ bsaContributionsTableRow({
                             year: '1999/2000',
                             employer: 'East And North Hertfordshire NHS Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
-                        }) }}
-
-                        {{ bsaContributionsTableRow({
-                            year: '1998/1999',
-                            employer: 'South Essex Partnership NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '328.50',
+                            employerContributions: '219.00'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '1997/1998',
                             employer: 'Central and North West London NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '122.93',
+                            employerContributions: '0'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '1996/1997',
                             employer: 'East of England Ambulance Service NHS Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '175.56',
+                            employerContributions: '0'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '1995/1996',
+                            rowClass: 'bsa-multi-row',
                             employer: 'East London NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '125.34',
+                            employerContributions: '0'
                         }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '1995/1996',
+                            hideDate: 'true',
+                            employer: 'East London NHS Foundation Trust',
+                            yourContributions: '553.90',
+                            employerContributions: '0'
+                        }) }}
+
 
                         {{ bsaContributionsTableRow({
                             year: '1994/1995',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'xxx',
+                            yourContributions: '147.62',
+                            employerContributions: '0'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '1994/1995',
+                            hideDate: 'true',
                             employer: 'Bedford Hospital NHS Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '1218.57',
+                            employerContributions: '0'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '1993/1994',
                             employer: 'Milton Keynes University Hospital NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '166.34',
+                            employerContributions: '0'
                         }) }}
 
                         {{ bsaContributionsTableRow({
                             year: '1992/1993',
                             employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
-                            yourContributions: '1346.28',
-                            employerContributions: '1613.40'
+                            yourContributions: '246.89',
+                            employerContributions: '0'
                         }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1991/1992',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '919.63',
+                            employerContributions: '0'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1990/1991',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '292.92',
+                            employerContributions: '0'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '1990/1991',
+                            hideDate: 'true',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '159.31',
+                            employerContributions: '0'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '1990/1991',
+                            hideDate: 'true',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '468.90',
+                            employerContributions: '0'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1989/1990',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '1060.22',
+                            employerContributions: '0'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1988/1989',
+                            rowClass: 'bsa-multi-row',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '119.40',
+                            employerContributions: '0'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '1988/1989',
+                            rowClass: 'bsa-multi-row',
+                            hideDate: 'true',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '118.70',
+                            employerContributions: '0'
+                        }) }}
+                        {{ bsaContributionsTableRow({
+                            year: '1988/1989',
+                            hideDate: 'true',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '356.10',
+                            employerContributions: '0'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1987/1988',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '352.40',
+                            employerContributions: '0'
+                        }) }}
+
+                        {{ bsaContributionsTableRow({
+                            year: '1986/1987',
+                            employer: 'Luton and Dunstable University Hospital NHS Foundation Trust',
+                            yourContributions: '4.68',
+                            employerContributions: '0'
+                        }) }} #}
 
                     {% endif %}
                 </tbody>
@@ -333,9 +496,10 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
             <br>
 
             <details>
-                <summary><span class="summary">Is there anything wrong with your contribution statement?</span></summary>
+                <summary><span class="summary">Have you noticed anything wrong with your contribution statement?</span></summary>
                 <div class="panel panel-border-narrow">
-                    <p>It is your employers responsibility to submit your contributions.</p>
+                    <p>Your statement was last updated on the <strong class="bold">31 March 2018</strong>. <br>
+                It is up to your employer to keep this information up to date.</p>
                     <p>If you are no longer working in the NHS you can call our helpline.</p>
                     <ul class="list list-bullet">
                         <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
