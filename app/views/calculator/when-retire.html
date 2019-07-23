@@ -20,17 +20,30 @@
 
             <header class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">When would you like to retire?</h1>
+                <h1 class="heading-large">When would you like to start your pension?</h1>
             </header>
 
             <form method="post" class="form" action="when-retire">
                 <fieldset class="form-group">
-                    <legend class="visually-hidden">When would you like to retire?</legend>
+                    <legend class="visually-hidden">When would you like to start your pension?</legend>
 
-                    <p class="form-hint">Your earliest retirement age is 55 your latest retirement age is 75. We can't give you an estimate outside of these ages.</p>
+                    <p class="form-hint">Your earliest pension age is 55 your latest pension age is 75. We can't give you an estimate outside of these ages.</p>
+
+                    <p class="form-hint">When you start your pension affects your maximum lump sum.</p>
+
+                    {# <div class="multiple-choice">
+                        <input id="age-55" type="radio" name="retire-group" value="age55" {{ checked('retire-group','age55') }}>
+                        <label for="age-55">At age 55 (earliest retirement age)</label>
+                    </div> #}
+
+                    <div class="multiple-choice">
+                        <input id="age-67" type="radio" name="retire-group" value="67" checked>
+                        <label for="age-67">At age 67 (normal pension age)</label>
+                    </div>
+
 
                     <div class="multiple-choice" data-target="specific-age-panel">
-                        <input id="specific-age" type="radio" name="retire-group" value="Yes">
+                        <input id="specific-age" type="radio" name="retire-group" value="specificAge" {{ checked('retire-group','specificAge') }}>
                         <label for="specific-age">At a specific age</label>
                     </div>
                     <div class="panel panel-border-narrow js-hidden" id="specific-age-panel">
@@ -38,11 +51,11 @@
                             Enter age
                             <span class="form-hint">For example, ‘63’</span>
                         </label>
-                        <input class="form-control form-control--sm" name="specific-age-value" type="text" id="specific-age-value">
+                        <input class="form-control form-control--sm" name="specific-age-value" type="text" id="specific-age-value" value="{{ data['specific-age-value'] }}">
                     </div>
 
                     <div class="multiple-choice" data-target="specific-date-panel">
-                        <input id="specific-date" type="radio" name="retire-group" value="Yes">
+                        <input id="specific-date" type="radio" name="retire-group" value="specificDate" {{ checked('retire-group','specificDate') }}>
                         <label for="specific-date">On a specific date</label>
                     </div>
                     <div class="panel panel-border-narrow js-hidden" id="specific-date-panel">
@@ -53,18 +66,18 @@
 
                             <div class="form-date">
                                 <div class="form-group form-group-day">
-                                    <label for="dob-day">Day</label>
-                                    <input class="form-control" id="dob-day" name="dob-day" pattern="[0-9]*" type="text">
+                                    <label for="retire-day">Day</label>
+                                    <input class="form-control" id="retire-day" name="retire-day" pattern="[0-9]*" type="text" value="{{ data['retire-day'] }}">
                                 </div>
 
                                 <div class="form-group form-group-month">
-                                    <label for="dob-month">Month</label>
-                                    <input class="form-control" id="dob-month" name="dob-month" pattern="[0-9]*" type="text">
+                                    <label for="retire-month">Month</label>
+                                    <input class="form-control" id="retire-month" name="retire-month" pattern="[0-9]*" type="text" value="{{ data['retire-month'] }}">
                                 </div>
 
                                 <div class="form-group form-group-year">
-                                    <label for="dob-year">Year</label>
-                                    <input class="form-control" id="dob-year" name="dob-year" pattern="[0-9]*" type="text">
+                                    <label for="retire-year">Year</label>
+                                    <input class="form-control" id="retire-year" name="retire-year" pattern="[0-9]*" type="text" value="{{ data['retire-year'] }}">
                                 </div>
 
                             </div>

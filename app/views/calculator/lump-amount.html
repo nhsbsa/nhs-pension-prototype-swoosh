@@ -1,5 +1,13 @@
 {% extends "layout_bsa.html" %}
 
+{# If 67 set max lump amount (default) #}
+{% set getLump = '114,740' %}
+
+{# If 63 set new lump amount #}
+{% if (data['specific-age-value'] === '63') %}
+{% set getLump = '72,960' %}
+{% endif %}
+
 {% block page_title %}
 2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
 {% endblock %}
@@ -26,9 +34,15 @@
             <form method="post" class="form" action="lump-amount">
                 <fieldset class="form-group">
                     <legend class="visually-hidden">How much of your pension would you like to take as a lump sum?</legend>
+
+                    <div class="multiple-choice">
+                        <input id="no-lump" type="radio" name="lump-amount" value="None" checked>
+                        <label for="no-lump">No lump sum</label>
+                    </div>
+
                     <div class="multiple-choice">
                         <input id="specific-age" type="radio" name="lump-amount" value="Max">
-                        <label for="specific-age">Your maximum amount which is £102,126</label>
+                        <label for="specific-age">Your maximum amount which is £{{ getLump }}</label>
                     </div>
 
                     <div class="multiple-choice" data-target="other-amount-panel">
@@ -38,9 +52,13 @@
 
                     <div class="js-hidden" id="other-amount-panel">
                         <div class="panel panel-border-narrow">
-                            <label class="form-label" for="other-amount-value">What amount?</label>
-                            <p class="form-hint">The amount you enter will be rounded down to be divisible by 12.</p>
-                            {# <input class="form-control" name="other-amount-value" type="text" id="other-amount-value"> #}
+                            <label class="form-label" for="other-amount-value">
+                                How much lump sum?
+                                <span class="form-hint">
+                                    You can't take anymore than your maximum amount.<br>
+                                    The amount you enter will be rounded down to be divisible by 12.
+                                </span>
+                            </label>                            
                             {{ govukCurrencyInput({
                                 id: "other-amount-value",
                                 name: "other-amount-value",

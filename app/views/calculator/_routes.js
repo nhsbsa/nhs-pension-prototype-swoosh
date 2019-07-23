@@ -18,21 +18,11 @@ router.post('/what-estimate', function (req, res) {
 })
   
 router.post('/when-retire', function (req, res) {
-    var estimate = req.session.data['estimate_based_on'];
-    if (estimate.includes('lump') || estimate.includes('addLump')) {
-      res.redirect('/calculator/lump-amount')
-    } else {
-      res.redirect('/calculator/estimate-age')
-    }
+  res.redirect('/calculator/lump-amount');
 })
   
 router.post('/lump-amount', function (req, res) {
-    var estimate = req.session.data['estimate_based_on'];
-    if(estimate.includes('age')) {
-      res.redirect('/calculator/estimate-both')
-    } else {
-      res.redirect('/calculator/estimate-lump')
-    }
+  res.redirect('/calculator/estimate-both');
 })
 
 module.exports = router

@@ -13,7 +13,8 @@ $interrupt-panel-background-color: $nhs-blue;
     a:active,
     a:link,
     a:visited,
-    .heading-group p {
+    .heading-group p,
+    details summary {
         color: $white;
     }
 
@@ -35,10 +36,12 @@ $interrupt-panel-background-color: $nhs-blue;
         margin-bottom: 0;
     }
 
+    table th,
+    table td,
+    .govuk-check-your-answers > * > * {
+        border-bottom-color: $white;
+    }
     table {
         margin-bottom: 20px;
-        th,td {
-            border-bottom-color: $white;
-        }
     }
 }
