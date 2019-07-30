@@ -4,6 +4,11 @@
 {% set getLump = '114,740' %}
 
 {# If 63 set new lump amount #}
+{% if (data['retire-group'] === '67') %}
+{% set getLump = '114,740' %}
+{% endif %}
+
+{# If 63 set new lump amount #}
 {% if (data['specific-age-value'] === '63') %}
 {% set getLump = '72,960' %}
 {% endif %}
