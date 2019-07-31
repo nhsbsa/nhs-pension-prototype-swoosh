@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Redirect to Post Office - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include 'verify/includes/back.html' %}
+
+
+    <div class="grid-row">
+        {% include 'verify/includes/verify-hub-logo.html' %}
+
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                Create your Post Office identity account
+            </h1>
+
+            <p>You'll now verify your identity on the Post Office website.</p>
+
+            <p>They'll give you an identity account you can use wherever you see the GOV.UK Verify logo.</p>
+
+            <p>You'll then be able to access your NHS Pension.</p>
+
+            <form action="provider" method="post">
+
+                <div class="form-group">
+                    <div class="actions">
+                        <input class="button" id="next-button" type="submit" value="Continue to the Post Office website">
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="verify-idp-logo-lockup">
+                <img class="idp-logo-lockup" src="/public/v6/images/idp-logos/post-office-narrow.png">
+                <img class="verify-logo-lockup" src="/public/v6/images/idp-logos/verify-narrow.png">
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</main>
+{% endblock %}

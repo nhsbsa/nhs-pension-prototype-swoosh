@@ -1,0 +1,40 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+You&rsquo;ll need to update your personal details {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="heading-group">
+          <p>{{ serviceName }}</p>
+          <h1 class="heading-large">Update your personal details</h1>
+        </div>
+        <h2 class="heading-medium">Personal details:</h2>
+        <ul class="list list-bullet">
+          <li>First name: <strong class="bold">Sam</strong></li>
+          <li>Last name: <strong class="bold">Jones</strong></li>
+          <li>Date of Birth: <strong class="bold">02/04/1974</strong></li>
+          <li>Address: <strong class="bold">10 Madeup Road, Madeupistown, Madeupville. MDE 0UP.</strong></li>
+        </ul>
+        <hr/>
+
+        <p>You need to update your personal details with the company that verified your identity.</p>
+
+        <div class="verify-block">
+            <img src="/public/v6/images/verify/govuk-verify-small-black-text.png" alt="GOV.UK Verify" />
+            {# <img src="/public/v6/images/idp-logos/post-office.png" alt="GOV.UK Verify" /> #}
+        </div>
+
+        <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#how-to-get-help-signing-in" class="button">Next</a>
+      </div>
+    </div>
+</main>
+
+{% endblock %}

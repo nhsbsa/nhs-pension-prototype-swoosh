@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Choose a company - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block body_classes %}
+hub-start
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+  {% include 'verify/includes/back.html' %}
+
+
+  <div class="grid-row">
+    {% include 'verify/includes/verify-hub-logo.html' %}
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Choose a company to verify your identity</h1>
+
+      <p>You don't have to be an existing customer with a company.</p>
+
+      <p>They ask you to provide personal information and evidence, and then check it's correct using the new, secure
+        systems they built.</p>
+
+      <ul class="list list-bullet">
+        <li><a href="#">Why there’s a choice of companies</a></li>
+      </ul>
+
+      <div id="company-about">
+
+
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <div class="company-logo-img-container">
+              <img alt="" src="/public/v6/images/idp-logos/experian.png">
+            </div>
+            <p class="company-about">
+              <a href="#">About Experian</a>
+            </p>
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="redirect">
+                <input type="hidden" name="idpChoice" value="experian">
+                <button class="button">Choose Experian</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <div class="company-logo-img-container">
+              <img alt="" src="/public/v6/images/idp-logos/post-office.png">
+            </div>
+            <p class="company-about">
+              <a href="#">About Post Office</a>
+            </p>
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="redirect">
+                <input type="hidden" name="idpChoice" value="post-office">
+                <button class="button">Choose Post Office</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <div class="company-logo-img-container">
+              <img alt="" src="/public/v6/images/idp-logos/digidentity.png">
+            </div>
+            <p class="company-about">
+              <a href="#">About Digidentity</a>
+            </p>
+
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="redirect">
+                <input type="hidden" name="idpChoice" value="digidentity">
+                <button class="button">Choose Digidentity</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <div class="company-logo-img-container">
+              <img alt="" src="/public/v6/images/idp-logos/barclays.png">
+            </div>
+            <p class="company-about">
+              <a href="#">About Barclays</a>
+            </p>
+
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="redirect">
+                <input type="hidden" name="idpChoice" value="barclays">
+                <button class="button">Choose Barclays</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <div class="company-logo-img-container">
+              <img alt="" src="/public/v6/images/idp-logos/secureidentity.png">
+            </div>
+            <p class="company-about">
+              <a href="#">About SecureIdentity</a>
+            </p>
+
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="redirect">
+                <input type="hidden" name="idpChoice" value="secureidentity">
+                <button class="button">Choose SecureIdentity</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</main>
+{% endblock %}

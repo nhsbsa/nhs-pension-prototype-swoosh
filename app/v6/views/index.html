@@ -1,0 +1,116 @@
+{% extends "layout_empty.html" %}
+
+{% block page_title %}
+  {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+  	<div class="column-two-thirds">
+		
+		<div class="heading-group">
+			{# <p>v Experiment</p> #}
+			<p>v11 – Created on 23/07/2019</p>
+        	<h1 class="heading-xlarge">{{ serviceName }}</h1>
+		</div>
+
+        {# <h2 class="heading-medium">Previous research showed:</h2>
+        <ul class="list list-bullet">
+			<li>Users needed to know about data refresh date</li>
+			<li>Users need to know when there is an error and what to do about it</li>
+			<li>Users need to see annual contributions</li>
+			<li>Users need to know if the service will time them out</li>
+			<li>Users want clear concise estimates</li>
+        </ul> #}
+		{# <p><a href="/public/v6/images/research/19+03+19+myNHS+-+Lancaster.pdf">View research notes</a></p> #}
+        <h2 class="heading-medium">Changes made:</h2>
+        <ul class="list list-bullet">
+			<li>Audit: accessibility audit and initial improvements</li>
+			<li>PENS-432: modelled examples from the start</li>
+			<li>Change: personal details page HTML check answers pattern</li>
+			<li>Add: hints to calculator questions after screen reader audit</li>
+			<li>Add: journey setup protoype question</li>
+			<li>Fix: Card grid spacing</li>
+			<li>Change: contribution statement data and pay info statements</li>
+			<li>Add: Service unavailable for awards journey</li>
+			<li>Change: disclaimers iteration to make ERRBO make sense</li>
+			<li>Add: "alternate design 3" WIP (finish after holiday)</li>
+        </ul>        
+        <p><a class="button" href="journey" role="button">View prototype</a></p>
+		<p><a href="/assisted">Assisted journey</a></p>
+  	</div>
+
+  	<div class="column-one-third">
+		<aside class="govuk-related-items" role="complementary">
+			<hr />
+			<nav role="navigation" aria-labelledby="subsection-title">
+				<h2 class="heading-medium" id="subsection-title">Supporting pages</h2>
+				<ul class="list list-bullet font-xsmall">
+					<li><a href="patterns">Patterns</a></li>
+					<li><a href="pages">Page templates</a></li>
+					<li><a href="error">Errors</a></li>
+					<li><a href="assisted">Call centre</a></li>
+					<li><a href="/authentication">Authentication</a></li>
+					<li><a href="/nino">Onboarding (enter: onboard)</a></li>
+				</ul>
+			</nav>
+
+			<nav role="navigation" aria-labelledby="subsection-title">
+				<h2 class="heading-medium" id="subsection-title">Alternate home pages</h2>
+				<ul class="list list-bullet font-xsmall">
+					<li><a href="/hub?show=trs">Hub page showing TRS unavailable</a></li>
+					<li><a href="/hub?show=taking">Hub page showing pensioner</a></li>
+					<li><a href="/hub?show=nino">Hub page with NI number</a></li>
+					<li><a href="/hub?show=sd">Hub page with SD number</a></li>
+				</ul>
+			</nav>
+			<hr />
+      </aside>
+  	</div>
+
+	</div>
+
+	<hr />
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h2 class="heading-medium">Previous prototype versions</h2>
+			<p>As we learn more about the <strong class="bold">{{ serviceName }}</strong> service and our user needs we are iterating the prototypes. Previous versions will be kept here as a historical record. The latest version can be accessed above.</p>
+			<p>Version numbers aren't neccessarily an indication of progress over time.</p>
+			<details>
+				<summary><span class="summary">All previous versions</span></summary>
+
+				<div class="panel panel-border-narrow">
+
+					<ul class="list list-bullet">
+						<li><a href="https://nhs-pension-v10.herokuapp.com/">Version 10.0</a></li>
+						<li><a href="https://nhs-pension-v9.herokuapp.com/">Version 9.0</a></li>
+						<li><a href="https://nhs-pension-v8.herokuapp.com/">Version 8.0</a></li>
+						<li><a href="https://nhs-pension-v7.herokuapp.com/">Version 7.0</a></li>
+						<li><a href="https://nhs-pension-v6.herokuapp.com/">Version 6.0</a></li>
+						<li><a href="https://nhs-pension-v5.herokuapp.com/">Version 5.0</a></li>
+						<li><a href="https://nhs-pension-v4.herokuapp.com/">Version 4.0</a></li>
+						<li><a href="https://nhs-pension-pb.herokuapp.com/">Version PB (Private beta)</a></li>
+						<li><a href="https://nhs-pension-v3.herokuapp.com/">Version 3.0</a></li>
+						<li><a href="https://nhs-pension-v2.herokuapp.com/">Version 2.0</a></li>
+						<li><a href="https://nhs-pension-v1.herokuapp.com/">Version 1.0</a></li>
+						<li><a href="https://valtech.invisionapp.com/share/8JPESRSUYBM#/341202285_Your_NHS_Pension_Dashboard_Latest_Desktop_1024x1024">Version 0.3 - InVision</a></li>
+						<li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp_V2/startpage">Version 0.2 - 5th Dec 2018 </a></li>
+						<li><a href="https://mnhsp-prototype.herokuapp.com/mnhsp/startpage">Version 0.1 - 18th Oct 2018 </a></li>
+					</ul>
+
+				</div>
+
+			</details>
+			
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
+
+

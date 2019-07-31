@@ -1,0 +1,26 @@
+{% extends "govuk_template_unbranded.html" %}
+
+{# Custom macros #}
+{% from "macros/macros.njk" import govukCurrencyInput %}
+{% from "macros/macros.njk" import bsaTransactionItem %}
+{% from "macros/macros.njk" import bsaAccountDetailsBar %}
+{% from "macros/macros.njk" import bsaContributionsTableRow %}
+
+{% block head %}
+<link href="/public/v6/stylesheets/bsa.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/public/v6/stylesheets/bsa-print.css" media="print" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block header_content %}
+  {% include "bsa_head.html" %}
+{% endblock %}
+   
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+   
+  {% endif %}
+{% endblock %}
+    
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
