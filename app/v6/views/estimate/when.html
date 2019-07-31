@@ -1,0 +1,113 @@
+{% extends "layout_bsa.html" %}
+
+{# {% set getNDate = '1 March 2040' %}
+{% set getNAge = '67' %}
+
+{% set getEDate = '1 March 2028' %}
+{% set getEAge = '55' %}
+
+{% set getLDate = '1 March 2048' %}
+{% set getLAge = '75' %} #}
+
+{% block page_title %}
+2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">When would you like to start your pension?</h1>
+            </header>
+
+            <form method="post" class="form" action="when">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">When would you like to start your pension?</legend>
+
+                    <ul class="list list-bullet form-hint">
+                    <li>Your earliest pension date is {{ data['getEDate'] }} when you will be {{ data['getEAge'] }}</li>
+                    <li>Your latest pension date is {{ data['getLDate'] }} when you will be {{ data['getLAge'] }}</li>
+                    <li>We can't give you an estimate outside of these ages</li>
+                    </ul>
+
+                    <p class="form-hint">The age that you start your pension will affect your maximum lump sum.</p>
+
+                    {# <div class="multiple-choice">
+                        <input id="age-55" type="radio" name="pension-start" value="age55" {{ checked('pension-start','age55') }}>
+                        <label for="age-55">At age 55 (earliest retirement age)</label>
+                    </div> #}
+
+                    <div class="multiple-choice">
+                        <input id="age-67" type="radio" name="pension-start" value="{{ data['getNAge'] }}" checked>
+                        <label for="age-67">Your normal pension date ({{ data['getNDate'] }} age {{ data['getNAge'] }})</label>
+                    </div>
+
+
+                    <div class="multiple-choice" data-target="specific-age-panel">
+                        <input id="specific-age" type="radio" name="pension-start" value="specificAge" {{ checked('pension-start','specificAge') }}>
+                        <label for="specific-age">At a specific age</label>
+                    </div>
+                    <div class="panel panel-border-narrow js-hidden" id="specific-age-panel">
+                        <label class="form-label" for="specific-age-value">
+                            Enter age
+                            <span class="form-hint">For example, ‘63’</span>
+                        </label>
+                        <input class="form-control form-control--sm" name="specific-age-value" type="text" id="specific-age-value" value="{{ data['specific-age-value'] }}">
+                    </div>
+
+                    <div class="multiple-choice" data-target="specific-date-panel">
+                        <input id="specific-date" type="radio" name="pension-start" value="specificDate" {{ checked('pension-start','specificDate') }}>
+                        <label for="specific-date">On a specific date</label>
+                    </div>
+                    <div class="panel panel-border-narrow js-hidden" id="specific-date-panel">
+
+                        <fieldset>
+                            <legend>Enter a date</legend>
+                            <p class="form-hint">For example, 31 3 2034</p>
+
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label for="retire-day">Day</label>
+                                    <input class="form-control" id="retire-day" name="retire-day" pattern="[0-9]*" type="text" value="{{ data['retire-day'] }}">
+                                </div>
+
+                                <div class="form-group form-group-month">
+                                    <label for="retire-month">Month</label>
+                                    <input class="form-control" id="retire-month" name="retire-month" pattern="[0-9]*" type="text" value="{{ data['retire-month'] }}">
+                                </div>
+
+                                <div class="form-group form-group-year">
+                                    <label for="retire-year">Year</label>
+                                    <input class="form-control" id="retire-year" name="retire-year" pattern="[0-9]*" type="text" value="{{ data['retire-year'] }}">
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+   
+                </fieldset>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Update">
+                </div>
+            </form>
+      
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

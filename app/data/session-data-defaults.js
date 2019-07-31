@@ -17,12 +17,36 @@ Example usage:
 
 */
 
+let getNDate = "1 March 2042";
+
 module.exports = {
 
-  // Insert values here
-  "lumpAmount": "£0",
+  // Dates
   "getEDate": "1 March 2028",
-  "getNDate": "1 March 2040",
-  "getLDate": "1 March 2050"
+  "getNDate": getNDate,
+  "getLDate": "1 March 2050",
+
+  // need to set this as NDate
+  "getDate": getNDate,
+
+  // ages
+  "getEAge": "55",
+  "getNAge": "67",
+  "getLAge": "75",
+
+  // "get2015Age": "67",
+  // "get2008Age": "65",
+  // "get1995Age": "60",
+
+  // amounts
+  "maxLump": false,
+  "noLump": true,
+  "getLump": "0",
+  "getMaxLump": "114,740",
+  "getMonthly": "2,231",
+  "getYearly": "26,773",
+
+  // scheme
+  "schemeReference": "2015"
 
 }

@@ -1,0 +1,87 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+
+            <div class="interrupt-panel">
+                <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data['getMonthly'] }} a month</p>
+                <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data['getYearly'] }} a year</p>
+
+                {% if ( data['noLump'] === true) %}
+                <p class="heading-small">This pension estimate does not include a lump sum</p>
+                {% else %}
+                <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data['getLump'] }}</span>
+                    when you start taking this pension
+                </p>
+                {% endif %}
+                <hr class="break">
+                <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
+
+                    <div>
+                        <dt class="cya-question">Start date</dt>
+                        <dd class="cya-answer">
+                            {{ data['getDate'] }}
+                            {% if ( data['getDate'] === data['getNDate']) %}
+                            <span class="font-xsmall nobr">(Your normal pension date)</span>
+                            {% endif %}
+                        </dd>
+                        <dd class="cya-change">
+                            <a href="when">Change<span class="visually-hidden"> start date</span></a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="cya-question">Lump sum amount</dt>
+                        <dd class="cya-answer">
+                            £{{ data['getLump'] }}
+                            {% if ( data['maxLump'] === true) %}
+                            <span class="font-xsmall nobr">(Your maximum lump amount)</span>
+                            {% endif %}
+                        </dd>
+                        <dd class="cya-change">
+                            <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
+                        </dd>
+                    </div>
+           
+                </dl>
+                <br>
+                {% include "calculator/includes/pay-info-date.html" %}
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="bsa-print-hide">
+                {# {% include "includes/calculator-link.html" %}
+                <hr> #}
+                {% include "calculator/includes/next.html" %}
+                {% include "includes/print-link.html" %}
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
+
+            {% include "includes/caveat-print.html" %}
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}
