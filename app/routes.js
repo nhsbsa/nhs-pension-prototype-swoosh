@@ -70,4 +70,7 @@ router.get('/journeys', function (req, res) {
   res.redirect('journey')
 })
 
+// This moves estimate routing to estimate directory
+router.use('/estimate/', require('./views/estimate/_routes'))
+
 module.exports = router

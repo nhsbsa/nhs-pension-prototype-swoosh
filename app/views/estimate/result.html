@@ -1,32 +1,5 @@
 {% extends "layout_bsa.html" %}
 
-{% set getDate = '1 March 2040' %}
-{% set getAge = '67' %}
-{% set getMonthly = '2,231' %}
-{% set getYearly = '26,773' %}
-{% set reducedDate = '1 March 2030' %}
-{% set reducedAge = '55' %}
-{% set getReducedMonthly = '1,287' %}
-{% set getReducedYearly = '18,957' %}
-
-{% if data['schemeReference'] === '2008' %}
-    {% set getDate = '1 December 2041' %}
-    {% set getMonthly = '422' %}
-    {% set getYearly = '5,075' %}
-    {% set getReducedMonthly = '1,287' %}
-    {% set getReducedYearly = '18,957' %}
-    {% set reducedDate = '1 December 2031' %}
-{% elif data['schemeReference'] === '1995' %}
-    {% set getDate = '1 December 2041' %}
-    {% set getAge = '60' %}
-    {% set getMonthly = '2,104' %}
-    {% set getYearly = '25,218' %}
-    {% set reducedDate = '1 December 2036' %}
-    {% set reducedAge = '55' %}
-    {% set getReducedMonthly = '1,287' %}
-    {% set getReducedYearly = '18,957' %}
-{% endif %}
-
 {% block page_title %}
 Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
 {% endblock %}
@@ -56,16 +29,21 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
 
                     <div>
                         <dt class="cya-question">Start date</dt>
-                        <dd class="cya-answer">{{ getDate }} <span class="font-xsmall nobr">(Your normal pension date)</span></dd>
+                        <dd class="cya-answer">
+                            {{ getDate }}
+                            <span class="font-xsmall nobr">(Your normal pension date)</span>
+                        </dd>
                         <dd class="cya-change">
-                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> age</span></a>
+                            <a href="when">Change<span class="visually-hidden"> start date</span></a>
                         </dd>
                     </div>
                     <div>
-                        <dt class="cya-question">Lump sum</dt>
-                        <dd class="cya-answer">{{ getLump }}</dd>
+                        <dt class="cya-question">Lump sum amount</dt>
+                        <dd class="cya-answer">
+                            {{ getLump }}
+                        </dd>
                         <dd class="cya-change">
-                            <a href="/calculator/lump-amount">Change<span class="visually-hidden"> lump sum amount</span></a>
+                            <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
                         </dd>
                     </div>
            

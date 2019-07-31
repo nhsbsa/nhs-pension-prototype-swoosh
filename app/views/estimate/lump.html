@@ -1,16 +1,5 @@
 {% extends "layout_bsa.html" %}
 
-{# If 67 set max lump amount (default) #}
-{% set getLump = '114,740' %}
-
-{# If 63 set new lump amount #}
-{% if (data['retire-group'] === '67') %}
-{% set getLump = '114,740' %}
-{% elif (data['specific-age-value'] === '63') %}
-{# If 63 set new lump amount #}
-{% set getLump = '72,960' %}
-{% endif %}
-
 {% block page_title %}
 2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
 {% endblock %}
@@ -34,7 +23,7 @@
                 <h1 class="heading-large">How much of your pension would you like to take as a lump sum?</h1>
             </header>
 
-            <form method="post" class="form" action="lump-amount">
+            <form method="post" class="form" action="lump">
                 <fieldset class="form-group">
                     <legend class="visually-hidden">How much of your pension would you like to take as a lump sum?</legend>
 

@@ -21,7 +21,7 @@
 {% endif %}
 
 {# Scenario 3 = 63 + no lump #}
-{% if (getAge === '63') and (data['lump-amount'] === 'None') %}
+{% if (getAge === '63') %}
 {% set getMonthly = '1,419' %}
 {% set getYearly = '17,024' %}
 {% endif %}
@@ -39,6 +39,15 @@
 {% set getYearly = '15,524' %}
 {% set getLump = '18,000' %}
 {% endif %}
+
+{# Scenario 6 = 67 + 18k lump #}
+{% if (getAge === '67') and (data['other-amount-value'] === '18000') %}
+{% set getMonthly = '2,106' %}
+{% set getYearly = '25,273' %}
+{% set getLump = '18,000' %}
+{% endif %}
+
+
 
 {% if data['schemeReference'] === '2008' %}
     {% set getDate = '1 December 2041' %}
@@ -61,6 +70,16 @@
     {% set getLump = '102,126' %}
 {% endif %}
 
+{% set lumpAmount = '£0' %}
+
+{% if (data['lump-amount'] == 'None') %}
+    {% set lumpAmount = '£0' %}
+{% elif (data['lump-amount'] == 'Max') %}
+    {% set lumpAmount = '£'+getLump %}
+{% elif (data['lump-amount'] == 'Other') %}
+    {% set lumpAmount = '£'+data['other-amount-value'] %}
+{% endif %}
+
 {% block page_title %}
 2015 Scheme pension calculator - {{ serviceName }} - NHSBSA
 {% endblock %}
@@ -80,60 +99,67 @@
         <div class="column-desktop-two-thirds">
 
             <div class="interrupt-panel">
-                <h1 class="heading-small govuk-margin-top-0">{{ data['schemeReference'] }} pension estimate</h1>
+                <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
                 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ getMonthly }} a month</p>
                 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ getYearly }} a year</p>
+
+                {% if (lumpAmount != '£0') %}
+                <p class="heading-small">with a one off lump sum payment of <br><span class="heading-medium">{{ lumpAmount }}</span>
+                    when you start taking this pension
+                </p>
+                {% else %}
+                <p class="heading-small">This pension estimate does not include a lump sum</p>
+                {% endif %}
                 <br>
                 <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
 
                     {% if (data['retire-group'] === 'specificDate') %}
                     <div>
-                        <dt class="cya-question">Starting pension on</dt>
+                        <dt class="cya-question">Start date</dt>
                         <dd class="cya-answer">{{ data['retire-day'] }}/{{ data['retire-month'] }}/{{ data['retire-year'] }}</dd>
                         <dd class="cya-change">
-                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> your retirement date</span></a>
+                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> your pension date</span></a>
                         </dd>
                     </div>
 
                     {% elif (data['retire-group'] === '67') %}
                     <div>
-                        <dt class="cya-question">Starting pension at</dt>
-                        <dd class="cya-answer">67 <span class="font-xsmall nobr">(normal retirement age)</span></dd>
+                        <dt class="cya-question">Start date</dt>
+                        <dd class="cya-answer">67 <span class="font-xsmall nobr">(normal pension age)</span></dd>
                         <dd class="cya-change">
-                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> your retirement date</span></a>
+                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> your pension date</span></a>
                         </dd>
                     </div>
 
                     {% elif (data['specific-age-value']) %}
                     <div>
-                        <dt class="cya-question">Starting pension at</dt>
+                        <dt class="cya-question">Start date</dt>
                         <dd class="cya-answer">{{ getAge }}</dd>
                         <dd class="cya-change">
-                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> age</span></a>
+                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> your pension age</span></a>
                         </dd>
                     </div>
+
                     {% else %}
                     <div>
-                        <dt class="cya-question">Starting pension at</dt>
-                        <dd class="cya-answer">{{ getAge }} <span class="font-xsmall nobr">(normal retirement age)</span></dd>
+                        <dt class="cya-question">Start date</dt>
+                        <dd class="cya-answer">{{ getAge }} <span class="font-xsmall nobr">(normal pension age)</span></dd>
                         <dd class="cya-change">
-                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> age</span></a>
+                            <a href="/calculator/when-retire">Change<span class="visually-hidden"> your pension age</span></a>
                         </dd>
                     </div>
                     {% endif %}
                     
-                    {% if (data['lump-amount'] == 'None') %}
-                        {% set lumpAmount = 'No lump sum' %}
-                    {% elif (data['lump-amount'] == 'Max') %}
-                        {% set lumpAmount = '£'+getLump %}
-                    {% elif (data['lump-amount'] == 'Other') %}
-                        {% set lumpAmount = '£'+data['other-amount-value'] %}
-                    {% endif %}
+
                     <div>
-                        <dt class="cya-question">With a lump sum of</dt>
-                        <dd class="cya-answer">{{ lumpAmount }}</dd>
+                        <dt class="cya-question">Lump sum</dt>
+                        <dd class="cya-answer">{{ lumpAmount }} 
+                            {% if (data['lump-amount'] == 'Max') %}
+                            <span class="font-xsmall nobr">(your maximum)</span>
+                            {% endif %}
+                        </dd>
                         <dd class="cya-change">
-                            <a href="/calculator/lump-amount">Change<span class="visually-hidden"> lump sum</span></a>
+                            <a href="/calculator/lump-amount">Change<span class="visually-hidden"> lump sum amount</span></a>
                         </dd>
                     </div>
            
@@ -149,12 +175,12 @@
         <div class="column-two-thirds">
             
             <div class="bsa-print-hide">
-
-                <h2 class="heading-medium govuk-margin-top-0">Other retirement examples</h2>
+{# 
+                <h2 class="heading-medium govuk-margin-top-0">Other {{ data['schemeReference'] }} pension examples</h2>
                 {% include "calculator/includes/retirement-examples/both.html" %}
                 <br>
                 {% include "includes/calculator-link.html" %}
-                <hr>
+                <hr> #}
                 {% include "calculator/includes/next.html" %}
                 {% include "includes/print-link.html" %}
                 <hr>

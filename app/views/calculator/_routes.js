@@ -18,7 +18,7 @@ router.post('/what-estimate', function (req, res) {
 })
   
 router.post('/when-retire', function (req, res) {
-  res.redirect('/calculator/lump-amount');
+  res.redirect('/calculator/estimate-both');
 })
   
 router.post('/lump-amount', function (req, res) {
