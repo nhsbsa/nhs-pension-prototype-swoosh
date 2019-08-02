@@ -23,12 +23,12 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data['getMonthly'] }} a month</p>
                 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data['getYearly'] }} a year</p>
 
-                {% if ( data['noLump'] === true) %}
-                <p class="heading-small">This pension estimate does not include a lump sum</p>
-                {% else %}
+                {% if ( data['hasLump'] === true) %}
                 <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data['getLump'] }}</span>
                     when you start taking this pension
                 </p>
+                {% else %}
+                <p class="heading-small">This pension estimate does not include a lump sum</p>
                 {% endif %}
                 <hr class="break">
                 <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
@@ -36,7 +36,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                     <div>
                         <dt class="cya-question">Start date</dt>
                         <dd class="cya-answer">
-                            {{ data['getDate'] }}
+                            {{ data['getDate'] }} - age {{ data['estimateAge'] }}
                             {% if ( data['getDate'] === data['getNDate']) %}
                             <span class="font-xsmall nobr">(Your normal pension date)</span>
                             {% endif %}

@@ -18,6 +18,7 @@ Example usage:
 */
 
 let getNDate = "1 March 2042";
+let getNAge = "67";
 
 module.exports = {
 
@@ -31,14 +32,18 @@ module.exports = {
 
   // ages
   "getEAge": "55",
-  "getNAge": "67",
+  "getNAge": getNAge,
   "getLAge": "75",
+
+
+  "estimateAge": getNAge,
 
   // "get2015Age": "67",
   // "get2008Age": "65",
   // "get1995Age": "60",
 
   // amounts
+  "hasLump": false,
   "maxLump": false,
   "noLump": true,
   "getLump": "0",

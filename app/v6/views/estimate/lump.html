@@ -29,17 +29,17 @@
 
                     <div class="multiple-choice">
                         <input id="no-lump" type="radio" name="lump-amount" value="None" {{ checked('lump-amount','None') }}>
-                        <label for="no-lump">No lump sum</label>
+                        <label for="no-lump">£0 (No lump sum)</label>
                     </div>
 
                     <div class="multiple-choice">
                         <input id="specific-age" type="radio" name="lump-amount" value="Max" {{ checked('lump-amount','Max') }}>
-                        <label for="specific-age">Your maximum amount which is £{{ data['getMaxLump'] }}</label>
+                        <label for="specific-age">£{{ data['getMaxLump'] }} (Your maximum amount)</label>
                     </div>
 
                     <div class="multiple-choice" data-target="other-amount-panel">
                         <input id="specific-date" type="radio" name="lump-amount" value="Other" {{ checked('lump-amount','Other') }}>
-                        <label for="specific-date">Other amount</label>
+                        <label for="specific-date">Another amount</label>
                     </div>
 
                     <div class="js-hidden" id="other-amount-panel">
