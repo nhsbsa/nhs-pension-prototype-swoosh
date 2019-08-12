@@ -50,7 +50,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                     {% set scheme = data['scheme'] %}
 
                     {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %} 
-                    <li >
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-small bsa-card__heading govuk-margin-top-0">2015 Pension</h3>
@@ -73,7 +73,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                     {% endif %}
 
                     {% if data['show'] === "trs"  %}
-                        <li >
+                        <li>
                             <div class="bsa-card">
                                 <div class="bsa-card__content">
                                     <h3 class="heading-small bsa-card__heading govuk-margin-top-0">2008 Pension</h3>
@@ -92,7 +92,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                             </div>
                         </li>
 
-                        <li >
+                        <li>
                             <div class="bsa-card">
                                 <div class="bsa-card__content">
                                     <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 Pension</a></h3>
@@ -113,7 +113,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                     {% else %}
 
                         {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %} 
-                        <li >
+                        <li>
                             <div class="bsa-card">
                                 <div class="bsa-card__content">
                                     <h3 class="heading-small bsa-card__heading govuk-margin-top-0">2008 Pension</h3>
@@ -134,21 +134,21 @@ Home page {{ serviceName }} NHS BSA Prototype
                         {% endif %}
 
                     {% if data['show'] === "taking"  %}
-                    <li >
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 Pension</h3>
-                                <div class="data govuk-margin-bottom-0">
-                                    <span class="data-item bold-large">£2,484 <span class="bold-xsmall">a month</span></span>
-                                    <span class="data-item bold-xsmall"><span class="app-c-tag app-c-tag--success">taking</span></span>
-                                </div>
+                                {# <span class="data-item bold-large">£2,484 <span class="bold-xsmall">a month</span></span> #}
+                                <p class="data-item bold-xsmall"><span class="app-c-tag">receiving</span></p>
+                                
+                                
                             </div>
                             <div class="bsa-card__actions">
-                                
-                                <ul class="bsa-card__actions-list">
+                                <p>You have claimed and are currently receiving this pension.</p>
+                                {# <ul class="bsa-card__actions-list">
                                     <li><a href="#">View your 1995 pension</a></li>
                                     <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
-                                </ul>
+                                </ul> #}
                             </div>
                         </div>
                     </li>
@@ -156,7 +156,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                     {% else %}
 
                     {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}                    
-                        <li >
+                        <li>
                             <div class="bsa-card">
                                 <div class="bsa-card__content">
                                     <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 Pension</h3>
@@ -197,16 +197,17 @@ Home page {{ serviceName }} NHS BSA Prototype
             <section aria-labelledBy="details-heading">
                 <h2 class="heading-large" id="details-heading">Your details</h2>
                 <ul class="grid-row grid-grid">
-                    <li >
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-medium bsa-card__heading"><a href="details">Your details</a></h3>
-                                <p>Check and make sure your details are up to date.</p>
+                                <p>Check and make sure your personal and contact details are up to date.</p>
                             </div>
                         </div>
                     </li>
 
-                    <li >
+                    {% if data['show'] === "taking"  %}
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-medium bsa-card__heading"><a href="#">Your bank details</a></h3>
@@ -214,6 +215,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                             </div>
                         </div>
                     </li>
+                    {% endif %}
 
                 </ul>
             </section>
@@ -224,16 +226,16 @@ Home page {{ serviceName }} NHS BSA Prototype
                 <h2 class="heading-large" id="think-heading">Think about</h2>
                 <ul class="grid-row grid-grid">
 
-                    <li >
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
-                                <h3 class="heading-medium bsa-card__heading"><a href="#">Your nominations</a></h3>
-                                <p>Name one or many people or organisations to get your pension if you die.</p>
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Naming a beneficiary</a></h3>
+                                <p>Nominate one or many people or organisations to get your pension if you die.</p>
                             </div>
                         </div>
                     </li>
 
-                    <li >
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-medium bsa-card__heading"><a href="#">Transferring a pension</a></h3>
@@ -242,11 +244,11 @@ Home page {{ serviceName }} NHS BSA Prototype
                         </div>
                     </li>
 
-                    <li >
+                    <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
-                                <h3 class="heading-medium bsa-card__heading"><a href="#">Your access</a></h3>
-                                <p>Give access to your NHS Pension information to a trusted friend or family member.</p>
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Giving access to your account</a></h3>
+                                <p>Give access to your NHS Pension information to a trusted person or family member.</p>
                             </div>
                         </div>
                     </li>
