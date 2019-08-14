@@ -28,8 +28,9 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                     when you start taking this pension
                 </p>
                 {% else %}
-                <p class="heading-small">This pension estimate does not include a lump sum</p>
+                <p class="heading-small">This pension estimate does not include a lump sum <a href="lump">add one</a>.</p>
                 {% endif %}
+
                 <hr class="break">
                 <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
 
@@ -57,10 +58,13 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                             <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
                         </dd>
                     </div>
-           
+        
                 </dl>
-                <br>
-                {% include "calculator/includes/pay-info-date.html" %}
+                <div class="bsa-print-hide">
+                    <br>
+                    {% include "calculator/includes/pay-info-date.html" %}
+                </div>
+
             </div>
         </div>
     </div>

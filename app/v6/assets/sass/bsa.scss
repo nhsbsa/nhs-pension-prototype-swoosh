@@ -21,13 +21,8 @@
 
 // Patterns
 @import 'patterns/grid-grid';
-
 @import 'patterns/hub-sign-in';
-
-  .column-desktop-two-thirds {
-    @include grid-column( 2/3, $full-width: 920px );
-  }
-
+@import 'patterns/layout';
 
 //body {
 //  color: #555;

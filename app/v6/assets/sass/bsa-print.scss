@@ -7,10 +7,16 @@
 @import 'components/panel';
 @import 'components/spacing';
 @import 'components/print';
+@import 'patterns/check-your-answers';
+@import 'patterns/layout';
 
 @page {
     margin: 15mm 10mm 15mm 15mm;
     size: A4 portrait;
+}
+
+.unbranded {
+    background-color: white;
 }
 
 .bsa-print-hide,
@@ -60,5 +66,12 @@
     }
     > .heading-large {
         margin-top: 0;
+    }
+}
+
+
+.govuk-check-your-answers {
+    a {
+        display: none;
     }
 }

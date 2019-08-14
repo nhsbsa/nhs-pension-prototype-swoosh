@@ -138,17 +138,24 @@ Home page {{ serviceName }} NHS BSA Prototype
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 Pension</h3>
-                                {# <span class="data-item bold-large">£2,484 <span class="bold-xsmall">a month</span></span> #}
                                 <p class="data-item bold-xsmall"><span class="app-c-tag">receiving</span></p>
-                                
-                                
                             </div>
                             <div class="bsa-card__actions">
                                 <p>You have claimed and are currently receiving this pension.</p>
-                                {# <ul class="bsa-card__actions-list">
-                                    <li><a href="#">View your 1995 pension</a></li>
-                                    <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
-                                </ul> #}
+                            </div>
+                        </div>
+                    </li>
+
+                    {% elif data['show'] === "submitted"  %}
+
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 Pension</h3>
+                                <p class="data-item bold-xsmall"><span class="app-c-tag">claim submitted</span></p> 
+                            </div>
+                            <div class="bsa-card__actions">
+                                <p>You have applied to receive this pension.</p>
                             </div>
                         </div>
                     </li>
