@@ -15,8 +15,8 @@ Welcome - {{ serviceName }} - NHSBSA
             <div class="interrupt-panel">
                 <div class="heading-group">
                     <p>{{ serviceName }}</p>
-                    <h1 class="heading-large">Welcome, Sam</h1>
-                    <p>Membership number: 12345678</p>
+                    <h1 class="heading-large">Welcome {{ data['firstName'] }}</h1>
+                    <p>National Insurance number: <strong class="bold">{{ data['nino'] }}</strong></p>
                 </div>
                 <hr>
                 

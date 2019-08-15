@@ -41,6 +41,16 @@ let scenario6Monthly = '1,294';
 let scenario6Yearly = '15,524';
 let scenario6Lump = scenario3Lump;
 
+let scenario7Monthly = '550';
+let scenario7Yearly = '6,602';
+
+router.use(function (req, res, next) {
+    if (!req.session.data.reports) {
+      req.session.data.reports = []
+    }
+    next()
+})
+
 router.get('/', function (req, res) {
     res.redirect(`${RESULT_PATH}`);
 })
@@ -109,6 +119,34 @@ router.post('/when', function (req, res) {
         req.session.data['maxLump'] = false;
     }
 
+
+    // if (startPension === 'specificDate') {
+    //     req.session.data['getMonthly'] = scenario7Monthly;
+    //     req.session.data['getYearly'] = scenario7Yearly;
+    //     req.session.data['getDate'] = '1 March 2030';
+    //     req.session.data['estimateAge'] = "55";
+    // }
+
+
+    // var defaultDetails = {
+    //     monthly: scenario1Monthly,
+    //     yearly: scenario1Yearly,
+    //     age: getNAge,
+    //     lump: noLumpAmount,
+    //     date: getNDate
+    // };
+
+    var reportDetails = {
+        monthly: req.session.data['getMonthly'],
+        yearly: req.session.data['getYearly'],
+        age: req.session.data['estimateAge'],
+        lump: req.session.data['getLump'],
+        date: req.session.data['getDate']
+    };
+
+    // req.session.data.reports.push(defaultDetails);
+    req.session.data.reports.push(reportDetails);
+
     res.redirect(`${RESULT_PATH}`);
 })
   
@@ -167,8 +205,27 @@ router.post('/lump', function (req, res) {
         req.session.data['getLump'] = scenario6Lump;
     }
 
+    // var defaultDetails = {
+    //     monthly: scenario1Monthly,
+    //     yearly: scenario1Yearly,
+    //     age: getNAge,
+    //     lump: noLumpAmount,
+    //     date: getNDate
+    // };
+
+    var reportDetails = {
+        monthly: req.session.data['getMonthly'],
+        yearly: req.session.data['getYearly'],
+        age: req.session.data['estimateAge'],
+        lump: req.session.data['getLump'],
+        date: req.session.data['getDate']
+    };
+
+    // req.session.data.reports.push(defaultDetails);
+    req.session.data.reports.push(reportDetails)
 
     res.redirect(`${RESULT_PATH}`);
 })
+
 
 module.exports = router

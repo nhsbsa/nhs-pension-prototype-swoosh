@@ -16,11 +16,32 @@ Example usage:
 ============================================================================
 
 */
+let firstName = "Sam";
+let middleName = "Curtis";
+let lastName = "Jones";
 
 let getNDate = "1 March 2042";
 let getNAge = "67";
+let getMonthly = "2,231";
+let getYearly = "26,773";
+let lump = "0";
+
+let getEAge = "55";
 
 module.exports = {
+
+  // member data
+  "nino": "AB 12 34 56 C",
+  "firstName": firstName,
+  "lastName": lastName,
+  "middleName": middleName,
+  "fullName": firstName + ' ' + middleName + ' ' + lastName,
+  "dateOfBirth": "1 December 1987",
+  "gender": "Male",
+  "homeAddress": "29 Larkholme Lane, Fleetwood, FY7 8AU",
+  "emailAddress": "sam.jones@madeupaddress.net",
+  "mobileNumber": "07777 123 4567",
+  "lastUpdatedDate": "31 March 2018",
 
   // Dates
   "getEDate": "1 March 2028",
@@ -31,7 +52,7 @@ module.exports = {
   "getDate": getNDate,
 
   // ages
-  "getEAge": "55",
+  "getEAge": getEAge,
   "getNAge": getNAge,
   "getLAge": "75",
 
@@ -46,12 +67,18 @@ module.exports = {
   "hasLump": false,
   "maxLump": false,
   "noLump": true,
-  "getLump": "0",
+  "getLump": lump,
   "getMaxLump": "114,740",
-  "getMonthly": "2,231",
-  "getYearly": "26,773",
+  "getMonthly": getMonthly,
+  "getYearly": getYearly,
 
   // scheme
-  "schemeReference": "2015"
+  "schemeReference": "2015",
+
+  "defaultAge": getNAge,
+  "defaultMonthly": getMonthly,
+  "defaultYearly": getYearly,
+  "defaultLump": lump,
+  "defaultDate": getNDate
 
 }

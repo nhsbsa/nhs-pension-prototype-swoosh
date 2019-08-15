@@ -23,10 +23,7 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
                 <h1 class="heading-large">{{ data['schemeReference'] }} Pension contribution statement</h1>
             </div>
 
-            <div class="panel panel-border-wide">
-                <p>Your statement was last updated on the <strong class="bold">31 March 2018</strong>. <br>
-                It is up to your employer to keep this information up to date.</p>
-            </div>
+            {% include "includes/last-updated-panel.html" %}
 
         </div>
     </div>
@@ -494,22 +491,9 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
         <div class="column-two-thirds">
             
             <br>
+            {% include "includes/last-updated-panel.html" %}
 
-            <details>
-                <summary><span class="summary">Have you noticed anything wrong with your contribution statement?</span></summary>
-                <div class="panel panel-border-narrow">
-                    <p>Your statement was last updated on the <strong class="bold">31 March 2018</strong>. <br>
-                It is up to your employer to keep this information up to date.</p>
-                    <p>If you are no longer working in the NHS you can call our helpline.</p>
-                    <ul class="list list-bullet">
-                        <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
-                        <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
-                        <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
-                    </ul>
-                </div>
-            </details>
             <hr>
-            
             {% include "includes/back-to-home-link.html" %}
 
         </div>

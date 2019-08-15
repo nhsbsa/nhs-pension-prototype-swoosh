@@ -27,6 +27,9 @@
                 <fieldset class="form-group">
                     <legend class="visually-hidden">How much of your pension would you like to take as a lump sum?</legend>
 
+                    <p class="form-hint">A lump sum is a single payment paid to you in full on the date you start taking your pension.</p>
+                    <p class="form-hint">You can choose to take any amount of lump sum up to your maximum amount, this changes based on the age you want to take your pension.</p>
+
                     <div class="multiple-choice">
                         <input id="no-lump" type="radio" name="lump-amount" value="None" {{ checked('lump-amount','None') }}>
                         <label for="no-lump">£0 (No lump sum)</label>
@@ -47,7 +50,7 @@
                             <label class="form-label" for="other-amount-value">
                                 How much lump sum?
                                 <span class="form-hint">
-                                    You can't take anymore than your maximum amount.<br>
+                                    You can't take more than £{{ data['getMaxLump'] }}.<br>
                                     The amount you enter will be rounded down to be divisible by 12.
                                 </span>
                             </label>                            

@@ -18,7 +18,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
     <div class="grid-row">
         <div class="column-desktop-two-thirds">
 
-            <div class="interrupt-panel">
+            <div class="interrupt-panel bsa-print-hide">
                 <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
                 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data['getMonthly'] }} a month</p>
                 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data['getYearly'] }} a year</p>
@@ -28,7 +28,8 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                     when you start taking this pension
                 </p>
                 {% else %}
-                <p class="heading-small">This pension estimate does not include a lump sum <a href="lump">add one</a>.</p>
+                <br>
+                <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span> <a href="lump">Add a lump sum</a>.</p>
                 {% endif %}
 
                 <hr class="break">
@@ -60,23 +61,22 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                     </div>
         
                 </dl>
-                <div class="bsa-print-hide">
-                    <br>
-                    {% include "calculator/includes/pay-info-date.html" %}
-                </div>
+
+                <br>
+                {% include "calculator/includes/pay-info-date.html" %}
 
             </div>
         </div>
     </div>
 
     <div class="grid-row">
-        <div class="column-two-thirds">
+        <div class="column-desktop-two-thirds">
+            {% include "estimate/includes/previous.html" %}
+            
+            {% include "calculator/includes/next.html" %}
 
             <div class="bsa-print-hide">
-                {# {% include "includes/calculator-link.html" %}
-                <hr> #}
-                {% include "calculator/includes/next.html" %}
-                {% include "includes/print-link.html" %}
+                
                 <hr>
                 {% include "includes/back-to-home-link.html" %}
             </div>

@@ -12,18 +12,16 @@ Home page {{ serviceName }} NHS BSA Prototype
 
     {% include "includes/phase_banner_beta.html" %}
 
-    {% if data['show'] === "nino"  %}
+    {% if data['show'] === "sd"  %}
     {{ bsaAccountDetailsBar({
-        class: "",
-        code: "NI number",
-        codeValue: "QQ 12 34 56 C",
+        code: "Membership number",
+        codeValue: "12345678",
         headingClass: "large"
     }) }}
 
     {% else %}
 
     {{ bsaAccountDetailsBar({
-        class: "",
         headingClass: "large"
     }) }}
     {% endif %}
@@ -33,6 +31,8 @@ Home page {{ serviceName }} NHS BSA Prototype
 
             <h1 class="visually-hidden" id="page-heading">{{ serviceName }} home</h1>
 
+            {# {{ config.defaultEstimate.age }}
+            {{ port }} #}
             <section aria-labelledBy="pensions-heading">
                 <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
                 <ul class="grid-row grid-grid">
@@ -63,9 +63,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                                 <ul class="bsa-card__actions-list">
                                     <li><a href="estimate?schemeReference=2015">View your 2015 estimate</a></li>
                                     <li><a href="statement?schemeReference=2015&schemeYear=2018/2019">View your 2015 contribution statement</a></li>
-                                    <li><a href="#">Get your 2015 pension</a></li>
-                                    <!-- opt out only applicable to 2015 and only for 12 months? after joining scheme -->
-                                    <li class="bsa-card__actions-break"><a href="#">Opt out of your 2015 pension</a></li>
+                                    <li><a href="#">Claim your 2015 pension</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -86,7 +84,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                                     <ul class="bsa-card__actions-list">
                                         {# <li><a href="estimate?schemeReference=2008">View your 2008 estimate</a></li> #}
                                         <li><a href="statement?schemeReference=2008&schemeYear=2007/2008">View your 2008 contribution statement</a></li>
-                                        <li><a href="#">Get your 2008 pension</a></li>
+                                        <li><a href="#">Claim your 2008 pension</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,7 +103,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                                     <ul class="bsa-card__actions-list">
                                         {# <li><a href="estimate?schemeReference=1995">View your 1995 estimate</a></li> #}
                                         <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
-                                        <li><a href="#">Get your 1995 pension</a></li>
+                                        <li><a href="#">Claim your 1995 pension</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -126,7 +124,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                                     <ul class="bsa-card__actions-list">
                                         <li><a href="estimate?schemeReference=2008">View your 2008 estimate</a></li>
                                         <li><a href="statement?schemeReference=2008&schemeYear=2007/2008">View your 2008 contribution statement</a></li>
-                                        <li><a href="#">Get your 2008 pension</a></li>
+                                        <li><a href="#">Claim your 2008 pension</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -177,7 +175,7 @@ Home page {{ serviceName }} NHS BSA Prototype
                                         <li><a href="estimate?schemeReference=1995">View your 1995 estimate</a></li>
                                         <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
                                         {# <li><a href="membership/1995">View your 1995 membership record</a></li> #}
-                                        <li><a href="#">Get your 1995 pension</a></li>
+                                        <li><a href="#">Claim your 1995 pension</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -230,14 +228,14 @@ Home page {{ serviceName }} NHS BSA Prototype
             <hr>
 
             <section aria-labelledBy="think-heading">
-                <h2 class="heading-large" id="think-heading">Think about</h2>
+                <h2 class="heading-large" id="think-heading">Thinking about</h2>
                 <ul class="grid-row grid-grid">
 
                     <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-medium bsa-card__heading"><a href="#">Naming a beneficiary</a></h3>
-                                <p>Nominate one or many people or organisations to get your pension if you die.</p>
+                                <p>Nominate one or many people or organisations to receive your pension if you die.</p>
                             </div>
                         </div>
                     </li>
@@ -251,14 +249,24 @@ Home page {{ serviceName }} NHS BSA Prototype
                         </div>
                     </li>
 
+                    <!-- opt out only applicable to 2015 and only for 12 months? after joining scheme -->
                     <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Leaving the pension scheme</a></h3>
+                                <p>Learn about what you would lose if you decide to leave or take a break from your NHS pension.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    {# <li>
                         <div class="bsa-card">
                             <div class="bsa-card__content">
                                 <h3 class="heading-medium bsa-card__heading"><a href="#">Giving access to your account</a></h3>
                                 <p>Give access to your NHS Pension information to a trusted person or family member.</p>
                             </div>
                         </div>
-                    </li>
+                    </li> #}
 
                 </ul>
             </section>

@@ -29,6 +29,24 @@ module.exports = {
   cookieText: 'NHSBSA uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>',
 
   // Enable or disable Browser Sync
-  useBrowserSync: 'true'
+  useBrowserSync: 'true',
+
+  // Today's date
+  // todaysDate: {
+  //   original: TODAYS_DATE,
+  //   year: TODAYS_DATE.getFullYear().toString(),
+  //   month: TODAYS_DATE.getMonth().toString(),
+  //   date: TODAYS_DATE.getDate().toString(),
+  //   day: TODAYS_DATE.getDay().toString()
+  // },
+
+  // Default estimate data
+  defaultEstimate: {
+    age: '67',
+    nrd: '1 March 2042',
+    lump: '0',
+    monthly: '2,231',
+    yearly: '26,773'
+  }
 
 }

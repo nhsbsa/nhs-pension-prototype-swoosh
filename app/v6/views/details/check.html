@@ -20,29 +20,31 @@ Summary of your contact details - My NHS pension - NHSBSA
                 <h1 class="heading-large">Your details</h1>
             </div>
 
-            <p>Last updated: <strong class="bold">31 March 2018</strong></p>
+            <div class="panel panel-border-wide">
+                <p>This information was last updated on the <strong class="bold">{{ data['lastUpdatedDate'] }}</strong>.</p>
+            </div>
 
             <h2 class="heading-medium">Personal details</h2>
 
             <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
                 <div>
                     <dt class="cya-question">Full name</dt>
-                    <dd class="cya-answer">Sam Curtis Jones</dd>
+                    <dd class="cya-answer">{{ data['fullName'] }}</dd>
                 </div>
 
                 <div>
                     <dt class="cya-question">National Insurance number</dt>
-                    <dd class="cya-answer">AC 12 34 56 C</dd>
+                    <dd class="cya-answer">{{ data['nino'] }}</dd>
                 </div>
 
                 <div>
                     <dt class="cya-question">Date of birth</dt>
-                    <dd class="cya-answer">1 December 1987</dd>
+                    <dd class="cya-answer">{{ data['dateOfBirth'] }}</dd>
                 </div>
 
                 <div>
                     <dt class="cya-question">Gender</dt>
-                    <dd class="cya-answer">Male</dd>
+                    <dd class="cya-answer">{{ data['gender'] }}</dd>
                 </div>
             </dl>
 
@@ -52,18 +54,18 @@ Summary of your contact details - My NHS pension - NHSBSA
                 <div>
                     <dt class="cya-question">Home address</dt>
                     <dd class="cya-answer">
-                        29 Larkholme Lane,<br> Fleetwood, FY7 8AU
+                        {{ data['homeAddress'] }}
                     </dd>
                 </div>
 
                 <div>
                     <dt class="cya-question">Email address</dt>
-                    <dd class="cya-answer">sam.jones@madeupaddress.net</dd>
+                    <dd class="cya-answer">{{ data['emailAddress'] }}</dd>
                 </div>
 
                 <div>
                     <dt class="cya-question">Mobile number</dt>
-                    <dd class="cya-answer">0200 010 303</dd>
+                    <dd class="cya-answer">{{ data['mobileNumber'] }}</dd>
                 </div>
 
             </dl>
@@ -73,7 +75,7 @@ Summary of your contact details - My NHS pension - NHSBSA
             <details>
                 <summary><span class="summary">What to do if your details are incorrect</span></summary>
                 <div class="panel panel-border-narrow">
-                    <p>You can make changes on your Electronic Staff Record (ESR). If you cannot access ESR, contact your employer.</p>
+                    <p>You can make changes on your Electronic Staff Record (ESR). If you cannot access ESR, you will need to tell your employer.</p>
                 </div>
             </details>
 
