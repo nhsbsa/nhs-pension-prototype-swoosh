@@ -31,7 +31,7 @@ let getEAge = "55";
 module.exports = {
 
   // member data
-  "nino": "AB 12 34 56 C",
+  "nino": "QQ 12 34 56 C",
   "firstName": firstName,
   "lastName": lastName,
   "middleName": middleName,
