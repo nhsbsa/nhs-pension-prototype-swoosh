@@ -483,6 +483,25 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
                     {% endif %}
                 </tbody>
             </table>
+            
+            {% if data['beforeRecordsBegan'] === '1' %}
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <h2 class="heading-medium">Getting a historical statement</h2>
+                    <p>Our digital pension contribution records go back as far as the financial year 2000/2001, if you need 
+                    a statement from before this time, you will need to contact us.</p>
+                    {{ govukDetails({
+                        summaryText: 'Get a historical statement',
+                        html: '<p>You can call our helpline.</p>
+                                <ul class="list list-bullet">
+                                    <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+                                    <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+                                    <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+                                </ul>'
+                    }) }}
+                </div>
+            </div>
+            {% endif %}
 
         </div>
     </div>
@@ -492,7 +511,7 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
             
             <br>
             {% include "includes/last-updated-panel.html" %}
-
+            
             <hr>
             {% include "includes/back-to-home-link.html" %}
 

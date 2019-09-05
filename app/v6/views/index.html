@@ -12,44 +12,20 @@
   	<div class="column-two-thirds">
 		
 		<div class="heading-group">
-			{# <p>v Experiment</p> #}
-			<p>v12 – Created on 20/08/2019</p>
+			<p>v13 – Created on 05/09/2019</p>
         	<h1 class="heading-xlarge">{{ serviceName }}</h1>
 		</div>
-
-        {# <h2 class="heading-medium">Previous research showed:</h2>
-        <ul class="list list-bullet">
-			<li>Users needed to know about data refresh date</li>
-			<li>Users need to know when there is an error and what to do about it</li>
-			<li>Users need to see annual contributions</li>
-			<li>Users need to know if the service will time them out</li>
-			<li>Users want clear concise estimates</li>
-        </ul> #}
-		{# <p><a href="/public/v6/images/research/19+03+19+myNHS+-+Lancaster.pdf">View research notes</a></p> #}
         <h2 class="heading-medium">Changes made:</h2>
         <ul class="list list-bullet">
-			<li>Pensioner: show person receiving 1995</li>
-			<li>Submitted: show person submitted 1995</li>
-			<li>Change: start and first onboard panel content</li>
-			<li>Change: tidy up print estimate</li>
-			<li>Add: estimate created date on print</li>
-			<li>Change: estimate if no lump sum content and added link</li>
-			<li>Change: make print link only appear if there are estimates to compare</li>
-			<li>Add: dynamic previous estimates for comparison</li>
-			<li>Change: contribution statement last updated</li>
-			<li>Add: data defaults for prototype</li>
-			<li>Change: details last updated statement consistency</li>
-			<li>Change: hub remove your access</li>
-			<li>Change: hub move opt out to its own card</li>
-			<li>Change: ID bar made NINO default</li>
-			<li>Remove: ID bar code label as people know their NINO if accessed</li>
+			<li>Contributions: show person 1995 historical statement</li>
         </ul>        
         <p><a class="button" href="journey" role="button">View prototype</a></p>
-		<p><a href="/assisted">Assisted journey</a></p>
   	</div>
 
   	<div class="column-one-third">
 		<aside class="govuk-related-items" role="complementary">
+		<hr>
+			<a href="/assisted">Assisted journey</a>
 			<hr />
 			<nav role="navigation" aria-labelledby="subsection-title">
 				<h2 class="heading-medium" id="subsection-title">Supporting pages</h2>
@@ -64,13 +40,21 @@
 			</nav>
 
 			<nav role="navigation" aria-labelledby="subsection-title">
-				<h2 class="heading-medium" id="subsection-title">Alternate home pages</h2>
+				<h2 class="heading-medium" id="subsection-title">Alternate hub pages</h2>
 				<ul class="list list-bullet font-xsmall">
 					<li><a href="/hub?show=trs">Hub page showing TRS unavailable</a></li>
 					<li><a href="/hub?show=taking">Hub page showing pensioner</a></li>
 					<li><a href="/hub?show=submitted">Hub page showing submitted</a></li>
 					<li><a href="/hub?show=nino">Hub page with NI number</a></li>
 					{# <li><a href="/hub?show=sd">Hub page with SD number</a></li> #}
+				</ul>
+			</nav>
+			<hr />
+
+			<nav role="navigation" aria-labelledby="subsection-title">
+				<h2 class="heading-medium" id="subsection-title">Alternate statement pages</h2>
+				<ul class="list list-bullet font-xsmall">
+					<li><a href="/statement?schemeReference=1995&schemeYear=1994/1995&beforeRecordsBegan=1">Historical statement 1995 scheme</a></li>
 				</ul>
 			</nav>
 			<hr />
