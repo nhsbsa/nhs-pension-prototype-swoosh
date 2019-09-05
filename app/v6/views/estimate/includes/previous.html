@@ -1,5 +1,9 @@
-{% if data['reports'] != '' %}
+
 <h3 class="heading-medium govuk-margin-top-0">Compare your estimates</h3>
+<div class="bsa-print-hide">
+    <p>To help you compare your retirement options you will see a list of previous estimates as you change them.</p>
+</div>
+
 <table class="responsive-table">
     <caption class="visually-hidden">Other retirement examples</caption>
     <thead>
@@ -12,33 +16,38 @@
         </tr>
     </thead>
     <tbody>
-        {% for report in data['reports'] | reverse %}
-        <tr>
-            <td>
-                <span class="table-heading" aria-hidden="true">Start date</span>
-                {{ report.date }}
-                {% if ( report.date === data['getNDate']) %}
-                    <span class="font-xsmall nobr">(Your normal pension date)</span>
-                {% endif %}
-            </td>
-            <td>
-                <span class="table-heading" aria-hidden="true">Age</span>
-                {{ report.age }}
-            </td>
-            <td class="numeric">
-                <span class="table-heading" aria-hidden="true">Lump sum</span>
-                £{{ report.lump }} 
-            </td>
-            <td class="numeric">
-                <span class="table-heading" aria-hidden="true">Monthly</span>
-                £{{ report.monthly }} 
-            </td>
-            <td class="numeric">
-                <span class="table-heading" aria-hidden="true">Yearly</span>
-                £{{ report.yearly }}
-            </td>
-        </tr>
-        {% endfor %}
+
+        {% if data['reports'] != '' %}
+
+            {% for report in data['reports'] | reverse %}
+            <tr>
+                <td>
+                    <span class="table-heading" aria-hidden="true">Start date</span>
+                    {{ report.date }}
+                    {% if ( report.date === data['getNDate']) %}
+                        <span class="font-xsmall nobr">(Your normal pension date)</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <span class="table-heading" aria-hidden="true">Age</span>
+                    {{ report.age }}
+                </td>
+                <td class="numeric">
+                    <span class="table-heading" aria-hidden="true">Lump sum</span>
+                    £{{ report.lump }} 
+                </td>
+                <td class="numeric">
+                    <span class="table-heading" aria-hidden="true">Monthly</span>
+                    £{{ report.monthly }} 
+                </td>
+                <td class="numeric">
+                    <span class="table-heading" aria-hidden="true">Yearly</span>
+                    £{{ report.yearly }}
+                </td>
+            </tr>
+            {% endfor %}
+
+        {% endif %}
         <tr>
             <td>
                 <span class="table-heading" aria-hidden="true">Start date</span>
@@ -65,12 +74,9 @@
     </tbody>
 </table>
 
+
 <div class="bsa-print-hide">
 <br>
 {% include "includes/print-link.html" %}
-
 </div>
 <br>
-{% else %}
-<p>To help you compare your pension options we will keep a list of your estimates as you change them.</p>
-{% endif %}
