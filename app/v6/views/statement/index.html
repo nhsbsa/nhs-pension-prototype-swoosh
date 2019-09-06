@@ -23,8 +23,7 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
                 <h1 class="heading-large">{{ data['schemeReference'] }} Pension contribution statement</h1>
             </div>
 
-            {% include "includes/last-updated-panel.html" %}
-
+            {% include "includes/last-updated.html" %}
         </div>
     </div>
 
@@ -484,36 +483,58 @@ Your {{ data['schemeReference'] }} pension contribution statement - {{ serviceNa
                 </tbody>
             </table>
             
-            {% if data['beforeRecordsBegan'] === '1' %}
             <div class="grid-row">
                 <div class="column-two-thirds">
-                    <h2 class="heading-medium">Getting a historical statement</h2>
-                    <p>Our digital pension contribution records go back as far as the financial year 2000/2001, if you need 
-                    a statement from before this time, you will need to contact us.</p>
-                    {{ govukDetails({
-                        summaryText: 'Get a historical statement',
-                        html: '<p>You can call our helpline.</p>
-                                <ul class="list list-bullet">
-                                    <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
-                                    <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
-                                    <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
-                                </ul>'
-                    }) }}
-                </div>
-            </div>
+
+            <br>
+            {% set deferredHtml %}
+            <p>This information was last updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>  <br>
+                If any information looks incorrect you will need to contact us.</p>
+                <ul class="list list-bullet">
+                    <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+                    <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+                    <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+                </ul>
+            {% endset %}
+
+            {% set activeHtml %}
+            <p>This information was last updated on <strong class="bold">{{ data['lastUpdatedDate'] }}</strong>. <br>
+                Tell your employer if anything looks incorrect, it is up to them to keep your information up to date.</p>
+            {% endset %}
+
+            {% if data['deferred'] === '1' %}
+                {{ govukDetails({
+                    summaryText: 'What to do if your statement is incorrect',
+                    html: deferredHtml
+                }) }}
+            {% else %}
+                {{ govukDetails({
+                    summaryText: 'What to do if your statement is incorrect',
+                    html: activeHtml
+                }) }}
             {% endif %}
 
-        </div>
-    </div>
+            {% if data['schemeReference'] === '1995' %}
+                <hr>
+                <h2 class="heading-medium">Getting a historical statement</h2>
+                <p>Our digital pension contribution records go back as far as the financial year 2000/2001, if you need 
+                a statement from before this time, you will need to contact us.</p>
+                {{ govukDetails({
+                    summaryText: 'Get a historical statement',
+                    html: '<p>You can call our helpline.</p>
+                            <ul class="list list-bullet">
+                                <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+                                <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+                                <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+                            </ul>'
+                }) }}
+            {% endif %}
 
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            
-            <br>
-            {% include "includes/last-updated-panel.html" %}
-            
             <hr>
             {% include "includes/back-to-home-link.html" %}
+
+            </div>
+            </div>
 
         </div>
     </div>

@@ -77,7 +77,7 @@
   {% set rowClass = options.rowClass or "" %}
   {% set year = options.year or "Year" %}
   {% set hideDate = options.hideDate or "" %}
-  {% set hideDateClass = "visually-hidden" if options.hideDate %}
+  {% set hideDateClass = "bsa-duplicate-label" if options.hideDate %}
   {% set employer = options.employer or "Employer" %}
   {% set yourContributions = options.yourContributions or "Your contributions" %}
   {% set employerContributions = options.employerContributions or "Employer contributions" %}
@@ -115,8 +115,10 @@
       {{ params.summaryHtml | safe if params.summaryHtml else params.summaryText }}
     </span>
   </summary>
-  <div class="govuk-details__text">
-    {{ params.html | safe if params.html else params.text }}
+  <div class="panel panel-border-narrow">
+    <div class="govuk-details__text">
+      {{ params.html | safe if params.html else params.text }}
+    </div>
   </div>
 </details>
 {% endmacro %}

@@ -20,9 +20,7 @@ Summary of your contact details - My NHS pension - NHSBSA
                 <h1 class="heading-large">Your details</h1>
             </div>
 
-            <div class="panel panel-border-wide">
-                <p>This information was last updated on the <strong class="bold">{{ data['lastUpdatedDate'] }}</strong>.</p>
-            </div>
+            {% include "includes/last-updated.html" %}
 
             <h2 class="heading-medium">Personal details</h2>
 
@@ -72,12 +70,10 @@ Summary of your contact details - My NHS pension - NHSBSA
 
             <br>
 
-            <details>
-                <summary><span class="summary">What to do if your details are incorrect</span></summary>
-                <div class="panel panel-border-narrow">
-                    <p>You can make changes on your Electronic Staff Record (ESR). If you cannot access ESR, you will need to tell your employer.</p>
-                </div>
-            </details>
+            {{ govukDetails({
+                summaryText: 'What to do if your details are incorrect',
+                text: 'You can make changes on your Electronic Staff Record (ESR). If you cannot access ESR, you will need to tell your employer.'
+            }) }}
 
             <hr>
             {% include "includes/back-to-home-link.html" %}

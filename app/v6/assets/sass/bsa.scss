@@ -1185,6 +1185,16 @@ border-bottom: 1px solid #bfc1c3;
   }
 }
 
+
+// This hides the duplicate year rows on contributions table
+.bsa-duplicate-label {
+  display: block;
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+// This makes the duplicate year rows borders white
 @include media(desktop) {
   .bsa-multi-row > td:first-child {
     border-bottom-color: $white;

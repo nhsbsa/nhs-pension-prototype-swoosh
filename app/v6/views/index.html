@@ -19,6 +19,8 @@
         <ul class="list list-bullet">
 			<li>Contributions: show person 1995 historical statement</li>
 			<li>Estimates: made print estimate link show even if only 1 estimate generated</li>
+			<li>CSS: new class for showing year label on contribution statement</li>
+			<li>Contributions: show deferred/active 2015 & 1995 statement views</li>
         </ul>        
         <p><a class="button" href="journey" role="button">View prototype</a></p>
   	</div>
@@ -55,7 +57,10 @@
 			<nav role="navigation" aria-labelledby="subsection-title">
 				<h2 class="heading-medium" id="subsection-title">Alternate statement pages</h2>
 				<ul class="list list-bullet font-xsmall">
-					<li><a href="/statement?schemeReference=1995&schemeYear=1994/1995&beforeRecordsBegan=1">Historical statement 1995 scheme</a></li>
+					<li><a href="/statement?schemeReference=2015&schemeYear=2018/2019&deferred=0">Active member 2015</a></li>
+					<li><a href="/statement?schemeReference=2015&schemeYear=2018/2019&deferred=1">Deferred member 2015</a></li>
+					<li><a href="/statement?schemeReference=1995&schemeYear=1994/1995&deferred=0">Active member 1995</a></li>
+					<li><a href="/statement?schemeReference=1995&schemeYear=1994/1995&deferred=1">Deferred member 1995</a></li>
 				</ul>
 			</nav>
 			<hr />
