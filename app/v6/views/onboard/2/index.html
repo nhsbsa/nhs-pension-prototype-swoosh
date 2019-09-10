@@ -1,0 +1,59 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Welcome - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">Welcome {{ data['firstName'] }} {{ data['lastName'] }}</h1>
+                    <p><span class="visually-hidden">National Insurance number</span> <strong class="bold">{{ data['ninoSafe'] }}</strong></p>
+                </div>
+                <hr>
+
+                <p>Use this service to help you to plan your retirement.</p>
+
+                <ol class="numbered-list">
+                    <li>
+                        <h2 class="heading-medium">Check your details</h2>
+                        <p class="font-xsmall">Review the personal details we hold about you.</p>
+                        <p class="font-xsmall">You can make changes to your personal details on the NHS Electronic Staff Record (ESR).</p>
+                    </li>
+                    <li>
+                        <h2 class="heading-medium">Check your pension information</h2>
+                        <p class="font-xsmall">Review the pension information we hold about you.</p>
+                        <p class="font-xsmall">The information we have is provided by your employer.</p>
+                    </li>
+                    <li>
+                        <h2 class="heading-medium">View a pension estimate</h2>
+                        <p class="font-xsmall">Get and change a pension estimate from each scheme you have contributed to.</p>
+                        <p class="font-xsmall">Pension estimates are not what you will get, they are based on current law and pay information 
+                        from your employer. We make assumptions to give an estimate. Estimates do not include tax.</p>
+                    </li>
+                    <li>
+                        <h2 class="heading-medium">Tell your employer</h2>
+                        <p class="font-xsmall">Incorrect information can cause delays in claiming your pension and inaccurate
+                        pension estimates.</p>
+                        <p class="font-xsmall">It is up to your employer to keep your pension information up to date.</p>
+                    </li>
+                </ol>
+
+                <hr>
+                <a href="/hub" class="button">Continue</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

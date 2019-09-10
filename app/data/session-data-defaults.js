@@ -28,10 +28,13 @@ let lump = "0";
 
 let getEAge = "55";
 
+let nino = "QQ 12 34 56 C";
+
 module.exports = {
 
   // member data
-  "nino": "QQ 12 34 56 C",
+  "nino": nino,
+  "ninoSafe": nino,
   "firstName": firstName,
   "lastName": lastName,
   "middleName": middleName,

@@ -1,0 +1,36 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Intro - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <h1 class="heading-large">Your employer updated your pension information on 
+                        <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>
+                    </h1>
+                </div>
+                <hr>
+                <p>Pay information from your employer is used to show your pension contributions and calculate your pension estimate.
+                This information is updated every year.</p>
+                <p>It is up to your employer to keep your pension information up to date. Tell them about
+                any incorrect information.</p>
+                <hr>
+                <a href="estimate" class="button">Continue</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

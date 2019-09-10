@@ -16,22 +16,18 @@ Welcome - {{ serviceName }} - NHSBSA
                 <div class="heading-group">
                     <p>{{ serviceName }}</p>
                     <h1 class="heading-large">Welcome {{ data['firstName'] }}</h1>
-                    <p>National Insurance number: <strong class="bold">{{ data['nino'] }}</strong></p>
+                    <p><span class="visually-hidden">National Insurance number</span> <strong class="bold">{{ data['nino'] }}</strong></p>
                 </div>
                 <hr>
                 
                 <p>Use this service to see:</p>
                 <ul class="list list-bullet">
                     <li>any NHS pensions you have contributed to</li>
-                    <li>a pension estimate based on different situations</li>
+                    <li>pension estimates based on different situations</li>
                     <li>dates when you could retire</li>
                     <li>lump sum amounts you could get</li>
                     <li>what your pension could be worth in the future</li>
                     <li>the personal details we hold about you</li>
-
-                    {# if applicable to member #}
-                    {# <li>who is named to get your pension if you die</li>
-                    <li>if you can transfer in from another pension scheme</li> #}
                 </ul>
                 <p>You can use this service to apply for your pension.</p>
                 <hr>

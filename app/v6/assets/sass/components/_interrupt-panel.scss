@@ -44,4 +44,12 @@ $interrupt-panel-background-color: $nhs-blue;
     table {
         margin-bottom: 20px;
     }
+
+    .numbered-list li {
+        border-bottom-color: $white;
+        &:before {
+            color: $interrupt-panel-background-color;
+            background-color: $white;
+        }
+    }
 }

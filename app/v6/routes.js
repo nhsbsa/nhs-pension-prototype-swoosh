@@ -44,6 +44,12 @@ router.get('/nino', function (req, res) {
   res.redirect('matching')
 })
 
+// This moves onboard routing to onboard directory
+router.use('/onboard/', require('./views/onboard/_routes'))
+router.get('/onboard', function (req, res) {
+  res.redirect('/onboard/1')
+})
+
 // This moves statement routing to statement directory
 router.use('/statement/', require('./views/statement/_routes'))
 

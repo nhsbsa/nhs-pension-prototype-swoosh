@@ -17,8 +17,12 @@ router.post('/nino', function (req, res) {
         res.redirect('check');
     } else if (answer == '3') {
         res.redirect('nino-not-found');
-    } else if (answer == 'onboard' || journey == 'onboard') {
-        res.redirect('/onboard/welcome');
+    } else if (answer == 'onboard' || answer == 'onboard1' || journey == 'onboard1') {
+        res.redirect('/onboard/1');
+    } else if (answer == 'onboard2' || journey == 'onboard2') {
+        res.redirect('/onboard/2');
+    } else if (answer == 'onboard3' || journey == 'onboard3') {
+        res.redirect('/onboard/3');
     } else {
         res.redirect('/hub');
     }

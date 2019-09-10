@@ -1,0 +1,41 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Welcome - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">Welcome {{ data['firstName'] }} {{ data['lastName'] }}</h1>
+                    <p><span class="visually-hidden">National Insurance number</span> <strong class="bold">{{ data['ninoSafe'] }}</strong></p>
+                </div>
+                <hr>
+                
+                <p>Use this service to see:</p>
+                <ul class="list list-bullet">
+                    <li>any NHS pensions you have contributed to</li>
+                    <li>estimates of what your pension could be worth in the future</li>
+                    <li>dates when you could retire</li>
+                    <li>lump sum amounts you could get</li>
+                    <li>the personal details we hold about you</li>
+                </ul>
+                <p>You can use this service to apply for your pension.</p>
+                <hr>
+                <a href="intro" class="button">Continue</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}
