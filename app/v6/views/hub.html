@@ -199,6 +199,43 @@ Home page {{ serviceName }} NHS BSA Prototype
 
             <hr>
 
+            {% if data['show'] === "inherited"  %}
+            <section aria-labelledBy="inherited-heading">
+                <h2 class="heading-large" id="inherited-heading">Your inherited pensions</h2>
+                <ul class="grid-row grid-grid">
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Divorce pension</h3>
+                                <p class="data-item bold-xsmall"><span class="app-c-tag">pending</span></p>
+                                <p class="govuk-margin-bottom-0">You have inherited a pension as part of a divorce.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Divorce pension</h3>
+                                <p class="data-item bold-xsmall"><span class="app-c-tag">receiving</span></p>
+                                <p class="govuk-margin-bottom-0">You have inherited a pension as part of a divorce.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Bereavement pension</h3>
+                                <p class="data-item bold-xsmall"><span class="app-c-tag">receiving</span></p>
+                                <p class="govuk-margin-bottom-0">You have inherited a pension from a person who has died.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <hr>
+
+            {% endif %}
+
             <section aria-labelledBy="details-heading">
                 <h2 class="heading-large" id="details-heading">Your details</h2>
                 <ul class="grid-row grid-grid">
