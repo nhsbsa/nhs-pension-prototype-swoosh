@@ -1,0 +1,45 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Apply for a refund {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        {# <div class="heading-group">
+            <p>{{ serviceName }}</p>
+            <h1 class="heading-large">Getting a refund of your 2015 pension scheme</h1>
+        </div> #}
+        
+        <div class="notice heading-group">
+            <p>{{ serviceName }}</p>
+            <i class="icon icon-important">
+                <span class="visually-hidden">Warning</span>
+            </i>
+            <h1 class="notice__heading heading-large">There is still time for you to rejoin this pension scheme</h1>
+        </div>
+
+        <p>You need to contribute to the pension scheme for 2 years in order to get a payable pension when you retire.
+        There is still time to contribute if you are thinking about rejoining this 2015 pension scheme.</p>
+
+
+        <h2 class="heading-medium">Or you can apply to have this pension refunded</h2>
+        <p>If you apply for a refund and wish to rejoin the NHS pension scheme in the future,
+        you will rejoin the scheme as a new member and your contributions will begin again.</p>
+        <p><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-05/RF12%20%28V11%29%20-%20Digital%20-%2005.2018.pdf">Complete the refund application form</a></p>
+
+        <hr>
+        {% include "includes/back-to-home-link.html" %}
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

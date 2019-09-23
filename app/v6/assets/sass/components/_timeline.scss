@@ -1,0 +1,46 @@
+$timeline-border-color: $nhs-blue;
+
+.bsa-timeline__entry {
+    border-left: 3px solid $timeline-border-color;
+    margin: 0;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    position: relative;
+
+    &--dash {
+        border-left-style: dashed;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+.bsa-timeline__entry::before {
+    background-color: $timeline-border-color;
+    content: ' ';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: .5em;
+    width: 10px;
+}
+
+.bsa-timeline__entry .bsa-timeline__title {
+    display: block;
+    font-weight: 700;
+}
+
+.bsa-timeline__entry .bsa-timeline__author,
+.bsa-timeline__entry .bsa-timeline__date {
+    color: #6f777b;
+    display: block;
+}
+
+.bsa-timeline__entry .bsa-timeline__info {
+    margin-top: 0;
+}
+
+.bsa-timeline__entry .bsa-timeline__body {
+    display: block;
+}

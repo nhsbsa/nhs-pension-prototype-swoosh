@@ -1,0 +1,46 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Apply for a refund {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="heading-group">
+            <p>{{ serviceName }}</p>
+            <h1 class="heading-large">Applying for a refund of your 2015 pension scheme</h1>
+            <p>September 2018 to October 2018</p>
+        </div>
+
+        <div class="panel panel-border-wide">
+        <p>You stopped contributing towards this scheme on <strong class="nobr bold">22 October 2018</strong>, this is within the 2 year qualifying period.</p>
+        </div>
+
+        <h2 class="heading-medium govuk-margin-top-0">You can either:</h2>
+        <ol class="numbered-list">
+            <li>
+                <h2 class="heading-small">Rejoin this pension scheme</h2>
+                <p class="font-xsmall">You can rejoin this pension scheme by 22 September 2020. You will need to speak to your employer about rejoining.</p>
+            </li>
+            <li>
+                <h2 class="heading-small">Apply to have this pension refunded</h2>
+                <p class="font-xsmall">If you apply for a refund and wish to rejoin the pension scheme in the future,
+                you will rejoin the scheme as a new member.</p>
+                <p class="font-xsmall"><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-05/RF12%20%28V11%29%20-%20Digital%20-%2005.2018.pdf">Complete the application form</a></p>
+            </li>
+        </ol>
+        <hr>
+        {% include "includes/back-to-home-link.html" %}
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

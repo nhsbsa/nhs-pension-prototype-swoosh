@@ -79,4 +79,7 @@ router.get('/journeys', function (req, res) {
 // This moves estimate routing to estimate directory
 router.use('/estimate/', require('./views/estimate/_routes'))
 
+// This moves refund routing to refund directory
+router.use('/refund/', require('./views/refund/_routes'))
+
 module.exports = router

@@ -18,7 +18,7 @@
 @import 'components/modal';
 @import 'components/modal-dialog';
 @import 'components/numbered-list';
-
+@import 'components/timeline';
 
 // Patterns
 @import 'patterns/grid-grid';
@@ -1214,4 +1214,16 @@ border-bottom: 1px solid #bfc1c3;
 
 .nobr {
   white-space: nowrap;
+}
+
+.notice {
+  &__heading {
+    display: block;
+    padding-left: 65px;
+    margin-left: -15px;
+    margin-bottom: 1em;
+  }
+  &.heading-group {
+    padding-left: 50px;
+  }
 }

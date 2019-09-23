@@ -1,0 +1,96 @@
+{% if data['2015'] === "w" or data['2015'] === "x" %}
+
+    {{ bsaCard({
+        title: '2015 pension scheme',
+        status: 'You are no longer contributing to this pension.',
+        data: [
+            {
+                monthly: data['getMonthly'],
+                age: data['getNAge']
+            }
+        ],
+        actions: [
+            {
+                label: 'View your 2015 estimate',
+                href: 'estimate?schemeReference=2015'
+            },
+            {
+                label: 'View your 2015 contribution statement',
+                href: 'statement?schemeReference=2015&schemeYear=2018/2019'
+            }
+        ]
+    }) }}
+
+{% elif data['2015'] === "pn"  %}
+
+    {{ bsaCard({
+        title: '2015 pension scheme',
+        status: 'You are currently receiving this pension.'
+    }) }}
+
+{% elif data['2015'] === "u1"  %}
+
+    {{ bsaCard({
+        title: '2015 pension scheme',
+        status: 'You have left this pension and are owed a refund.',
+        actions: [
+            {
+                label: 'Apply for a refund',
+                href: '/refund'
+            },
+            {
+                label: 'View your 2015 contribution statement',
+                href: 'statement?schemeReference=2015&schemeYear=2018/2019'
+            }
+        ]
+    }) }}
+
+{% elif data['2015'] === "u2"  %}
+
+    {{ bsaCard({
+        title: '2015 pension scheme',
+        subTitle: 'September 2018 to October 2018',
+        status: 'You have left this pension and are owed a refund.',
+        actions: [
+            {
+                label: 'Apply for a refund',
+                href: '/refund/rejoin'
+            },
+            {
+                label: 'View your 2015 contribution statement',
+                href: 'statement?schemeReference=2015&schemeYear=2018/2019'
+            }
+        ]
+    }) }}
+
+{% elif data['2015'] === "n"  %}
+
+    {{ bsaCard({
+        title: '2015 pension scheme',
+        status: 'You have left this pension scheme and no money is owed to you.'
+    }) }}
+
+{% else %}
+
+    {{ bsaCard({
+        title: '2015 pension scheme',
+        status: 'You are currently contributing to this pension.',
+        data: [
+            {
+                monthly: data['getMonthly'],
+                age: data['getNAge']
+            }
+        ],
+        actions: [
+            {
+                label: 'View your 2015 estimate',
+                href: 'estimate?schemeReference=2015'
+            },
+            {
+                label: 'View your 2015 contribution statement',
+                href: 'statement?schemeReference=2015&schemeYear=2018/2019'
+            }
+        ]
+    }) }}
+
+{% endif %}

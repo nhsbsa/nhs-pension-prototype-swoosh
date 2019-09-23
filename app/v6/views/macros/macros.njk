@@ -122,3 +122,41 @@
   </div>
 </details>
 {% endmacro %}
+
+
+{% macro bsaCard(params) %}
+<div class="bsa-card">
+    <div class="bsa-card__content">
+        <h3 class="heading-small bsa-card__heading govuk-margin-top-0">{{ params.title }}</h3>
+        {% if params.status %}
+          <p class="bold-xsmall">
+          {{ params.statusHtml | safe if params.statusHtml else params.status }}</p>
+        {% endif %}
+
+        {% if params.status and params.data %}
+        <hr class="break">
+        {% endif %}
+
+        {% if params.data %}
+          {% for item in params.data %}
+          <div class="data govuk-margin-bottom-0">
+              <span class="data-item bold-large">£{{ item.monthly }} <span class="bold-xsmall">a month (age {{ item.age }})</span></span>
+              <span class="data-item bold-xsmall"><span class="app-c-tag">{{ item.tag or "Estimate" }}</span></span>
+          </div>
+          {% endfor %}
+        {% endif %}
+    </div>
+    {% if params.actions %}
+    <div class="bsa-card__actions">
+        <ul class="bsa-card__actions-list">
+          {% for item in params.actions %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+          {% endfor %}
+          {% if params.inRetirementWindow %}
+          <li><a href="#">Claim your pension</a></li>
+          {% endif %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}

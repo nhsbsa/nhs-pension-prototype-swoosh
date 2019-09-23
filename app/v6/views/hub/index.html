@@ -1,0 +1,178 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Home page {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    <span class="visually-hidden">{{ data['hiddenInputExampleShownOnHub'] }}</span>
+
+    {% include "includes/phase_banner_beta.html" %}
+
+    {% if data['show'] === "sd"  %}
+    {{ bsaAccountDetailsBar({
+        code: "Membership number",
+        codeValue: "12345678",
+        headingClass: "large"
+    }) }}
+
+    {% else %}
+
+    {{ bsaAccountDetailsBar({
+        headingClass: "large"
+    }) }}
+    {% endif %}
+
+    <div class="grid-row">
+        <div class="column-full">
+
+            <h1 class="visually-hidden" id="page-heading">{{ serviceName }} home</h1>
+
+            {# {{ config.defaultEstimate.age }}
+            {{ port }} #}
+            <section aria-labelledBy="pensions-heading">
+                <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
+                <ul class="grid-row grid-grid">
+
+                    {# {% set estimate = data['estimate_test'] %}
+                    {% if (estimate == 'A') %}
+                    A = true
+                    {% elif (estimate == 'B') %}
+                    B = true
+                    {% elif (estimate == 'C') %}
+                    C = true
+                    {% endif %} #}
+
+                    {{ scheme }}
+                    {% set scheme = data['scheme'] %}
+
+                    {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %} 
+                        <li>
+                            {% include "hub/card/2015.html" %}
+                        </li>
+                    {% endif %}
+
+
+                    {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %} 
+                        <li>
+                            {% include "hub/card/2008.html" %}
+                        </li>
+                    {% endif %}
+
+
+                    {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}                    
+                        <li>
+                            {% include "hub/card/1995.html" %}
+                        </li>
+                    {% endif %}
+
+                </ul>
+
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                        {% include "includes/caveat-link.html" %}
+                    </div>
+                </div>
+
+            </section>
+
+            <hr>
+
+            {% if data['show'] === "inherited"  %}
+            <section aria-labelledBy="inherited-heading">
+                <h2 class="heading-large" id="inherited-heading">Your inherited pensions</h2>
+                <ul class="grid-row grid-grid">
+                    <li>
+                        {% include "hub/card/inherited-divorce.html" %}
+                    </li>
+                    <li>
+                        {% include "hub/card/inherited-bereavement.html" %}
+                    </li>
+                </ul>
+            </section>
+            <hr>
+
+            {% endif %}
+
+            <section aria-labelledBy="details-heading">
+                <h2 class="heading-large" id="details-heading">Your details</h2>
+                <ul class="grid-row grid-grid">
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="details">Your personal details</a></h3>
+                                <p>Check and make sure your personal and contact details are up to date.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    {% if data['show'] === "taking"  %}
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Your bank details</a></h3>
+                                <p>Check and update your bank details. This is the bank account your pension is being paid into.</p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </section>
+
+            <hr>
+
+            <section aria-labelledBy="choices-heading">
+                <h2 class="heading-large" id="choices-heading">Your choices</h2>
+                <ul class="grid-row grid-grid">
+
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Name a beneficiary</a></h3>
+                                <p>Nominate one or many people or organisations to receive your pension if you die.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Transfer a pension</a></h3>
+                                <p>You can transfer in from another pension scheme registered with HM Revenue & Customs (HMRC).</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- opt out only applicable to 2015 and only for 12 months? after joining scheme -->
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Leave the pension scheme</a></h3>
+                                <p>Learn about what you would lose if you decide to leave or take a break from your NHS pension.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    {# <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="#">Giving access to your account</a></h3>
+                                <p>Give access to your NHS Pension information to a trusted person or family member.</p>
+                            </div>
+                        </div>
+                    </li> #}
+
+                </ul>
+            </section>
+
+            <hr>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

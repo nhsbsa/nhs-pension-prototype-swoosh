@@ -59,7 +59,7 @@ $card-actions-bg-color: $white;
 
     &__actions-list {
         li {
-            margin-bottom: $card-spacing * 1.2;
+            margin-bottom: $card-spacing;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -69,5 +69,9 @@ $card-actions-bg-color: $white;
     &__actions-break {
         padding-top: 10px;
         border-top: 1px solid $card-border-color;
+    }
+
+    .break {
+        background-color: $card-border-color;
     }
 }

@@ -1,0 +1,52 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Still working? - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">Are you still working in the NHS?</h1>
+            </header>
+
+            <form method="post" class="form" action="still-working">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">Are you still working in the NHS?</legend>
+
+                    <div class="multiple-choice">
+                        <input id="swYes" type="radio" name="still-working" value="Yes">
+                        <label for="swYes">Yes</label>
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="swNo" type="radio" name="still-working" value="No">
+                        <label for="swNo">No</label>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+            </form>
+      
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

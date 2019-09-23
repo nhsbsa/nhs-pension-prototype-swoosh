@@ -1,0 +1,95 @@
+{% if data['2008'] === "w" or data['2008'] === "x" %}
+
+    {{ bsaCard({
+        title: '2008 pension',
+        status: 'You are no longer contributing to this pension.',
+        data: [
+            {
+                monthly: '422',
+                age: '65'
+            }
+        ],
+        actions: [
+            {
+                label: 'View your 2008 estimate',
+                href: 'estimate?schemeReference=2008'
+            },
+            {
+                label: 'View your 2008 contribution statement',
+                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
+            }
+        ]
+    }) }}
+
+{% elif data['2008'] === "pn"  %}
+
+    {{ bsaCard({
+        title: '2008 pension',
+        status: 'You are currently receiving this pension.'
+    }) }}
+
+{% elif data['2008'] === "u1"  %}
+
+    {{ bsaCard({
+        title: '2008 pension',
+        status: 'You have left this pension and are owed a refund.',
+        actions: [
+            {
+                label: 'Apply for a refund',
+                href: '#'
+            },
+            {
+                label: 'View your 2008 contribution statement',
+                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
+            }
+        ]
+    }) }}
+
+{% elif data['2008'] === "u2"  %}
+
+    {{ bsaCard({
+        title: '2008 pension',
+        status: 'You have left this pension and are owed a refund.',
+        actions: [
+            {
+                label: 'Apply for a refund',
+                href: '#'
+            },
+            {
+                label: 'View your 2008 contribution statement',
+                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
+            }
+        ]
+    }) }}
+
+{% elif data['2008'] === "n"  %}
+
+    {{ bsaCard({
+        title: '2008 pension',
+        status: 'You have left this pension and no money is owed to you.'
+    }) }}
+
+{% else %}
+
+    {{ bsaCard({
+        title: '2008 pension',
+        status: 'You are currently contributing to this pension.',
+        data: [
+            {
+                monthly: '422',
+                age: '65'
+            }
+        ],
+        actions: [
+            {
+                label: 'View your 2008 estimate',
+                href: 'estimate?schemeReference=2008'
+            },
+            {
+                label: 'View your 2008 contribution statement',
+                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
+            }
+        ]
+    }) }}
+
+{% endif %}

@@ -1,0 +1,72 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Apply for a refund {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        {# <div class="heading-group">
+            <p>{{ serviceName }}</p>
+            <h1 class="heading-large">Getting a refund of your 2015 pension scheme</h1>
+        </div> #}
+        
+        <div class="notice heading-group">
+            <p>{{ serviceName }}</p>
+            <i class="icon icon-important">
+                <span class="visually-hidden">Warning</span>
+            </i>
+            <h1 class="notice__heading heading-large">There is still time to rejoin this pension scheme</h1>
+        </div>
+
+        <p>You need to contribute to the pension scheme for 2 years in order to get a payable pension when you retire.
+        There is still time for you to rejoin and continue contributing to this 2015 pension scheme.</p>
+
+        <h2 class="heading-medium">Your pension contributions</h2>
+        <ol class="bsa-timeline">
+
+            <li class="bsa-timeline__entry bsa-timeline__entry--dash">
+                <h3 class="bsa-timeline__title">5 year scheme break expiry</h3>
+                <p class="bsa-timeline__info">
+                    <span class="bsa-timeline__date bold-xsmall">22 October 2023</span>
+                </p>
+                <p class="bsa-timeline__body">
+                    Speak to your employer about rejoining this scheme before <strong class="bold nobr">22 October 2023</strong>.
+                </p>
+            </li>
+            <li class="bsa-timeline__entry">
+                <h3 class="bsa-timeline__title">Last contribution</h3>
+                <p class="bsa-timeline__info">
+                    <span class="bsa-timeline__date bold-xsmall">22 October 2018</span>
+                </p>
+                <p>You stopped contributing to this scheme.</p>
+            </li>
+            <li class="bsa-timeline__entry">
+                <h3 class="bsa-timeline__title">First contribution</h3>
+                <p class="bsa-timeline__info">
+                    <span class="bsa-timeline__date bold-xsmall">20 September 2018</span>
+                </p>
+                <p>Your first 2015 pension scheme contribution.</p>
+            </li>
+        </ol>
+
+        <h2 class="heading-medium">Or you can apply to have this pension refunded</h2>
+        <p>If you apply for a refund and wish to rejoin the NHS pension scheme in the future,
+        you will rejoin the scheme as a new member and your contributions will begin again.</p>
+        <p><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-05/RF12%20%28V11%29%20-%20Digital%20-%2005.2018.pdf">Complete the refund application form</a></p>
+
+        <hr>
+        {% include "includes/back-to-home-link.html" %}
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}
