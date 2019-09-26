@@ -5,7 +5,7 @@ const BASE_PATH = '/';
 const ABS_BASE_PATH = `${BASE_PATH}`;
 
 router.get('/', function (req, res) {
-    res.redirect('/onboard/1/welcome')
+    res.redirect('/onboard/3/welcome')
 })
 
 router.get('/1', function (req, res) {
