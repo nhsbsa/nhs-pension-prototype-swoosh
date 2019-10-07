@@ -70,11 +70,33 @@
         status: 'You have left this pension scheme and no money is owed to you.'
     }) }}
 
-{% else %}
+{% elif data['1995'] === "a"  %}
 
     {{ bsaCard({
         title: '1995 pension',
         status: 'You are currently contributing to this pension.',
+        data: [
+            {
+                monthly: '2,104',
+                age: '60'
+            }
+        ],
+        actions: [
+            {
+                label: 'View your 1995 estimate',
+                href: 'estimate?schemeReference=2015'
+            },
+            {
+                label: 'View your 1995 contribution statement',
+                href: 'statement?schemeReference=1995&schemeYear=1994/1995'
+            }
+        ]
+    }) }}
+
+{% else %}
+
+    {{ bsaCard({
+        title: '1995 pension',
         data: [
             {
                 monthly: '2,104',
