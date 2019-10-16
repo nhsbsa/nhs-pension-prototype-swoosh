@@ -41,8 +41,10 @@ let scenario6Monthly = '1,294';
 let scenario6Yearly = '15,524';
 let scenario6Lump = scenario3Lump;
 
+// scenario 7
 let scenario7Monthly = '550';
 let scenario7Yearly = '6,602';
+let scenario7Lump = scenario3Lump;
 
 router.use(function (req, res, next) {
     if (!req.session.data.reports) {
@@ -119,6 +121,11 @@ router.post('/when', function (req, res) {
         req.session.data['maxLump'] = false;
     }
 
+    // scenario 7
+    if (startPension === 'specificDate') {
+        req.session.data['getMonthly'] = scenario7Monthly;
+        req.session.data['getYearly'] = scenario7Yearly;
+    }
 
     // if (startPension === 'specificDate') {
     //     req.session.data['getMonthly'] = scenario7Monthly;
@@ -155,10 +162,10 @@ router.post('/lump', function (req, res) {
     var normalAge = req.session.data['getNAge'];
     var startPension = req.session.data['pension-start'];
 
-    console.log(normalAge, lumpAmount);
+    console.log(normalAge, lumpAmount, startPension);
 
     // if lump set true/false
-    if (lumpAmount === 'Max' || lumpAmount === 'Other') {
+    if (lumpAmount === 'Max' || lumpAmount === 'Other' || lumpAmount === 'Min') {
         req.session.data['hasLump'] = true;
     } else {
         req.session.data['hasLump'] = false;
@@ -168,6 +175,12 @@ router.post('/lump', function (req, res) {
         req.session.data['maxLump'] = true;
     } else {
         req.session.data['maxLump'] = false;
+    }
+
+    if (lumpAmount === 'Min') {
+        req.session.data['minLump'] = true;
+    } else {
+        req.session.data['minLump'] = false;
     }
 
     // scenario 1

@@ -69,9 +69,11 @@ module.exports = {
   // amounts
   "hasLump": false,
   "maxLump": false,
+  "minLump": true,
   "noLump": true,
   "getLump": lump,
   "getMaxLump": "114,740",
+  "getMinLump": "15,192",
   "getMonthly": getMonthly,
   "getYearly": getYearly,
 
@@ -82,6 +84,19 @@ module.exports = {
   "defaultMonthly": getMonthly,
   "defaultYearly": getYearly,
   "defaultLump": lump,
-  "defaultDate": getNDate
+  "defaultDate": getNDate,
 
+  // 2008 scheme
+  "get2008Monthly": "422",
+  "get2008Yearly": "5,064",
+  "get2008NAge": "65",
+  "get2008Lump": "15,192",
+  "get2008NDate": "1 March 2040",
+
+  // 1995 scheme
+  "get1995Monthly": "2,104",
+  "get1995Yearly": "26,773",
+  "get1995NAge": "60",
+  "get1995Lump": "80,319",
+  "get1995NDate": "1 March 2035",
 }

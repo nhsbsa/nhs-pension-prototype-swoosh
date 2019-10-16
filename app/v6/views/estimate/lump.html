@@ -30,10 +30,17 @@
                     <p class="form-hint">A lump sum is a single payment paid to you in full on the date you start taking your pension.</p>
                     <p class="form-hint">You can choose to take any amount of lump sum up to your maximum amount, this changes based on the age you want to take your pension.</p>
 
+                    {% if ( data['schemeReference'] === '2008') or ( data['schemeReference'] === '1995') %}
+                    <div class="multiple-choice">
+                        <input id="min-lump" type="radio" name="lump-amount" value="Min" {{ checked('lump-amount','Min') }}>
+                        <label for="min-lump">£{{ data['getMinLump'] }} (Your minimum amount)</label>
+                    </div>
+                    {% else %}
                     <div class="multiple-choice">
                         <input id="no-lump" type="radio" name="lump-amount" value="None" {{ checked('lump-amount','None') }}>
                         <label for="no-lump">£0 (No lump sum)</label>
                     </div>
+                    {% endif %}
 
                     <div class="multiple-choice">
                         <input id="specific-age" type="radio" name="lump-amount" value="Max" {{ checked('lump-amount','Max') }}>

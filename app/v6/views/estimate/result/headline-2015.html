@@ -1,0 +1,11 @@
+<h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
+<p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data['getMonthly'] }} a month</p>
+<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data['getYearly'] }} a year</p>
+{% if ( data['hasLump'] === true) %}
+    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data['getLump'] }}</span>
+        when you start taking this pension
+    </p>
+{% else %}
+    <br>
+    <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span> <a href="lump">Add a lump sum</a>.</p>
+{% endif %}
