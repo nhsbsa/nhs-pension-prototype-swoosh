@@ -36,24 +36,18 @@
                 <fieldset class="form-group">
                     <legend class="visually-hidden">When would you like to start your pension?</legend>
 
-                    <ul class="list list-bullet form-hint">
-                    <li>Your earliest pension date is {{ data['getEDate'] }} when you will be {{ data['getEAge'] }}</li>
-                    <li>Your latest pension date is {{ data['getLDate'] }} when you will be {{ data['getLAge'] }}</li>
-                    <li>We can't give you an estimate outside of these ages</li>
-                    </ul>
-
-                    <p class="form-hint">The age that you start your pension will affect your maximum lump sum.</p>
-
-                    {# <div class="multiple-choice">
-                        <input id="age-55" type="radio" name="pension-start" value="age55" {{ checked('pension-start','age55') }}>
-                        <label for="age-55">At age 55 (earliest retirement age)</label>
-                    </div> #}
+                    <p class="form-hint">We can't give you an estimate before your earliest or after your latest pension dates.</p>
+                    <p class="form-hint">The date that you start your pension will affect your maximum lump sum.</p>
 
                     <div class="multiple-choice">
-                        <input id="age-67" type="radio" name="pension-start" value="{{ data['getNAge'] }}" checked>
-                        <label for="age-67">Your normal pension date ({{ data['getNDate'] }} age {{ data['getNAge'] }})</label>
+                        <input id="age-early" type="radio" name="pension-start" value="{{ data['getEAge'] }}" {{ checked('pension-start', data['getEAge']) }}>
+                        <label for="age-early">Your earliest pension date ({{ data['getEDate'] }} age {{ data['getEAge'] }})</label>
                     </div>
 
+                    <div class="multiple-choice">
+                        <input id="age-normal" type="radio" name="pension-start" value="{{ data['getNAge'] }}" {{ checked('pension-start', data['getNAge']) }}>
+                        <label for="age-normal">Your NHS pension date ({{ data['getNDate'] }} age {{ data['getNAge'] }})</label>
+                    </div>
 
                     <div class="multiple-choice" data-target="specific-age-panel">
                         <input id="specific-age" type="radio" name="pension-start" value="specificAge" {{ checked('pension-start','specificAge') }}>
@@ -96,6 +90,11 @@
                             </div>
                         </fieldset>
 
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="age-late" type="radio" name="pension-start" value="{{ data['getLAge'] }}" {{ checked('pension-start', data['getLAge']) }}>
+                        <label for="age-late">Your latest pension date ({{ data['getLDate'] }} age {{ data['getLAge'] }})</label>
                     </div>
    
                 </fieldset>

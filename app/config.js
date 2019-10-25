@@ -47,6 +47,25 @@ module.exports = {
     lump: '0',
     monthly: '2,231',
     yearly: '26,773'
+  },
+
+  summaryClaimantData: {
+    claimant: {
+      title: 'Mr',
+      firstName: 'John',
+      lastName: 'Doe',
+      nino: 'QQ 12 34 56 D',
+      dob: '19/11/1980',
+      telephone: '01234 567890',
+      address: {
+        line1: '85, Sample Lane',
+        line2: 'Sampletown',
+        postcode: 'SA4 7SH'
+      }
+    },
+    date: '24/09/2018',
+    language: 'English',
+    benefitCentre: 'Preston'
   }
 
 }

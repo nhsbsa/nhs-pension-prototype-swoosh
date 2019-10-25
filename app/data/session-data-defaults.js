@@ -99,4 +99,65 @@ module.exports = {
   "get1995NAge": "60",
   "get1995Lump": "80,319",
   "get1995NDate": "1 March 2035",
+
+
+
+  "estimateResult": {
+    "age": "1",
+    "date": "2",
+    "max": "3",
+    "min": "0",
+    "lump": "4",
+    "estimate": {
+      "monthly": "5",
+      "yearly": "6",
+    }
+  },
+
+  "normalNoLump2015": {
+    "normal": "67",
+    "age": "67",
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "0",
+    "estimate": {
+      "monthly": "2,231",
+      "yearly": "26,773",
+    }
+  },
+
+  "normalMaxLump2015": {
+    "normal": "67",
+    "age": "67",
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "114,740",
+    "estimate": {
+      "monthly": "1,434",
+      "yearly": "17,211",
+    }
+  },
+
+  "normalGivenLump2015": {
+    "normal": "67",
+    "age": "67",
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "2,106",
+      "yearly": "25,273",
+    }
+  },
+
+  "groupA": {
+    "name": "foo",
+    "title": "bar"
+  },
+
+  "groupB": {
+    "name": "baz",
+    "title": "yo"
+  }
+
 }

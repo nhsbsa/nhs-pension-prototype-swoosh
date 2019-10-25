@@ -21,24 +21,45 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <div class="interrupt-panel bsa-print-hide">
 
                 {# result headlines #}
-                {% if ( data['schemeReference'] === '2008') %}
-                    {% include "estimate/includes/headline-2008.html" %}
-                {% elif ( data['schemeReference'] === '1995') %}
-                    {% include "estimate/includes/headline-1995.html" %}
+                <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult.estimate.monthly }} a month</p>
+                <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult.estimate.yearly }}  a year</p>
+                {% if ( data.estimateResult.lump > "0" ) %}
+                    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult.lump }}</span>
+                        when you start taking this pension
+                    </p>
                 {% else %}
-                    {% include "estimate/includes/headline-2015.html" %}
+                    <br>
+                    <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span> <a href="lump">Add a lump sum</a>.</p>
                 {% endif %}
 
                 <hr class="break">
                 <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
                     {# result options #}
-                    {% if ( data['schemeReference'] === '2008') %}
-                        {% include "estimate/includes/options-2008.html" %}
-                    {% elif ( data['schemeReference'] === '1995') %}
-                        {% include "estimate/includes/options-1995.html" %}
-                    {% else %}
-                        {% include "estimate/includes/options-2015.html" %}
-                    {% endif %}
+                    <div>
+                        <dt class="cya-question">Start date</dt>
+                        <dd class="cya-answer">
+                            {{ data.estimateResult.date }} - age {{ data.estimateResult.age }}
+                            {% if ( data.estimateResult.age === data.estimateResult.normal ) %}
+                            <span class="font-xsmall nobr">(Your normal pension date)</span>
+                            {% endif %}
+                        </dd>
+                        <dd class="cya-change">
+                            <a href="when?schemeReference=2015">Change<span class="visually-hidden"> start date</span></a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="cya-question">Lump sum amount</dt>
+                        <dd class="cya-answer">
+                            £{{ data.estimateResult.lump }}
+                            {% if ( data.estimateResult.lump === data.estimateResult.max  ) %}
+                            <span class="font-xsmall nobr">(Your maximum lump amount)</span>
+                            {% endif %}
+                        </dd>
+                        <dd class="cya-change">
+                            <a href="lump?schemeReference=2015">Change<span class="visually-hidden"> lump sum amount</span></a>
+                        </dd>
+                    </div>
                 </dl>
 
                 <br>

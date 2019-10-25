@@ -33,18 +33,18 @@
                     {% if ( data['schemeReference'] === '2008') or ( data['schemeReference'] === '1995') %}
                     <div class="multiple-choice">
                         <input id="min-lump" type="radio" name="lump-amount" value="Min" {{ checked('lump-amount','Min') }}>
-                        <label for="min-lump">£{{ data['getMinLump'] }} (Your minimum amount)</label>
+                        <label for="min-lump">£{{ data.estimateResult.min }} (Your minimum amount)</label>
                     </div>
                     {% else %}
                     <div class="multiple-choice">
-                        <input id="no-lump" type="radio" name="lump-amount" value="None" {{ checked('lump-amount','None') }}>
+                        <input id="no-lump" type="radio" name="lump-amount" value="Min" {{ checked('lump-amount','Min') }}>
                         <label for="no-lump">£0 (No lump sum)</label>
                     </div>
                     {% endif %}
 
                     <div class="multiple-choice">
                         <input id="specific-age" type="radio" name="lump-amount" value="Max" {{ checked('lump-amount','Max') }}>
-                        <label for="specific-age">£{{ data['getMaxLump'] }} (Your maximum amount)</label>
+                        <label for="specific-age">£{{ data.estimateResult.max }} (Your maximum amount)</label>
                     </div>
 
                     <div class="multiple-choice" data-target="other-amount-panel">
@@ -57,7 +57,7 @@
                             <label class="form-label" for="other-amount-value">
                                 How much lump sum?
                                 <span class="form-hint">
-                                    You can't take more than £{{ data['getMaxLump'] }}.<br>
+                                    You can't take more than £{{ data.estimateResult.max }}.<br>
                                     The amount you enter will be rounded down to be divisible by 12.
                                 </span>
                             </label>                            

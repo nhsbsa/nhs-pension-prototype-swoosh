@@ -82,4 +82,26 @@ router.use('/estimate/', require('./views/estimate/_routes'))
 // This moves refund routing to refund directory
 router.use('/refund/', require('./views/refund/_routes'))
 
+
+router.post('/data-test', function (req, res, next) {
+  var data = req.session.data
+  
+  var groupA = data.groupA
+  var groupB = data.groupB
+  var question = data['changed-name']
+
+  if (question == 'yes'){
+    data.choice = data.groupA
+    res.redirect('/data-test')
+  }
+  else if (question == 'no') {
+    data.choice = data.groupB
+    res.redirect('/data-test' )
+  } else {
+    // if unanswered return back to page
+    res.redirect('/data-test' )
+  }
+  console.log(data.choice);
+
+});
 module.exports = router
