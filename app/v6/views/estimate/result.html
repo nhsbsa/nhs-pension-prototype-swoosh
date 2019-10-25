@@ -22,22 +22,22 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
 
                 {# result headlines #}
                 {% if ( data['schemeReference'] === '2008') %}
-                    {% include "estimate/result/headline-2008.html" %}
+                    {% include "estimate/includes/headline-2008.html" %}
                 {% elif ( data['schemeReference'] === '1995') %}
-                    {% include "estimate/result/headline-1995.html" %}
+                    {% include "estimate/includes/headline-1995.html" %}
                 {% else %}
-                    {% include "estimate/result/headline-2015.html" %}
+                    {% include "estimate/includes/headline-2015.html" %}
                 {% endif %}
 
                 <hr class="break">
                 <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
                     {# result options #}
                     {% if ( data['schemeReference'] === '2008') %}
-                        {% include "estimate/result/options-2008.html" %}
+                        {% include "estimate/includes/options-2008.html" %}
                     {% elif ( data['schemeReference'] === '1995') %}
-                        {% include "estimate/result/options-1995.html" %}
+                        {% include "estimate/includes/options-1995.html" %}
                     {% else %}
-                        {% include "estimate/result/options-2015.html" %}
+                        {% include "estimate/includes/options-2015.html" %}
                     {% endif %}
                 </dl>
 
