@@ -44,7 +44,7 @@
 
                     <div class="multiple-choice">
                         <input id="specific-age" type="radio" name="lump-amount" value="Max" {{ checked('lump-amount','Max') }}>
-                        <label for="specific-age">£{{ data.estimateResult.max }} (Your maximum amount)</label>
+                        <label for="specific-age">£{{ data.estimateResult.max }} (Your maximum amount at age {{ data.estimateResult.age }})</label>
                     </div>
 
                     <div class="multiple-choice" data-target="other-amount-panel">
@@ -57,7 +57,7 @@
                             <label class="form-label" for="other-amount-value">
                                 How much lump sum?
                                 <span class="form-hint">
-                                    You can't take more than £{{ data.estimateResult.max }}.<br>
+                                    You can't take more than £{{ data.estimateResult.max }} at age {{ data.estimateResult.age }}.<br>
                                     The amount you enter will be rounded down to be divisible by 12.
                                 </span>
                             </label>                            

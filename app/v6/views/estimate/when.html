@@ -40,12 +40,12 @@
                     <p class="form-hint">The date that you start your pension will affect your maximum lump sum.</p>
 
                     <div class="multiple-choice">
-                        <input id="age-early" type="radio" name="pension-start" value="{{ data['getEAge'] }}" {{ checked('pension-start', data['getEAge']) }}>
+                        <input id="age-early" type="radio" name="pension-start" value="early" {{ checked('pension-start', 'early') }}>
                         <label for="age-early">Your earliest pension date ({{ data['getEDate'] }} age {{ data['getEAge'] }})</label>
                     </div>
 
                     <div class="multiple-choice">
-                        <input id="age-normal" type="radio" name="pension-start" value="{{ data['getNAge'] }}" {{ checked('pension-start', data['getNAge']) }}>
+                        <input id="age-normal" type="radio" name="pension-start" value="normal" {{ checked('pension-start', 'normal') }}>
                         <label for="age-normal">Your NHS pension date ({{ data['getNDate'] }} age {{ data['getNAge'] }})</label>
                     </div>
 
@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="multiple-choice">
-                        <input id="age-late" type="radio" name="pension-start" value="{{ data['getLAge'] }}" {{ checked('pension-start', data['getLAge']) }}>
+                        <input id="age-late" type="radio" name="pension-start" value="late" {{ checked('pension-start', 'late') }}>
                         <label for="age-late">Your latest pension date ({{ data['getLDate'] }} age {{ data['getLAge'] }})</label>
                     </div>
    

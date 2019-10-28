@@ -20,12 +20,21 @@
         {% if data['reports'] != '' %}
 
             {% for report in data['reports'] | reverse %}
+{#
+            <tr>
+                <td colspan="5">{{ report | dump }}</td>
+            </tr>
+#}
             <tr>
                 <td>
                     <span class="table-heading" aria-hidden="true">Start date</span>
                     {{ report.date }}
-                    {% if ( report.date === data['getNDate']) %}
-                        <span class="font-xsmall nobr">(Your normal pension date)</span>
+                    {% if ( report.age === data['early2015'] ) %}
+                        <span class="font-xsmall nobr">(Your earliest pension date)</span>
+                    {% elif ( report.age === data['normal2015'] ) %}
+                        <span class="font-xsmall nobr">(Your NHS pension date)</span>
+                    {% elif ( report.age === data['late2015'] ) %}
+                        <span class="font-xsmall nobr">(Your latest pension date)</span>
                     {% endif %}
                 </td>
                 <td>
@@ -38,11 +47,11 @@
                 </td>
                 <td class="numeric">
                     <span class="table-heading" aria-hidden="true">Monthly</span>
-                    £{{ report.monthly }} 
+                    £{{ report.estimate.monthly }} 
                 </td>
                 <td class="numeric">
                     <span class="table-heading" aria-hidden="true">Yearly</span>
-                    £{{ report.yearly }}
+                    £{{ report.estimate.yearly }}
                 </td>
             </tr>
             {% endfor %}
@@ -51,24 +60,24 @@
         <tr>
             <td>
                 <span class="table-heading" aria-hidden="true">Start date</span>
-                {{ data['defaultDate'] }}
-                <span class="font-xsmall nobr">(Your normal pension date)</span>
+                {{ data['estimateDate'] }}
+                <span class="font-xsmall nobr">(Your NHS pension date)</span>
             </td>
             <td>
                 <span class="table-heading" aria-hidden="true">Age</span>
-                {{ data['defaultAge'] }}
+                {{ data['estimateAge'] }}
             </td>
             <td class="numeric">
                 <span class="table-heading" aria-hidden="true">Lump sum</span>
-                £{{ data['defaultLump'] }}
+                £{{ data['estimateLump'] }}
             </td>
             <td class="numeric">
                 <span class="table-heading" aria-hidden="true">Monthly</span>
-                £{{ data['defaultMonthly'] }}
+                £{{ data['estimateMonthly'] }}
             </td>
             <td class="numeric">
                 <span class="table-heading" aria-hidden="true">Yearly</span>
-                £{{ data['defaultYearly'] }}
+                £{{ data['estimateYearly'] }}
             </td>
         </tr>
     </tbody>

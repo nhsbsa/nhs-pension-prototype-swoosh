@@ -13,17 +13,25 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
         class: "bsa-account-details-bar--slim"
     }) }}
 
-    {% include "includes/back-link.html" %}
+    {# {% include "includes/back-link.html" %} #}
 
     <div class="grid-row">
         <div class="column-desktop-two-thirds">
 
             <div class="interrupt-panel bsa-print-hide">
+{#
+            {{ data.estimateResult | dump }}
+            <br>
+            Lump amount: {{ data['lump-amount'] }}
+            <br>
+            Start date: {{ data['pension-start'] }}
+#}
 
                 {# result headlines #}
                 <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
                 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult.estimate.monthly }} a month</p>
                 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult.estimate.yearly }}  a year</p>
+
                 {% if ( data.estimateResult.lump > "0" ) %}
                     <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult.lump }}</span>
                         when you start taking this pension
@@ -41,7 +49,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                         <dd class="cya-answer">
                             {{ data.estimateResult.date }} - age {{ data.estimateResult.age }}
                             {% if ( data.estimateResult.age === data.estimateResult.normal ) %}
-                            <span class="font-xsmall nobr">(Your normal pension date)</span>
+                            <span class="font-xsmall nobr">(Your NHS pension date)</span>
                             {% endif %}
                         </dd>
                         <dd class="cya-change">
@@ -53,7 +61,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                         <dd class="cya-answer">
                             £{{ data.estimateResult.lump }}
                             {% if ( data.estimateResult.lump === data.estimateResult.max  ) %}
-                            <span class="font-xsmall nobr">(Your maximum lump amount)</span>
+                            <span class="font-xsmall nobr">(Your maximum amount at age {{ data.estimateResult.age }})</span>
                             {% endif %}
                         </dd>
                         <dd class="cya-change">
