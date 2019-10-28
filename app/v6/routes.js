@@ -104,4 +104,11 @@ router.post('/data-test', function (req, res, next) {
   console.log(data.choice);
 
 });
+
+router.get('/hub', function (req, res, next) {
+  var data = req.session.data
+  data.estimateResult2015 = data.estimateResult;
+  req.next();
+})
+
 module.exports = router

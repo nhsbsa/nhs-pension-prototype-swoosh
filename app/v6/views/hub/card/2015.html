@@ -5,8 +5,8 @@
         status: 'You are no longer contributing to this pension.',
         data: [
             {
-                monthly: data.estimateResult.estimate.monthly,
-                age: data.estimateResult.age
+                monthly: data.estimateResult2015.estimate.monthly,
+                age: data.estimateResult2015.age
             }
         ],
         actions: [
@@ -77,8 +77,8 @@
         status: 'You are currently contributing to this pension.',
         data: [
             {
-                monthly: data.estimateResult.estimate.monthly,
-                age: data.estimateResult.age
+                monthly: data.estimateResult2015.estimate.monthly,
+                age: data.estimateResult2015.age
             }
         ],
         actions: [
@@ -99,14 +99,14 @@
         title: '2015 pension',
         data: [
             {
-                monthly: data.estimateResult.estimate.monthly,
-                age: data.estimateResult.age
+                monthly: data.estimateResult2015.estimate.monthly,
+                age: data.estimateResult2015.age
             }
         ],
         actions: [
             {
                 label: 'View your 2015 estimate',
-                href: 'estimate?schemeReference=2015'
+                href: 'estimate/2015?schemeReference=2015'
             },
             {
                 label: 'View your 2015 contribution statement',

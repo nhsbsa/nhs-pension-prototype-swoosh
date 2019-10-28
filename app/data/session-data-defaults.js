@@ -22,13 +22,11 @@ let lastName = "Jones";
 
 let getNDate = "1 March 2042";
 let getNAge = "67";
-// let getMonthly = "2,231";
-// let getYearly = "26,773";
 
 let getEAge = "55";
 let nino = "QQ 12 34 56 C";
 
-// default estimates
+// 2015 (default)
 let estimateMonthly = "2,231";
 let estimateYearly = "26,773";
 let estimateDate = getNDate;
@@ -37,6 +35,55 @@ let estimateLump = "0";
 let normal2015 = "67";
 let early2015 = "55";
 let late2015 = "75";
+
+let estimateResult2015 = {
+  normal: normal2015,
+  age: normal2015,
+  date: estimateDate,
+  max: estimateMax,
+  min: "0",
+  lump: "0",
+  estimate: {
+    monthly: estimateMonthly,
+    yearly: estimateYearly
+  }
+};
+
+// 2008
+let normal2008 = "65";
+let early2008 = "55";
+let late2008 = "75";
+
+let estimateResult2008 = {
+  normal: normal2008,
+  age: normal2008,
+  date: "change me 08 date",
+  max: "change me 08 max",
+  min: "2008 min",
+  lump: "2008 lump",
+  estimate: {
+    monthly: "08 monthly",
+    yearly: "08 yearly"
+  }
+};
+
+// 1995
+let normal1995 = "60";
+let early1995 = "50";
+let late1995 = "75";
+
+let estimateResult1995 = {
+  normal: normal1995,
+  age: normal1995,
+  date: "change me 95 date",
+  max: "change me 95 max",
+  min: "change me 95 min",
+  lump: "change me 95 lump",
+  estimate: {
+    monthly: "95 monthly",
+    yearly: "95 yearly"
+  }
+};
 
 module.exports = {
 
@@ -67,32 +114,12 @@ module.exports = {
   "getEDate": "1 March 2028",
   "getNDate": getNDate,
   "getLDate": "1 March 2050",
-
-  // // need to set this as NDate
   "getDate": getNDate,
 
   // // ages
   "getEAge": getEAge,
   "getNAge": getNAge,
   "getLAge": late2015,
-
-
-  // "estimateAge": getNAge,
-
-  // // "get2015Age": "67",
-  // // "get2008Age": "65",
-  // // "get1995Age": "60",
-
-  // // amounts
-  // "hasLump": false,
-  // "maxLump": false,
-  // "minLump": true,
-  // "noLump": true,
-  // "getLump": lump,
-  // "getMaxLump": estimateMax,
-  // "getMinLump": "15,192",
-  // "getMonthly": getMonthly,
-  // "getYearly": getYearly,
 
   // // scheme
   "schemeReference": "2015",
@@ -104,33 +131,11 @@ module.exports = {
   "estimateLump": estimateLump,
   "estimateDate": getNDate,
 
-  // // 2008 scheme
-  // "get2008Monthly": "422",
-  // "get2008Yearly": "5,064",
-  // "get2008NAge": "65",
-  // "get2008Lump": "15,192",
-  // "get2008NDate": "1 March 2040",
-
-  // // 1995 scheme
-  // "get1995Monthly": "2,104",
-  // "get1995Yearly": "26,773",
-  // "get1995NAge": "60",
-  // "get1995Lump": "80,319",
-  // "get1995NDate": "1 March 2035",
-
-
-  "estimateResult": {
-    "normal": normal2015,
-    "age": normal2015,
-    "date": estimateDate,
-    "max": estimateMax,
-    "min": "0",
-    "lump": "0",
-    "estimate": {
-      "monthly": estimateMonthly,
-      "yearly": estimateYearly,
-    }
-  },
+  // estimate results arrays
+  "estimateResult": estimateResult2015,
+  "estimateResult2015": estimateResult2015,
+  "estimateResult2008": estimateResult2008,
+  "estimateResult1995": estimateResult1995,
 
   "normalAgeMinLump2015": {
     "normal": normal2015,
@@ -312,6 +317,19 @@ module.exports = {
     }
   },
   
+  // 2008
+  "normalAgeMinLump2008": {
+    "normal": normal2008,
+    "age": normal2008,
+    "date": "1 March 2040",
+    "max": "32,000",
+    "lump": "12,000",
+    "estimate": {
+      "monthly": "987",
+      "yearly": "11,844",
+    }
+  },
+
   "groupA": {
     "name": "foo",
     "title": "bar"

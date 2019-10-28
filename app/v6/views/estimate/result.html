@@ -19,13 +19,15 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
         <div class="column-desktop-two-thirds">
 
             <div class="interrupt-panel bsa-print-hide">
-{#
+
             {{ data.estimateResult | dump }}
+            <br>
+            {{ data['schemeReference'] }}
             <br>
             Lump amount: {{ data['lump-amount'] }}
             <br>
             Start date: {{ data['pension-start'] }}
-#}
+
 
                 {# result headlines #}
                 <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
@@ -53,7 +55,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                             {% endif %}
                         </dd>
                         <dd class="cya-change">
-                            <a href="when?schemeReference=2015">Change<span class="visually-hidden"> start date</span></a>
+                            <a href="when">Change<span class="visually-hidden"> start date</span></a>
                         </dd>
                     </div>
                     <div>
@@ -65,7 +67,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
                             {% endif %}
                         </dd>
                         <dd class="cya-change">
-                            <a href="lump?schemeReference=2015">Change<span class="visually-hidden"> lump sum amount</span></a>
+                            <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
                         </dd>
                     </div>
                 </dl>

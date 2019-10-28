@@ -9,8 +9,26 @@ router.get('/', function (req, res) {
   var data = req.session.data
 
   // sets default data
-  data.estimateResult = data.normalAgeMinLump2015;
+  // data.estimateResult = data.normalAgeMinLump2015;
 
+  res.redirect(`${RESULT_PATH}`);
+})
+
+router.get('/2015', function (req, res) {
+  var data = req.session.data
+  data.estimateResult = data.estimateResult2015;
+  res.redirect(`${RESULT_PATH}`);
+})
+
+router.get('/2008', function (req, res) {
+  var data = req.session.data
+  data.estimateResult = data.estimateResult2008;
+  res.redirect(`${RESULT_PATH}`);
+})
+
+router.get('/1995', function (req, res) {
+  var data = req.session.data
+  data.estimateResult = data.estimateResult1995;
   res.redirect(`${RESULT_PATH}`);
 })
 
@@ -59,24 +77,19 @@ router.post('/lump', function (req, res) {
     } else if (start == 'specificDate' && lumpAmount == 'Min') {
       data.estimateResult = data.dateAgeMinLump2015;
     }
+
+    req.session.data.reports.push(data.estimateResult)
   
     // if 2008
   } else if (data.schemeReference === '2008') {
-
+    if (start == 'specificAge' && lumpAmount == 'Other') {
+      data.estimateResult = normalAgeMinLump2008;
+    }
+    
     // if 1995
   } else {
 
   }
-
-  // var reportDetails = {
-  //   monthly: req.session.data['getMonthly'],
-  //   yearly: req.session.data['getYearly'],
-  //   age: req.session.data['estimateAge'],
-  //   lump: req.session.data['getLump'],
-  //   date: req.session.data['getDate']
-  // };
-
-  req.session.data.reports.push(data.estimateResult)
   
   res.redirect(`${RESULT_PATH}`);
 })
@@ -84,7 +97,10 @@ router.post('/lump', function (req, res) {
 router.post('/estimate/result', function (req, res) {
 
   var data = req.session.data
-  data.estimateResult = data.normalAgeMinLump2015;
+  data.estimateResult2015 = data.estimateResult;
+  data.estimateResult2008 = data.estimateResult;
+  data.estimateResult1995 = data.estimateResult;
+
   console.log(data.estimateResult);
   // res.redirect(`${RESULT_PATH}`);
 })
@@ -135,6 +151,8 @@ router.post('/when', function (req, res, next) {
         data.estimateResult = data.dateAgeMinLump2015;
       }
 
+      req.session.data.reports.push(data.estimateResult)
+
       // if 2008
     } else if (data.schemeReference === '2008') {
   
@@ -142,16 +160,6 @@ router.post('/when', function (req, res, next) {
     } else {
   
     }
-
-    // var reportDetails = {
-    //   monthly: req.session.data['getMonthly'],
-    //   yearly: req.session.data['getYearly'],
-    //   age: req.session.data['estimateAge'],
-    //   lump: req.session.data['getLump'],
-    //   date: req.session.data['getDate']
-    // };
-
-    req.session.data.reports.push(data.estimateResult)
 
     res.redirect(`${RESULT_PATH}`);
   
