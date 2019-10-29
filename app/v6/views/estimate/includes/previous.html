@@ -8,11 +8,13 @@
     <caption class="visually-hidden">Other retirement examples</caption>
     <thead>
         <tr>
+            
             <th scope="col" class="nobr">Start date</th>
             <th scope="col" class="nobr">Age</th>
             <th scope="col" class="numeric nobr">Lump sum</th>
             <th scope="col" class="numeric nobr">Monthly</th>
             <th scope="col" class="numeric nobr">Yearly</th>
+            {# <th scope="col" class="nobr">From</th> #}
         </tr>
     </thead>
     <tbody>
@@ -20,11 +22,11 @@
         {% if data['reports'] != '' %}
 
             {% for report in data['reports'] | reverse %}
-{#
-            <tr>
-                <td colspan="5">{{ report | dump }}</td>
-            </tr>
-#}
+
+            {# <tr>
+                <td colspan="6">{{ report | dump }}</td>
+            </tr> #}
+
             <tr>
                 <td>
                     <span class="table-heading" aria-hidden="true">Start date</span>
@@ -53,11 +55,13 @@
                     <span class="table-heading" aria-hidden="true">Yearly</span>
                     £{{ report.estimate.yearly }}
                 </td>
+                {# <td>{{ report.scheme }}</td> #}
             </tr>
             {% endfor %}
 
         {% endif %}
         <tr>
+            
             <td>
                 <span class="table-heading" aria-hidden="true">Start date</span>
                 {{ data['estimateDate'] }}
@@ -79,6 +83,7 @@
                 <span class="table-heading" aria-hidden="true">Yearly</span>
                 £{{ data['estimateYearly'] }}
             </td>
+            {# <td>2015</td> #}
         </tr>
     </tbody>
 </table>

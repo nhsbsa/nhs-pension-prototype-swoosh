@@ -37,6 +37,7 @@ let early2015 = "55";
 let late2015 = "75";
 
 let estimateResult2015 = {
+  scheme: "2015",
   normal: normal2015,
   age: normal2015,
   date: estimateDate,
@@ -60,6 +61,7 @@ let early2008 = "55";
 let late2008 = "75";
 
 let estimateResult2008 = {
+  scheme: "2008",
   normal: normal2008,
   age: normal2008,
   date: estimateDate2008,
@@ -83,6 +85,7 @@ let early1995 = "50";
 let late1995 = "75";
 
 let estimateResult1995 = {
+  scheme: "1995",
   normal: normal1995,
   age: normal1995,
   date: estimateDate1995,
@@ -148,6 +151,7 @@ module.exports = {
   "estimateResult1995": estimateResult1995,
 
   "normalAgeMinLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": normal2015,
     "date": "1 March 2042",
@@ -160,6 +164,7 @@ module.exports = {
   },
 
   "normalAgeMaxLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": normal2015,
     "date": "1 March 2042",
@@ -172,6 +177,7 @@ module.exports = {
   },
 
   "normalAgeGivenLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": normal2015,
     "date": "1 March 2042",
@@ -184,6 +190,7 @@ module.exports = {
   },
 
   "givenAgeGivenLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": "63",
     "date": "1 March 2038",
@@ -196,6 +203,7 @@ module.exports = {
   },
 
   "earlyAgeGivenLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": early2015,
     "date": "1 March 2030",
@@ -208,6 +216,7 @@ module.exports = {
   },
 
   "lateAgeGivenLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": late2015,
     "date": "1 March 2050",
@@ -220,6 +229,7 @@ module.exports = {
   },
 
   "dateAgeGivenLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": "60",
     "date": "1 March 2050",
@@ -232,6 +242,7 @@ module.exports = {
   },
 
   "givenAgeMaxLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": "63",
     "date": "1 March 2038",
@@ -244,6 +255,7 @@ module.exports = {
   },
   
   "earlyAgeMaxLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": early2015,
     "date": "1 March 2030",
@@ -256,6 +268,7 @@ module.exports = {
   },
 
   "lateAgeMaxLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": late2015,
     "date": "1 March 2050",
@@ -268,6 +281,7 @@ module.exports = {
   },
 
   "dateAgeMaxLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": "60",
     "date": "1 March 2050",
@@ -280,6 +294,7 @@ module.exports = {
   },
 
   "givenAgeMinLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": "63",
     "date": "1 March 2038",
@@ -292,6 +307,7 @@ module.exports = {
   },
   
   "earlyAgeMinLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": early2015,
     "date": "1 March 2030",
@@ -304,6 +320,7 @@ module.exports = {
   },
 
   "lateAgeMinLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": late2015,
     "date": "1 March 2050",
@@ -316,6 +333,7 @@ module.exports = {
   },
 
   "dateAgeMinLump2015": {
+    "scheme": "2015",
     "normal": normal2015,
     "age": "60",
     "date": "1 March 2050",
@@ -331,6 +349,7 @@ module.exports = {
   
   // 2008 scenarios
   "normalAgeMinLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": normal2008,
     "date": "1 March 2042",
@@ -343,6 +362,7 @@ module.exports = {
   },
 
   "normalAgeMaxLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": normal2008,
     "date": "1 March 2042",
@@ -355,6 +375,7 @@ module.exports = {
   },
 
   "normalAgeGivenLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": normal2008,
     "date": "1 March 2042",
@@ -367,6 +388,7 @@ module.exports = {
   },
 
   "givenAgeGivenLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": "63",
     "date": "1 March 2038",
@@ -379,6 +401,7 @@ module.exports = {
   },
 
   "earlyAgeGivenLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": early2008,
     "date": "1 March 2030",
@@ -391,6 +414,7 @@ module.exports = {
   },
 
   "lateAgeGivenLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": late2008,
     "date": "1 March 2050",
@@ -403,6 +427,7 @@ module.exports = {
   },
 
   "dateAgeGivenLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": "60",
     "date": "1 March 2050",
@@ -415,6 +440,7 @@ module.exports = {
   },
 
   "givenAgeMaxLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": "63",
     "date": "1 March 2038",
@@ -427,6 +453,7 @@ module.exports = {
   },
   
   "earlyAgeMaxLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": early2008,
     "date": "1 March 2030",
@@ -439,6 +466,7 @@ module.exports = {
   },
 
   "lateAgeMaxLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": late2008,
     "date": "1 March 2050",
@@ -451,6 +479,7 @@ module.exports = {
   },
 
   "dateAgeMaxLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": "60",
     "date": "1 March 2050",
@@ -463,6 +492,7 @@ module.exports = {
   },
 
   "givenAgeMinLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": "63",
     "date": "1 March 2038",
@@ -475,6 +505,7 @@ module.exports = {
   },
   
   "earlyAgeMinLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": early2008,
     "date": "1 March 2030",
@@ -487,6 +518,7 @@ module.exports = {
   },
 
   "lateAgeMinLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": late2008,
     "date": "1 March 2050",
@@ -499,6 +531,7 @@ module.exports = {
   },
 
   "dateAgeMinLump2008": {
+    "scheme": "2008",
     "normal": normal2008,
     "age": "60",
     "date": "1 March 2050",
@@ -510,6 +543,203 @@ module.exports = {
     }
   },
   // end 2008 scenarios
+
+   // 1995 scenarios
+   "normalAgeMinLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": normal1995,
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "0",
+    "estimate": {
+      "monthly": "2,231",
+      "yearly": "26,773",
+    }
+  },
+
+  "normalAgeMaxLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": normal1995,
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "114,740",
+    "estimate": {
+      "monthly": "1,434",
+      "yearly": "17,211",
+    }
+  },
+
+  "normalAgeGivenLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": normal1995,
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "2,106",
+      "yearly": "25,273",
+    }
+  },
+
+  "givenAgeGivenLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": "63",
+    "date": "1 March 2038",
+    "max": "72,960",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "1,294",
+      "yearly": "15,524",
+    }
+  },
+
+  "earlyAgeGivenLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": early1995,
+    "date": "1 March 2030",
+    "max": "28,296",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "425",
+      "yearly": "5,102",
+    }
+  },
+
+  "lateAgeGivenLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": late1995,
+    "date": "1 March 2050",
+    "max": "229,515",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "4,338",
+      "yearly": "52,054",
+    }
+  },
+
+  "dateAgeGivenLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": "60",
+    "date": "1 March 2050",
+    "max": "51,792",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "882",
+      "yearly": "10,585",
+    }
+  },
+
+  "givenAgeMaxLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": "63",
+    "date": "1 March 2038",
+    "max": "72,960",
+    "lump": "72,960",
+    "estimate": {
+      "monthly": "912",
+      "yearly": "10,994",
+    }
+  },
+  
+  "earlyAgeMaxLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": early1995,
+    "date": "1 March 2030",
+    "max": "28,296",
+    "lump": "28,296",
+    "estimate": {
+      "monthly": "354",
+      "yearly": "4,244",
+    }
+  },
+
+  "lateAgeMaxLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": late1995,
+    "date": "1 March 2050",
+    "max": "229,515",
+    "lump": "229,515",
+    "estimate": {
+      "monthly": "2,869",
+      "yearly": "34,428",
+    }
+  },
+
+  "dateAgeMaxLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": "60",
+    "date": "1 March 2050",
+    "max": "51,792",
+    "lump": "51,792",
+    "estimate": {
+      "monthly": "647",
+      "yearly": "7,769",
+    }
+  },
+
+  "givenAgeMinLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": "63",
+    "date": "1 March 2038",
+    "max": "72,960",
+    "lump": "0",
+    "estimate": {
+      "monthly": "1,419",
+      "yearly": "17,024",
+    }
+  },
+  
+  "earlyAgeMinLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": early1995,
+    "date": "1 March 2030",
+    "max": "28,296",
+    "lump": "0",
+    "estimate": {
+      "monthly": "550",
+      "yearly": "6,602",
+    }
+  },
+
+  "lateAgeMinLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": late1995,
+    "date": "1 March 2050",
+    "max": "229,515",
+    "lump": "0",
+    "estimate": {
+      "monthly": "4,463",
+      "yearly": "53,554",
+    }
+  },
+
+  "dateAgeMinLump1995": {
+    "scheme": "1995",
+    "normal": normal1995,
+    "age": "60",
+    "date": "1 March 2050",
+    "max": "51,792",
+    "lump": "0",
+    "estimate": {
+      "monthly": "1,007",
+      "yearly": "12,085",
+    }
+  },
+  // end 1995 scenarios
 
   "groupA": {
     "name": "foo",

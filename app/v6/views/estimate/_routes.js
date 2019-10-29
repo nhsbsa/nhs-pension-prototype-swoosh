@@ -156,8 +156,59 @@ router.post('/lump', function (req, res) {
     // if 1995
   } else {
 
-    // push result to report
-    // req.session.data.reports.push(data.estimateResult1995)
+     // Given lumps
+     if (start == 'specificAge' && lumpAmount == 'Other') {
+      data.estimateResult1995 = data.givenAgeGivenLump1995;
+      data.estimateResult = data.givenAgeGivenLump1995;
+    } else if (start == 'early' && lumpAmount == 'Other') {
+      data.estimateResult1995 = data.earlyAgeGivenLump1995;
+      data.estimateResult = data.earlyAgeGivenLump1995;
+    } else if (start == 'late' && lumpAmount == 'Other') {
+      data.estimateResult1995 = data.lateAgeGivenLump1995;
+      data.estimateResult = data.lateAgeGivenLump1995;
+    } else if (start == 'normal' && lumpAmount == 'Other') {
+      data.estimateResult1995 = data.normalAgeGivenLump1995;
+      data.estimateResult = data.normalAgeGivenLump1995;
+    } else if (start == 'specificDate' && lumpAmount == 'Other') {
+      data.estimateResult1995 = data.dateAgeGivenLump1995;
+      data.estimateResult = data.dateAgeGivenLump1995;
+
+      // Max lumps
+    } else if (start == 'specificAge' && lumpAmount == 'Max') {
+      data.estimateResult1995 = data.givenAgeMaxLump1995;
+      data.estimateResult = data.givenAgeMaxLump1995;
+    } else if (start == 'early' && lumpAmount == 'Max') {
+      data.estimateResult1995 = data.earlyAgeMaxLump1995;
+      data.estimateResult = data.earlyAgeMaxLump1995;
+    } else if (start == 'late' && lumpAmount == 'Max') {
+      data.estimateResult1995 = data.lateAgeMaxLump1995;
+      data.estimateResult = data.lateAgeMaxLump1995;
+    } else if (start == 'normal' && lumpAmount == 'Max') {
+      data.estimateResult1995 = data.normalAgeMaxLump1995;
+      data.estimateResult = data.normalAgeMaxLump1995;
+    } else if (start == 'specificDate' && lumpAmount == 'Max') {
+      data.estimateResult1995 = data.dateAgeMaxLump1995;
+      data.estimateResult = data.dateAgeMaxLump1995;
+    
+      // min lumps
+    } else if (start == 'specificAge' && lumpAmount == 'Min') {
+      data.estimateResult1995 = data.givenAgeMinLump1995;
+      data.estimateResult = data.givenAgeMinLump1995;
+    } else if (start == 'early' && lumpAmount == 'Min') {
+      data.estimateResult1995 = data.earlyAgeMinLump1995;
+      data.estimateResult = data.earlyAgeMinLump1995;
+    } else if (start == 'late' && lumpAmount == 'Min') {
+      data.estimateResult1995 = data.lateAgeMinLump1995;
+      data.estimateResult = data.lateAgeMinLump1995;
+    } else if (start == 'normal' && lumpAmount == 'Min') {
+      data.estimateResult1995 = data.normalAgeMinLump1995;
+      data.estimateResult = data.normalAgeMinLump1995;
+    } else if (start == 'specificDate' && lumpAmount == 'Min') {
+      data.estimateResult1995 = data.dateAgeMinLump1995;
+      data.estimateResult = data.dateAgeMinLump1995;
+    }
+
+    req.session.data.reports.push(data.estimateResult1995)
   }
   
   res.redirect(`${RESULT_PATH}`);
@@ -240,7 +291,7 @@ router.post('/when', function (req, res, next) {
       // if 2008
     } else if (data.schemeReference === '2008') {
   
-      // Given lumps all set to £18k
+      // Given lumps
       if (start == 'specificAge' && lumpAmount == 'Other') {
         data.estimateResult2008 = data.givenAgeGivenLump2008;
         data.estimateResult = data.givenAgeGivenLump2008;
@@ -274,7 +325,7 @@ router.post('/when', function (req, res, next) {
         data.estimateResult2008 = data.dateAgeMaxLump2008;
         data.estimateResult = data.dateAgeMaxLump2008;
       
-        // min lumps effectively £0 in 2008
+        // min lumps
       } else if (start == 'specificAge' && lumpAmount == 'Min') {
         data.estimateResult2008 = data.givenAgeMinLump2008;
         data.estimateResult = data.givenAgeMinLump2008;
@@ -296,7 +347,61 @@ router.post('/when', function (req, res, next) {
 
       // if 1995
     } else {
-  
+
+      // Given lumps
+      if (start == 'specificAge' && lumpAmount == 'Other') {
+        data.estimateResult1995 = data.givenAgeGivenLump1995;
+        data.estimateResult = data.givenAgeGivenLump1995;
+      } else if (start == 'early' && lumpAmount == 'Other') {
+        data.estimateResult1995 = data.earlyAgeGivenLump1995;
+        data.estimateResult = data.earlyAgeGivenLump1995;
+      } else if (start == 'late' && lumpAmount == 'Other') {
+        data.estimateResult1995 = data.lateAgeGivenLump1995;
+        data.estimateResult = data.lateAgeGivenLump1995;
+      } else if (start == 'normal' && lumpAmount == 'Other') {
+        data.estimateResult1995 = data.normalAgeGivenLump1995;
+        data.estimateResult = data.normalAgeGivenLump1995;
+      } else if (start == 'specificDate' && lumpAmount == 'Other') {
+        data.estimateResult1995 = data.dateAgeGivenLump1995;
+        data.estimateResult = data.dateAgeGivenLump1995;
+
+        // Max lumps
+      } else if (start == 'specificAge' && lumpAmount == 'Max') {
+        data.estimateResult1995 = data.givenAgeMaxLump1995;
+        data.estimateResult = data.givenAgeMaxLump1995;
+      } else if (start == 'early' && lumpAmount == 'Max') {
+        data.estimateResult1995 = data.earlyAgeMaxLump1995;
+        data.estimateResult = data.earlyAgeMaxLump1995;
+      } else if (start == 'late' && lumpAmount == 'Max') {
+        data.estimateResult1995 = data.lateAgeMaxLump1995;
+        data.estimateResult = data.lateAgeMaxLump1995;
+      } else if (start == 'normal' && lumpAmount == 'Max') {
+        data.estimateResult1995 = data.normalAgeMaxLump1995;
+        data.estimateResult = data.normalAgeMaxLump1995;
+      } else if (start == 'specificDate' && lumpAmount == 'Max') {
+        data.estimateResult1995 = data.dateAgeMaxLump1995;
+        data.estimateResult = data.dateAgeMaxLump1995;
+      
+        // min lumps
+      } else if (start == 'specificAge' && lumpAmount == 'Min') {
+        data.estimateResult1995 = data.givenAgeMinLump1995;
+        data.estimateResult = data.givenAgeMinLump1995;
+      } else if (start == 'early' && lumpAmount == 'Min') {
+        data.estimateResult1995 = data.earlyAgeMinLump1995;
+        data.estimateResult = data.earlyAgeMinLump1995;
+      } else if (start == 'late' && lumpAmount == 'Min') {
+        data.estimateResult1995 = data.lateAgeMinLump1995;
+        data.estimateResult = data.lateAgeMinLump1995;
+      } else if (start == 'normal' && lumpAmount == 'Min') {
+        data.estimateResult1995 = data.normalAgeMinLump1995;
+        data.estimateResult = data.normalAgeMinLump1995;
+      } else if (start == 'specificDate' && lumpAmount == 'Min') {
+        data.estimateResult1995 = data.dateAgeMinLump1995;
+        data.estimateResult = data.dateAgeMinLump1995;
+      }
+
+      req.session.data.reports.push(data.estimateResult1995)
+      
     }
 
     res.redirect(`${RESULT_PATH}`);

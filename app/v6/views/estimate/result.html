@@ -21,19 +21,19 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <div class="interrupt-panel bsa-print-hide">
 
             
-            {{ data['schemeReference'] }}
+            {# {{ data['schemeReference'] }}
             <br>
             Lump amount: {{ data['lump-amount'] }}
             <br>
-            Start date: {{ data['pension-start'] }}
+            Start date: {{ data['pension-start'] }} #}
 
             <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
                 {% if ( data['schemeReference'] === '2015' ) %} 
                     {% include "estimate/includes/2015.html" %}
                 {% elif ( data['schemeReference'] === '2008' ) %}
                     {% include "estimate/includes/2008.html" %}
-                {# {% elif ( data['schemeReference'] === '1995' ) %}
-                    {% include "estimate/includes/2015.html" %} #}
+                {% elif ( data['schemeReference'] === '1995' ) %}
+                    {% include "estimate/includes/1995.html" %}
                 {% endif %}
                 <br>
                 {% include "calculator/includes/pay-info-date.html" %}
