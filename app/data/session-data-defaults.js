@@ -26,7 +26,7 @@ let getNAge = "67";
 let getEAge = "55";
 let nino = "QQ 12 34 56 C";
 
-// 2015 (default)
+// 2015 defaults
 let estimateMonthly = "2,231";
 let estimateYearly = "26,773";
 let estimateDate = getNDate;
@@ -49,7 +49,12 @@ let estimateResult2015 = {
   }
 };
 
-// 2008
+// 2008 defaults
+let estimateMonthly2008 = "2,000";
+let estimateYearly2008 = "35,000";
+let estimateDate2008 = "1 March 2040";
+let estimateMax2008 = "123,456";
+let estimateLump2008 = "0";
 let normal2008 = "65";
 let early2008 = "55";
 let late2008 = "75";
@@ -57,17 +62,22 @@ let late2008 = "75";
 let estimateResult2008 = {
   normal: normal2008,
   age: normal2008,
-  date: "change me 08 date",
-  max: "change me 08 max",
-  min: "2008 min",
-  lump: "2008 lump",
+  date: estimateDate2008,
+  max: estimateMax2008,
+  min: "0",
+  lump: estimateLump2008,
   estimate: {
-    monthly: "08 monthly",
-    yearly: "08 yearly"
+    monthly: estimateMonthly2008,
+    yearly: estimateYearly2008
   }
 };
 
-// 1995
+// 1995 defaults
+let estimateMonthly1995 = "3,000";
+let estimateYearly1995 = "36,000";
+let estimateDate1995 = "1 March 2035";
+let estimateMax1995 = "543,210";
+let estimateLump1995 = "20,000";
 let normal1995 = "60";
 let early1995 = "50";
 let late1995 = "75";
@@ -75,13 +85,13 @@ let late1995 = "75";
 let estimateResult1995 = {
   normal: normal1995,
   age: normal1995,
-  date: "change me 95 date",
-  max: "change me 95 max",
-  min: "change me 95 min",
-  lump: "change me 95 lump",
+  date: estimateDate1995,
+  max: estimateMax1995,
+  min: "0",
+  lump: estimateLump1995,
   estimate: {
-    monthly: "95 monthly",
-    yearly: "95 yearly"
+    monthly: estimateMonthly1995,
+    yearly: estimateYearly1995
   }
 };
 
@@ -316,19 +326,190 @@ module.exports = {
       "yearly": "12,085",
     }
   },
+
+  // end 2015 scenarios
   
-  // 2008
+  // 2008 scenarios
   "normalAgeMinLump2008": {
     "normal": normal2008,
     "age": normal2008,
-    "date": "1 March 2040",
-    "max": "32,000",
-    "lump": "12,000",
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "0",
     "estimate": {
-      "monthly": "987",
-      "yearly": "11,844",
+      "monthly": "2,231",
+      "yearly": "26,773",
     }
   },
+
+  "normalAgeMaxLump2008": {
+    "normal": normal2008,
+    "age": normal2008,
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "114,740",
+    "estimate": {
+      "monthly": "1,434",
+      "yearly": "17,211",
+    }
+  },
+
+  "normalAgeGivenLump2008": {
+    "normal": normal2008,
+    "age": normal2008,
+    "date": "1 March 2042",
+    "max": "114,740",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "2,106",
+      "yearly": "25,273",
+    }
+  },
+
+  "givenAgeGivenLump2008": {
+    "normal": normal2008,
+    "age": "63",
+    "date": "1 March 2038",
+    "max": "72,960",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "1,294",
+      "yearly": "15,524",
+    }
+  },
+
+  "earlyAgeGivenLump2008": {
+    "normal": normal2008,
+    "age": early2008,
+    "date": "1 March 2030",
+    "max": "28,296",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "425",
+      "yearly": "5,102",
+    }
+  },
+
+  "lateAgeGivenLump2008": {
+    "normal": normal2008,
+    "age": late2008,
+    "date": "1 March 2050",
+    "max": "229,515",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "4,338",
+      "yearly": "52,054",
+    }
+  },
+
+  "dateAgeGivenLump2008": {
+    "normal": normal2008,
+    "age": "60",
+    "date": "1 March 2050",
+    "max": "51,792",
+    "lump": "18,000",
+    "estimate": {
+      "monthly": "882",
+      "yearly": "10,585",
+    }
+  },
+
+  "givenAgeMaxLump2008": {
+    "normal": normal2008,
+    "age": "63",
+    "date": "1 March 2038",
+    "max": "72,960",
+    "lump": "72,960",
+    "estimate": {
+      "monthly": "912",
+      "yearly": "10,994",
+    }
+  },
+  
+  "earlyAgeMaxLump2008": {
+    "normal": normal2008,
+    "age": early2008,
+    "date": "1 March 2030",
+    "max": "28,296",
+    "lump": "28,296",
+    "estimate": {
+      "monthly": "354",
+      "yearly": "4,244",
+    }
+  },
+
+  "lateAgeMaxLump2008": {
+    "normal": normal2008,
+    "age": late2008,
+    "date": "1 March 2050",
+    "max": "229,515",
+    "lump": "229,515",
+    "estimate": {
+      "monthly": "2,869",
+      "yearly": "34,428",
+    }
+  },
+
+  "dateAgeMaxLump2008": {
+    "normal": normal2008,
+    "age": "60",
+    "date": "1 March 2050",
+    "max": "51,792",
+    "lump": "51,792",
+    "estimate": {
+      "monthly": "647",
+      "yearly": "7,769",
+    }
+  },
+
+  "givenAgeMinLump2008": {
+    "normal": normal2008,
+    "age": "63",
+    "date": "1 March 2038",
+    "max": "72,960",
+    "lump": "0",
+    "estimate": {
+      "monthly": "1,419",
+      "yearly": "17,024",
+    }
+  },
+  
+  "earlyAgeMinLump2008": {
+    "normal": normal2008,
+    "age": early2008,
+    "date": "1 March 2030",
+    "max": "28,296",
+    "lump": "0",
+    "estimate": {
+      "monthly": "550",
+      "yearly": "6,602",
+    }
+  },
+
+  "lateAgeMinLump2008": {
+    "normal": normal2008,
+    "age": late2008,
+    "date": "1 March 2050",
+    "max": "229,515",
+    "lump": "0",
+    "estimate": {
+      "monthly": "4,463",
+      "yearly": "53,554",
+    }
+  },
+
+  "dateAgeMinLump2008": {
+    "normal": normal2008,
+    "age": "60",
+    "date": "1 March 2050",
+    "max": "51,792",
+    "lump": "0",
+    "estimate": {
+      "monthly": "1,007",
+      "yearly": "12,085",
+    }
+  },
+  // end 2008 scenarios
 
   "groupA": {
     "name": "foo",

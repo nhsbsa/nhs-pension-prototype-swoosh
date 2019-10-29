@@ -1,0 +1,48 @@
+estimateResult: <br>{{ data.estimateResult | dump }}
+            <br><br>
+
+estimateResult2015:<br> {{ data.estimateResult2015 | dump }}
+            <br>
+            <br>
+
+2015
+<p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2015.estimate.monthly }} a month</p>
+<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2015.estimate.yearly }}  a year</p>
+
+{% if ( data.estimateResult2015.lump > "0" ) %}
+    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult2015.lump }}</span>
+        when you start taking this pension
+    </p>
+{% else %}
+    <br>
+    <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span> <a href="lump">Add a lump sum</a>.</p>
+{% endif %}
+
+<hr class="break">
+<dl class="govuk-check-your-answers cya-questions-short cya-no-change">
+    {# result options #}
+    <div>
+        <dt class="cya-question">Start date</dt>
+        <dd class="cya-answer">
+            {{ data.estimateResult2015.date }} - age {{ data.estimateResult2015.age }}
+            {% if ( data.estimateResult2015.age === data.estimateResult2015.normal ) %}
+            <span class="font-xsmall nobr">(Your NHS pension date)</span>
+            {% endif %}
+        </dd>
+        <dd class="cya-change">
+            <a href="when">Change<span class="visually-hidden"> start date</span></a>
+        </dd>
+    </div>
+    <div>
+        <dt class="cya-question">Lump sum amount</dt>
+        <dd class="cya-answer">
+            £{{ data.estimateResult2015.lump }}
+            {% if ( data.estimateResult2015.lump === data.estimateResult2015.max  ) %}
+            <span class="font-xsmall nobr">(Your maximum amount at age {{ data.estimateResult2015.age }})</span>
+            {% endif %}
+        </dd>
+        <dd class="cya-change">
+            <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
+        </dd>
+    </div>
+</dl>

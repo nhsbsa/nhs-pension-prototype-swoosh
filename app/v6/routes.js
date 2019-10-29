@@ -105,10 +105,12 @@ router.post('/data-test', function (req, res, next) {
 
 });
 
-router.get('/hub', function (req, res, next) {
-  var data = req.session.data
-  data.estimateResult2015 = data.estimateResult;
-  req.next();
-})
+// router.get('/hub', function (req, res, next) {
+//   var data = req.session.data
+//   data.estimateResult2015 = data.estimateResult;
+//   // data.estimateResult2008 = data.estimateResult;
+//   // data.estimateResult1995 = data.estimateResult;
+//   req.next();
+// })
 
 module.exports = router

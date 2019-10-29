@@ -33,9 +33,17 @@ Home page {{ serviceName }} NHS BSA Prototype
 
             {# {{ config.defaultEstimate.age }}
             {{ port }} #}
+
+            2015: {{ data.estimateResult2015 | dump }}
+            <br><br>
+            2008: {{ data.estimateResult2008 | dump }}
+            <br><br>
+            1995: {{ data.estimateResult1995 | dump }}
+
             <section aria-labelledBy="pensions-heading">
                 <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
                 <ul class="grid-row grid-grid">
+
 
                     {# {% set estimate = data['estimate_test'] %}
                     {% if (estimate == 'A') %}
