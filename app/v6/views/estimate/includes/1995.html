@@ -21,9 +21,9 @@
             <span class="font-xsmall nobr">(Your NHS pension date)</span>
             {% endif %}
         </dd>
-        <dd class="cya-change">
+        {# <dd class="cya-change">
             <a href="when">Change<span class="visually-hidden"> start date</span></a>
-        </dd>
+        </dd> #}
     </div>
     <div>
         <dt class="cya-question">Lump sum amount</dt>
@@ -33,8 +33,9 @@
             <span class="font-xsmall nobr">(Your maximum amount at age {{ data.estimateResult1995.age }})</span>
             {% endif %}
         </dd>
+{#         
         <dd class="cya-change">
-            <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
-        </dd>
+            <a href="lump?schemeReference=1995">Change<span class="visually-hidden"> lump sum amount</span></a>
+        </dd> #}
     </div>
 </dl>

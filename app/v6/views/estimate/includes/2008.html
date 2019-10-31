@@ -7,7 +7,10 @@
     </p>
 {% else %}
     <br>
-    <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span> <a href="lump">Add a lump sum</a>.</p>
+    <p>
+        <span class="bold-small">You can take part of this pension as a one off lump sum payment.</span>
+        {# <a href="lump">Add a lump sum</a>. #}
+    </p>
 {% endif %}
 
 <hr class="break">
@@ -21,9 +24,9 @@
             <span class="font-xsmall nobr">(Your NHS pension date)</span>
             {% endif %}
         </dd>
-        <dd class="cya-change">
+        {# <dd class="cya-change">
             <a href="when">Change<span class="visually-hidden"> start date</span></a>
-        </dd>
+        </dd> #}
     </div>
     <div>
         <dt class="cya-question">Lump sum amount</dt>
@@ -33,8 +36,8 @@
             <span class="font-xsmall nobr">(Your maximum amount at age {{ data.estimateResult2008.age }})</span>
             {% endif %}
         </dd>
-        <dd class="cya-change">
+        {# <dd class="cya-change">
             <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
-        </dd>
+        </dd> #}
     </div>
 </dl>

@@ -37,7 +37,7 @@ router.post('/lump', function (req, res) {
   // data.estimateResult = data.normalAgeMinLump2015;
   var start = req.session.data['pension-start'];
   var lumpAmount = req.session.data['lump-amount'];
-
+  
     // if 2015
   if (data.schemeReference === '2015') {
 
@@ -156,6 +156,10 @@ router.post('/lump', function (req, res) {
     // if 1995
   } else {
 
+      // console.log('here');
+      data.estimateResult1995 = data.normalAgeMinLump1995;
+      data.estimateResult = data.estimateResult1995;
+
      // Given lumps
      if (start == 'specificAge' && lumpAmount == 'Other') {
       data.estimateResult1995 = data.givenAgeGivenLump1995;
@@ -214,14 +218,29 @@ router.post('/lump', function (req, res) {
   res.redirect(`${RESULT_PATH}`);
 })
 
-router.post('/estimate/result', function (req, res) {
-
+router.get('/lump', function (req, res, next) {
   var data = req.session.data
-  // data.estimateResult2015 = data.estimateResult;
-  // data.estimateResult2008 = data.estimateResult;
-  // data.estimateResult1995 = data.estimateResult;
+  if (data.schemeReference === '2015') {
+    data.estimateResult = data.estimateResult2015;
+  } else if (data.schemeReference === '1995') {
+    data.estimateResult = data.estimateResult1995;
+  } else {
+    data.estimateResult = data.estimateResult2008;
+  }
+  next();
+})
 
-  console.log(data.estimateResult);
+router.get('/estimate/result', function (req, res) {
+  var data = req.session.data
+
+  // if (data.schemeReference === '2015') {
+  //   data.estimateResult = data.estimateResult2015;
+  // } else if (data.schemeReference === '1995') {
+  //   data.estimateResult = data.estimateResult1995;
+  // } else {
+  //   data.estimateResult = data.estimateResult2008;
+  // }
+
   // res.redirect(`${RESULT_PATH}`);
 })
 
@@ -347,6 +366,9 @@ router.post('/when', function (req, res, next) {
 
       // if 1995
     } else {
+
+      data.estimateResult1995 = data.normalAgeMinLump1995;
+      data.estimateResult = data.estimateResult1995;
 
       // Given lumps
       if (start == 'specificAge' && lumpAmount == 'Other') {

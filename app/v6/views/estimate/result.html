@@ -27,6 +27,10 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <br>
             Start date: {{ data['pension-start'] }} #}
 
+{# estimateResult: <br>{{ data.estimateResult | dump }}
+            <br><br>
+estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
+
             <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
                 {% if ( data['schemeReference'] === '2015' ) %} 
                     {% include "estimate/includes/2015.html" %}

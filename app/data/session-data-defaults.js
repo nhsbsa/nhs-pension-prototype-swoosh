@@ -51,10 +51,10 @@ let estimateResult2015 = {
 };
 
 // 2008 defaults
-let estimateMonthly2008 = "2,000";
-let estimateYearly2008 = "35,000";
+let estimateMonthly2008 = "116";
+let estimateYearly2008 = "1,394";
 let estimateDate2008 = "1 March 2040";
-let estimateMax2008 = "123,456";
+let estimateMax2008 = "999";
 let estimateLump2008 = "0";
 let normal2008 = "65";
 let early2008 = "55";
@@ -75,11 +75,11 @@ let estimateResult2008 = {
 };
 
 // 1995 defaults
-let estimateMonthly1995 = "3,000";
-let estimateYearly1995 = "36,000";
+let estimateMonthly1995 = "407";
+let estimateYearly1995 = "4,885";
 let estimateDate1995 = "1 March 2035";
-let estimateMax1995 = "543,210";
-let estimateLump1995 = "20,000";
+let estimateMax1995 = "130,284";
+let estimateLump1995 = "32,571";
 let normal1995 = "60";
 let early1995 = "50";
 let late1995 = "75";
@@ -90,7 +90,7 @@ let estimateResult1995 = {
   age: normal1995,
   date: estimateDate1995,
   max: estimateMax1995,
-  min: "0",
+  min: estimateLump1995,
   lump: estimateLump1995,
   estimate: {
     monthly: estimateMonthly1995,
@@ -156,6 +156,7 @@ module.exports = {
     "age": normal2015,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "2,231",
@@ -169,6 +170,7 @@ module.exports = {
     "age": normal2015,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "114,740",
     "estimate": {
       "monthly": "1,434",
@@ -182,6 +184,7 @@ module.exports = {
     "age": normal2015,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "2,106",
@@ -195,6 +198,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "1,294",
@@ -208,6 +212,7 @@ module.exports = {
     "age": early2015,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "425",
@@ -221,6 +226,7 @@ module.exports = {
     "age": late2015,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "4,338",
@@ -234,6 +240,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "882",
@@ -247,6 +254,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "72,960",
     "estimate": {
       "monthly": "912",
@@ -260,6 +268,7 @@ module.exports = {
     "age": early2015,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "28,296",
     "estimate": {
       "monthly": "354",
@@ -273,6 +282,7 @@ module.exports = {
     "age": late2015,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "229,515",
     "estimate": {
       "monthly": "2,869",
@@ -286,6 +296,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "51,792",
     "estimate": {
       "monthly": "647",
@@ -299,6 +310,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "1,419",
@@ -312,6 +324,7 @@ module.exports = {
     "age": early2015,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "550",
@@ -325,6 +338,7 @@ module.exports = {
     "age": late2015,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "4,463",
@@ -338,6 +352,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "1,007",
@@ -354,6 +369,7 @@ module.exports = {
     "age": normal2008,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "2,231",
@@ -367,6 +383,7 @@ module.exports = {
     "age": normal2008,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "114,740",
     "estimate": {
       "monthly": "1,434",
@@ -380,6 +397,7 @@ module.exports = {
     "age": normal2008,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "2,106",
@@ -393,6 +411,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "1,294",
@@ -406,6 +425,7 @@ module.exports = {
     "age": early2008,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "425",
@@ -419,6 +439,7 @@ module.exports = {
     "age": late2008,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "4,338",
@@ -432,6 +453,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "882",
@@ -445,6 +467,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "72,960",
     "estimate": {
       "monthly": "912",
@@ -458,6 +481,7 @@ module.exports = {
     "age": early2008,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "28,296",
     "estimate": {
       "monthly": "354",
@@ -471,6 +495,7 @@ module.exports = {
     "age": late2008,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "229,515",
     "estimate": {
       "monthly": "2,869",
@@ -484,6 +509,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "51,792",
     "estimate": {
       "monthly": "647",
@@ -497,6 +523,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "1,419",
@@ -510,6 +537,7 @@ module.exports = {
     "age": early2008,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "550",
@@ -523,6 +551,7 @@ module.exports = {
     "age": late2008,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "4,463",
@@ -536,6 +565,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "1,007",
@@ -550,11 +580,12 @@ module.exports = {
     "normal": normal1995,
     "age": normal1995,
     "date": "1 March 2042",
-    "max": "114,740",
-    "lump": "0",
+    "max": "130,284",
+    "min": "32,571",
+    "lump": "32,571",
     "estimate": {
-      "monthly": "2,231",
-      "yearly": "26,773",
+      "monthly": "407",
+      "yearly": "4,885",
     }
   },
 
@@ -563,8 +594,9 @@ module.exports = {
     "normal": normal1995,
     "age": normal1995,
     "date": "1 March 2042",
-    "max": "114,740",
-    "lump": "114,740",
+    "max": "130,284",
+    "min": "32,571",
+    "lump": "130,284",
     "estimate": {
       "monthly": "1,434",
       "yearly": "17,211",
@@ -577,6 +609,7 @@ module.exports = {
     "age": normal1995,
     "date": "1 March 2042",
     "max": "114,740",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "2,106",
@@ -590,6 +623,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "1,294",
@@ -603,6 +637,7 @@ module.exports = {
     "age": early1995,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "425",
@@ -616,6 +651,7 @@ module.exports = {
     "age": late1995,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "4,338",
@@ -629,6 +665,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "18,000",
     "estimate": {
       "monthly": "882",
@@ -642,6 +679,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "72,960",
     "estimate": {
       "monthly": "912",
@@ -655,6 +693,7 @@ module.exports = {
     "age": early1995,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "28,296",
     "estimate": {
       "monthly": "354",
@@ -668,6 +707,7 @@ module.exports = {
     "age": late1995,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "229,515",
     "estimate": {
       "monthly": "2,869",
@@ -681,6 +721,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "51,792",
     "estimate": {
       "monthly": "647",
@@ -694,6 +735,7 @@ module.exports = {
     "age": "63",
     "date": "1 March 2038",
     "max": "72,960",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "1,419",
@@ -707,6 +749,7 @@ module.exports = {
     "age": early1995,
     "date": "1 March 2030",
     "max": "28,296",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "550",
@@ -720,6 +763,7 @@ module.exports = {
     "age": late1995,
     "date": "1 March 2050",
     "max": "229,515",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "4,463",
@@ -733,6 +777,7 @@ module.exports = {
     "age": "60",
     "date": "1 March 2050",
     "max": "51,792",
+    "min": "0",
     "lump": "0",
     "estimate": {
       "monthly": "1,007",
