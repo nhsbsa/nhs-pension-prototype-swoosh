@@ -93,6 +93,28 @@
         ]
     }) }}
 
+{% elif data['1995'] === "app"  %}
+
+    <div class="bsa-card">
+        <div class="bsa-card__content">
+            <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 pension</h3>
+            <p class="bold-xsmall">You applied for this pension on <span class="nobr">31 March 2018</span>.</p>
+            {# <hr class="break"> #}
+            {# <div class="data govuk-margin-bottom-0">
+                <span class="data-item bold-large">£{{ item.monthly }} <span class="bold-xsmall">a month (age {{ item.age }})</span></span>
+                <span class="data-item bold-xsmall"><span class="app-c-tag">{{ item.tag or "Estimate" }}</span></span>
+            </div> #}
+
+        </div>
+
+        <div class="bsa-card__actions">
+            <ul class="bsa-card__actions-list">
+                <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
+            </ul>
+        </div>
+
+    </div>
+
 {% else %}
 
     {{ bsaCard({
