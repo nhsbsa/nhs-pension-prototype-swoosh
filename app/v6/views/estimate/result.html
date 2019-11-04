@@ -48,7 +48,9 @@ estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
 
     <div class="grid-row">
         <div class="column-desktop-two-thirds">
-            {% include "estimate/includes/previous.html" %}
+            {% if ( data['schemeReference'] === '2015' ) %} 
+                {% include "estimate/includes/previous.html" %}
+            {% endif %}
             
             {% include "calculator/includes/next.html" %}
 
