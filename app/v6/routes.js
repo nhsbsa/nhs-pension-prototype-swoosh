@@ -113,4 +113,7 @@ router.post('/data-test', function (req, res, next) {
 //   req.next();
 // })
 
+// This moves refund routing to refund directory
+router.use('/super-dumb/', require('./views/super-dumb/_routes'))
+
 module.exports = router

@@ -1,0 +1,57 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Welcome - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">Welcome {{ data['firstName'] }} {{ data['lastName'] }}</h1>
+                    <p><span class="visually-hidden">National Insurance number</span> <strong class="bold">{{ data['ninoSafe'] }}</strong></p>
+                </div>
+                <hr>
+
+                <p class="lede">As you are new to the NHS Pension scheme, let us tell you a bit more about it.</p>
+
+                <div class="bsa-embed-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zUTk_eRz4Wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <p>Download the <a href="/sites/default/files/2018-05/NHS_Pensions_-_Important_benefits_of_being_in_the_NHS_Pension_Scheme_video_transcript_03.2018_%28v1%29.pdf" title="Benefits of being in the NHS Pension Scheme video transcript">video transcript (PDF: 98KB)</a>.</p>
+                {# <ul class="list-bullet">
+                    <li>Government backed pension</li>
+                    <li>Not invested in stocks</li>
+                    <li>tax releif on contributions</li>
+                    <li>The best pension scheme in the UK</li>
+                </ul>
+
+                <ul class="list-bullet">
+                    <li>we know you are new</li>
+                    <li>what can we do for you?</li>
+                    <li>how does the scheme work?</li>
+                    <li>its not like a private pension</li>
+                    <li>you are rewarded for your loyalty to the NHS</li>
+                    <li>What you might get in future</li>
+                    <li>Opt-out consequences</li>
+                    <li>Remember 2015 scheme only</li>
+                </ul> #}
+
+                <hr>
+                <a href="joiner/welcome" class="button">Next</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

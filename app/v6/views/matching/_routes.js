@@ -23,6 +23,8 @@ router.post('/nino', function (req, res) {
         res.redirect('/onboard/2');
     } else if (answer == 'onboard3' || journey == 'onboard3') {
         res.redirect('/onboard/3');
+    } else if (journey == 'joiner') {
+        res.redirect('/onboard/joiner');
     } else {
         res.redirect('/hub');
     }

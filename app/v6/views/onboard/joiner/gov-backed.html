@@ -1,0 +1,33 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Government backed - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">We are government backed</h1>
+                </div>
+                <hr>
+
+                <p>The NHS pension scheme is guaranteed by the government, this means that it is not invested in stocks and shares.</p>
+
+                <hr>
+                <a href="gov-backed" class="button">Next</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

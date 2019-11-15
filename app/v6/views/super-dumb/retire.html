@@ -1,0 +1,102 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Super dumb - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div>
+                <header class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">What age do you want to retire?</h1>
+                </header>
+
+                <form method="post" class="form" action="retire">
+                    <fieldset class="form-group">
+                        <legend class="visually-hidden">What age do you want to retire?</legend>
+                        <p class="form-hint">We can't give you an estimate before your earliest or after your latest pension ages.</p>
+
+                    <div class="multiple-choice">
+                        <input id="age-early" type="radio" name="pension-start" value="early" {{ checked('pension-start', 'early') }}>
+                        <label for="age-early">Your earliest pension age ({{ data['getEAge'] }})</label>
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="age-normal" type="radio" name="pension-start" value="normal" {{ checked('pension-start', 'normal') }}>
+                        <label for="age-normal">Your NHS pension age ({{ data['getNAge'] }})</label>
+                    </div>
+
+                    <div class="multiple-choice" data-target="specific-age-panel">
+                        <input id="specific-age" type="radio" name="pension-start" value="specificAge" {{ checked('pension-start','specificAge') }}>
+                        <label for="specific-age">At a specific age</label>
+                    </div>
+                    <div class="panel panel-border-narrow js-hidden" id="specific-age-panel">
+                        <label class="form-label" for="specific-age-value">
+                            Enter age
+                            <span class="form-hint">For example, ‘63’</span>
+                        </label>
+                        <input class="form-control form-control--sm" name="specific-age-value" type="text" id="specific-age-value" value="{{ data['specific-age-value'] }}">
+                    </div>
+
+                    <div class="multiple-choice" data-target="specific-date-panel">
+                        <input id="specific-date" type="radio" name="pension-start" value="specificDate" {{ checked('pension-start','specificDate') }}>
+                        <label for="specific-date">On a specific date</label>
+                    </div>
+                    <div class="panel panel-border-narrow js-hidden" id="specific-date-panel">
+
+                        <fieldset>
+                            <legend>Enter a date</legend>
+                            <p class="form-hint">For example, 31 3 2034</p>
+
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label for="retire-day">Day</label>
+                                    <input class="form-control" id="retire-day" name="retire-day" pattern="[0-9]*" type="text" value="{{ data['retire-day'] }}">
+                                </div>
+
+                                <div class="form-group form-group-month">
+                                    <label for="retire-month">Month</label>
+                                    <input class="form-control" id="retire-month" name="retire-month" pattern="[0-9]*" type="text" value="{{ data['retire-month'] }}">
+                                </div>
+
+                                <div class="form-group form-group-year">
+                                    <label for="retire-year">Year</label>
+                                    <input class="form-control" id="retire-year" name="retire-year" pattern="[0-9]*" type="text" value="{{ data['retire-year'] }}">
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="age-late" type="radio" name="pension-start" value="late" {{ checked('pension-start', 'late') }}>
+                        <label for="age-late">Your latest pension age ({{ data['getLAge'] }})</label>
+                    </div>                          
+ 
+                    </fieldset>
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

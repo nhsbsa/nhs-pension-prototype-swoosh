@@ -1,0 +1,45 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Sign up to be notified of contributions updates {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include "includes/phase_banner_beta.html" %}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">Get an email when your pension information is updated</h1>
+            </div>
+
+            <p class="form-hint">Your pension information is updated at the end of each year by your employer we'll email you once we have this information.</p>
+            <form action="sign-up" method="post" class="form">
+                <fieldset>
+                    <legend class="visuallyhidden">What’s your email address?</legend>
+
+                    <div class="form-text">
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email address</label>
+                            <input class="form-control" id="email" name="email" type="text">
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Sign up">
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

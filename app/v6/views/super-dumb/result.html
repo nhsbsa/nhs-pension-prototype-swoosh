@@ -1,0 +1,76 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+
+    {# {% include "includes/back-link.html" %} #}
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+
+            <div class="interrupt-panel bsa-print-hide">
+
+            
+            {# {{ data['schemeReference'] }}
+            <br>
+            Lump amount: {{ data['lump-amount'] }}
+            <br>
+            Start date: {{ data['pension-start'] }} #}
+
+{# estimateResult: <br>{{ data.estimateResult | dump }}
+            <br><br>
+estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
+
+            <h1 class="heading-small govuk-margin-top-0">You could get an NHS pension of</h1>
+
+<p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2015.estimate.monthly }} a month</p>
+<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2015.estimate.yearly }}  a year</p>
+
+{% if ( data.estimateResult2015.lump > "0" ) %}
+    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult2015.lump }}</span>
+        when you start taking this pension
+    </p>
+{% else %}
+    <br>
+    <p><span class="bold-small">You can take a tax free lump sum of up to 25% of your pension value when you retire.</span></p>
+{% endif %}
+
+
+<a href="salary">Change<span class="visually-hidden"> start date</span></a>
+                <hr class="break">
+                <p class="font-xsmall"><a href="/disclaimer">Find out what we assume when we calculate your estimate</a>.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+            {# {% if ( data['schemeReference'] === '2015' ) %} 
+                {% include "estimate/includes/previous.html" %}
+            {% endif %} #}
+            
+            <div class="bsa-print-hide">
+                
+                <hr>
+                {% include "includes/back-to-home-link.html" %}
+            </div>
+
+            {% include "includes/caveat-print.html" %}
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

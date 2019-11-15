@@ -37,6 +37,34 @@ Home page {{ serviceName }} NHS BSA Prototype
             <br><br>
             1995: {{ data.estimateResult1995 | dump }} #}
 
+            {{ journey }}
+            {% set journey = data['journey'] %}
+            {% if (journey == 'joiner') %}
+            <section aria-labelledBy="pensions-heading">
+                <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
+                <div class="grid-row">
+
+                    <div class="column-two-thirds">
+                        <div class="panel panel-border-wide">
+                            <p>We don't yet have any pension information from your employer. This information is sent to us at the end 
+                        of each financial year and we update all records in May each year.</p>
+                        </div>
+                         <p>If you <a href="sign-up" class="nobr">sign up to our mailing list</a> we'll email you when your pension information has been updated.</p>
+                        {# <p><a href="onboard/joiner">Find out more about NHS pensions</a>.</p> #}
+                    </div>
+
+                    <div class="column-one-third">
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                <h3 class="heading-medium bsa-card__heading"><a href="super-dumb">Get an estimate</a></h3>
+                                <p>Find out what your pension could be worth in the future.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            {% else %}
             <section aria-labelledBy="pensions-heading">
                 <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
                 <ul class="grid-row grid-grid">
@@ -86,21 +114,23 @@ Home page {{ serviceName }} NHS BSA Prototype
 
             <hr>
 
-            {% if data['show'] === "inherited"  %}
-            <section aria-labelledBy="inherited-heading">
-                <h2 class="heading-large" id="inherited-heading">Your inherited pensions</h2>
-                <ul class="grid-row grid-grid">
-                    <li>
-                        {% include "hub/card/inherited-divorce.html" %}
-                    </li>
-                    <li>
-                        {% include "hub/card/inherited-bereavement.html" %}
-                    </li>
-                </ul>
-            </section>
-            <hr>
+                {% if data['show'] === "inherited"  %}
+                <section aria-labelledBy="inherited-heading">
+                    <h2 class="heading-large" id="inherited-heading">Your inherited pensions</h2>
+                    <ul class="grid-row grid-grid">
+                        <li>
+                            {% include "hub/card/inherited-divorce.html" %}
+                        </li>
+                        <li>
+                            {% include "hub/card/inherited-bereavement.html" %}
+                        </li>
+                    </ul>
+                </section>
+                <hr>
 
-            {% endif %}
+                {% endif %}
+            
+            {% endif %} {# end joiner logic #}
 
             <section aria-labelledBy="details-heading">
                 <h2 class="heading-large" id="details-heading">Your details</h2>

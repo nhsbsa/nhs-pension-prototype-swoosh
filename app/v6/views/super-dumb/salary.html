@@ -1,0 +1,49 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Super dumb - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div>
+                <header class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">What is your current salary?</h1>
+                </header>
+
+                <form method="post" class="form" action="salary">
+                    <fieldset class="form-group">
+                        <legend class="visually-hidden">What is your current salary?</legend>
+                        <p class="form-hint">dddd</p>
+                        <label class="form-label visually-hidden" for="salary">How much lump sum?</label>                            
+                        {{ govukCurrencyInput({
+                            id: "salary",
+                            name: "salary",
+                            classes: "form-control"
+                        }) }}
+                    </fieldset>
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}
