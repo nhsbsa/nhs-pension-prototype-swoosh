@@ -31,23 +31,41 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <br><br>
 estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
 
-            <h1 class="heading-small govuk-margin-top-0">You could get an NHS pension of</h1>
+            <h1 class="heading-small govuk-margin-top-0">If you keep contributing to the NHS pension, <br>you could get an estimated</h1>
 
-<p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2015.estimate.monthly }} a month</p>
-<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2015.estimate.yearly }}  a year</p>
-
-{% if ( data.estimateResult2015.lump > "0" ) %}
-    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult2015.lump }}</span>
-        when you start taking this pension
-    </p>
-{% else %}
+<p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£2,567 a month</p>
+<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£30,804 a year</p>
+<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">Your total pension value could be £134,234</p>
     <br>
-    <p><span class="bold-small">You can take a tax free lump sum of up to 25% of your pension value when you retire.</span></p>
-{% endif %}
+ <p><span class="bold-small">You can take a tax free lump sum of up to 25% of your pension value when you retire.</span></p>
 
+<hr class="break">
+<dl class="govuk-check-your-answers cya-questions-short cya-no-change">
+    <div>
+        <dt class="cya-question">Current salary</dt>
+        <dd class="cya-answer">
+            £32,000
+        </dd>
+        <dd class="cya-change">
+            <a href="salary">Change<span class="visually-hidden"> current salary</span></a>
+        </dd>
+    </div>
+    <div>
+        <dt class="cya-question">Retirement age</dt>
+        <dd class="cya-answer">
+            {{ data.estimateResult2015.date }} - age {{ data.estimateResult2015.age }}
+            {% if ( data.estimateResult2015.age === data.estimateResult2015.normal ) %}
+            <span class="font-xsmall nobr">(Your {{ data['npdLabel'] }})</span>
+            {% endif %}
+        </dd>
+        <dd class="cya-change">
+            <a href="retire">Change<span class="visually-hidden"> start date</span></a>
+        </dd>
+    </div>
 
-<a href="salary">Change<span class="visually-hidden"> start date</span></a>
-                <hr class="break">
+</dl>
+<br>
+               
                 <p class="font-xsmall"><a href="/disclaimer">Find out what we assume when we calculate your estimate</a>.</p>
 
             </div>
@@ -59,6 +77,13 @@ estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
             {# {% if ( data['schemeReference'] === '2015' ) %} 
                 {% include "estimate/includes/previous.html" %}
             {% endif %} #}
+
+{% include "estimate/includes/previous.html" %}
+
+            <div class="panel panel-border-wide">
+    <p>You can get a more accurate estimate once we have pension information from your employer.</p>
+    <p>If you <a href="sign-up" class="nobr">sign up to our mailing list</a> we'll email you when your pension information has been updated.</p>
+</div>
             
             <div class="bsa-print-hide">
                 

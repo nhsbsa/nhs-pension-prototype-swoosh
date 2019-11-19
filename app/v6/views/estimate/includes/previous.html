@@ -34,7 +34,7 @@
                     {% if ( report.age === data['early2015'] ) %}
                         <span class="font-xsmall nobr">(Your earliest pension date)</span>
                     {% elif ( report.age === data['normal2015'] ) %}
-                        <span class="font-xsmall nobr">(Your NHS pension date)</span>
+                        <span class="font-xsmall nobr">(Your {{ data['npdLabel'] }})</span>
                     {% elif ( report.age === data['late2015'] ) %}
                         <span class="font-xsmall nobr">(Your latest pension date)</span>
                     {% endif %}
@@ -65,7 +65,7 @@
             <td>
                 <span class="table-heading" aria-hidden="true">Start date</span>
                 {{ data['estimateDate'] }}
-                <span class="font-xsmall nobr">(Your NHS pension date)</span>
+                <span class="font-xsmall nobr">(Your {{ data['npdLabel'] }})</span>
             </td>
             <td>
                 <span class="table-heading" aria-hidden="true">Age</span>

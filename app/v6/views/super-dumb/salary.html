@@ -25,7 +25,7 @@ Super dumb - {{ serviceName }} - NHSBSA
                 <form method="post" class="form" action="salary">
                     <fieldset class="form-group">
                         <legend class="visually-hidden">What is your current salary?</legend>
-                        <p class="form-hint">dddd</p>
+                        <p class="form-hint">We use this to work out your pension contribution rate.</p>
                         <label class="form-label visually-hidden" for="salary">How much lump sum?</label>                            
                         {{ govukCurrencyInput({
                             id: "salary",
@@ -33,6 +33,16 @@ Super dumb - {{ serviceName }} - NHSBSA
                             classes: "form-control"
                         }) }}
                     </fieldset>
+
+                    {% set tableHtml %}
+                        {% include "includes/table-contributions.html" %}
+                    {% endset %}
+
+                    {{ govukDetails({
+                        summaryText: 'What is my pension contribution rate?',
+                        html: tableHtml
+                    }) }}
+                    <br>
 
                     <div class="form-group">
                         <input class="button" type="submit" value="Continue">

@@ -114,6 +114,9 @@ module.exports = {
   "mobileNumber": "07777 123 4567",
   "lastUpdatedDate": "31 March 2018",
 
+  "npaLabel": "NHS pension age",
+  "npdLabel": "NHS pension date",
+
   // estimates
   "lump-amount": "Min",
   "pension-start": "normal",

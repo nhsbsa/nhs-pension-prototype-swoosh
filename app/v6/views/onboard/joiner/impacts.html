@@ -15,32 +15,30 @@ Reduction factors - {{ serviceName }} - NHSBSA
             <div class="interrupt-panel">
                 <div class="heading-group">
                     <p>{{ serviceName }}</p>
-                    <h1 class="heading-large">Things to be aware of</h1>
+                    <h1 class="heading-large">Impacts on your pension</h1>
                 </div>
                 <hr>
 
-                <p>You may not realise that there are employment benefits offered to you that can increase or reduce the amount of pension 
+                <p>You may not realise it but there are employment benefits offered to you that can increase or reduce the amount of pension 
                 you could get in retirement.</p>
 
                 <h2 class="heading-small">Benefits that will increase your pension</h2>
                 <ul class="list list-bullet">
-                    <li>working beyond your "normal pension age"</li>
+                    <li>working beyond your "{{ data['npaLabel'] }}"</li>
                     <li>increasing your salary</li>
                 </ul>
 
                 <h2 class="heading-small">Benefits that could reduce your pension</h2>
                 <ul class="list list-bullet">
-                    <li>retiring before your "normal pension age"</li>
+                    <li>retiring before your "{{ data['npaLabel'] }}"</li>
                     <li>taking a lease car</li>
                     <li>getting a bike through the cycle to work scheme</li>
                     <li>working part time</li>
                     <li>childcare voucher scheme</li>
                 </ul>
-
-                <p>It is a good idea to sign in regularly to keep an eye on how your pension is growing.</p>
-
+                
                 <hr>
-                <a href="/hub" class="button">Next</a>
+                <a href="no-data" class="button">Next</a>
             </div>
 
         </div>

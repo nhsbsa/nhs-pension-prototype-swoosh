@@ -1,0 +1,41 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Contribution - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">Contributing to your pension</h1>
+                </div>
+                <hr>
+
+                
+
+                <p>You need to have contributed for a minimum of 2 years in order to qualify for a pension.</p>
+
+                <div class="bsa-embed-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mUZZ5tTMZ6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <br>
+                <p class="font-xsmall">Download the <a href="/sites/default/files/2018-05/NHS_Pensions_-_Transferring_into_the_NHS_Pension_Scheme_video_transcript_03.2018_%28v1%29.pdf" title="Transferring into the NHS Pension Scheme video transcript">video transcript (PDF: 38KB)</a>.</p>
+
+                <hr>
+                <a href="impacts" class="button">Next</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

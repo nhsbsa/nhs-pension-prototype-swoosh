@@ -1,0 +1,17 @@
+<h2 class="heading-medium">Your pension estimate</h2>
+<p>Your estimate is not a guarantee. It’s based on current law and assumptions.</p>
+<h2 class="heading-medium">When we calculate your estimate</h2>
+<h3 class="heading-small">We assume:</h3>
+<ul class="list list-bullet">
+    <li>a pay increase of 2% each year</li>
+    <li>an inflation figure of 0.5% each year</li>
+</ul>
+<h3 class="heading-small">We do not take into account:</h3>
+<ul class="list list-bullet">
+    <li>any reduction to your pension due to a ‘Pensions on Divorce’ or ‘Scheme Pays’ debit</li>
+    <li>any additions to your pension due to Additional Pension you may have bought, or benefits you have transferred from another public sector pension CARE scheme</li>
+    {% if data['schemeReference'] === '2015' %}
+    <li>any Early Retirement Reduction Buy Out (ERRBO) you may have</li>
+    {% endif %}
+    <li>tax. Tax rules are applied when you apply to get your pension</li>
+</ul>

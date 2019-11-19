@@ -41,27 +41,32 @@ Home page {{ serviceName }} NHS BSA Prototype
             {% set journey = data['journey'] %}
             {% if (journey == 'joiner') %}
             <section aria-labelledBy="pensions-heading">
-                <h2 class="heading-large" id="pensions-heading">Your pensions</h2>
+                {# <h2 class="heading-large" id="pensions-heading">Your pensions</h2> #}
+
                 <div class="grid-row">
-
                     <div class="column-two-thirds">
-                        <div class="panel panel-border-wide">
-                            <p>We don't yet have any pension information from your employer. This information is sent to us at the end 
-                        of each financial year and we update all records in May each year.</p>
-                        </div>
-                         <p>If you <a href="sign-up" class="nobr">sign up to our mailing list</a> we'll email you when your pension information has been updated.</p>
-                        {# <p><a href="onboard/joiner">Find out more about NHS pensions</a>.</p> #}
+                        <h3 class="heading-large">Get an NHS pension estimate</h3>
+                        <p>Find out what your NHS pension could be worth in the future.</p>
+                        <p><a href="super-dumb">Get an NHS pension estimate</a></p>
                     </div>
-
+                </div>
+                {# <div class="grid-row">
                     <div class="column-one-third">
                         <div class="bsa-card">
                             <div class="bsa-card__content">
-                                <h3 class="heading-medium bsa-card__heading"><a href="super-dumb">Get an estimate</a></h3>
-                                <p>Find out what your pension could be worth in the future.</p>
+                                <h3 class="heading-medium bsa-card__heading"><a href="super-dumb">Get a pension estimate</a></h3>
+                                <p>Find out what your NHS pension could be worth in the future.</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="column-two-thirds">
+                        <div class="panel panel-border-wide">
+                            <p>We don't yet have any pension information from your employer.</p>
+                            <p>If you <a href="sign-up" class="nobr">sign up to our mailing list</a> we'll email you when your pension information has been updated.</p>
+                        </div>
+                         
+                    </div>
+                </div> #}
             </section>
             <hr>
             {% else %}

@@ -12,7 +12,7 @@ Super dumb - {{ serviceName }} - NHSBSA
     {{ bsaAccountDetailsBar({
         class: "bsa-account-details-bar--slim"
     }) }}
-    
+
     <div class="grid-row">
         <div class="column-two-thirds">
             
@@ -34,7 +34,7 @@ Super dumb - {{ serviceName }} - NHSBSA
 
                     <div class="multiple-choice">
                         <input id="age-normal" type="radio" name="pension-start" value="normal" {{ checked('pension-start', 'normal') }}>
-                        <label for="age-normal">Your NHS pension age ({{ data['getNAge'] }})</label>
+                        <label for="age-normal">Your {{ data['npaLabel'] }} ({{ data['getNAge'] }})</label>
                     </div>
 
                     <div class="multiple-choice" data-target="specific-age-panel">

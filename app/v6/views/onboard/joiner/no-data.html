@@ -1,0 +1,41 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Reduction factors - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">We don&rsquo;t have your pension information yet</h1>
+                </div>
+                <hr>
+
+                <p>As you work your employer will collect your pension information. Your employer then sends this information to us 
+                at the end of each financial year and we update your pension record.</p>
+
+                <p>We use your pension information to provide you with information about your NHS pensions scheme and
+                 to calculate more accurate pensions estimates.</p>
+                
+                <p>You can sign up to our mailing list and we'll email you when your pension information has been updated.</p>
+
+                {# <p>Sign into this service regularly to check your pension information.</p> #}
+
+                <hr>
+                <a href="/hub" class="button">View your pension</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}
