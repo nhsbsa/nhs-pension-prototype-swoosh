@@ -1,0 +1,61 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+We dont have your pension information {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include "includes/phase_banner_beta.html" %}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">We don&rsquo;t have your pension information</h1>
+            </div>
+
+            <p>Your employer hasn&rsquo;t sent us any pensions information yet. This means we don&rsquo;t have a complete
+            pension record for you to view.</p>
+
+            <p>If you <a href="sign-up">sign up to our mailing list</a> we'll email you when your pension record is available to view.</p>
+
+            <h2 class="heading-medium">What you can expect to see</h2>
+            <p>Once we have this information you can:</p>
+
+            <ul class="list list-bullet">
+                <li>get an estimate of what your pension will be worth in future</li>
+                <li>see contributions you have made to the NHS pension scheme</li>
+                <li>see your pension membership information</li>
+                <li>check your personal details</li>
+            </ul>
+
+            <h2 class="heading-medium">Paying into the NHS pension scheme</h2>
+            <p>In order to qualify for your pension you need to have contributed for a minimum of 2 years.</p>
+            {% set tableHtml %}
+                {% include "includes/table-contributions.html" %}
+            {% endset %}
+
+            {{ govukDetails({
+                summaryText: 'How much do I contribute to my pension?',
+                html: tableHtml
+            }) }}
+
+            <h2 class="heading-medium">Transferring another pension in</h2>
+            <div class="notice">
+                <i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
+                <p class="bold-small notice__content">There is a 12 month time limit for you to start a transfer of another pension into the NHS Pension Scheme.</p>
+            </div>
+            <p>You will need to download and complete the application pack on the <a href="https://www.nhsbsa.nhs.uk/member-hub/transferring-scheme">NHS Business Services Authority website</a>.</p>
+
+            <hr>
+            <p>You can find out more about your pension on the <a href="https://www.nhsbsa.nhs.uk/member-hub">NHS Business 
+            Services Authority website</a>.</p>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

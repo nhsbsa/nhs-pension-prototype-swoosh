@@ -1227,4 +1227,10 @@ border-bottom: 1px solid #bfc1c3;
   &.heading-group {
     padding-left: 50px;
   }
+
+  &__content {
+    display: block;
+    padding-left: 65px;
+    margin-left: -15px;
+  }
 }

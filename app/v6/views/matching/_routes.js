@@ -24,7 +24,7 @@ router.post('/nino', function (req, res) {
     } else if (answer == 'onboard3' || journey == 'onboard3') {
         res.redirect('/onboard/3');
     } else if (journey == 'joiner') {
-        res.redirect('/onboard/joiner');
+        res.redirect('/hard-stop/joiner');
     } else {
         res.redirect('/hub');
     }
