@@ -124,7 +124,10 @@ Home page {{ serviceName }} NHS BSA Prototype
                     <h2 class="heading-large" id="inherited-heading">Your inherited pensions</h2>
                     <ul class="grid-row grid-grid">
                         <li>
-                            {% include "hub/card/inherited-divorce.html" %}
+                            {% include "hub/card/inherited-divorce-not-receive.html" %}
+                        </li>
+                        <li>
+                            {% include "hub/card/inherited-divorce-receive.html" %}
                         </li>
                         <li>
                             {% include "hub/card/inherited-bereavement.html" %}
