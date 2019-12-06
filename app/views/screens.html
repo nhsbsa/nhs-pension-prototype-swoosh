@@ -1,6 +1,6 @@
-{% extends "layout_empty.html" %}
+{% extends "layout_bsa.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   {{ serviceName }} prototype
 {% endblock %}
 
@@ -12,22 +12,22 @@
 
     <div class="grid-row">
   	    <div class="column-two-thirds">
-		
-            <div class="heading-group">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-xlarge">Screens</h1>
-            </div>
+		                
+            <h1 class="govuk-heading-l">
+                <span class="govuk-caption-m">{{ serviceName }}</span>
+                Screens
+            </h1>
 
             <aside class="govuk-related-items" role="complementary">
                 <nav role="navigation">
-                    <h2 class="heading-medium">Assisted digital</h2>
+                    <h2 class="govuk-heading-m">Assisted digital</h2>
                     <a href="/assisted" class="font-xsmall">Find by National Insurance number</a>
                 </nav>
-                <hr>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
                     
                 <nav role="navigation">
-                    <h2 class="heading-medium">Supporting</h2>
-                    <ul class="list list-bullet font-xsmall">
+                    <h2 class="govuk-heading-m">Supporting</h2>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="patterns">Patterns</a></li>
                         <li><a href="pages">Page templates</a></li>
                         <li><a href="error">Errors</a></li>
@@ -36,10 +36,10 @@
                     </ul>
                 </nav>
 
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
                 <nav role="navigation">
-                    <h2 class="heading-medium">Matching</h2>
-                    <ul class="list list-bullet font-xsmall">
+                    <h2 class="govuk-heading-m">Matching</h2>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/matching/check">Check details and confirm</a></li>
                         <li><a href="/matching/nino-not-found">National Insurance number not found</a></li>
                         <li><a href="/matching/problem">Problem with our record</a></li>
@@ -47,37 +47,38 @@
                     </ul>
                 </nav>
 
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
                 <nav role="navigation">
-                    <h2 class="heading-medium">Onboarding</h2>
-                    <ul class="list list-bullet font-xsmall">
+                    <h2 class="govuk-heading-m">Onboarding</h2>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/onboard/1">Iteration 1 (4 screens)</a></li>
                         <li><a href="/onboard/2">Iteration 2 (1 screen)</a></li>
                         <li><a href="/onboard/3">Iteration 3 (3 screens)</a></li>
-                        <li><a href="onboard/joiner?journey=joiner">Joiner</a> - WIP</li>
+                        <li><a href="onboard/joiner?journey=joiner">Joiner</a> - in progress</li>
                     </ul>
                 </nav>
 
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
                 <nav role="navigation">
-                    <h2 class="heading-medium">Estimating</h2>
-                    <ul class="list list-bullet font-xsmall">
-                        <li><a href="/super-dumb">Super dumb</a></li>
+                    <h2 class="govuk-heading-m">Estimating</h2>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/super-dumb">Contribution calculator</a> (joiners) - in progress</li>
+                        <li><a href="/super-dumb">Super dumb calculator</a> - in progress</li>
                     </ul>
                 </nav>
 
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
                 <nav role="navigation">
-                    <h2 class="heading-medium">Hub</h2>
-                    <ul class="list list-bullet font-xsmall">
+                    <h2 class="govuk-heading-m">Hub</h2>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/hub?show=trs">Show TRS unavailable</a></li>
                         <li><a href="/hub?show=taking">Show pensioner in 1995 scheme</a></li>
                         <li><a href="/hub?show=submitted">Show submitted 1995 pension</a></li>
                         <li><a href="/hub?show=inherited">Show inherited pensions</a></li>
                     </ul>
-                    <h3 class="heading-small">Statuses (blunt statements)</h3>
-                    <ul class="list list-bullet font-xsmall">
+                    <h3 class="govuk-heading-s">Statuses (blunt statements)</h3>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/hub?1995=a&2008=a&2015=a">Status A</a> – currently contributing blunt statement</li>
                         <li><a href="/hub?1995=u1&2008=u1&2015=u1">Status U1</a> – Refund owed member is outside of the 5 year disqualifying break period</li>
                         <li><a href="/hub?1995=u2&2008=u2&2015=u2">Status U2</a> – Refund owed member is within the 5 year disqualifying break period</li>
@@ -88,33 +89,43 @@
                         <li><a href="/hub?1995=app&2008=a&2015=a">Applied</a> – Applied for pension</li>
                     </ul>
                 </nav>
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
                 <nav role="navigation">
-                    <h2 class="heading-medium">Contribution statement</h2>
-                    <ul class="list list-bullet font-xsmall">
+                    <h2 class="govuk-heading-m">Contribution statement</h2>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/statement?schemeReference=2015&schemeYear=2018/2019&deferred=0">Active member 2015</a></li>
                         <li><a href="/statement?schemeReference=2015&schemeYear=2018/2019&deferred=1">Deferred member 2015</a></li>
                         <li><a href="/statement?schemeReference=1995&schemeYear=1994/1995&deferred=0">Active member 1995</a></li>
                         <li><a href="/statement?schemeReference=1995&schemeYear=1994/1995&deferred=1">Deferred member 1995</a></li>
                     </ul>
                 </nav>
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
                 <nav role="navigation">
-                    <h2 class="heading-medium">Hard stops</h2>
-                    <ul class="list list-bullet font-xsmall">
+                    <h2 class="govuk-heading-m">Membership statement</h2>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/membership/summary-list-style">Summary list style</a> - MVP</li>
+                        <li><a href="/membership/statement">Table style</a> - Broken</li>
+                        <li><a href="/membership/accordion-style">Accordion style</a> - Potential future</li>
+                    </ul>
+                </nav>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+                <nav role="navigation">
+                    <h2 class="govuk-heading-m">Hard stops</h2>
+                    <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/hard-stop/joiner">Joiner</a></li>
                     </ul>
                 </nav>
-                <hr />
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
             </aside>
 
         </div>
 
 	</div>
 
-    {% include "includes/back-link.html" %}
+    {# {% include "includes/back-link.html" %} #}
 
 </main>
 

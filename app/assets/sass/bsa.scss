@@ -1,0 +1,83 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/examples/blank-unbranded
+
+// Import colour palette and applied colours so that we can use
+// $govuk-body-background-colour in our overrides below.
+// 
+// If you need to enable compatibility mode or the legacy palette, do that
+// *before* these imports.
+@import "node_modules/govuk-frontend/govuk/settings/colours-palette";
+@import "node_modules/govuk-frontend/govuk/settings/colours-applied";
+
+// Style links and paragraphs by default
+$govuk-global-styles: true;
+
+// Override the govuk-frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with
+// the GOV.UK footer.
+$govuk-canvas-background-colour: govuk-colour("light-grey", $legacy: "grey-3");
+
+
+// Show the breakpoints
+$govuk-show-breakpoints: true;
+
+// Set additional colours
+$nhs-blue: #005EB8;
+
+// Import govuk
+@import "node_modules/govuk-frontend/govuk/all";
+
+
+// Create swoosh header
+.bsa-header {
+    @include govuk-media-query($until: tablet) {
+        border-bottom: 1px solid govuk-colour("mid-grey", $legacy: "grey-3");
+    }
+    @include govuk-media-query(tablet){
+        background: url('/public/v6/images/bsa/header-bsa.svg') center bottom no-repeat transparent;
+    }
+    &__container {
+        text-align: right;
+    }
+}
+
+.bsa-logo {
+    display: inline-block;
+    width: 260px;
+    margin: 20px 0;
+
+    @include govuk-media-query(tablet){
+        width: 300px;
+        height: 68px;
+        margin-bottom: 54px;
+        margin-top: 28px;
+    }
+
+    @include govuk-media-query(desktop){
+        margin-bottom: 74px;
+    }
+}
+
+.bsa-footer {
+    padding: 60px 0;
+    background-color: govuk-colour("light-grey", $legacy: "grey-3");
+    border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-3");
+
+    ul {
+        list-style: none;
+        margin: 0 0 1.5em 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin: 0 15px 0 0;
+        }
+    }
+
+    a {
+        color: govuk-colour("dark-grey", $legacy: "grey-1");
+    }
+}

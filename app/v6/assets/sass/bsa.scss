@@ -20,6 +20,8 @@
 @import 'components/numbered-list';
 @import 'components/timeline';
 @import 'components/embed-container';
+@import 'components/summary-list';
+@import 'components/bsa-transaction-item';
 
 // Patterns
 @import 'patterns/grid-grid';
@@ -825,7 +827,7 @@ $task-list-indent: 35px;
     color: $grey-1;
     font-size: 110%;
   }
-  .heading-xlarge, .heading-large {
+  .heading-xlarge, .heading-large, .heading-medium, .heading-small {
     margin: 0;
     padding: 0;
   }

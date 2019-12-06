@@ -26,6 +26,10 @@ let getNAge = "67";
 let getEAge = "55";
 let nino = "QQ 12 34 56 C";
 
+let sd1 = "SD12345678";
+let sd2 = "SD98765432"
+let sd = sd1;
+
 // 2015 defaults
 let estimateMonthly = "2,231";
 let estimateYearly = "26,773";
@@ -112,7 +116,8 @@ module.exports = {
   "homeAddress": "29 Larkholme Lane, Fleetwood, FY7 8AU",
   "emailAddress": "sam.jones@madeupaddress.net",
   "mobileNumber": "07777 123 4567",
-  "lastUpdatedDate": "31 March 2018",
+  "lastUpdatedDate": "31 March 2019",
+  "sd": sd,
 
   "npaLabel": "NHS pension age",
   "npdLabel": "NHS pension date",

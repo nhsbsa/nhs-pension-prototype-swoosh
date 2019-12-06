@@ -1,0 +1,16 @@
+.bsa-transaction {
+    &__item {
+
+    }
+
+    &__header {
+        > * {
+            margin: 0;
+        }
+    }
+
+    &__tag {
+        color: #6f777b;
+        font-weight: bold;
+    }
+}

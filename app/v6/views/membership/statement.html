@@ -1,0 +1,324 @@
+{% extends "layout_bsa.html" %}
+
+{% block pageTitle %}
+Membership statement - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">1995 Membership statement</h1>
+            </div>
+            {% include "membership/includes/intro.html" %}
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="grid-row">
+        <div class="column-full">
+
+            <div>
+                <h3 class="heading-small">5663 – North West Boroughs Healthcare NHS Foundation Trust</h3>
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th class="numeric">MHO</th>
+                            <th class="numeric">Contract type</th>
+                            <th>Calendar length</th>
+                            <th>Whole time equivalent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 November 2012</td>
+                            <td>31 March 2018</td>
+                            <td class="numeric">No</td>
+                            <td class="numeric">Whole time</td>
+                            <td class="numeric">10 years 184 days</td>
+                            <td class="numeric">10 years 184 days</td>
+                        </tr>
+                        <tr>
+                            <td>1 May 2002</td>
+                            <td>31 October 2012</td>
+                            <td class="numeric">No</td>
+                            <td class="numeric">Part time (37.5)</td>
+                            <td class="numeric">5 years 151 days</td>
+                            <td class="numeric">4 years 122 days</td>
+                        </tr>
+                        <tr>
+                            <td class="numeric" colspan="4"><strong class="bold">Total</strong></td>
+                            <td class="numeric">15 years 335 days</td>
+                            <td class="numeric">14 years 306 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                {# <div class="grid-row">
+                    <div class="column-half">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="numeric">Years</th>
+                                    <th class="numeric">Days</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <th>Calendar length membership</th>
+                                <td class="numeric">10</td>
+                                <td class="numeric">184</td>
+                            </tr>
+                            <tr>
+                                <th>Whole time equivalent membership</th>
+                                <td class="numeric">10</td>
+                                <td class="numeric">184</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> #}
+            </div>
+
+            <table class="table--small responsive-table">
+                <thead>
+                    <tr>
+                        <th colspan="4"></th>
+                        <th colspan="2" class="numeric">Calendar length</th>
+                        <th colspan="2" class="numeric">Whole time equivalent</th>
+                    </tr>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>MHO</th>
+                        <th>WT/PT</th>
+                        <th class="numeric">Years</th>
+                        <th class="numeric">Days</th>
+                        <th class="numeric">Years</th>
+                        <th class="numeric">Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-no-border">
+                        <td colspan="8">
+                            <strong>5663 North West Boroughs Healthcare NHS Foundation Trust</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>01/05/2002</td>
+                        <td>31/10/2012</td>
+                        <td>N</td>
+                        <td>WT</td>
+                        <td class="numeric">10</td>
+                        <td class="numeric">184</td>
+                        <td class="numeric">10</td>
+                        <td class="numeric">184</td>
+                    </tr>
+                    <tr>
+                        <td>01/11/2012</td>
+                        <td>31/03/2018</td>
+                        <td>N</td>
+                        <td>PT(37.5)</td>
+                        <td class="numeric">5</td>
+                        <td class="numeric">151</td>
+                        <td class="numeric">4</td>
+                        <td class="numeric">122</td>
+                    </tr>
+                    <tr class="row-no-border">
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Year</th>
+                                    <td><strong>2013</strong></td>
+                                    <td><strong>2014</strong></td>
+                                    <td><strong>2015</strong></td>
+                                    <td><strong>2016</strong></td>
+                                    <td><strong>2017</strong></td>
+                                    <td><strong>2018</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Hours/sessions</td>
+                                    <td>652</td>
+                                    <td>1654</td>
+                                    <td>1654</td>
+                                    <td>1654</td>
+                                    <td>1654</td>
+                                    <td>1654</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="4"><strong>Office membership totals</strong></th>
+                        <td class="numeric"><strong>15</strong></td>
+                        <td class="numeric"><strong>335</strong></td>
+                        <td class="numeric"><strong>14</strong></td>
+                        <td class="numeric"><strong>306</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="heading-medium">Additional membership</h3>
+
+            <p>If you have acquired additional membership by transferring in membership from another scheme this is shown below:</p>
+
+            <h4 class="heading-small">Transfer in membership</h4>
+
+            <table class="block table--small">
+                <thead>
+                    <tr>   
+                        <td></td>
+                        <td class="numeric"><strong>Years</strong></td>
+                        <td class="numeric"><strong>Days</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Transferred service</td>
+                        <td class="numeric">12</td>
+                        <td class="numeric">47</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="heading-medium">Membership summary</h4>
+
+            <table class="block table--small">
+                <thead>
+                    <tr>
+                        <td><strong>Membership type</strong></td>
+                        <td class="numeric"><strong>Years</strong></td>
+                        <td class="numeric"><strong>Days</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calendar length membership</td>
+                        <td class="numeric">15</td>
+                        <td class="numeric">335</td>
+                    </tr>
+                    <tr>
+                        <td>Whole time equivalent membership</td>
+                        <td class="numeric">14</td>
+                        <td class="numeric">306</td>
+                    </tr>
+                    <tr>
+                        <td>Added years membership (purchased to date)</td>
+                        <td class="numeric">0</td>
+                        <td class="numeric">0</td>
+                    </tr>
+                    <tr>
+                        <td>Transferred in membership</td>
+                        <td class="numeric">12</td>
+                        <td class="numeric">47</td>
+                    </tr>
+                    <tr>
+                        <td>MHO double membership</td>
+                        <td class="numeric">0</td>
+                        <td class="numeric">0</td>
+                    </tr>
+                    <tr>
+                        <td>Disallowed days (to be deducted)</td>
+                        <td class="numeric">0</td>
+                        <td class="numeric">0</td>
+                    </tr>
+                    <tr>
+                        <td>Total pensionable service</td>
+                        <td class="numeric">26</td>
+                        <td class="numeric">335</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="heading-large">About your 1995 Section Membership Statement</h3>
+
+            <h4 class="heading-medium">How your membership is updated</h4>
+
+            <p>Your NHS Employer(s) provided the membership details contained within your statement to NHS Pensions. This information assumes all data is correct up to the last update received or to the date of leaving, if appropriate. Our scheme year runs from the 1st April to the 31st March. If any financial year-end updates are missing, then this membership will not be reflected in the statement.</p>
+
+            <h4 class="heading-medium">Glossary of terms</h4>
+
+            <table class="block table">
+                <tbody>
+                    <tr>
+                        <th style="width: 25%"><strong>Employment details</strong></th>
+                        <td>The name of your NHS Employer (where known) and the relevant employment dates. The from and to dates are for each employment or where there has been a change in contract. <br /> Employment dates will overlap where concurrent employments occur.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>MHO</strong></th>
+                        <td>Mental Health Officer; where an employment has ben given MHO status this is indicated by a Yes (Y) flag.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>WT/PT</strong></th>
+                        <td>Whole Time/Part Time; indicates the type of contract for each employment. Where the contract is part time the standard hours or sessions will be shown in brackets.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Hours/Sessions</strong></th>
+                        <td>For part time employments only, this shows the total hours or sessions worked in each financial year.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Calendar Length Membership</strong></th>
+                        <td>The actual length of the employment. If you work part time this is scaled down in order to calculate whole time equivalent membership (see below).<br /> Non-contributory membership prior to 6th April 1988 has been reduced by half in the calendar length membership totals.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Whole Time Equivalent Membership</strong></th>
+                        <td>The amount of membership used to calculate your pension entitlement.<br/> For whole time employments the whole time equivalent membership will usually be the same as the calendar length membership.<br /> For part time employments the calendar length membership will be scaled down to the whole time equivalent length reflecting the number of hours or sessions worked. For example if you worked half the whole time hours for an employent lasting 300 days, the whole time equivalent membership will be 150 days.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Added Years Membership</strong></th>
+                        <td>If you were entitled to purchase added years and elected to take this option, your added years contracts will be shown in the statement.<br /> The added years membership shown in the totals will only be that purchased to the date of the statement.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Transferred in Membership</strong></th>
+                        <td>If you have elected to transfer membership from another pension scheme the value of this transfer will be shown in the statement.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Dissallowed Days</strong></th>
+                        <td>Membership which will not count towards benefits, for example strike days or unpaid sick leave.</p>
+                    </tr>
+                    <tr>
+                        <th><strong>Total Pensionable Service</strong></th>
+                        <td>The total of the whole time equivalent membership that will be used in calculating yoru pension benefits.</p>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="heading-medium">Limiting your membership</h4>
+
+            <p>Your membership is subject to certain limits - these limits are taken into account in your statement.</p>
+
+            <p>You are not allowed to have more than 40 years membership at the earlier of (1) age 60 or (2) 1st April 2008. Unless you are a member of the special classes and then you are not allowed to have more than 40 year's membership at age 55.</p>
+
+            <p>If you continue in the scheme you are allowed to accrue membership up to a total limit of 45 years.</p>
+
+            <h4 class="heading-medium">Refund of contributions/transfers out</h4>
+
+            <p>If you have received a refund of contributions or transferred out any period(s) of employment it will not be included in this statement.</p>
+
+            <h4 class="heading-medium">Overtime hours</h4>
+
+            <p>Overtime hours, or sessions worked over the whole time rate for your job, are not pensionable.</p>
+
+            <h4 class="heading-medium">Service queries</h4>
+
+            <p>If you have any queries about the content of this statement please contact your empoyers directly.</p>
+
+            <h4 class="heading-medium">Further information</h4>
+
+            <p>Further information is available on our website at www.nhsbsa.nhs.uk/pensions<br /> KN/SS95<br /> 08/11</p>
+
+            <hr />
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

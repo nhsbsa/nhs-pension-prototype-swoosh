@@ -1,0 +1,62 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 1995 membership statement - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-full">
+
+            <div class="heading-group">
+                <p>{{ data['sd'] }}</p>
+                <h1 class="heading-large">Membership statement</h1>
+                <p>1995 Scheme</p>
+            </div>
+
+            <p>You have:</p>
+            <ul class="list list-bullet">
+                <li>10 years and 213 days of calendar length membership in the 1995 scheme</li>
+                <li>10 years and 213 days of whole time equivalent length membership in the 1995 scheme</li>
+                <li>3 years where you have partial years membership</li>
+            </ul>
+
+            {{ govukDetails({
+                summaryText: 'What is the difference between calendar and whole time?',
+                html: "Explain difference"
+            }) }}
+
+            <hr>
+
+            {{ govukSummaryList({
+                rows: [
+                    {
+                    key: {
+                        text: "2019-2020"
+                    },
+                    value: {
+                        text: "Full year membership"
+                    }
+                    }
+                ]
+            }) }}
+            to add
+
+            <hr>
+
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

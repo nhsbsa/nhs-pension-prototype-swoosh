@@ -1,0 +1,14 @@
+<p>This statement is a list of your pensionable service in the NHS, it was last 
+updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
+
+{% set wrongHtml %}
+<p>There are many reasons this information may seem incorrect. It is not a history of your employment in the NHS.</p>
+
+<p>Make sure you <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2019-06/Membership%20record%20factsheet%2020190509-%28V5%29%20.pdf">
+check the membership statement factsheet on our website</a> and tell your employer if anything looks incorrect, it's up to them to keep your information up to date.</p>
+{% endset %}
+
+{{ govukDetails({
+    summaryText: 'What do I do if my information looks incorrect?',
+    html: wrongHtml
+}) }}

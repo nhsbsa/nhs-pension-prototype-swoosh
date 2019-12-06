@@ -1,0 +1,236 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 1995 pension contributions - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">1995 Membership statement</h1>
+            </div>
+            {% include "membership/includes/intro.html" %}
+        </div>
+    </div>
+
+    
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <hr />
+
+            <ul class="bsa-transaction">
+
+                <li class="bsa-transaction__item">
+
+                    <div class="bsa-transaction__header">
+                        <span class="bsa-transaction__tag font-xsmall">EA483950</span>
+                        <h2 class="heading-small">Black Country Partnership NHS Foundation Trust</h2>
+                    </div>
+
+                    {{ govukSummaryList({
+                        rows: [
+                            {
+                                key: {
+                                    text: "Term"
+                                },
+                                value: {
+                                    text: "23 June 2011 to 6 August 2012"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Membership"
+                                },
+                                value: {
+                                    text: "10 years 184 days"
+                                }
+                            }
+                        ]
+                    }) }}
+                </li>
+
+                <li class="bsa-transaction__item">
+                    <div class="bsa-transaction__header">
+                        <span class="bsa-transaction__tag font-xsmall">EA183827</span>
+                        <h2 class="heading-small">Birmingham and Solihull Mental Health NHS Foundation Trust</h2>
+                    </div>
+
+                    {{ govukSummaryList({
+                        rows: [
+                            {
+                                key: {
+                                    text: "Term"
+                                },
+                                value: {
+                                    text: "23 June 2011 to 6 August 2012"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Membership"
+                                },
+                                value: {
+                                    text: "10 years 184 days"
+                                }
+                            }
+                        ]
+                    }) }}
+
+                </li>
+
+                <li class="bsa-transaction__item">
+                    <div class="bsa-transaction__header">
+                        <span class="bsa-transaction__tag font-xsmall">EA403928</span>
+                        <h2 class="heading-small">Coventry and Warwickshire Partnership Trust (CWPT)</h2>
+                    </div>
+
+                    {{ govukSummaryList({
+                        rows: [
+                            {
+                                key: {
+                                    text: "Term"
+                                },
+                                value: {
+                                    text: "3 January 2008 to 2 May 2011"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Status"
+                                },
+                                value: {
+                                    text: "Mental health officer held"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Membership"
+                                },
+                                value: {
+                                    text: "10 years 184 days"
+                                }
+                            }
+                        ]
+                    }) }}
+
+                </li>
+
+                <li class="bsa-transaction__item">
+                    <div class="bsa-transaction__header">
+                        <span class="bsa-transaction__tag font-xsmall">EA488853</span>
+                        <h2 class="heading-small">Midlands Partnership NHS Foundation Trust (formerly Staffordshire and Stoke on Trent Partnership Trust)</h2>
+                    </div>
+
+                    {% set ptTableHtml %}
+                    <table>
+                        <caption class="visually-hidden">Hours breakdown</caption>
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Hours / sessions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>2013</strong></td>
+                                <td>652</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2014</strong></td>
+                                <td>1654</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2015</strong></td>
+                                <td>1654</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2016</strong></td>
+                                <td>1654</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2017</strong></td>
+                                <td>1654</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2018</strong></td>
+                                <td>1654</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% endset %}
+
+                    {{ govukSummaryList({
+                        rows: [
+                            {
+                                key: {
+                                    text: "Term"
+                                },
+                                value: {
+                                    text: "3 January 2008 to 2 May 2011"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Contract"
+                                },
+                                value: {
+                                    text: "Part time"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Breakdown"
+                                },
+                                value: {
+                                    html: ptTableHtml
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Calendar length"
+                                },
+                                value: {
+                                    text: "10 years 156 days"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Membership"
+                                },
+                                value: {
+                                    text: "10 years 184 days"
+                                }
+                            }
+                        ]
+                    }) }}
+
+                </li>
+
+            </ul>
+
+            <h2 class="heading-medium">What are you using this information for?</h2>
+            <p>So that we can provide you with a better service, we'd like to understand what you are using this membership statement for.
+            <a href="#">Help us improve by completing a short survey.</a></p>
+            <hr />
+            <p><a href="#">Print this page</a></p>
+            <hr>
+
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

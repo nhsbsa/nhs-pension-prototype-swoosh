@@ -1,0 +1,64 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+
+{% block headIcons %}
+  <!-- change all to bsa -->
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+  <link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset_path }}images/apple-touch-icon-152x152.png?0.18.3">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
+  <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
+{% endblock %}
+
+{% block head %}
+  <link href="/public/stylesheets/bsa.css" media="all" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block header %}
+<header class="bsa-header" role="banner">
+  <div class="bsa-header__container govuk-width-container">
+    <a id="bsa-logo" href="/" class="bsa-logo">
+      <img src="/public/v6/images/bsa/bsa_logo.svg" alt="NHS BSA Logo">
+    </a>
+  </div>
+</header>
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block footer %}
+  <footer class="bsa-footer" id="footer" role="contentinfo">
+    <div class="bsa-footer__container govuk-width-container">
+
+      <div class="footer-meta">
+        <div class="footer-meta-inner">
+
+          <div class="footer-meta-inner">
+            <h2 class="govuk-visually-hidden">Support links</h2>
+            <ul>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="open-government-licence">
+            <p>Built by <a href="https://www.gov.uk/government/organisations/nhs-business-services-authority">NHS Business Services Authority</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+{% endblock %}
+
+{% block bodyEnd %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
