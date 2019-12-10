@@ -12,19 +12,36 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
+       
         <div class="column-two-thirds">
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">1995 Membership statement</h1>
+                <h1 class="heading-large">Your 1995 scheme membership</h1>
             </div>
-            {% include "membership/includes/intro.html" %}
-        </div>
-    </div>
 
-    
+            <p>This information is a list of your pensionable service in the NHS <span class="optional">for the 1995 scheme only</span>, it was last 
+updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
 
-    <div class="grid-row">
-        <div class="column-two-thirds">
+            <div class="notice">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small">
+                    We use this information to calculate your pension so make sure you check it thoroughly. 
+                    Tell your employer if anything looks incorrect.
+                </strong>
+            </div>
+
+            <br>
+            {% set totalHtml %}
+                {% include "membership/includes/total.html" %}
+                
+            {% endset %}
+
+            {{ govukDetails({
+                summaryText: 'View your 1995 scheme membership total',
+                html: totalHtml
+            }) }}
             <hr />
 
             <ul class="bsa-transaction">
@@ -40,7 +57,7 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
                         rows: [
                             {
                                 key: {
-                                    text: "Term"
+                                    text: "Dates"
                                 },
                                 value: {
                                     text: "23 June 2011 to 6 August 2012"
@@ -68,7 +85,7 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
                         rows: [
                             {
                                 key: {
-                                    text: "Term"
+                                    text: "Dates"
                                 },
                                 value: {
                                     text: "23 June 2011 to 6 August 2012"
@@ -97,7 +114,7 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
                         rows: [
                             {
                                 key: {
-                                    text: "Term"
+                                    text: "Dates"
                                 },
                                 value: {
                                     text: "3 January 2008 to 2 May 2011"
@@ -172,7 +189,7 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
                         rows: [
                             {
                                 key: {
-                                    text: "Term"
+                                    text: "Dates"
                                 },
                                 value: {
                                     text: "3 January 2008 to 2 May 2011"
@@ -215,15 +232,39 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
 
                 </li>
 
+                <li>
+                    <div class="bsa-transaction__header">
+                        <h2 class="heading-large">Membership total</h2>
+                    </div>
+                    {% include "membership/includes/total.html" %}
+                </li>
+
             </ul>
 
-            <h2 class="heading-medium">What are you using this information for?</h2>
-            <p>So that we can provide you with a better service, we'd like to understand what you are using this membership statement for.
-            <a href="#">Help us improve by completing a short survey.</a></p>
-            <hr />
-            <p><a href="#">Print this page</a></p>
+            <p><a href="#">View your 2008 pension scheme membership</a></p>
+
             <hr>
 
+            <h2 class="heading-medium">What do I do if my information looks incorrect?</h2>
+            <p>There are many reasons this information may seem incorrect. It is not a history of your employment in the NHS.</p>
+
+            <p>Make sure you <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2019-06/Membership%20record%20factsheet%2020190509-%28V5%29%20.pdf">
+            check the membership statement factsheet on our website</a> and tell your employer if anything looks incorrect, it's up to them to keep your information up to date.</p>
+
+            {% set whatHtml %}
+                <p>So that we can provide you with a better service, we'd like to understand what you are using this information for.
+                <a href="#">Help us improve by completing a short survey.</a></p>
+            {% endset %}
+
+            {{ govukDetails({
+                summaryText: 'What is this information for?',
+                html: whatHtml
+            }) }}
+
+            {# <hr /> #}
+            
+            <hr>
+<p><a href="#">Print this page</a></p>
             <br>
             {% include "includes/back-to-home-link.html" %}
 

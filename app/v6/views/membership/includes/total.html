@@ -1,0 +1,68 @@
+<h2 class="heading-medium govuk-margin-top-0 visually-hidden">Membership total</h2>
+
+{{ govukSummaryList({
+    rows: [
+        {
+            key: {
+                text: "Your membership"
+            },
+            value: {
+                text: "30 years 128 days"
+            }
+        },
+        {
+            key: {
+                text: "Added years"
+            },
+            value: {
+                text: "3 years 144 days"
+            }
+        },
+        {
+            key: {
+                text: "Total"
+            },
+            value: {
+                text: "33 years 272 days"
+            }
+        }
+    ]
+}) }}
+{# <table>
+    <caption class="visually-hidden">Membership totals</caption>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Years</th>
+            <th>Days</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Your membership<br>
+                <span class="font-xsmall">(includes part time)</span></td>
+            <td>30</td>
+            <td>128</td>
+        </tr>
+        <tr>
+            <td>Added years</td>
+            <td>3</td>
+            <td>144</td>
+        </tr>
+        <tr>
+            <td>Transferred</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Mental Health Officer</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>33</td>
+            <td>272</td>
+        </tr>       
+    </tbody>
+</table> #}

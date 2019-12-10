@@ -38,7 +38,10 @@ $interrupt-panel-background-color: $nhs-blue;
 
     table th,
     table td,
-    .govuk-check-your-answers > * > * {
+    .govuk-check-your-answers > * > *,
+    .govuk-summary-list__key,
+    .govuk-summary-list__value,
+    .govuk-summary-list__actions {
         border-bottom-color: $white;
     }
     table {
