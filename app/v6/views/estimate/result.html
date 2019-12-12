@@ -20,7 +20,6 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
 
             <div class="interrupt-panel bsa-print-hide">
 
-            
             {# {{ data['schemeReference'] }}
             <br>
             Lump amount: {{ data['lump-amount'] }}
@@ -31,7 +30,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <br><br>
 estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
 
-            <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
+                <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
                 {% if ( data['schemeReference'] === '2015' ) %} 
                     {% include "estimate/includes/2015.html" %}
                 {% elif ( data['schemeReference'] === '2008' ) %}
@@ -39,10 +38,24 @@ estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
                 {% elif ( data['schemeReference'] === '1995' ) %}
                     {% include "estimate/includes/1995.html" %}
                 {% endif %}
-                <br>
-                {% include "calculator/includes/pay-info-date.html" %}
+                {% if ( data['schemeReference'] === '2015' ) %}
+                    <br>
+                    {% include "calculator/includes/pay-info-date.html" %}
+                {% endif %}
 
             </div>
+
+            {% if ( data['schemeReference'] === '1995' ) %}
+                <h2 class="heading-medium">Your pension estimate</h2>
+                <p>
+                    Your estimate is calculated using assumptions and pay information from 
+                    <strong class="bold nobr">31 March 2018</strong>.
+
+                    The pay information uses your pensionable pay of <span class="bold">£32,567</span> and your 
+                    <span class="bold">4 years and 123 days membership</span> in the 1995 pension scheme.
+                </p>
+            {% endif %}
+
         </div>
     </div>
 
