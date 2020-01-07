@@ -13,7 +13,9 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
         class: "bsa-account-details-bar--slim"
     }) }}
 
-    {# {% include "includes/back-link.html" %} #}
+    {% if ( data['schemeReference'] === '1995' or '2008' ) %}
+        {% include "includes/back-link.html" %}
+    {% endif %}
 
     <div class="grid-row">
         <div class="column-desktop-two-thirds">
@@ -30,30 +32,66 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <br><br>
 estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
 
-                <h1 class="heading-small govuk-margin-top-0">You could get a {{ data['schemeReference'] }} pension of</h1>
+                <h1 class="heading-small govuk-margin-top-0">You could get a <span class="bold">{{ data['schemeReference'] }} pension</span> of</h1>
                 {% if ( data['schemeReference'] === '2015' ) %} 
                     {% include "estimate/includes/2015.html" %}
+                    <br>
                 {% elif ( data['schemeReference'] === '2008' ) %}
                     {% include "estimate/includes/2008.html" %}
                 {% elif ( data['schemeReference'] === '1995' ) %}
                     {% include "estimate/includes/1995.html" %}
                 {% endif %}
                 {% if ( data['schemeReference'] === '2015' ) %}
-                    <br>
                     {% include "calculator/includes/pay-info-date.html" %}
                 {% endif %}
-
+                {% if ( data['schemeReference'] === '1995' or '2008' ) %}
+                <br>    
+                    <p class="font-xsmall">We have calculated your estimate using assumptions as well as your pensionable pay of <span class="bold">£32,567</span>
+                    and your <span class="bold nobr">1,583 days membership</span> in the {{ data['schemeReference'] }} pension scheme as of <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.
+                    <a href="/disclaimer" class="nobr">Find out what we assume</a>.</p>
+                {% endif %}
             </div>
 
             {% if ( data['schemeReference'] === '1995' ) %}
-                <h2 class="heading-medium">Your pension estimate</h2>
-                <p>
-                    Your estimate is calculated using assumptions and pay information from 
-                    <strong class="bold nobr">31 March 2018</strong>.
+                {# <h2 class="heading-medium">Your pension estimate</h2> #}
+                {% set tableHtml %}
+                    <p>We start by taking the best of your last 3 years pay. This figure is then divided by 80 and the result is then
+                        multiplied by the number of days of your pension scheme membership.</p>
+                    <p>We then use this working total and make some assumptions
+                        to work out what you might get when you reach your NHS pension age.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Step</th>
+                                <th class="numeric" scope="col">Figure</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Take the best of last 3 years pay</td>
+                                <td class="numeric">32,456</td>
+                            </tr>
+                            <tr>
+                                <td>Divide by</td>
+                                <td class="numeric"><span class="font-medium">&divide;</span> 80</td>
+                            </tr>
+                            <tr>
+                                <td>Multiply by days of membership</td>
+                                <td class="numeric"><span class="font-medium">&times;</span> 1,583</td>
+                            </tr>
+                            <tr>
+                                <td>Working total</td>
+                                <td class="numeric"><span class="font-medium">&equals;</span> 643,916</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Your lump sum is 3 times the amount worked out.</p>
+                {% endset %}
 
-                    The pay information uses your pensionable pay of <span class="bold">£32,567</span> and your 
-                    <span class="bold">4 years and 123 days membership</span> in the 1995 pension scheme.
-                </p>
+                {# {{ govukDetails({
+                    summaryText: 'How we worked this out',
+                    html: tableHtml
+                }) }} #}
             {% endif %}
 
         </div>

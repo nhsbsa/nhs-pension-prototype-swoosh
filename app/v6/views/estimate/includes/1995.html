@@ -2,8 +2,9 @@
 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult1995.estimate.yearly }}  a year</p>
 
 {% if ( data.estimateResult1995.lump > "0" ) %}
-    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult1995.lump }}</span>
-        when you start taking this pension
+    <p class="heading-small">with a one off minimum lump sum payment of <br> <span class="font-large nobr bold">£{{ data.estimateResult1995.lump }}</span>
+    when you start taking this pension.
+        {# if you take this pension on <span class="nobr"><span class="bold">{{ data.estimateResult1995.date }}</span> at age <span class="bold">{{ data.estimateResult1995.age }}</span>.</span> #}
     </p>
 {% else %}
     <br>
@@ -12,7 +13,6 @@
 
 <hr class="break">
 <dl class="govuk-check-your-answers cya-questions-short cya-no-change">
-    {# result options #}
     <div>
         <dt class="cya-question">Start date</dt>
         <dd class="cya-answer">
@@ -25,7 +25,7 @@
             <a href="when">Change<span class="visually-hidden"> start date</span></a>
         </dd> #}
     </div>
-    <div>
+    {# <div>
         <dt class="cya-question">Lump sum amount</dt>
         <dd class="cya-answer">
             £{{ data.estimateResult1995.lump }}
@@ -33,9 +33,9 @@
             <span class="font-xsmall nobr">(Your maximum amount at age {{ data.estimateResult1995.age }})</span>
             {% endif %}
         </dd>
-{#         
+        
         <dd class="cya-change">
             <a href="lump?schemeReference=1995">Change<span class="visually-hidden"> lump sum amount</span></a>
-        </dd> #}
-    </div>
+        </dd>
+    </div> #}
 </dl>
