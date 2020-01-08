@@ -1,0 +1,19 @@
+.bsa-list {
+    border-top: 1px solid #bfc1c3;
+    margin: 40px 0;
+
+    &__label {
+        margin-right: 40px;
+        white-space: nowrap;
+    }
+
+    &__item {
+        display: flex;
+        padding: 16px 0;
+        border-bottom: 1px solid #bfc1c3;
+    }
+    &__action {
+        white-space: nowrap;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,118 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 1995 pension contributions - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+       
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">Check your {{ data['schemeReference'] }} scheme <br>membership record</h1>
+            </div>
+            
+            {% include "membership/includes/check-it-notice.html" %}
+            <br>
+
+            <p>This information is a list of your pensionable service in the NHS <span class="optional">for 
+            the {{ data['schemeReference'] }} scheme only</span>, it was last updated on 
+            <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
+
+            {# <br>
+            {% set totalHtml %}
+                {% include "membership/includes/total.html" %}
+            {% endset %}
+
+            {{ govukDetails({
+                summaryText: 'View your ' + data['schemeReference'] + ' scheme membership total',
+                html: totalHtml
+            }) }} #}
+            
+            <ul class="bsa-list">
+                <li class="bsa-list__item">
+                    <b class="bsa-list__label">2019-20</b> <span>Record is not available yet</span>
+                </li>
+                <li class="bsa-list__item">
+                    <b class="bsa-list__label">2018-19</b> 
+                    <span class="bsa-list__count bold">123 days</span> 
+                    <a href="detail" class="bsa-list__action">View details</a>
+                </li>
+                <li class="bsa-list__item">
+                    <b class="bsa-list__label">2017-18</b>
+                    <span class="bsa-list__count bold">60 days</span>
+                    <a href="detail" class="bsa-list__action">View details</a>
+                </li>
+                <li class="bsa-list__item">
+                    <b class="bsa-list__label">2016-17</b>
+                    <span class="bsa-list__count bold">155 days</span>
+                    <a href="detail" class="bsa-list__action">View details</a>
+                </li>
+                <li class="bsa-list__item">
+                    <b class="bsa-list__label">2015-16</b>
+                    <span class="bsa-list__count bold">253 days</span>
+                    <a href="detail" class="bsa-list__action">View details</a>
+                </li>
+                <li class="bsa-list__item">
+                    <b class="bsa-list__label">2014-15</b>
+                    <span class="bsa-list__count bold">66 days</span>
+                    <a href="detail" class="bsa-list__action">View details</a>
+                </li>
+            </ul>
+            
+            <h2 class="heading-medium govuk-margin-top-0 govuk-margin-bottom-0">Membership totals</h2>
+            <span class="font-xsmall bold">(1 year = 365 days)</span>
+
+            {{ govukSummaryList({
+                rows: [
+                    {
+                        key: {
+                            text: "Your membership"
+                        },
+                        value: {
+                            text: "1 year 292 days"
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Added years"
+                        },
+                        value: {
+                            text: "3 years 144 days"
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Total"
+                        },
+                        value: {
+                            text: "5 years 71 days"
+                        }
+                    }
+                ]
+            }) }}
+
+            <p>You also have membership in the 1995 pension scheme <a href="/membership/summary-list-style?schemeReference=1995">view your membership record</a>.</p>
+
+            <hr>
+            {% include "membership/includes/incorrect.html" %}
+            
+            <hr>
+            <p><a href="#">Print this page</a></p>
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

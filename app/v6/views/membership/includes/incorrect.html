@@ -1,0 +1,23 @@
+<h2 class="heading-medium">What do I do if my information looks incorrect?</h2>
+<p>There are many reasons this information may seem incorrect. It is not a history of your employment in the NHS.</p>
+
+<p>For a complete list of reasons your statement may seem incorrect, make sure you <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2019-06/Membership%20record%20factsheet%2020190509-%28V5%29%20.pdf">
+read the membership statement factsheet on our website</a>.</p>
+
+<h3 class="heading-small">Your current employment</h3>
+<p>If you have a query about any current employment you will need to speak to your current employer it's up to them to keep 
+your information up to date.</p>
+
+{% set historicalEmploymentHtml %}
+<p>For any historical employment queries you can call our helpline.</p>
+<ul class="list list-bullet">
+    <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
+    <li>Member helpline: <strong class="bold">0191 279 0571</strong></li>
+    <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+</ul>
+{% endset %}
+
+{{ govukDetails({
+    summaryText: 'Your historical employment',
+    html: historicalEmploymentHtml
+}) }}

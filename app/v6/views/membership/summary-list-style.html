@@ -16,30 +16,21 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
         <div class="column-two-thirds">
             <div class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">Your 1995 scheme membership</h1>
+                <h1 class="heading-large">Check your {{ data['schemeReference'] }} scheme membership record</h1>
             </div>
 
-            <p>This information is a list of your pensionable service in the NHS <span class="optional">for the 1995 scheme only</span>, it was last 
+            {% include "membership/includes/check-it-notice.html" %}
+            <br>
+
+            <p>This information is a list of your pensionable service in the NHS <span class="optional">for the {{ data['schemeReference'] }} scheme only</span>, it was last 
 updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
 
-            <div class="notice">
-                <i class="icon icon-important">
-                    <span class="visually-hidden">Warning</span>
-                </i>
-                <strong class="bold-small">
-                    We use this information to calculate your pension so make sure you check it thoroughly. 
-                    Tell your employer if anything looks incorrect.
-                </strong>
-            </div>
-
-            <br>
             {% set totalHtml %}
                 {% include "membership/includes/total.html" %}
-                
             {% endset %}
 
             {{ govukDetails({
-                summaryText: 'View your 1995 scheme membership total',
+                summaryText: 'View your ' + data['schemeReference'] + ' scheme membership total',
                 html: totalHtml
             }) }}
             <hr />
@@ -213,14 +204,6 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
                             },
                             {
                                 key: {
-                                    text: "Calendar length"
-                                },
-                                value: {
-                                    text: "10 years 156 days"
-                                }
-                            },
-                            {
-                                key: {
                                     text: "Membership"
                                 },
                                 value: {
@@ -232,39 +215,21 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
 
                 </li>
 
-                <li>
-                    <div class="bsa-transaction__header">
-                        <h2 class="heading-large">Membership total</h2>
-                    </div>
-                    {% include "membership/includes/total.html" %}
-                </li>
-
             </ul>
 
-            <p><a href="#">View your 2008 pension scheme membership</a></p>
+            <h2 class="heading-medium govuk-margin-top-0 govuk-margin-bottom-0">Membership totals</h2>
+            {% include "membership/includes/total.html" %}
+
+            <p>You also have membership in the 2008 pension scheme <a href="/membership/summary-list-style?schemeReference=2008">view your membership record</a>.</p>
 
             <hr>
 
-            <h2 class="heading-medium">What do I do if my information looks incorrect?</h2>
-            <p>There are many reasons this information may seem incorrect. It is not a history of your employment in the NHS.</p>
-
-            <p>Make sure you <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2019-06/Membership%20record%20factsheet%2020190509-%28V5%29%20.pdf">
-            check the membership statement factsheet on our website</a> and tell your employer if anything looks incorrect, it's up to them to keep your information up to date.</p>
-
-            {% set whatHtml %}
-                <p>So that we can provide you with a better service, we'd like to understand what you are using this information for.
-                <a href="#">Help us improve by completing a short survey.</a></p>
-            {% endset %}
-
-            {{ govukDetails({
-                summaryText: 'What is this information for?',
-                html: whatHtml
-            }) }}
-
-            {# <hr /> #}
+            {% include "membership/includes/incorrect.html" %}
+            <hr>
+            {% include "membership/includes/what-for.html" %}
+            <hr>
             
-            <hr>
-<p><a href="#">Print this page</a></p>
+            <p><a href="#">Print this page</a></p>
             <br>
             {% include "includes/back-to-home-link.html" %}
 

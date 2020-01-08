@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your 1995 pension contributions - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/logout-link.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+       
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>Check your {{ data['schemeReference'] }} scheme membership record</p>
+                <h1 class="heading-large">2015-16</h1>
+            </div>
+
+            <p>This information was last updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
+
+            {# <div class="notice">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small">
+                    We use this information to calculate your pension and provide your estimates so make sure you check it thoroughly. 
+                </strong>
+            </div> #}
+        
+            <hr>
+
+
+            <ul class="bsa-transaction">
+
+                <li class="bsa-transaction__item">
+
+                    <div class="bsa-transaction__header">
+                        <span class="bsa-transaction__tag font-xsmall">EA483950</span>
+                        <h2 class="heading-small">Black Country Partnership NHS Foundation Trust</h2>
+                    </div>
+
+                    {{ govukSummaryList({
+                        rows: [
+                            {
+                                key: {
+                                    text: "Dates"
+                                },
+                                value: {
+                                    text: "8 February 2016 to 31 March 2016"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Membership"
+                                },
+                                value: {
+                                    text: "37 days"
+                                }
+                            }
+                        ]
+                    }) }}
+                </li>
+
+                <li class="bsa-transaction__item">
+                    <div class="bsa-transaction__header">
+                        <span class="bsa-transaction__tag font-xsmall">EA183827</span>
+                        <h2 class="heading-small">Birmingham and Solihull Mental Health NHS Foundation Trust</h2>
+                    </div>
+
+                    {{ govukSummaryList({
+                        rows: [
+                            {
+                                key: {
+                                    text: "Dates"
+                                },
+                                value: {
+                                    text: "1 April 2015 to 5 February 2016"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Membership"
+                                },
+                                value: {
+                                    text: "216 days"
+                                }
+                            }
+                        ]
+                    }) }}
+
+                </li>
+
+            </ul>
+            
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}
