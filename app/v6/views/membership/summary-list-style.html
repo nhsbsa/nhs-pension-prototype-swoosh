@@ -22,17 +22,17 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
             {% include "membership/includes/check-it-notice.html" %}
             <br>
 
-            <p>This information is a list of your pensionable service in the NHS <span class="optional">for the {{ data['schemeReference'] }} scheme only</span>, it was last 
+            <p>This information is a list of your pensionable service in the NHS <span class="optional">for the {{ data['schemeReference'] }} scheme only</span>. It was last 
 updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
 
             {% set totalHtml %}
                 {% include "membership/includes/total.html" %}
             {% endset %}
 
-            {{ govukDetails({
+            {# {{ govukDetails({
                 summaryText: 'View your ' + data['schemeReference'] + ' scheme membership total',
                 html: totalHtml
-            }) }}
+            }) }} #}
             <hr />
 
             <ul class="bsa-transaction">
@@ -53,14 +53,6 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
                                 value: {
                                     text: "23 June 2011 to 6 August 2012"
                                 }
-                            },
-                            {
-                                key: {
-                                    text: "Membership"
-                                },
-                                value: {
-                                    text: "10 years 184 days"
-                                }
                             }
                         ]
                     }) }}
@@ -80,14 +72,6 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
                                 },
                                 value: {
                                     text: "23 June 2011 to 6 August 2012"
-                                }
-                            },
-                            {
-                                key: {
-                                    text: "Membership"
-                                },
-                                value: {
-                                    text: "10 years 184 days"
                                 }
                             }
                         ]
@@ -116,15 +100,7 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
                                     text: "Status"
                                 },
                                 value: {
-                                    text: "Mental health officer held"
-                                }
-                            },
-                            {
-                                key: {
-                                    text: "Membership"
-                                },
-                                value: {
-                                    text: "10 years 184 days"
+                                    text: "Mental health officer (MHO)"
                                 }
                             }
                         ]
@@ -193,22 +169,6 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
                                 value: {
                                     text: "Part time"
                                 }
-                            },
-                            {
-                                key: {
-                                    text: "Breakdown"
-                                },
-                                value: {
-                                    html: ptTableHtml
-                                }
-                            },
-                            {
-                                key: {
-                                    text: "Membership"
-                                },
-                                value: {
-                                    text: "10 years 184 days"
-                                }
                             }
                         ]
                     }) }}
@@ -217,20 +177,20 @@ updated on <strong class="bold">{{ data["lastUpdatedDate"] }}</strong>.</p>
 
             </ul>
 
-            <h2 class="heading-medium govuk-margin-top-0 govuk-margin-bottom-0">Membership totals</h2>
-            {% include "membership/includes/total.html" %}
+            {# <h2 class="heading-medium govuk-margin-top-0 govuk-margin-bottom-0">Membership totals</h2>
+            {% include "membership/includes/total.html" %} #}
 
-            <p>You also have membership in the 2008 pension scheme <a href="/membership/summary-list-style?schemeReference=2008">view your membership record</a>.</p>
+            <p><a href="/membership/summary-list-style?schemeReference=2008">View your 2008 pension scheme membership record.</a></p>
 
             <hr>
 
             {% include "membership/includes/incorrect.html" %}
             <hr>
-            {% include "membership/includes/what-for.html" %}
-            <hr>
+            {# {% include "membership/includes/what-for.html" %}
+            <hr> #}
             
-            <p><a href="#">Print this page</a></p>
-            <br>
+            {# <p><a href="#">Print this page</a></p>
+            <br> #}
             {% include "includes/back-to-home-link.html" %}
 
         </div>

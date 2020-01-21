@@ -1,0 +1,32 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Pension current {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-desktop-two-thirds">
+
+            <div class="interrupt-panel bsa-print-hide">
+                <h1 class="heading-small govuk-margin-top-0">Your 1995 scheme pension is currently worth</h1>
+                <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£12,345</p>
+                <hr />
+                <p class="heading-small govuk-margin-top-0">You will be able to see what it will be worth 
+                in future once you are <span>55</span> years old.</p>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

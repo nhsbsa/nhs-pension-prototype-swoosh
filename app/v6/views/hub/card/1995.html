@@ -128,6 +128,27 @@
 
     </div>
 
+{% elif data['1995'] === "preMPA"  %}
+
+    <div class="bsa-card">
+        <div class="bsa-card__content">
+            <h3 class="heading-small bsa-card__heading govuk-margin-top-0">1995 pension</h3>
+            <div class="data govuk-margin-bottom-0">
+                <span class="data-item bold-large">£12,345</span>
+                <span class="data-item bold-xsmall"><span class="app-c-tag">current value</span></span>
+            </div>
+        </div>
+
+        <div class="bsa-card__actions">
+            <ul class="bsa-card__actions-list">
+                <li><a href="current-value?schemeReference=1995">View details of this pension</a></li>
+                <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
+                <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
+            </ul>
+        </div>
+
+    </div>
+
 {% else %}
 
     {{ bsaCard({
