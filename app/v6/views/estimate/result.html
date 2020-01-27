@@ -21,6 +21,7 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
         <div class="column-desktop-two-thirds">
 
             <div class="interrupt-panel bsa-print-hide">
+                <h1 class="visually-hidden">Your {{ data['schemeReference'] }} pension</h1>
 
             {# {{ data['schemeReference'] }}
             <br>
@@ -32,24 +33,21 @@ Your {{ data['schemeReference'] }} pension estimate - {{ serviceName }} - NHSBSA
             <br><br>
 estimateResult2015:<br> {{ data.estimateResult2015 | dump }} #}
 
-                <h1 class="heading-small govuk-margin-top-0">You could get a <span class="bold">{{ data['schemeReference'] }} pension</span> of</h1>
                 {% if ( data['schemeReference'] === '2015' ) %} 
                     {% include "estimate/includes/2015.html" %}
-                    <br>
                 {% elif ( data['schemeReference'] === '2008' ) %}
                     {% include "estimate/includes/2008.html" %}
                 {% elif ( data['schemeReference'] === '1995' ) %}
                     {% include "estimate/includes/1995.html" %}
                 {% endif %}
-                {% if ( data['schemeReference'] === '2015' ) %}
-                    {% include "calculator/includes/pay-info-date.html" %}
-                {% endif %}
-                {% if ( data['schemeReference'] === '1995' or data['schemeReference'] === '2008' ) %}
+                {% include "calculator/includes/pay-info-date.html" %}
+
+                {# {% if ( data['schemeReference'] === '1995' or data['schemeReference'] === '2008' ) %}
                 <br>    
                     <p class="font-xsmall">We have calculated your estimate using assumptions as well as your pensionable pay of <span class="bold">£32,567</span>
                     and your <span class="bold nobr">4 years, 123 days membership</span> in the {{ data['schemeReference'] }} pension scheme as of <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.
                     <a href="/disclaimer" class="nobr">Find out what we assume</a>.</p>
-                {% endif %}
+                {% endif %} #}
             </div>
 
             {% if ( data['schemeReference'] === '1995' ) %}

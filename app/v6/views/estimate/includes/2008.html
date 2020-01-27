@@ -1,3 +1,11 @@
+<p class="heading-xsmall govuk-margin-top-0">
+    Your <span class="bold">{{ data['schemeReference'] }} pension</span> is currently worth 
+    <span class="bold">£73</span> a month,
+    which is 
+    <span class="bold">£876</span>  a year.
+</p>
+
+<h2 class="heading-small govuk-margin-top-0">At <span class="bold font-medium">age {{ data.estimateResult2008.age }}</span> it could be worth</h2>
 <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2008.estimate.monthly }} a month</p>
 <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2008.estimate.yearly }}  a year</p>
 
@@ -12,32 +20,4 @@
         {# <a href="lump">Add a lump sum</a>. #}
     </p>
 {% endif %}
-
 <hr class="break">
-<dl class="govuk-check-your-answers cya-questions-short cya-no-change">
-    {# result options #}
-    <div>
-        <dt class="cya-question">Start date</dt>
-        <dd class="cya-answer">
-            {{ data.estimateResult2008.date }} - age {{ data.estimateResult2008.age }}
-            {% if ( data.estimateResult2008.age === data.estimateResult2008.normal ) %}
-            <span class="font-xsmall nobr">(Your NHS pension date)</span>
-            {% endif %}
-        </dd>
-        {# <dd class="cya-change">
-            <a href="when">Change<span class="visually-hidden"> start date</span></a>
-        </dd> #}
-    </div>
-    {# <div>
-        <dt class="cya-question">Lump sum amount</dt>
-        <dd class="cya-answer">
-            £{{ data.estimateResult2008.lump }}
-            {% if ( data.estimateResult2008.lump === data.estimateResult2008.max  ) %}
-            <span class="font-xsmall nobr">(Your maximum amount at age {{ data.estimateResult2008.age }})</span>
-            {% endif %}
-        </dd>
-        <dd class="cya-change">
-            <a href="lump">Change<span class="visually-hidden"> lump sum amount</span></a>
-        </dd>
-    </div> #}
-</dl>

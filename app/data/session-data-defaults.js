@@ -79,11 +79,11 @@ let estimateResult2008 = {
 };
 
 // 1995 defaults
-let estimateMonthly1995 = "407";
-let estimateYearly1995 = "4,885";
+let estimateMonthly1995 = "1,234";
+let estimateYearly1995 = "14,808";
 let estimateDate1995 = "1 March 2035";
 let estimateMax1995 = "130,284";
-let estimateLump1995 = "32,571";
+let estimateLump1995 = "44,424";
 let normal1995 = "60";
 let early1995 = "50";
 let late1995 = "75";
