@@ -1,3 +1,4 @@
+{% if ( data['age'] === 'preMPA' or data['age'] === 'preNPA' ) %}
 <p class="heading-xsmall govuk-margin-top-0">
     Your <span class="bold">{{ data['schemeReference'] }} pension</span> is currently worth 
     <span class="bold">£403</span> a month,
@@ -5,20 +6,33 @@
     <span class="bold">£4,836</span>  a year
     with a minimum lump sum of <span class="bold">£14,508</span>.
 </p>
+{% endif %}
 
-{% if ( data['age'] === 'preMPA' or data['age'] === 'postNPA' ) %}
+{% if ( data['age'] === 'preMPA' ) %}
 
     <h2 class="heading-small">
         You can take this pension in full at<br>
         <span class="font-large bold">age 60</span> <span>from <span class="bold nobr">23 March 2035</span></span>
     </h2>
 
-    {% if ( data['age'] === 'preMPA' ) %}
-        <br>
-        <p class="font-small govuk-margin-bottom-0">
-            You could take a reduced pension at <span class="bold">age 55</span> from <span class="bold nobr">23 March 2030</span>.
-        </p>
-    {% endif %}
+    <br>
+    <p class="font-small govuk-margin-bottom-0">
+        You could take a reduced pension at <span class="bold">age 55</span> from <span class="bold nobr">23 March 2030</span>.
+    </p>
+    <hr class="break">
+
+{% elif ( data['age'] === 'postNPA' ) %}
+
+    
+    <h2 class="heading-medium govuk-margin-top-0">You can now take this pension in full</h2>
+<hr class="break">
+    <h2 class="heading-small govuk-margin-bottom-0 govuk-margin-top-0">
+        Your <span class="bold">{{ data['schemeReference'] }} pension</span> is currently worth 
+    </h2>
+    <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£2,231 a month</p>
+    <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£26,773  a year</p>
+    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£114,740</span></p>
+    <p class="heading-small govuk-margin-top-0">The lump sum is paid when you start taking this pension</p>
     <hr class="break">
 
 {% else %}

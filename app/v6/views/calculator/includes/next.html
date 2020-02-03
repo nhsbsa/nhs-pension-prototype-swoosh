@@ -1,2 +1,8 @@
-<h3 class="heading-small">Thinking about retiring?</h3>
-<p>You will need to talk to your pensions officer or employer about claiming your NHS pension.</p>
+{% if ( data['age'] != 'preMPA' ) %} 
+    <h3 class="heading-small">What's next?</h3>
+    <p>If you are thinking about retiring, you'll need to talk to your pensions officer or employer about claiming your NHS pension.</p>
+{% endif %}
+
+{% if ( data['age'] === 'postNPA') %}
+    <p>If you have already spoken with your employer you can <a href="https://tea-prototype.herokuapp.com/awards/V10/start/start">claim your NHS pension</a> online.</p>
+{% endif %}

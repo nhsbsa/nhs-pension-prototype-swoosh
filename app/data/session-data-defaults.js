@@ -116,8 +116,9 @@ module.exports = {
   "homeAddress": "29 Larkholme Lane, Fleetwood, FY7 8AU",
   "emailAddress": "sam.jones@madeupaddress.net",
   "mobileNumber": "07777 123 4567",
-  "lastUpdatedDate": "31 March 2019",
+  "lastUpdatedDate": "5 April 2019",
   "sd": sd,
+  "age": 0,
 
   "npaLabel": "NHS pension age",
   "npdLabel": "NHS pension date",

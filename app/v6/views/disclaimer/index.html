@@ -18,12 +18,26 @@ Your pension estimate - {{ serviceName }} - NHSBSA
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <div class="heading-group">
-                <p>{{ serviceName }}</p>
-                <h1 class="heading-large">Your pension estimate</h1>
-            </div>
+            {{ scheme }}
+            {% set scheme = data['scheme'] %}
 
-            {% include "includes/caveat-content.html" %}
+            {% if (scheme == null) or ('2015' in scheme) or ('0' in scheme) %}
+
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="heading-large">Your pension estimate</h1>
+                </div>
+
+                {% include "includes/caveat-content.html" %}
+            {% endif %}
+
+            {# {% if (scheme == null) or ('2008' in scheme) or ('0' in scheme) %} 
+08
+            {% endif %}
+
+            {% if (scheme == null) or ('1995' in scheme) or ('0' in scheme) %}   
+95
+            {% endif %} #}
 
             <hr>
             {% include "includes/back-to-home-link.html" %}
