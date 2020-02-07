@@ -2,17 +2,17 @@
 
     {% if ( data['age'] === 'preMPA' or data['age'] === 'postNPA' ) %}
         <p class="font-xsmall">The values shown are approximate and based on your pay information and <a href="#">membership record</a> 
+        from your employer
         up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.</p>
     {% else %}
-        <p class="font-xsmall">The values shown are approximate and based on your pay information and <a href="#">membership record</a> 
-        up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.
-        
-        We make assumptions to give you a future value of your pension. <a href="/disclaimer">Find out what we assume</a>.</p>
+        <p class="font-xsmall">The values shown are approximate and based on your pay information, pattern of service and
+         <a href="#">membership record</a> from your employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.</p>
     {% endif %}
 
 {% else %}
 
-    <p class="font-xsmall">We use assumptions and pay information from <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>
+    <p class="font-xsmall">We use assumptions and pay information from your employer up to
+     <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>
         to give you an approximate value of your pension. <a href="/disclaimer">Find out what we assume</a>.</p>
 
 {% endif %}
