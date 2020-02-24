@@ -8,7 +8,11 @@ Your 1995 pension contributions - {{ serviceName }} - NHSBSA
 
 <main id="content" role="main" tabindex="-1">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/logout-link.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
     {% include "includes/back-link.html" %}
 
     <div class="grid-row">
