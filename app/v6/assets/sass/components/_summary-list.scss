@@ -111,6 +111,20 @@
     .govuk-summary-list__key {
         width:30%
     }
+    .govuk-summary-list--wide {
+        .govuk-summary-list__key,
+        .govuk-summary-list__value {
+            width: 90%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .govuk-summary-list--wide {
+        .govuk-summary-list__key {
+            width: 30%;
+        }
+    }
 }
 
 @media (max-width: 40.0525em) {

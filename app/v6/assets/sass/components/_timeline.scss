@@ -10,20 +10,36 @@ $timeline-border-color: $nhs-blue;
     &--dash {
         border-left-style: dashed;
     }
+}
 
-    &:last-child {
-        padding-bottom: 0;
-    }
+.bsa-timeline__entry::before,
+.bsa-timeline__entry::after {
+    background-color: $timeline-border-color;
+    content: ' ';
+    display: none;
 }
 
 .bsa-timeline__entry::before {
-    background-color: $timeline-border-color;
-    content: ' ';
+    display: block;
     height: 3px;
     left: 0;
     position: absolute;
     top: .5em;
     width: 10px;
+}
+
+.bsa-timeline__entry::after {
+    height: 3px;
+    left: -11px;
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+}
+
+.bsa-timeline__entry:last-child {
+    &::after {
+        display: block;
+    }
 }
 
 .bsa-timeline__entry .bsa-timeline__title {
