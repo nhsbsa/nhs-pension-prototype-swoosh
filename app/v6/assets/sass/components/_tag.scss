@@ -9,6 +9,11 @@
     padding: 4px 8px;
     text-decoration: none;
     text-transform: uppercase;
+    &--sm {
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 2px;;
+    }
   }
   
   .app-c-tag--success {

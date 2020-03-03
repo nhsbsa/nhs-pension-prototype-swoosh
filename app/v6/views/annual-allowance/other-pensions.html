@@ -41,15 +41,20 @@ Do you have any other pensions? - Annual allowance - {{ serviceName }} - NHSBSA
                     <legend class="heading-medium">Do you have any other public or private pensions?</legend>
 
                     <div class="multiple-choice">
-                        <input id="other-pension-yes" type="radio" name="other-pension" value="yes" {{ checked('other-pension', 'yes') }}>
+                        <input id="other-pension-yes" type="radio" name="other-pension" value="Yes" {{ checked('other-pension', 'yes') }}>
                         <label for="other-pension-yes">Yes</label>
                     </div>
 
                     <div class="multiple-choice">
-                        <input id="other-pension-no" type="radio" name="other-pension" value="no" {{ checked('other-pension', 'no') }}>
+                        <input id="other-pension-no" type="radio" name="other-pension" value="No" {{ checked('other-pension', 'no') }}>
                         <label for="other-pension-no">No</label>
                     </div>
-   
+
+                    <div class="multiple-choice">
+                        <input id="other-pension-idk" type="radio" name="other-pension" value="I don't know" {{ checked('other-pension', 'idk') }}>
+                        <label for="other-pension-idk">I don't know</label>
+                    </div>
+
                 </fieldset>
 
                 <div class="form-group">

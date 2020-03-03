@@ -19,19 +19,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
         <div class="column-two-thirds">
             {% include "annual-allowance/includes/heading.html" %}
 
-{# <div class="notice">
-  <i class="icon icon-important">
-    <span class="visually-hidden">Warning</span>
-  </i>
-  <strong class="bold-small">You have told us that your NHS pensions are your only pensions.</strong>
-  <p><a href="other-pensions">Change this</a></p>
-</div> #}
-
-            {% include "annual-allowance/includes/what.html" %}
-
-
-            
-            <br>
+            <p>Your annual allowance is the most you can save in your pension pots in a tax year (6 April to 5 April) before you have to pay tax.</p>
         </div>
     </div>
 
@@ -49,10 +37,10 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                 <thead>
                     <tr>
                         <th scope="col">{{ tableHeader1 }}</th>
-                        <th scope="col">{{ tableHeader2 }}</th>
+                        <th scope="col">Available <br>allowance</th>
                         <th scope="col">{{ tableHeader3 }}</th>
                         <th scope="col" class="numeric">Amount on <br>which tax is due</th>
-                        <th scope="col" class="numeric">{{ tableHeader5 }}</th>
+                        <th scope="col" class="numeric">Unused <br>allowance</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,11 +51,11 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
-                            £40,000
+                            £58,213
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
-                            £64,503 <br>estimated
+                            £6,290 <span class="app-c-tag app-c-tag--sm">estimated</span>
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
@@ -75,7 +63,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £0
+                            £51,923
                         </td>
                     </tr>
                     <tr>
@@ -85,7 +73,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
-                            £40,000
+                            £78,063
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
@@ -97,7 +85,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £0
+                            £18,213
                         </td>
                     </tr>
                     <tr>
@@ -107,7 +95,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
-                            £40,000
+                            £89,293
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
@@ -119,7 +107,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £0
+                            £38,063
                         </td>
                     </tr>
                     <tr>
@@ -129,7 +117,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
-                            £40,000
+                            £87,293
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
@@ -141,7 +129,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £0
+                            £49,293
                         </td>
                     </tr>
                     <tr>
@@ -151,7 +139,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
-                            £0
+                            £70,568
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
@@ -163,7 +151,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £0
+                            £47,293
                         </td>
                     </tr>
                     <tr>
@@ -185,7 +173,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £0
+                            £70,568
                         </td>
                     </tr>
                     <tr>
@@ -203,7 +191,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
-                            £0
+                            £12,295
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
@@ -225,7 +213,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
-                            £0
+                            £3,663
                         </td>
                         <td class="numeric">
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
@@ -242,9 +230,11 @@ Your annual allowance - {{ serviceName }} - NHSBSA
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            {% include "annual-allowance/includes/go-above.html" %}
+            {% include "annual-allowance/includes/other-go-above.html" %}
 
             {% include "annual-allowance/includes/how-calculated.html" %}
+
+            <hr>
 
             {% include "annual-allowance/includes/next.html" %}
 
