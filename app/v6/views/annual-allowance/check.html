@@ -1,0 +1,62 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    {% include "includes/back-link.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Check your answers before viewing your annual allowance pension savings
+      </h1>
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">Your pensions</h2>
+
+      <dl class="govuk-check-your-answers cya-questions-long">
+        <div>
+          <dt class="cya-question">
+            Do you have any other public or private pensions?
+          </dt>
+          <dd class="cya-answer">
+            No
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change<span class="visually-hidden"> answer</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="heading-medium">Now view your annual allowance pension savings</h2>
+
+      <p class="text">
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+        <form method="post" class="form" action="check">
+            <div class="form-group">
+                <input class="button" type="submit" value="Continue">
+            </div>
+        </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

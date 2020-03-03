@@ -3,6 +3,10 @@ Based on workings from:
 https://responsive-tables.herokuapp.com/tables/transactions
 https://github.com/alphagov/govuk-design-system-backlog/issues/61#issuecomment-427415722
 */
+[aria-hidden="true"] {
+  display: none;
+}
+
 .responsive-table {
     $mobile: 768px;
     width: 100%;
@@ -47,6 +51,12 @@ https://github.com/alphagov/govuk-design-system-backlog/issues/61#issuecomment-4
   
         @media (max-width: $mobile) {
           padding-right: 0;
+          &.has-multi {
+            display: block;
+            > *:first-child {
+              float: left;
+            }
+          }
         }
       }
   

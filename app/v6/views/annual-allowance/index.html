@@ -17,45 +17,57 @@ Your annual allowance - {{ serviceName }} - NHSBSA
 
     <div class="grid-row">
         <div class="column-two-thirds">
+            {% include "annual-allowance/includes/heading.html" %}
+            {% include "annual-allowance/includes/what.html" %}
 
-            <div class="heading-group">
-                <p>Your {{ data['schemeReference'] }} pension scheme</p>
-                <h1 class="page-header--lede heading-large">Annual allowance pension savings statement</h1>
-            </div>
-
-            {% set AAHtml %}
-                <p>Your annual allowance is the most you can save in your pension pots in a tax year (6 April to 5 April) before you have to pay tax.</p>
-                <p>You’ll only pay tax if you go above the annual allowance. This is £40,000 this tax year.</p>
-                <p><a href="https://www.gov.uk/tax-on-your-private-pension/annual-allowance">Find out more about annual allowance on GOV.UK.</a></p>
-            {% endset %}
-
-            {{ govukDetails({
-                summaryText: 'What is my annual allowance?',
-                html: AAHtml
-            }) }}
-            
             <hr>
 
-            <ul class="bsa-timeline">
+            <ol id="pension-savings">
 
-                <li class=" bsa-timeline__entry bsa-timeline__entry--dash">
-                    <h3 class="bsa-timeline__title">2019/2020</h3>
-                    <p class="bsa-timeline__info font-xsmall bold">6 April 2019 to 5 April 2020</p>
-                    <div class="bsa-timeline__body">
-                        <p>Year is not available.</p>
-                    </div>
-                </li>
-
-                <li class="bsa-timeline__entry">
-
-                    <h3 class="bsa-timeline__title">2018/2019</h3>
-
-                    <p class="bsa-timeline__info font-xsmall bold">6 April 2018 to 5 April 2019</p>
-                    
-                    <div class="bsa-timeline__body">
+                <li>
                     {{ govukSummaryList({
                         classes: "govuk-summary-list--wide",
                         rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "6 April 2019 to 5 April 2020"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Allowance"
+                                },
+                                value: {
+                                    text: "£40,000"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Savings"
+                                },
+                                value: {
+                                    text: "Saving are not available"
+                                }
+                            }
+                        ]
+                    }) }}
+                </li>
+
+                <li>
+                    {{ govukSummaryList({
+                        classes: "govuk-summary-list--wide",
+                        rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "6 April 2018 to 5 April 2019"
+                                }
+                            },
                             {
                                 key: {
                                     text: "Allowance"
@@ -74,19 +86,20 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             }
                         ]
                     }) }}
-                    </div>
                 </li>
 
-                <li class="bsa-timeline__entry">
-
-                    <h3 class="bsa-timeline__title">2017/2018</h3>
-
-                    <p class="bsa-timeline__info font-xsmall bold">6 April 2017 to 5 April 2018</p>
-                    
-                    <div class="bsa-timeline__body">
+                <li>
                     {{ govukSummaryList({
                         classes: "govuk-summary-list--wide",
                         rows: [
+                             {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "6 April 2017 to 5 April 2018"
+                                }
+                            },                           
                             {
                                 key: {
                                     text: "Allowance"
@@ -105,19 +118,20 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             }
                         ]
                     }) }}
-                    </div>
                 </li>
 
-                <li class="bsa-timeline__entry">
-
-                    <h3 class="bsa-timeline__title">2016/2017</h3>
-
-                    <p class="bsa-timeline__info font-xsmall bold">6 April 2016 to 5 April 2017</p>
-                    
-                    <div class="bsa-timeline__body">
+                <li>
                     {{ govukSummaryList({
                         classes: "govuk-summary-list--wide",
                         rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "6 April 2016 to 5 April 2017"
+                                }
+                            },
                             {
                                 key: {
                                     text: "Allowance"
@@ -136,110 +150,118 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             }
                         ]
                     }) }}
-                    </div>
                 </li>
 
-                <li class="bsa-timeline__entry">
-
-                    <h3 class="bsa-timeline__title">2015/2016</h3>
-
-                    <p class="bsa-timeline__info font-xsmall bold">1 April 2015 to 5 April 2016</p>
-                    <div class="bsa-timeline__body">
-                        {# <div class="pane">
-                            <p class="bold-xsmall govuk-margin-bottom-0">This combined pension input amount is split between the pre and post alignment tax years.</p>
-                        </div> #}
-                        {{ govukSummaryList({
-                            classes: "govuk-summary-list--wide",
-                            rows: [
-                                {
-                                    key: {
-                                        text: "Allowance"
-                                    },
-                                    value: {
-                                        text: "£0"
-                                    }
-                                },
-                                {
-                                    key: {
-                                        text: "Savings"
-                                    },
-                                    value: {
-                                        text: "£23,275"
-                                    }
-                                }
-                            ]
-                        }) }}
-
-                    </div>
-
-                    <h3 class="bsa-timeline__title">Post tax year alignment</h3>
-                    <p class="bsa-timeline__info font-xsmall bold">9 July 2015 to 5 April 2016</p>
-                    <div class="bsa-timeline__body">
-
-                        {{ govukSummaryList({
-                            classes: "govuk-summary-list--wide",
-                            rows: [
-                                {
-                                    key: {
-                                        text: "Allowance"
-                                    },
-                                    value: {
-                                        text: "£0"
-                                    }
-                                },
-                                {
-                                    key: {
-                                        text: "Savings"
-                                    },
-                                    value: {
-                                        text: "£12,295"
-                                    }
-                                }
-                            ]
-                        }) }}
-
-                    </div>
-
-                    <h3 class="bsa-timeline__title">Pre tax year alignment</h3>
-                    <p class="bsa-timeline__info font-xsmall bold">1 April 2015 to 8 July 2015</p>
-                    <div class="bsa-timeline__body">
-
-                        {{ govukSummaryList({
-                            classes: "govuk-summary-list--wide",
-                            rows: [
-                                {
-                                    key: {
-                                        text: "Allowance"
-                                    },
-                                    value: {
-                                        text: "£80,000"
-                                    }
-                                },
-                                {
-                                    key: {
-                                        text: "Savings"
-                                    },
-                                    value: {
-                                        text: "£9,432"
-                                    }
-                                }
-                            ]
-                        }) }}
-
-                    </div>
-
-                </li>
-
-                <li class="bsa-timeline__entry">
-
-                    <h3 class="bsa-timeline__title">2014/2015</h3>
-
-                    <p class="bsa-timeline__info font-xsmall bold">1 April 2014 to 31 March 2015</p>
-                    
-                    <div class="bsa-timeline__body">
+                <li>
                     {{ govukSummaryList({
                         classes: "govuk-summary-list--wide",
                         rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "1 April 2015 to 5 April 2016"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Allowance"
+                                },
+                                value: {
+                                    text: "£0"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Savings"
+                                },
+                                value: {
+                                    text: "£23,275"
+                                }
+                            }
+                        ]
+                    }) }}
+                </li>
+
+                <li>
+
+                    {{ govukSummaryList({
+                        classes: "govuk-summary-list--wide",
+                        rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "9 July 2015 to 5 April 2016"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Allowance"
+                                },
+                                value: {
+                                    text: "£0"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Savings"
+                                },
+                                value: {
+                                    text: "£12,295"
+                                }
+                            }
+                        ]
+                    }) }}
+                </li>
+
+                <li>
+                    {{ govukSummaryList({
+                        classes: "govuk-summary-list--wide",
+                        rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "1 April 2015 to 8 July 2015"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Allowance"
+                                },
+                                value: {
+                                    text: "£80,000"
+                                }
+                            },
+                            {
+                                key: {
+                                    text: "Savings"
+                                },
+                                value: {
+                                    text: "£9,432"
+                                }
+                            }
+                        ]
+                    }) }}
+
+                </li>
+
+                <li>
+                    {{ govukSummaryList({
+                        classes: "govuk-summary-list--wide",
+                        rows: [
+                            {
+                                key: {
+                                    text: "Year"
+                                },
+                                value: {
+                                    text: "1 April 2014 to 31 March 2015"
+                                }
+                            },
                             {
                                 key: {
                                     text: "Allowance"
@@ -258,45 +280,17 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             }
                         ]
                     }) }}
-                    </div>
                 </li>
 
-            </ul>
+            </ol>
 
-            <br>
+            {% include "annual-allowance/includes/go-above.html" %}
 
-            <p><a href="/annual-allowance?schemeReference=2015">View your 2015 pension scheme annual allowance pension savings statement.</a></p>
+            {% include "annual-allowance/includes/how-calculated.html" %}
 
-            <h2 class="heading-medium">How is my statement calculated?</h2>
+            {% include "annual-allowance/includes/next.html" %}
 
-            <p>The values shown are based on your pay information and <a href="/membership/summary-list-style?schemeReference=1995">membership record</a> 
-            from your employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>. 
-            It is up to your employer to keep your pension information up to date.</p>
-
-            <h2 class="heading-medium">If you go above the allowance</h2>
-            <p>If your savings are higher than the allowance, you are likely to have a tax charge. You can use a calculator on GOV.UK to <a href="https://www.tax.service.gov.uk/pension-annual-allowance-calculator">work out 
-            how much you have gone above the allowance</a>.</p>
-
-            <h2 class="heading-medium">What's next?</h2>
-
-            <p>If you have a tax advisor you may wish to <a href="detailed">send them a detailed statement</a> so they can consider
-            any tax charges for you.</p>
-
-            <p>See the <a href="https://www.nhsbsa.nhs.uk/member-hub/annual-allowance">annual allowance section on our website</a>
-            to help you understand what to do next.</p>
-
-            {% set alternateHtml %}
-            <p>You can call our helpline:</p>
-            <ul class="list list-bullet">
-                <li>Member helpline: <strong class="bold">0300 330 1346</strong></li>
-                <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
-            </ul>
-            {% endset %}
-
-            {{ govukDetails({
-                summaryText: 'If you need to contact us',
-                html: alternateHtml
-            }) }}
+            {% include "includes/contact.html" %}
 
             <hr>
 

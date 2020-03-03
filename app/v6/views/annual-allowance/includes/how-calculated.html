@@ -1,0 +1,16 @@
+{# <h2 class="heading-medium">How is my statement calculated?</h2>
+
+<p>The values shown are based on your pay information and <a href="/membership/summary-list-style?schemeReference=1995">membership record</a> 
+from your employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>. 
+It is up to your employer to keep your pension information up to date.</p> #}
+
+{% set calculatedHtml %}
+<p>The values shown are based on your pay information and <a href="/membership/summary-list-style?schemeReference=1995">membership record</a> 
+from your employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>. 
+It is up to your employer to keep your pension information up to date.</p>
+{% endset %}
+
+{{ govukDetails({
+    summaryText: 'How is my statement calculated?',
+    html: calculatedHtml
+}) }}

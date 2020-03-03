@@ -111,8 +111,25 @@ Home page {{ serviceName }} NHS BSA Prototype
                 <div class="grid-row">
                     <div class="column-two-thirds">
                         {% include "includes/caveat-link.html" %}
+                        <br>
                     </div>
                 </div>
+
+                <ul class="grid-row grid-grid">
+                    <li>
+                        <div class="bsa-card">
+                            <div class="bsa-card__content">
+                                {% if data['aa'] === "question"  %}
+                                    {% set aaUrl = 'annual-allowance/other-pensions' %}
+                                {% else %}
+                                    {% set aaUrl = 'annual-allowance' %}
+                                {% endif %}
+                                <h3 class="heading-medium bsa-card__heading"><a href="{{ aaUrl }}">Check your annual allowance pension savings</a></h3>
+                                <p>Check to see if your NHS pension savings go above the annual allowance.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 
             </section>
 

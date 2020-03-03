@@ -1,0 +1,12 @@
+{% set contactHtml %}
+<p>You can call our helpline:</p>
+<ul class="list list-bullet">
+    <li>Member helpline: <strong class="bold">0300 3301 346</strong></li>
+    <li>Calling from overseas: <strong class="bold">0044 191 279 0571</strong></li>
+</ul>
+{% endset %}
+
+{{ govukDetails({
+    summaryText: 'If you need to contact us',
+    html: contactHtml
+}) }}

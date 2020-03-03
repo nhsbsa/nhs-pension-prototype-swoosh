@@ -116,4 +116,8 @@ router.post('/data-test', function (req, res, next) {
 // This moves refund routing to refund directory
 router.use('/super-dumb/', require('./views/super-dumb/_routes'))
 
+
+// This moves annual-allowance routing to annual-allowance directory
+router.use('/annual-allowance/', require('./views/annual-allowance/_routes'))
+
 module.exports = router

@@ -1,0 +1,264 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your annual allowance - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            {% include "annual-allowance/includes/heading.html" %}
+
+{# <div class="notice">
+  <i class="icon icon-important">
+    <span class="visually-hidden">Warning</span>
+  </i>
+  <strong class="bold-small">You have told us that your NHS pensions are your only pensions.</strong>
+  <p><a href="other-pensions">Change this</a></p>
+</div> #}
+
+            {% include "annual-allowance/includes/what.html" %}
+
+
+            
+            <br>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-full">
+            
+            {% set tableHeader1 %}Year{% endset %}
+            {% set tableHeader2 %}Available allowance{% endset %}
+            {% set tableHeader3 %}Savings{% endset %}
+            {% set tableHeader4 %}Amount on which tax is due{% endset %}
+            {% set tableHeader5 %}Unused allowance{% endset %}
+
+            <table class="responsive-table">
+                <caption class="visually-hidden">Other retirement examples</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">{{ tableHeader1 }}</th>
+                        <th scope="col">{{ tableHeader2 }}</th>
+                        <th scope="col">{{ tableHeader3 }}</th>
+                        <th scope="col" class="numeric">Amount on <br>which tax is due</th>
+                        <th scope="col" class="numeric">{{ tableHeader5 }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            6&nbsp;April&nbsp;2019 to 5&nbsp;April&nbsp;2020
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £64,503 <br>estimated
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            6&nbsp;April&nbsp;2018 to 5&nbsp;April&nbsp;2019
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £59,850
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            6&nbsp;April&nbsp;2017 to 5&nbsp;April&nbsp;2018
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £51,230
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            6&nbsp;April&nbsp;2015 to 5&nbsp;April&nbsp;2016
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £38,000
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            1&nbsp;April&nbsp;2015 to 5&nbsp;April&nbsp;2016
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £0
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £23,275
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="has-multi">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            1&nbsp;April&nbsp;2015 to 8&nbsp;July&nbsp;2015
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £80,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £9,432
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="has-multi">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            9&nbsp;July&nbsp;2015 to 5&nbsp;April&nbsp;2016
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £0
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £12,295
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
+                            1&nbsp;April&nbsp;2014 to 31&nbsp;March&nbsp;2015
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
+                            £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £43,663
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
+                        </td>
+                        <td class="numeric">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £0
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <p class="font-xsmall">This information was last updated on <strong class="bold">{{ data['lastUpdatedDate'] }}</strong>.</p>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {% include "annual-allowance/includes/go-above.html" %}
+
+            {% include "annual-allowance/includes/how-calculated.html" %}
+
+            {% include "annual-allowance/includes/next.html" %}
+
+            {% include "includes/contact.html" %}
+
+            <hr>
+
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}
