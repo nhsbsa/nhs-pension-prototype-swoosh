@@ -1,23 +1,65 @@
+{% if ( data['age'] === 'preMPA' or data['age'] === 'preNPA' ) %}
 <p class="heading-xsmall govuk-margin-top-0">
     Your <span class="bold">{{ data['schemeReference'] }} pension</span> is currently worth 
     <span class="bold">£73</span> a month,
     which is 
     <span class="bold">£876</span>  a year.
 </p>
-
-<h2 class="heading-small govuk-margin-top-0">At <span class="bold font-medium">age {{ data.estimateResult2008.age }}</span> it could be worth</h2>
-<p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2008.estimate.monthly }} a month</p>
-<p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2008.estimate.yearly }}  a year</p>
-
-{% if ( data.estimateResult2008.lump > "0" ) %}
-    <p class="heading-small">with a one off lump sum payment of <br><span class="font-large bold">£{{ data.estimateResult2008.lump }}</span>
-        when you start taking this pension
-    </p>
-{% else %}
-    <br>
-    <p>
-        <span class="bold-small">You can take part of this pension as a one off lump sum payment.</span>
-        {# <a href="lump">Add a lump sum</a>. #}
-    </p>
 {% endif %}
+
+{% if ( data['age'] === 'preMPA' ) %}
+
+    <h2 class="heading-small">
+        You can take this pension in full at<br>
+        <span class="font-large bold">age 60</span> <span>from <span class="bold nobr">23 March 2035</span></span>
+    </h2>
+    <br>
+    <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span> 
+    <br>
+    <p class="font-small govuk-margin-bottom-0">
+        You could take a reduced pension at <span class="bold">age 55</span> from <span class="bold nobr">23 March 2030</span>.
+    </p>
+    <hr class="break">
+
+{% elif ( data['age'] === 'postNPA' ) %}
+
+    
+    <h2 class="heading-medium govuk-margin-top-0">You can now take this pension in full</h2>
 <hr class="break">
+    <h2 class="heading-small govuk-margin-bottom-0 govuk-margin-top-0">
+        Your <span class="bold">{{ data['schemeReference'] }} pension</span> is currently worth 
+    </h2>
+    <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2008.estimate.monthly }} a month</p>
+    <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2008.estimate.yearly }}  a year</p>
+    <p class="heading-small"><span>You can take part of this pension as a one off lump sum payment.</span></p>
+    <hr class="break">
+
+{% else %}
+
+    {% if ( data['age'] === 'preNPA' ) %}
+        <h2 class="heading-small govuk-margin-bottom-0">You can take this pension in full at <span class="font-medium bold">age 60</span>
+        <br> when it could be worth</h2>
+
+    {% else %}
+        <h2 class="heading-small govuk-margin-top-0">At age {{ data.estimateResult2008.age }} it could be worth</h2>
+    {% endif %}
+
+    <p class="heading-xlarge govuk-margin-top-0 govuk-margin-bottom-0">£{{ data.estimateResult2008.estimate.monthly }} a month</p>
+    <p class="heading-medium govuk-margin-bottom-0 govuk-margin-top-0">£{{ data.estimateResult2008.estimate.yearly }}  a year</p>
+
+    {% if ( data.estimateResult2008.lump > "0" ) %}
+        <p class="heading-small">with a one off minimum lump sum payment of <br> <span class="font-large nobr bold">£{{ data.estimateResult2008.lump }}</span>
+        when you start taking this pension.
+        </p>
+    {% else %}
+        <br>
+        <p><span class="bold-small">You can take part of this pension as a one off lump sum payment.</span></p>
+    {% endif %}
+
+    {# <hr class="break" /> #}
+    <p class="font-small govuk-margin-top-0 govuk-margin-bottom-0">
+    You could take a reduced pension at <span class="bold">age 55</span> from <span class="bold nobr">23 March 2030</span>.
+    </p>
+    <hr class="break">
+
+{% endif %}
