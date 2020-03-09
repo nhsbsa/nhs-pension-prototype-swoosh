@@ -10,7 +10,7 @@
 {% set getLAge = '75' %} #}
 
 {% block page_title %}
-Is your NHS pension the only pension you have? - Annual allowance - {{ serviceName }} - NHSBSA
+Do you have any other pensions? - Annual allowance - {{ serviceName }} - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -33,25 +33,26 @@ Is your NHS pension the only pension you have? - Annual allowance - {{ serviceNa
             </header>
 
             <p class="form-hint">Your annual allowance is the most you can save in your pension pots in a tax year (6 April to 5 April) before you have to pay tax.</p>
+            
             <p class="form-hint">You have membership in the NHS pensions 2015 and 1995/2008 schemes.</p>
 
             <form method="post" class="form" action="other-pensions">
                 <fieldset class="form-group">
-                    <legend class="heading-medium">Is your NHS pension the only pension you have?</legend>
+                    <legend class="heading-medium">Not including your state pension, do you have any other public or private pensions?</legend>
 
                     <div class="multiple-choice">
-                        <input id="other-pension-yes" type="radio" name="other-pension" value="Yes" {{ checked('other-pension2', 'yes') }}>
-                        <label for="other-pension-yes">Yes, it is my only pension</label>
+                        <input id="other-pension-yes" type="radio" name="other-pension" value="Yes" {{ checked('other-pension', 'yes') }}>
+                        <label for="other-pension-yes">Yes, I have other pensions</label>
                     </div>
 
                     <div class="multiple-choice">
-                        <input id="other-pension-no" type="radio" name="other-pension" value="No" {{ checked('other-pension2', 'no') }}>
-                        <label for="other-pension-no">No, I have other pensions</label>
+                        <input id="other-pension-no" type="radio" name="other-pension" value="No" {{ checked('other-pension', 'no') }}>
+                        <label for="other-pension-no">No, I don't have any other pensions</label>
                     </div>
 
                     <div class="multiple-choice">
-                        <input id="other-pension-idk" type="radio" name="other-pension" value="I don't know" {{ checked('other-pension2', 'idk') }}>
-                        <label for="other-pension-idk">I don't know if I have other pensions</label>
+                        <input id="other-pension-idk" type="radio" name="other-pension" value="I don't know" {{ checked('other-pension', 'idk') }}>
+                        <label for="other-pension-idk">I don't know if I have any other pensions</label>
                     </div>
 
                 </fieldset>

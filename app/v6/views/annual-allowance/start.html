@@ -1,0 +1,43 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Start – Check your annual allowance pension savings – NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>NHS Pensions</p>
+                <h1 class="heading-xlarge">Check your annual allowance pension savings</h1>
+            </div>
+            <p>Your annual allowance is the most you can save in all your pension pots in a tax year (6 April to 5 April) before you have to pay tax.</p>
+
+            <h2 class="heading-medium">Use this service to:</h2>
+            <ul class="list list-bullet">
+                <li>Check how much you have saved each year in your NHS pension</li>
+                <li>Help you work out if you have gone above the allowance</li>
+                <li>Share your information with a tax advisor</li>
+            </ul>
+            <h2 class="heading-medium">You'll need:</h2>
+            <ul class="list list-bullet">
+                <li>your NHS pensions member number sometimes called SD number</li>
+                <li>to sign in using NHS Login or GOV.UK Verify</li>
+            </ul>
+            <h2 class="heading-medium">What to do if you haven’t used NHS Login or&nbsp;GOV.UK Verify</h2>
+            <p>This takes about 10 minutes to get set up. You’ll then be able to use it to access other NHS and government services.</p>
+            
+            <br>
+
+            <p><a class="button button-get-started" href="how-auth">Start now</a></p>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

@@ -6,16 +6,17 @@ const ABS_BASE_PATH = `${BASE_PATH}`;
 const RESULT_PATH = '/annual-allowance/';
 
 router.post('/other-pensions', function (req, res) {
-    res.redirect(`${RESULT_PATH}check`);
+    var otherPension = req.session.data['other-pension'];
+    // console.log(otherPension)
+    if (otherPension === 'Yes') {
+        res.redirect(`${RESULT_PATH}other-table`);
+    } else {
+        res.redirect(`${RESULT_PATH}table`);
+    }
 })
 
-router.post('/check', function (req, res) {
-    var otherPension = req.session.data['other-pension'];
-    if (otherPension === 'yes') {
-        res.redirect(`${RESULT_PATH}table`);
-    } else {
-        res.redirect(`${RESULT_PATH}other-table`);
-    }
+router.post('/how-auth', function (req, res) {
+    res.redirect(`${RESULT_PATH}about-pensions`);
 })
 
 module.exports = router

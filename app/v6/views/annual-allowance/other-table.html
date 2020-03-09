@@ -7,7 +7,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
 {% block content %}
 
 <main id="content" role="main" tabindex="-1">
-    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/phase_banner_alpha.html" %}
 
     {{ bsaAccountDetailsBar({
         class: "bsa-account-details-bar--slim"
@@ -234,9 +234,11 @@ Your annual allowance - {{ serviceName }} - NHSBSA
 
             {% include "annual-allowance/includes/how-calculated.html" %}
 
+            {# <h2 class="heading-medium">If your information looks wrong</h2> #}
+
             <hr>
 
-            {% include "annual-allowance/includes/next.html" %}
+            {% include "annual-allowance/includes/other-next.html" %}
 
             {% include "includes/contact.html" %}
 

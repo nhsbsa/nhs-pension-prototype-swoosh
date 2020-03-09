@@ -1,0 +1,34 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Your annual allowance detail - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_alpha.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            {% include "annual-allowance/includes/heading.html" %}
+            {% include "annual-allowance/includes/what.html" %}
+
+            <hr>
+
+            <br>
+            {% include "includes/back-to-home-link.html" %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

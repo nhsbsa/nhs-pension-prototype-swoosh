@@ -7,8 +7,7 @@ How do you want to auth? - {{ serviceName }} - NHSBSA
 {% block content %}
 
 <main id="content" role="main" tabindex="-1">
-    {% include "includes/phase_banner_beta.html" %}
-    {# {% include "includes/back-link.html" %} #}
+    {% include "includes/phase_banner_alpha.html" %}
 
     <div class="grid-row">
         <div class="column-two-thirds">
@@ -18,13 +17,13 @@ How do you want to auth? - {{ serviceName }} - NHSBSA
                 <h1 class="heading-large">How would you like to confirm your identity?</h1>
             </div>
 
-            <form action="authentication" method="post">
+            <form action="how-auth" method="post">
                 <fieldset class="form-group">
                     <legend class="visually-hidden">How would you like to confirm your identity?</legend>
                     <div class="multiple-choice">
-                        <input id="auth-num" name="auth" type="radio" value="auth-num">
-                        <label for="auth-num">Using my pension member and National Insurance numbers.
-                            <span class="form-hint">These numbers can be found on your NHS payslip.</span>
+                        <input id="auth-num" name="auth" type="radio" value="auth-nhs">
+                        <label for="auth-num">Using NHS Login.
+                            <span class="form-hint">You can use NHS Login to verify your identity.</span>
                         </label>
                     </div>
                     <div class="multiple-choice">

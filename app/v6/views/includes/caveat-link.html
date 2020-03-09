@@ -1,6 +1,6 @@
-{% if data['current'] === "1"  %}
+{% if data['estimate'] === "1"  %}
+    <p><a href="/disclaimer?schemeReference=2015">Find out what we assume when we calculate your pension estimate</a>.</p>
+{% else %}
     <p>The values shown are approximate and based on your pay information and membership record from your employer
         up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.</p>
-{% else %}
-<p><a href="/disclaimer?schemeReference=2015">Find out what we assume when we calculate your pension estimate</a>.</p>
 {% endif %}

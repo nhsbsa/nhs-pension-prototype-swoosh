@@ -37,14 +37,12 @@ We can&rsquo;t find you in our pension records {{ serviceName }} NHS BSA Prototy
           <li>Address: <strong class="bold">10 Madeup Road, Madeupistown, Madeupville. MDE 0UP.</strong></li>
         </ul>
 
-        <details>
-          <summary><span class="summary">Why are my personal details here?</span></summary>
-          <div class="panel panel-border-narrow">
-            <p>When you first accessed your NHS pension you registered with an identity provider using GOV.UK Verify.
-            We use your National Insurance number and your personal details from the identity provider to find you in
-            our pension records.</p>
-          </div>
-        </details>
+        {{ govukDetails({
+            summaryText: 'Why are my personal details here?',
+            text: "When you first accessed your NHS pension you registered with an identity provider using GOV.UK Verify.
+                    We use your National Insurance number and your personal details from the identity provider to find you in
+                    our pension records."
+        }) }}
         
         <hr/>
 

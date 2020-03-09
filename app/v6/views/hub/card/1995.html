@@ -150,29 +150,7 @@
     </div> #}
 
 
-{% elif ( data['current'] === "1" ) %}
-
-<div class="bsa-card">
-    <div class="bsa-card__content">
-        <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Your 1995 pension</h3>
-        <div class="data govuk-margin-bottom-0">
-            <span class="data-item bold-xsmall"><span>Currently worth</span></span>
-            <span class="data-item bold-large">£4,836 <span class="bold-xsmall">a year</span></span>
-        </div>
-    </div>
-
-    <div class="bsa-card__actions">
-        <ul class="bsa-card__actions-list">
-            <li><a href="estimate?schemeReference=1995&age=preMPA">View details of this pension</a></li>
-            <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
-            <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
-        </ul>
-    </div>
-
-</div>
-
-{% else %}
-
+{% elif ( data['estimate'] === "1" ) %}
     {{ bsaCard({
         title: '1995 pension',
         data: [
@@ -196,5 +174,43 @@
             }
         ]
     }) }}
+
+
+{% elif ( data['value-unavailable'] === "1" ) %}
+
+    <div class="bsa-card">
+        <div class="bsa-card__content">
+            <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Your 1995 pension</h3>
+            <p class="govuk-margin-bottom-0">Your 1995 pension value is currently not available</p>
+        </div>
+
+        <div class="bsa-card__actions">
+            <ul class="bsa-card__actions-list">
+                <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+{% else %}
+
+<div class="bsa-card">
+    <div class="bsa-card__content">
+        <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Your 1995 pension</h3>
+        <div class="data govuk-margin-bottom-0">
+            <span class="data-item bold-xsmall"><span>Currently worth</span></span>
+            <span class="data-item bold-large">£4,836 <span class="bold-xsmall">a year</span></span>
+        </div>
+    </div>
+
+    <div class="bsa-card__actions">
+        <ul class="bsa-card__actions-list">
+            <li><a href="estimate?schemeReference=1995&age=preMPA">View details of this pension</a></li>
+            <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
+            <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
+        </ul>
+    </div>
+
+</div>
 
 {% endif %}

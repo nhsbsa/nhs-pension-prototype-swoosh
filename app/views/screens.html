@@ -10,18 +10,24 @@
 
     {% include "includes/back-link.html" %}
 
-    <div class="grid-row">
-  	    <div class="column-two-thirds">
+    <div class="govuk-grid-row">
+  	    <div class="govuk-grid-column-two-thirds">
 		                
             <h1 class="govuk-heading-l">
                 <span class="govuk-caption-m">{{ serviceName }}</span>
                 Screens
             </h1>
 
+            <p>Sometimes protoypes get set to the wrong view and the data needs to be cleared.
+            <a href="/prototype-admin/clear-data">Clear the data now</a>. Once cleared you can 
+            come back here and try the link again.</p>
+            <hr>
+            <br>
+
             <aside class="govuk-related-items" role="complementary">
                 <nav role="navigation">
                     <h2 class="govuk-heading-m">Assisted digital</h2>
-                    <a href="/assisted" class="font-xsmall">Find by National Insurance number</a>
+                    <a href="/assisted">Find by National Insurance number</a>
                 </nav>
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
                     
@@ -31,8 +37,18 @@
                         <li><a href="patterns">Patterns</a></li>
                         <li><a href="pages">Page templates</a></li>
                         <li><a href="error">Errors</a></li>
-                        <li><a href="/authentication">Authentication</a></li>
                         <li><a href="/logged-out">Signed out</a></li>
+                    </ul>
+                </nav>
+
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+                <nav role="navigation">
+                    <h2 class="govuk-heading-m">Authentication</h2>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/authentication">Member and NINO</a></li>
+                        <li><a href="/annual-allowance/how-auth">NHS Login or GOV.UK Verify</a></li>
+                        <li><a href="/nhs-login">NHS Login screens</a></li>
+                        
                     </ul>
                 </nav>
 
@@ -77,11 +93,12 @@
                 <nav role="navigation">
                     <h2 class="govuk-heading-m">Hub</h2>
                     <ul class="govuk-list govuk-list--bullet">
-                        <li><a href="/hub?current=1">Show current value on pension cards</a></li>
+                        <li><a href="/hub?estimate=1">Show estimate on pension cards</a></li>
                         <li><a href="/hub?show=trs">Show TRS unavailable</a></li>
                         <li><a href="/hub?show=taking">Show pensioner in 1995 scheme</a></li>
                         <li><a href="/hub?show=submitted">Show submitted 1995 pension</a></li>
                         <li><a href="/hub?show=inherited">Show inherited pensions</a></li>
+                        <li><a href="/hub?value-unavailable=1">Show value unavailable for 1995</a></li>
                     </ul>
                     <h3 class="govuk-heading-s">Statuses (blunt statements)</h3>
                     <ul class="govuk-list govuk-list--bullet">
@@ -120,15 +137,15 @@
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
                 <nav role="navigation">
-                    <h2 class="govuk-heading-m">Annual allowance pension savings</h2>
+                    <h2 class="govuk-heading-m">Annual allowance pension savings – (<i>statement</i>)</h2>
                     <ul class="govuk-list govuk-list--bullet">
                         <li><a href="/annual-allowance">List</a></li>
                         <li><a href="/annual-allowance/timeline">Timeline</a></li>
                         <li><a href="/annual-allowance/table">Table</a></li>
                         <li><a href="/annual-allowance/other-table">Table (NHS pensions only)</a></li>
                         <li><a href="/hub?aa=1">Access (hub)</a></li>
-                        <li><a href="/annual-allowance/other-pensions">Question</a></li>
-                        <li><a href="/hub?aa=question">Access via question (hub)</a></li>
+                        <li><a href="/annual-allowance/other-pensions">Only pension question</a></li>
+                        <li><a href="/annual-allowance/other-pensions-alternative">Only pension alternative question</a></li>
                     </ul>
                 </nav>
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
