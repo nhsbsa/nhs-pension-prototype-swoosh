@@ -1,0 +1,70 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What is annual allowance? - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_alpha.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-anel">
+                <div class="heading-group">
+                    <h1 class="heading-large">Key dates and events</h1>
+                </div>
+                
+                <ol class="bsa-timeline">
+                    <li class="bsa-timeline__entry bsa-timeline__entry--dash">
+                        <h3 class="bsa-timeline__title">End of the tax year</h3>
+                        <p class="bsa-timeline__info">
+                            <span class="bsa-timeline__date bold-xsmall">5 April</span>
+                        </p>
+                    </li>
+                    <li class="bsa-timeline__entry ">
+                        <h3 class="bsa-timeline__title">Self assessment deadline</h3>
+                        <p class="bsa-timeline__info">
+                            <span class="bsa-timeline__date bold-xsmall">31 January</span>
+                        </p>
+                        <p>Employees must send thier self-assessment tax return to HMRC.</p>
+                    </li>
+                    <li class="bsa-timeline__entry">
+                        <h3 class="bsa-timeline__title">Pension savings statement deadline</h3>
+                        <p class="bsa-timeline__info">
+                            <span class="bsa-timeline__date bold-xsmall">6 October</span>
+                        </p>
+                        <p>We will send pension savings statements to members to confirm the value of savings over the last tax year.</p>
+                    </li>
+                    <li class="bsa-timeline__entry">
+                        <h3 class="bsa-timeline__title">Intention of payment</h3>
+                        <p class="bsa-timeline__info">
+                            <span class="bsa-timeline__date bold-xsmall">31 July</span>
+                        </p>
+                        <p>You must tell us if you want to use scheme to pay for a tax charge from 2018/2019.</p>
+                    </li>
+                    <li class="bsa-timeline__entry">
+                        <h3 class="bsa-timeline__title">We get pay and membership information</h3>
+                        <p class="bsa-timeline__info">
+                            <span class="bsa-timeline__date bold-xsmall">6 July</span>
+                        </p>
+                        <p>Your employer must send us your pay and pension membership information.</p>
+                    </li>
+                    <li class="bsa-timeline__entry">
+                        <h3 class="bsa-timeline__title">Start of the tax year</h3>
+                        <p class="bsa-timeline__info">
+                            <span class="bsa-timeline__date bold-xsmall">6 April</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}

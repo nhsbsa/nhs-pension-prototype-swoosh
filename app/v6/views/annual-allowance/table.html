@@ -19,6 +19,8 @@ Your annual allowance - {{ serviceName }} - NHSBSA
         <div class="column-two-thirds">
             {% include "annual-allowance/includes/heading.html" %}
             {% include "annual-allowance/includes/what.html" %}
+
+            <p>Your pension savings information is updated each year, <a href="help/key-dates">see a timeline of key dates and events</a>.</p>
             <br>
         </div>
     </div>
@@ -27,63 +29,89 @@ Your annual allowance - {{ serviceName }} - NHSBSA
         <div class="column-full">
             
             {% set tableHeader1 %}Year{% endset %}
-            {# {% set tableHeader2 %}Start{% endset %}
-            {% set tableHeader3 %}End{% endset %} #}
-            {% set tableHeader4 %}Allowance{% endset %}
-            {% set tableHeader5 %}Savings{% endset %}
+            {% set tableHeader2 %}Annual allowance{% endset %}
+            {% set tableHeader3 %}1995/2008 scheme savings{% endset %}
+            {% set tableHeader4 %}2015 scheme{% endset %}
+            {% set tableHeader5 %}Total{% endset %}
 
             <table class="responsive-able">
                 <caption class="visually-hidden">Other retirement examples</caption>
                 <thead>
                     <tr>
                         <th scope="col">{{ tableHeader1 }}</th>
-                        {# <th scope="col">{{ tableHeader2 }}</th>
-                        <th scope="col">{{ tableHeader3 }}</th> #}
-                        <th scope="col">{{ tableHeader4 }}</th>
-                        <th scope="col">{{ tableHeader5 }}</th>
+                        <th scope="col">Annual <br>allowance</th>
+                        <th scope="col">1995/2008 <br>scheme savings</th>
+                        <th scope="col">2015 <br>scheme savings</th>
+                        <th scope="col">Total <br>savings</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
-                            <span class="nobr">6 April 2019</span> to <span class="nobr">5 April 2020</span>
+                            6 April 2019 to 5 April 2020
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £40,000
+                        </td>
+                        <td colspan="3">
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            Your savings for this year are not available yet
+                        </td>
+                        {# <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £12,345
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            Savings are not available
-                        </td>
+                            £13,579
+                        </td> #}
                     </tr>
+
                     <tr>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
                             6 April 2018 to 5 April 2019
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £40,000
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
                             £59,850
                         </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £9,854
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £69,704
+                        </td>
                     </tr>
+
                     <tr>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader1 }}</span>
                             6 April 2017 to 5 April 2018
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £40,000
                         </td>
                         <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £1,312
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £2,419
+                        </td>
+                        <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
-                            £51,230
+                            £3,731
                         </td>
                     </tr>
                     <tr>
@@ -92,8 +120,16 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             6 April 2015 to 5 April 2016
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £38,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £0
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
@@ -106,12 +142,20 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             1 April 2015 to 5 April 2016
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £0
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
                             £23,275
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £19,231
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £42,506
                         </td>
                     </tr>
                     <tr>
@@ -120,12 +164,20 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             1 April 2015 to 8 July 2015
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £80,000
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
                             £9,432
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £49,231
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £58,663
                         </td>
                     </tr>
                     <tr>
@@ -134,12 +186,20 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             9 July 2015 to 5 April 2016
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £0
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
                             £12,295
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            £1,285
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>
+                            £13,580
                         </td>
                     </tr>
                     <tr>
@@ -148,8 +208,16 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                             1 April 2014 to 31 March 2015
                         </td>
                         <td>
-                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader2 }}</span>
                             £40,000
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader3 }}</span>
+                            £43,663
+                        </td>
+                        <td>
+                            <span class="table-heading" aria-hidden="true">{{ tableHeader4 }}</span>
+                            Not applicable
                         </td>
                         <td>
                             <span class="table-heading" aria-hidden="true">{{ tableHeader5 }}</span>

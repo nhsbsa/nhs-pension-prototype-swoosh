@@ -1,0 +1,31 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What is annual allowance? - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="interrupt-panel">
+                <div class="heading-group">
+                    <h1 class="heading-large">How annual allowance affects you</h1>
+                </div>
+                <hr>
+                <p>Your annual allowance is the most you can save in your pension pots in a tax year (6 April to 5 April) before you have to pay tax.</p>
+                <hr>
+                <a href="/what" class="button">Continue</a>
+            </div>
+
+        </div>
+    </div>
+        
+</main>
+
+{% endblock %}
