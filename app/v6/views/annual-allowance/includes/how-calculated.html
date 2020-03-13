@@ -1,23 +1,15 @@
-{# <h2 class="heading-medium">How is my statement calculated?</h2>
-
-<p>The values shown are based on your pay information and <a href="/membership/summary-list-style?schemeReference=1995">membership record</a> 
-from your employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>. 
-It is up to your employer to keep your pension information up to date.</p> #}
-
 {% set calculatedHtml %}
-<p>The values shown are based on your pay information and <a href="/membership/summary-list-style?schemeReference=1995">membership record</a> 
-from your employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.</p>
-<div class="notice">
-    <i class="icon icon-important">
-        <span class="visually-hidden">Warning</span>
-    </i>
-    <strong class="bold-small">Speak to your employer if something looks wrong, it is up to 
-    them to keep your pension information up to date.</strong>
-</div>
+<p>You can <a href="/public/v6/images/xl/aa-fp.csv">download a breakdown of your pension savings</a>.</p>
 
+<p>The values shown are based on your pay information or membership details from your 
+employer up to <strong class="bold nobr">{{ data['lastUpdatedDate'] }}</strong>.</p>
+<div class="notice">
+    <i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
+    <strong class="bold-small">It is up to your employer to keep your pension information up to date.</strong>
+</div>
 {% endset %}
 
 {{ govukDetails({
-    summaryText: 'How is my statement calculated?',
+    summaryText: 'How your savings are calculated',
     html: calculatedHtml
 }) }}

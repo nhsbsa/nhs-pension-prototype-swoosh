@@ -13,10 +13,6 @@
             {
                 label: 'View your 2008 estimate',
                 href: 'estimate?schemeReference=2008'
-            },
-            {
-                label: 'View your 2008 contribution statement',
-                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
             }
         ]
     }) }}
@@ -37,10 +33,6 @@
             {
                 label: 'Apply for a refund',
                 href: '#'
-            },
-            {
-                label: 'View your 2008 contribution statement',
-                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
             }
         ]
     }) }}
@@ -54,10 +46,6 @@
             {
                 label: 'Apply for a refund',
                 href: '#'
-            },
-            {
-                label: 'View your 2008 contribution statement',
-                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
             }
         ]
     }) }}
@@ -87,10 +75,6 @@
                 href: 'estimate?schemeReference=2008'
             },
             {
-                label: 'View your 2008 contribution statement',
-                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
-            },
-            {
                 label: 'Check your 2008 membership record',
                 href: 'membership/year-style?schemeReference=2008'
             }
@@ -98,8 +82,6 @@
     }) }}
 
 {% elif ( data['estimate'] === "1" ) %}
-
-
     {{ bsaCard({
         title: '2008 pension',
         data: [
@@ -112,10 +94,6 @@
             {
                 label: 'View your 2008 estimate',
                 href: 'estimate/2008?schemeReference=2008'
-            },
-            {
-                label: 'View your 2008 contribution statement',
-                href: 'statement?schemeReference=2008&schemeYear=2007/2008'
             },
             {
                 label: 'Check your 2008 membership record',
@@ -131,15 +109,15 @@
         <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Your 2008 pension</h3>
         <div class="data govuk-margin-bottom-0">
             <span class="data-item bold-xsmall"><span>Currently worth</span></span>
-            <span class="data-item bold-large">£876 <span class="bold-xsmall">a year</span></span>
-            
+            <span class="data-item bold-large">£876 <span class="bold-small">a year</span></span>
         </div>
+        <hr class="break break--small">
+        <p class="font-xsmall govuk-margin-bottom-0">Calculated on <strong class="bold">15&nbsp;March&nbsp;2020</strong></p>
     </div>
 
     <div class="bsa-card__actions">
         <ul class="bsa-card__actions-list">
             <li><a href="estimate?schemeReference=2008&age=preMPA">View details of this pension</a></li>
-            <li><a href="statement?schemeReference=2008&schemeYear=1994/1995">View your 2008 contribution statement</a></li>
             <li><a href="membership/summary-list-style?schemeReference=2008">Check your 2008 membership record</a></li>
         </ul>
     </div>

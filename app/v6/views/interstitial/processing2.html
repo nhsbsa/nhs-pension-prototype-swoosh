@@ -12,15 +12,15 @@ Processing - {{ serviceName }} - NHSBSA
 
             <header class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">We are processing your details</h1>
+                <h1 class="heading-large">Your pension record is being retrieved</h1>
             </header>
             <figure>
-                <figcaption><p>This may take a few seconds, please bear with us.</p></figcaption>
+                <figcaption><p>This may take several minutes, please bear with us.</p></figcaption>
                 <p><img src="/public/v6/images/ajax-loader.gif" alt="Spinner" /></p>  
             </figure>
            
             <noscript>
-                 <p>If nothing happens for 5 minutes you can <a href="/interstitial/processing">try again</a>.</p>
+                 <p>If nothing happens for 5 minutes you can <a href="/interstitial/processing2">try again</a>.</p>
             </noscript>
         </div>
     </div>
@@ -28,7 +28,7 @@ Processing - {{ serviceName }} - NHSBSA
 
 <script>
 window.setTimeout(function(){
-    window.location.href = "/interstitial/processing";
+    window.location.href = "/interstitial/processing2";
 }, 3000);
 </script>
 

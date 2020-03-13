@@ -15,11 +15,7 @@
                 href: 'estimate?schemeReference=1995'
             },
             {
-                label: 'View your 1995 contribution statement',
-                href: 'statement?schemeReference=1995&schemeYear=1994/1995'
-            },
-            {
-                label: 'View your 1995 membership statement',
+                label: 'View your 1995 membership record',
                 href: 'membership/summary-list-style?schemeReference=1995'
             }
         ],
@@ -44,11 +40,7 @@
                 href: '#'
             },
             {
-                label: 'View your 1995 contribution statement',
-                href: 'statement?schemeReference=1995&schemeYear=1994/1995'
-            },
-            {
-                label: 'View your 1995 membership statement',
+                label: 'View your 1995 membership record',
                 href: 'membership/summary-list-style?schemeReference=1995'
             }
         ]
@@ -63,10 +55,6 @@
             {
                 label: 'Apply for a refund',
                 href: '#'
-            },
-            {
-                label: 'View your 1995 contribution statement',
-                href: 'statement?schemeReference=1995&schemeYear=1994/1995'
             }
         ]
     }) }}
@@ -95,10 +83,6 @@
                 href: 'estimate?schemeReference=1995'
             },
             {
-                label: 'View your 1995 contribution statement',
-                href: 'statement?schemeReference=1995&schemeYear=1994/1995'
-            },
-            {
                 label: 'View your 1995 membership statement',
                 href: 'membership/summary-list-style?schemeReference=1995'
             }
@@ -121,7 +105,6 @@
 
         <div class="bsa-card__actions">
             <ul class="bsa-card__actions-list">
-                <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
                 <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
             </ul>
         </div>
@@ -142,7 +125,6 @@
         <div class="bsa-card__actions">
             <ul class="bsa-card__actions-list">
                 <li><a href="current-value?schemeReference=1995">View details of this pension</a></li>
-                <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
                 <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
             </ul>
         </div>
@@ -163,10 +145,6 @@
             {
                 label: 'View your 1995 estimate',
                 href: 'estimate/1995?schemeReference=1995'
-            },
-            {
-                label: 'View your 1995 contribution statement',
-                href: 'statement?schemeReference=1995&schemeYear=1994/1995'
             },
             {
                 label: 'Check your 1995 membership record',
@@ -192,6 +170,24 @@
 
     </div>
 
+{% elif ( data['being-calculated'] === "1" ) %}
+
+    <div class="bsa-card">
+        <div class="bsa-card__content">
+            <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Your 1995 pension</h3>
+            <hr class="break break--small">
+            <p class="font-xsmall govuk-margin-bottom-0">Your 1995 pension value is being calculated
+            and will be available soon.</p>
+        </div>
+
+        <div class="bsa-card__actions">
+            <ul class="bsa-card__actions-list">
+                <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
+            </ul>
+        </div>
+
+    </div>
+
 {% else %}
 
 <div class="bsa-card">
@@ -199,14 +195,15 @@
         <h3 class="heading-small bsa-card__heading govuk-margin-top-0">Your 1995 pension</h3>
         <div class="data govuk-margin-bottom-0">
             <span class="data-item bold-xsmall"><span>Currently worth</span></span>
-            <span class="data-item bold-large">£4,836 <span class="bold-xsmall">a year</span></span>
+            <span class="data-item bold-large">£4,836 <span class="bold-small">a year</span></span>
         </div>
+        <hr class="break break--small">
+        <p class="font-xsmall govuk-margin-bottom-0">Calculated on <strong class="bold">15&nbsp;March&nbsp;2020</strong></p>
     </div>
 
     <div class="bsa-card__actions">
         <ul class="bsa-card__actions-list">
             <li><a href="estimate?schemeReference=1995&age=preMPA">View details of this pension</a></li>
-            <li><a href="statement?schemeReference=1995&schemeYear=1994/1995">View your 1995 contribution statement</a></li>
             <li><a href="membership/summary-list-style?schemeReference=1995">Check your 1995 membership record</a></li>
         </ul>
     </div>

@@ -12,23 +12,25 @@ Processing - {{ serviceName }} - NHSBSA
 
             <header class="heading-group">
                 <p>{{ serviceName }}</p>
-                <h1 class="heading-large">We are processing your details</h1>
+                <h1 class="heading-large">We are experiencing a high <br>level of demand</h1>
             </header>
+
             <figure>
-                <figcaption><p>This may take a few seconds, please bear with us.</p></figcaption>
-                <p><img src="/public/v6/images/ajax-loader.gif" alt="Spinner" /></p>  
+                <figcaption><p>Your request is being processed and could take several minutes. <br>Please wait a moment.</p></figcaption>
+                <p><img src="/public/v6/images/ajax-loader.gif" alt="Spinner" /></p>
             </figure>
-           
+
             <noscript>
-                 <p>If nothing happens for 5 minutes you can <a href="/interstitial/processing">try again</a>.</p>
+                 <p>If nothing happens for 5 minutes you can <a href="/interstitial/processing4">try again</a>.</p>
             </noscript>
+           
         </div>
     </div>
 </main>
 
 <script>
 window.setTimeout(function(){
-    window.location.href = "/interstitial/processing";
+    window.location.href = "/interstitial/processing4";
 }, 3000);
 </script>
 

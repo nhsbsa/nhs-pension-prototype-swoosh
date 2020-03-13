@@ -60,3 +60,20 @@ $timeline-border-color: $nhs-blue;
 .bsa-timeline__entry .bsa-timeline__body {
     display: block;
 }
+
+.bsa-timeline--closed {
+    padding-top: .5em;
+    .bsa-timeline__entry:first-child {
+        .bsa-timeline__title {
+            position: relative;
+            top: -.5em;
+            margin-bottom: -.5em;
+        }
+        
+        &::before {
+            top: 0;
+            width: 20px;
+            left: -11px;
+        }
+    }
+}

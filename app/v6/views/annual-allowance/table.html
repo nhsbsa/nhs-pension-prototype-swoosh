@@ -20,7 +20,7 @@ Your annual allowance - {{ serviceName }} - NHSBSA
             {% include "annual-allowance/includes/heading.html" %}
             {% include "annual-allowance/includes/what.html" %}
 
-            <p>Your pension savings information is updated each year, <a href="help/key-dates">see a timeline of key dates and events</a>.</p>
+            <p>Your pension savings information is updated by your employer each year, <a href="help/key-dates">see a timeline of key dates and events</a>.</p>
             <br>
         </div>
     </div>
@@ -227,20 +227,22 @@ Your annual allowance - {{ serviceName }} - NHSBSA
                 </tbody>
             </table>
             <br>
-            <p class="font-xsmall">This information was last updated on <strong class="bold">{{ data['lastUpdatedDate'] }}</strong>.</p>
+            <p class="font-xsmall">The annual allowance values shown are known as the standard annual allowance.<br>
+            This information was last updated on <strong class="bold">{{ data['lastUpdatedDate'] }}</strong>.</p>
+            <hr>
+
         </div>
     </div>
 
     <div class="grid-row">
         <div class="column-two-thirds">
+            {% include "annual-allowance/includes/how-calculated.html" %}
 
             {% include "annual-allowance/includes/go-above.html" %}
 
-            {% include "annual-allowance/includes/how-calculated.html" %}
+            {# <hr> #}
 
-            <hr>
-
-            {% include "annual-allowance/includes/next.html" %}
+            {# {% include "annual-allowance/includes/next.html" %} #}
 
             {% include "includes/contact.html" %}
 

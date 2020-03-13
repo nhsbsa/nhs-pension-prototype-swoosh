@@ -1,0 +1,28 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Hub unavailable - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">We are experiencing a high <br>level of demand</h1>
+            </header>
+
+            <p>The service is very busy, <a href="/interstitial/processing5">try again</a> later.</p>
+
+            <p><a href="https://www.nhsbsa.nhs.uk/member-hub/members-contact-us">Contact our NHS Business Services Authority Pensions helpline</a> if you need to speak to someone about your pension.</p>           
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
