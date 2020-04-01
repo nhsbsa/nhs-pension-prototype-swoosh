@@ -1,0 +1,44 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Email - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form action="email" method="post" class="form">                
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="page-header--lede heading-large">We'll send you an email now</h1>
+                </div>
+
+                <p class="form-hint">You'll need to use the code we send in the email to access the service.</p>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Enter your email address
+                        <span class="form-hint">Enter the email address you used when you first signed into this service.
+                        <br>Make sure only you have access to it.</span>
+                    </label>
+                    <input class="form-control" id="email" name="email" type="text">
+                </div>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

@@ -124,5 +124,7 @@ router.use('/annual-allowance/', require('./views/annual-allowance/_routes'))
 router.use('/access/', require('./views/access/_routes'))
 router.use('/access/nhs/', require('./views/access/nhs/_routes'))
 router.use('/access/nhs-gov/', require('./views/access/nhs-gov/_routes'))
+router.use('/access/bsa/', require('./views/access/bsa/_routes'))
+router.use('/access/nhs-bsa/', require('./views/access/nhs-bsa/_routes'))
 
 module.exports = router

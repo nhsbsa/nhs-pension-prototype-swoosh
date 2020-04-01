@@ -1,0 +1,35 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {# {% include "includes/back-link.html" %} #}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="heading-group">
+            <p>{{ serviceName }}</p>
+            <h1 class="heading-large">We need to find your pension record</h1>
+        </div>
+
+        <p>We'll ask you a some questions and use your answers to find your record.</p>
+
+        <p>When we have found your record we'll ask you for your email address which you'll use to access this service in future.</p>
+
+        <a href="name">Continue</a>
+
+        If just email we ignore, we'll only send to verified emails.
+        Email a code in future.
+
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

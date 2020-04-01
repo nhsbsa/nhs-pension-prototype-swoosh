@@ -1,0 +1,48 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+How do you want to auth? - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {# {% include "includes/back-link.html" %} #}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="heading-large">Have you signed into this service before?</h1>
+            </div>
+
+            <form action="before" method="post">
+                <fieldset class="form-group">
+                    <legend class="visually-hidden">Have you signed into this service before?</legend>
+                    <div class="multiple-choice">
+                        <input id="auth-ye" name="before" type="radio" value="yes">
+                        <label for="auth-ye">Yes I have</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="auth-no" name="before" type="radio" value="no">
+                        <label for="auth-no">No I haven't</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="auth-cr" name="before" type="radio" value="cr">
+                        <label for="auth-cr">I can't remember</label>
+                    </div>
+                </fieldset>
+
+                  <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What's your address? {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="heading-group">
+            <p>{{ serviceName }}</p>
+            <h1 class="heading-large">What is your address?</h1>
+        </div>
+
+      <form action="address" method="post" class="form">
+
+        <div class="form-group">
+            <label class="form-label" for="address1">Address line 1</label>
+            <input class="form-control" id="address1" name="address1" type="text" value="{{data['address-lineone']}}">
+        </div>
+            
+        <div class="form-group">
+            <label class="form-label" for="lineone">Address line 2</label>
+            <input class="form-control"  id="address2" name="address2" type="text" value="{{data['address-linetwo']}}">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="town">Town or city</label>
+            <input class="form-control" id="town" name="town" type="text">
+        </div>
+        
+            
+        <div class="form-group">
+            <label class="form-label" for="postcode">Post code</label>
+            <input class="form-control form-control-1-4"  id="postcode" name="postcode" type="text" value="{{data['address-postcode']}}">
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+      </div>
+    </div>
+</main>
+
+{% endblock %}
