@@ -1,0 +1,40 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What's your National Insurance number? {{ serviceName }} NHS BSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {# {% include "includes/back-link.html" %} #}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <form action="nino" method="post" class="form">
+
+          <div class="form-group">
+              <div class="heading-group">
+                  <p>{{ serviceName }}</p>
+                  <h1 class="heading-large">We need to find you in our pension records</h1>
+              </div>
+              <label for="nino" class="form-label">
+                <span class="bold">What's your National Insurance number?</span>
+                <span class="form-hint">It's on your National Insurance card, benefit letter, payslip or P60. <br>For example, ‘QQ 12 34 56 C’.</span>
+              </label>
+              <input class="form-control" id="nino" name="nino" type="text">
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout_empty.html" %}
+
+{% block page_title %}
+  {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			
+			<div class="heading-group">
+				<p>Access journeys – Created on 1 April 2020</p>
+				<h1 class="heading-xlarge">{{ serviceName }}</h1>
+			</div>
+
+			<p><a href="access/nhs/start">View NHS Login only journey</a></p>
+			<p><a href="access/nhs-gov/start">View NHS Login and Verify journey</a></p>
+			<p><a href="access/nhs-bsa/start">View NHS Login and NHS BSA journey</a></p>
+
+		</div>
+
+	</div>
+
+</main>
+
+{% endblock %}
+
+

@@ -120,4 +120,9 @@ router.use('/super-dumb/', require('./views/super-dumb/_routes'))
 // This moves annual-allowance routing to annual-allowance directory
 router.use('/annual-allowance/', require('./views/annual-allowance/_routes'))
 
+// This moves access routing to access directory
+router.use('/access/', require('./views/access/_routes'))
+router.use('/access/nhs/', require('./views/access/nhs/_routes'))
+router.use('/access/nhs-gov/', require('./views/access/nhs-gov/_routes'))
+
 module.exports = router
