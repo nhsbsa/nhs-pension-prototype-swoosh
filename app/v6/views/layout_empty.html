@@ -46,7 +46,12 @@
 
     {% block content %}{% endblock %}
 
-    {% block body_end %}{% endblock %}
+    {% block body_end %}
+      {% block scripts %}
+        {% include "includes/scripts.html" %}
+        {% block page_scripts %}{% endblock %}
+      {% endblock %}
+    {% endblock %}
 
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
   </body>

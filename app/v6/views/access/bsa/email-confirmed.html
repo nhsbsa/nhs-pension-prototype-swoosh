@@ -1,0 +1,33 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Code expired - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+             
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="page-header--lede heading-large">Email confirmed</h1>
+            </div>
+
+            <div class="panel panel-border-wide">
+                <p>You have confirmed <strong class="bold">gareth.joyce@nhs.net</strong></p>
+            </div>
+            <br>
+
+            <p>You can now use this email address to <a href="processing">sign into this service</a>.</p>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
+

@@ -1,0 +1,96 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_alpha.html" %}
+
+    {{ bsaAccountDetailsBar({
+        class: "bsa-account-details-bar--slim"
+    }) }}
+    
+    {% include "includes/back-link.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Check your answers</h1>
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">Your pensions</h2>
+
+      <dl class="govuk-check-your-answers cya-questions-long">
+        <div>
+          <dt class="cya-question">
+            Full name
+          </dt>
+          <dd class="cya-answer">
+            Gareth Joyce
+          </dd>
+          <dd class="cya-change">
+            <a href="name">
+              Change<span class="visually-hidden"> answer</span>
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt class="cya-question">
+            Address
+          </dt>
+          <dd class="cya-answer">
+            12 Madeup Road,<br>
+            Madeupistown,<br>
+            Madeupville.<br>
+            MD10 2UP.
+          </dd>
+          <dd class="cya-change">
+            <a href="address">
+              Change<span class="visually-hidden"> answer</span>
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt class="cya-question">
+            Date of birth
+          </dt>
+          <dd class="cya-answer">
+            23 February 1981
+          </dd>
+          <dd class="cya-change">
+            <a href="dob">
+              Change<span class="visually-hidden"> answer</span>
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt class="cya-question">
+            National Insurance number
+          </dt>
+          <dd class="cya-answer">
+            QQ 12 34 56 C
+          </dd>
+          <dd class="cya-change">
+            <a href="nino">
+              Change<span class="visually-hidden"> answer</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="heading-medium">Now we'll look for your pension record</h2>
+
+      <p>By submitting this information you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        <a href="set-email" class="button">Confirm</a>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

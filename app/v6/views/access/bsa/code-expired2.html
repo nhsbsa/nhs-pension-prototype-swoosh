@@ -1,0 +1,31 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Code expired - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+             
+            <div class="heading-group">
+                <p>{{ serviceName }}</p>
+                <h1 class="page-header--lede heading-large">Code expired</h1>
+            </div>
+
+            <p>The code you entered has expired. Codes are valid for one hour.</p>
+
+            <p>You will need to <a href="code2">enter the code</a> to access this service.</p>
+
+            <p>If our email doesn't arrive within 5 minutes, check your spam and trash folder, or <a href="email">try again</a>.</p>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

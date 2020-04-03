@@ -8,25 +8,29 @@
 
 <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
-    {# {% include "includes/back-link.html" %} #}
+    {% include "includes/back-link.html" %}
     
     <div class="grid-row">
       <div class="column-two-thirds">
 
-        <div class="heading-group">
+        <div class="notice heading-group">
             <p>{{ serviceName }}</p>
-            <h1 class="heading-large">We need to find your pension record</h1>
+            <i class="icon icon-important">
+                <span class="visually-hidden">Warning</span>
+            </i>
+            <h1 class="notice__heading heading-large">Find your pension record</h1>
         </div>
 
-        <p>We'll ask you a some questions and use your answers to find your record.</p>
+        {# <div class="heading-group">
+            <p>{{ serviceName }}</p>
+            <h1 class="heading-large">We need to find your pension record</h1>
+        </div> #}
 
-        <p>When we have found your record we'll ask you for your email address which you'll use to access this service in future.</p>
+        <p>We'll ask you some questions to find your record.</p>
 
-        <a href="name">Continue</a>
+        <p>We'll also ask you for an email address which you'll need to confirm. You'll use this to access this service in future.</p>
 
-        If just email we ignore, we'll only send to verified emails.
-        Email a code in future.
-
+        <a href="name" class="button">Continue</a>
 
       </div>
     </div>

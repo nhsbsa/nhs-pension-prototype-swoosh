@@ -1,0 +1,47 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Code - {{ serviceName }} - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back-link.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form action="code" method="post" class="form">                
+                <div class="heading-group">
+                    <p>{{ serviceName }}</p>
+                    <h1 class="page-header--lede heading-large">Enter your code</h1>
+                </div>
+
+                <div class="form-group">
+                    <label for="code" class="form-label">Enter the code we sent to your email address</label>
+                    <input class="form-control" id="code" name="code" type="text">
+                </div>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+
+                {{ govukDetails({
+                    summaryText: 'If you didnt get a code',
+                    html: "
+                    <p>We sent the code to you in an email. If our email hasn't arrived, check your spam and 
+                    trash folder, or <a href=set-email>try again</a>.</p>
+                    "
+                }) }}
+                
+
+            </form>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

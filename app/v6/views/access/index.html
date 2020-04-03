@@ -9,18 +9,61 @@
 <main id="content" role="main">
 
 	<div class="grid-row">
-		<div class="column-two-thirds">
+		<div class="column-full">
 			
 			<div class="heading-group">
 				<p>Access journeys – Created on 1 April 2020</p>
 				<h1 class="heading-xlarge">{{ serviceName }}</h1>
 			</div>
 
-			<p><a href="access/nhs/start">View NHS Login only journey</a></p>
-			<p><a href="access/nhs-gov/start">View NHS Login and Verify journey</a></p>
-			{# <p><a href="access/nhs-bsa/start">View NHS Login and NHS BSA only journey</a></p> #}
-			<p><a href="access/bsa/start">View NHS BSA only journey</a></p>
-			{# <p><a href="access/bsa-esr/start">View NHS BSA from ESR journey</a></p> #}
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Journey</th>
+						<th scope="col">Scenario</th>
+						<th scope="col">Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="/access/nhs/start">NHS Login only</a></td>
+						<td>User already has a registered NHS Login</td>
+						<td><span class="app-c-tag app-c-tag--danger">Not tested</span></td>
+					</tr>
+					<tr>
+						<td><a href="/access/nhs-gov/start">NHS Login and GOV.UK Verify</a></td>
+						<td>User already has a registered NHS Login</td>
+						<td><span class="app-c-tag">Part tested</span></td>
+					</tr>
+					<tr>
+						<td><a href="/access/bsa/start">NHS BSA only (code)</a> </td>
+						<td>
+							<ul class="list list-bullet">
+								<li>Using <a href="https://www.notifications.service.gov.uk/">GOV.UK Notify</a> to send email</li>
+								<li>Using <a href="https://design-system.service.gov.uk/patterns/confirm-an-email-address/">blocking email loop</a> design pattern</li>
+								<li>Code in email</li>
+							</ul>
+						</td>
+						<td><span class="app-c-tag app-c-tag--danger">Not tested</span></td>
+					</tr>
+					<tr>
+						<td><a href="#">NHS BSA only (magic link)</a></td>
+						<td>
+							<ul class="list list-bullet">
+								<li>Using <a href="https://www.notifications.service.gov.uk/">GOV.UK Notify</a> to send email</li>
+								<li>Using <a href="https://design-system.service.gov.uk/patterns/confirm-an-email-address/">blocking email loop</a> design pattern</li>
+								<li>Magic link in email</li>
+							</ul>
+						</td>
+						<td><span class="app-c-tag app-c-tag--warning">To do</span></td>
+					</tr>
+					<tr>
+						<td><a href="#">NHS BSA from ESR</a></td>
+						<td>could we authenticate through ESR?</td>
+						<td><span class="app-c-tag app-c-tag--warning">To do</span></td>
+					</tr>
+				</tbody>
+			</table>
 
 		</div>
 
