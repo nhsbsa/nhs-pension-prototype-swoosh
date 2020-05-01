@@ -16,6 +16,9 @@
 				<h1 class="heading-xlarge">{{ serviceName }}</h1>
 			</div>
 
+
+			<h2 class="heading-large">{{ serviceName }}</h2>
+
 			<table>
 				<thead>
 					<tr>
@@ -61,6 +64,38 @@
 						<td><a href="#">NHS BSA from ESR</a></td>
 						<td>could we authenticate through ESR?</td>
 						<td><span class="app-c-tag app-c-tag--warning">To do</span></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<h2 class="heading-large">TRS</h2>
+
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Journey</th>
+						<th scope="col">Scenario</th>
+						<th scope="col">Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="/access/from-trs/home">From totalrewardstatements.nhs.uk to choose</a></td>
+						<td>User accesses TRS from TRS website</td>
+						<td><span class="app-c-tag app-c-tag--danger">Not tested</span></td>
+					</tr>
+					<tr>
+						<td><a href="/access/from-nhsbsa/home">From nhsbsa.nhs.uk to choose</a></td>
+						<td>User accesses TRS from corporate website and<br> chooses
+						method from pensions service.</td>
+						<td><span class="app-c-tag app-c-tag--danger">Not tested</span></td>
+					</tr>
+					<tr>
+						<td><a href="/access/from-nhsbsa/choice">Choose from nhsbsa.nhs.uk</a></td>
+						<td>User accesses TRS from our corporate website and<br> chooses
+						method from the website.</td>
+						<td><span class="app-c-tag app-c-tag--danger">Not tested</span></td>
 					</tr>
 				</tbody>
 			</table>

@@ -104,6 +104,8 @@ let estimateResult1995 = {
 
 module.exports = {
 
+  "corp_asset_path": "https://www.nhsbsa.nhs.uk/",
+
   // member data
   "nino": nino,
   "ninoSafe": nino,
